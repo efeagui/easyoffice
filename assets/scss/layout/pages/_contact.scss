@@ -1,0 +1,234 @@
+@use '../../utils/' as *;
+
+/*============= CONTACT CSS AREA ===============*/
+.contact-inner {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    margin: 0 auto;
+    max-width: 1376px;
+    border-radius: 40px;
+    background: var(--ztc-bg-bg-1);
+    padding: 60px 30px 60px;
+
+    @media #{$xs} {
+        margin: 0;
+        padding: 60px 0 60px;
+    }
+
+    .phone-number {
+        border-radius: 20px;
+        background: #F1F2F3;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 24px;
+        transition: all .4s;
+        margin-bottom: 30px;
+
+        &:hover {
+            background: var(--ztc-bg-bg-3);
+            transition: all .4s;
+
+            .img1 {
+                background: var(--ztc-bg-bg-1);
+                transition: all .4s;
+
+                svg {
+                    filter: none;
+                    transition: all .4s;
+                }
+            }
+
+            .content {
+                p {
+                    color: var(--ztc-text-text-1);
+                    transition: all .4s;
+                }
+
+                a {
+                    color: var(--ztc-text-text-1);
+                    transition: all .4s;
+                }
+            }
+        }
+
+        .img1 {
+            height: 60px;
+            width: 60px;
+            text-align: center;
+            background: var(--ztc-bg-bg-3);
+            display: flex;
+            align-items: center;
+            align-self: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all .4s;
+
+            svg {
+                transition: all .4s;
+                filter: brightness(0) invert(1);
+            }
+        }
+
+        .content {
+            padding-left: 14px;
+
+            p {
+                color: var(--ztc-text-text-2);
+                font-family: var(--ztc-family-font1);
+                font-size: var(--ztc-font-size-font-s16);
+                font-style: normal;
+                font-weight: var(--ztc-weight-semibold);
+                line-height: 18px;
+                transition: all .4s;
+                padding-bottom: 14px;
+            }
+
+            a {
+                color: var(--ztc-text-text-3);
+                text-align: center;
+                font-family: var(--ztc-family-font1);
+                font-size: var(--ztc-font-size-font-s16);
+                font-style: normal;
+                font-weight: var(--ztc-weight-medium);
+                line-height: 16px;
+                display: inline-block;
+                transition: all .4s;
+            }
+        }
+    }
+
+    .chosse-images {
+        position: relative;
+        z-index: 1;
+
+        @media #{$xs} {
+            margin-bottom: 30px;
+        }
+
+        @media #{$md} {
+            margin-bottom: 30px;
+        }
+
+        .elements8 {
+            position: absolute;
+            left: 100px;
+            top: 50px;
+        }
+
+        .img2 {
+            border-radius: 16px;
+            position: relative;
+            z-index: 2;
+            margin-top: -320px;
+            left: 80px;
+
+            @media #{$xs} {
+                margin-top: 30px;
+                left: 0;
+            }
+
+            img {
+                border-radius: 16px;
+            }
+        }
+    }
+
+    .contact-boxarea {
+        border-radius: 16px;
+        background: #F2F3F3;
+        padding: 32px;
+
+        h3 {
+            color: var(--ztc-text-text-2);
+            font-family: var(--ztc-family-font1);
+            font-size: var(--ztc-font-size-font-s24);
+            font-style: normal;
+            font-weight: var(--ztc-weight-semibold);
+            line-height: 24px;
+        }
+
+        .input-area {
+            margin-top: 16px;
+
+            input {
+                width: 100%;
+                color: var(--ztc-text-text-2);
+                font-family: var(--ztc-family-font1);
+                font-size: var(--ztc-font-size-font-s16);
+                font-style: normal;
+                font-weight: var(--ztc-weight-medium);
+                line-height: 16px;
+                padding: 20px;
+                border-radius: 8px;
+                background: var(--ztc-bg-bg-1);
+
+                &::placeholder {
+                    color: var(--ztc-text-text-2);
+                    font-family: var(--ztc-family-font1);
+                    font-size: var(--ztc-font-size-font-s16);
+                    font-style: normal;
+                    font-weight: var(--ztc-weight-medium);
+                    line-height: 16px;
+                    opacity: 0.7;
+                }
+            }
+
+            textarea {
+                width: 100%;
+                color: var(--ztc-text-text-2);
+                font-family: var(--ztc-family-font1);
+                font-size: var(--ztc-font-size-font-s16);
+                font-style: normal;
+                font-weight: var(--ztc-weight-medium);
+                line-height: 16px;
+                padding: 20px;
+                border-radius: 8px;
+                background: var(--ztc-bg-bg-1);
+                height: 180px;
+
+                &::placeholder {
+                    color: var(--ztc-text-text-2);
+                    font-family: var(--ztc-family-font1);
+                    font-size: var(--ztc-font-size-font-s16);
+                    font-style: normal;
+                    font-weight: var(--ztc-weight-medium);
+                    line-height: 16px;
+                    opacity: 70%;
+                }
+            }
+
+            button {
+                border: none;
+                outline: none;
+            }
+        }
+    }
+}
+
+.maps-area {
+    background: var(--ztc-bg-bg-1);
+    border-radius: 16px;
+    margin: 0 auto;
+    max-width: 1376px;
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+
+    @media #{$xs} {
+        margin: 0;
+    }
+
+    .maps {
+        iframe {
+            width: 100%;
+            border-radius: 16px;
+            height: 440px;
+        }
+    }
+}
+
+/*============= CONTACT CSS AREA ENDS===============*/

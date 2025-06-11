@@ -1,0 +1,704 @@
+<style>
+  .contact-desktop-amazing {
+    display: block;
+  }
+
+  .contact-mobile-optimized {
+    display: none;
+  }
+
+  .contact-row-amazing {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+    align-items: stretch;
+  }
+
+  .contact-compact-amazing {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(248, 249, 250, 0.9));
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 107, 0, 0.1);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+    min-height: 60px;
+  }
+
+  .contact-compact-amazing::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 107, 0, 0.1), transparent);
+    transition: left 0.6s ease;
+  }
+
+  .contact-compact-amazing:hover::before {
+    left: 100%;
+  }
+
+  .contact-compact-amazing:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(255, 107, 0, 0.15);
+    border-color: rgba(255, 107, 0, 0.3);
+  }
+
+  .contact-compact-amazing.full-width {
+    width: 100%;
+  }
+
+  .icon-compact {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    flex-shrink: 0;
+    color: white;
+    font-size: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  .info-compact {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .info-compact span {
+    display: block;
+    font-weight: 600;
+    color: #333;
+    font-size: 13px;
+    line-height: 1.2;
+    margin-bottom: 2px;
+  }
+
+  .info-compact small {
+    display: block;
+    color: #666;
+    font-size: 11px;
+    line-height: 1.2;
+    font-weight: 500;
+  }
+
+  /* ===== MÓVIL: Layout 2 columnas optimizado ===== */
+  @media (max-width: 768px) {
+    .contact-desktop-amazing {
+      display: none;
+    }
+    
+    .contact-mobile-optimized {
+      display: block;
+    }
+    
+    .contact-mobile-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 12px;
+      align-items: stretch;
+    }
+    
+    .contact-mobile-row.single {
+      justify-content: center;
+    }
+    
+    .contact-mobile-card {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 12px 8px;
+      background: white;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      border: 1px solid #f0f0f0;
+      min-height: 80px;
+      justify-content: center;
+    }
+    
+    .contact-mobile-card.full {
+      max-width: 280px;
+      flex-direction: row;
+      justify-content: flex-start;
+      padding: 12px 16px;
+    }
+    
+    .contact-mobile-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(255, 107, 0, 0.15);
+      border-color: #FF6B00;
+    }
+    
+    .mobile-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 8px;
+      color: white;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    
+    .contact-mobile-card.full .mobile-icon {
+      margin-bottom: 0;
+      margin-right: 12px;
+    }
+    
+    .mobile-info {
+      text-align: center;
+      flex: 1;
+    }
+    
+    .contact-mobile-card.full .mobile-info {
+      text-align: left;
+    }
+    
+    .mobile-title {
+      display: block;
+      font-weight: 600;
+      color: #333;
+      font-size: 11px;
+      line-height: 1.2;
+      margin-bottom: 3px;
+    }
+    
+    .mobile-detail {
+      display: block;
+      color: #666;
+      font-size: 10px;
+      line-height: 1.2;
+      font-weight: 500;
+    }
+  }
+
+  /* ===== FONDOS DE ICONOS ===== */
+  .phone-bg { background: linear-gradient(135deg, #FF6B00, #ff8533); }
+  .whatsapp-bg { background: linear-gradient(135deg, #25d366, #128c7e); }
+  .email-bg { background: linear-gradient(135deg, #ea4335, #fbbc04); }
+  .location-bg { background: linear-gradient(135deg, #4285f4, #34a853); }
+
+  /* ===== RESPONSIVE ADICIONAL ===== */
+  @media (max-width: 480px) {
+    .contact-mobile-card {
+      padding: 10px 6px;
+      min-height: 75px;
+    }
+    
+    .contact-mobile-card.full {
+      padding: 10px 12px;
+      max-width: 260px;
+    }
+    
+    .mobile-icon {
+      width: 28px;
+      height: 28px;
+      font-size: 12px;
+    }
+    
+    .mobile-title {
+      font-size: 10px;
+    }
+    
+    .mobile-detail {
+      font-size: 9px;
+    }
+    
+    .contact-mobile-row {
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+  }
+
+  /* ===== TABLET Y PANTALLAS MEDIANAS ===== */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .contact-compact-amazing {
+      padding: 10px 12px;
+      min-height: 55px;
+    }
+    
+    .icon-compact {
+      width: 32px;
+      height: 32px;
+      font-size: 14px;
+      margin-right: 10px;
+    }
+    
+    .info-compact span {
+      font-size: 12px;
+    }
+    
+    .info-compact small {
+      font-size: 10px;
+    }
+    
+    .contact-row-amazing {
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+  }
+
+  /* ===== ANIMACIONES Y EFECTOS AVANZADOS ===== */
+  @keyframes contactPulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 107, 0, 0.4); }
+    70% { box-shadow: 0 0 0 8px rgba(255, 107, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 107, 0, 0); }
+  }
+
+  .contact-compact-amazing:focus,
+  .contact-mobile-card:focus {
+    outline: none;
+    animation: contactPulse 1.5s infinite;
+  }
+
+  /* ===== FOOTER GENERAL ===== */
+  .footer-cta-bg-area {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  }
+
+  .social-links a:hover {
+    transform: translateY(-2px) rotate(5deg);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  }
+
+  @media (max-width: 768px) {
+    .footer-logo img {
+      max-width: 120px !important;
+    }
+  }
+
+  /* ===== EFECTO DE CARGA SUAVE ===== */
+  .contact-desktop-amazing,
+  .contact-mobile-optimized {
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+<!--===== FOOTER AREA STARTS =======-->
+<div class="footer-cta-bg-area">
+  <div class="cta1-section-area">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-10 m-auto">
+          <div class="heading1 text-center">
+            <h2>Hagamos realidad su espacio ideal de trabajo</h2>
+            <div class="space16"></div>
+            <p>No espere más para transformar su forma de trabajar. Ya sea una oficina privada,<br class="d-lg-block d-none"> coworking o un proyecto llave en mano, nuestro equipo lo<br class="d-lg-block d-none"> acompaña con soluciones personalizadas y eficientes.</p>
+            <div class="space32"></div>
+            <div class="btn-area1">
+              <a href="contact.html" class="vl-btn1">Contáctenos ahora <span class="arrow1"><i class="fa-solid fa-arrow-right"></i></span><span class="arrow2"><i class="fa-solid fa-arrow-right"></i></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="vl-footer1-section-area">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Logo y descripción -->
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-time-area">
+            <div class="footer-logo mb-4">
+              <img src="assets/img/logo/EasyOffice logo.png" alt="Easyoffice" style="max-width: 130px; height: auto;">
+            </div>
+            <p style="text-align: justify; color: #666; line-height: 1.6;">Nos comprometemos a que su experiencia con Easyoffice sea simple y sin complicaciones. Desde elegir su oficina ideal hasta personalizarla, lo acompañamos en cada paso del camino.</p>
+            <div class="space32"></div>
+            <div class="social-links">
+              <ul style="display: flex; gap: 12px; list-style: none; padding: 0;">
+                <li>
+                  <a href="https://www.facebook.com/easyofficeh" target="_blank" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: linear-gradient(135deg, #1877f2, #42a5f5); border-radius: 8px; color: white; transition: all 0.3s ease;">
+                    <i class="fa-brands fa-facebook-f"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/in/easyofficehn/" target="_blank" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: linear-gradient(135deg, #0077b5, #00a0dc); border-radius: 8px; color: white; transition: all 0.3s ease;">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/easyofficeh/" target="_blank" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: linear-gradient(135deg, #e4405f, #fd5949, #fccc63); border-radius: 8px; color: white; transition: all 0.3s ease;">
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.tiktok.com/@easyofficehn?_t=ZM-8wjdff1Bnan&_r=1" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: linear-gradient(135deg,rgb(11, 11, 11),rgb(74, 70, 70)); border-radius: 8px; color: white; transition: all 0.3s ease;">
+                    <i class="fa-brands fa-tiktok"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Enlaces rápidos - OCULTO EN MÓVIL -->
+        <div class="col-lg col-md-6 d-none d-lg-block">
+          <div class="space30 d-md-none d-block"></div>
+          <div class="footer-widget-area foot-padding1">
+            <h3 style="color: #333; font-weight: 600; margin-bottom: 24px;">Enlaces Rápidos</h3>
+            <ul style="list-style: none; padding: 0;">
+              <li style="margin-bottom: 12px;">
+                <a href="index.html" style="color: #666; text-decoration: none; transition: color 0.3s ease; display: flex; align-items: center;">
+                  <i class="fa-solid fa-home" style="margin-right: 8px; color: #FF6B00;"></i>
+                  Inicio
+                </a>
+              </li>
+              <li style="margin-bottom: 12px;">
+                <a href="about-us.html" style="color: #666; text-decoration: none; transition: color 0.3s ease; display: flex; align-items: center;">
+                  <i class="fa-solid fa-users" style="margin-right: 8px; color: #FF6B00;"></i>
+                  Nosotros
+                </a>
+              </li>
+              <li style="margin-bottom: 12px;">
+                <a href="our-service.html" style="color: #666; text-decoration: none; transition: color 0.3s ease; display: flex; align-items: center;">
+                  <i class="fa-solid fa-cog" style="margin-right: 8px; color: #FF6B00;"></i>
+                  Servicios
+                </a>
+              </li>
+              <li style="margin-bottom: 12px;">
+                <a href="property-halfmap-grid.html" style="color: #666; text-decoration: none; transition: color 0.3s ease; display: flex; align-items: center;">
+                  <i class="fa-solid fa-building" style="margin-right: 8px; color: #FF6B00;"></i>
+                  Propiedades
+                </a>
+              </li>
+              <li style="margin-bottom: 12px;">
+                <a href="contact.html" style="color: #666; text-decoration: none; transition: color 0.3s ease; display: flex; align-items: center;">
+                  <i class="fa-solid fa-envelope" style="margin-right: 8px; color: #FF6B00;"></i>
+                  Contacto
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Información de contacto - ASOMBROSO Y OPTIMIZADO -->
+        <div class="col-lg col-md-4">
+          <div class="space30 d-lg-none d-block"></div>
+          <div class="footer-widget-area">
+            <h3 style="color: #333; font-weight: 600; margin-bottom: 24px;">Contáctanos</h3>
+
+            <!-- DESKTOP: Layout horizontal compacto -->
+            <div class="contact-desktop-amazing">
+              <div class="contact-row-amazing">
+                <a href="tel:+50422627024" class="contact-compact-amazing phone-compact">
+                  <div class="icon-compact phone-bg"><i class="fa-solid fa-phone"></i></div>
+                  <div class="info-compact">
+                    <span>Teléfono</span>
+                    <small>2262-7024</small>
+                  </div>
+                </a>
+                
+                <a href="https://wa.me/50432484168?text=Hola%20estimado%20cliente%2C%20gracias%20por%20contactar%20nuestros%20servicios%20de%20Easyoffice.%20En%20un%20momento%20te%20atenderemos." target="_blank" class="contact-compact-amazing whatsapp-compact">
+                  <div class="icon-compact whatsapp-bg"><i class="fa-brands fa-whatsapp"></i></div>
+                  <div class="info-compact">
+                    <span>WhatsApp</span>
+                    <small>3248-4168</small>
+                  </div>
+                </a>
+              </div>
+              
+              <div class="contact-row-amazing">
+                <a href="mailto:easyofficehn@gmail.com" class="contact-compact-amazing email-compact full-width">
+                  <div class="icon-compact email-bg"><i class="fa-solid fa-envelope"></i></div>
+                  <div class="info-compact">
+                    <span>Correo Electrónico</span>
+                    <small>easyofficehn@gmail.com</small>
+                  </div>
+                </a>
+              </div>
+              
+              <!-- ✅ SOLUCIÓN: Cada ubicación en su propia fila -->
+              <div class="contact-row-amazing">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=Torre+Agalta,+Boulevard+Morazán,+Tegucigalpa,+Honduras" target="_blank" class="contact-compact-amazing location-compact full-width">
+                  <div class="icon-compact location-bg"><i class="fa-solid fa-map-marker-alt"></i></div>
+                  <div class="info-compact">
+                    <span>Tegucigalpa</span>
+                    <small>Torre Agalta, Piso 11</small>
+                  </div>
+                </a>
+              </div>
+              
+              <div class="contact-row-amazing">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=Edificio+Yude+Canahuati,+San+Pedro+Sula,+Honduras" target="_blank" class="contact-compact-amazing location-compact full-width">
+                  <div class="icon-compact location-bg"><i class="fa-solid fa-map-marker-alt"></i></div>
+                  <div class="info-compact">
+                    <span>San Pedro Sula</span>
+                    <small>Edif. Yude, Piso 4</small>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <!-- MÓVIL: Layout 2 columnas optimizado -->
+            <div class="contact-mobile-optimized">
+              <!-- Fila 1: Teléfono + WhatsApp -->
+              <div class="contact-mobile-row">
+                <a href="tel:+50422627024" class="contact-mobile-card">
+                  <div class="mobile-icon phone-bg">
+                    <i class="fa-solid fa-phone"></i>
+                  </div>
+                  <div class="mobile-info">
+                    <span class="mobile-title">Teléfono</span>
+                    <span class="mobile-detail">+504 2262-7024</span>
+                  </div>
+                </a>
+                
+                <a href="https://wa.me/50432484168?text=Hola%20estimado%20cliente%2C%20gracias%20por%20contactar%20nuestros%20servicios%20de%20Easyoffice.%20En%20un%20momento%20te%20atenderemos." target="_blank" class="contact-mobile-card">
+                  <div class="mobile-icon whatsapp-bg">
+                    <i class="fa-brands fa-whatsapp"></i>
+                  </div>
+                  <div class="mobile-info">
+                    <span class="mobile-title">WhatsApp</span>
+                    <span class="mobile-detail">+504 3248-4168</span>
+                  </div>
+                </a>
+              </div>
+              
+              <!-- Fila 2: Correo solo -->
+              <div class="contact-mobile-row single">
+                <a href="mailto:easyofficehn@gmail.com" class="contact-mobile-card full">
+                  <div class="mobile-icon email-bg">
+                    <i class="fa-solid fa-envelope"></i>
+                  </div>
+                  <div class="mobile-info">
+                    <span class="mobile-title">Correo Electrónico</span>
+                    <span class="mobile-detail">easyofficehn@gmail.com</span>
+                  </div>
+                </a>
+              </div>
+              
+              <!-- Fila 3: Tegucigalpa + San Pedro Sula -->
+              <div class="contact-mobile-row">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=Torre+Agalta,+Boulevard+Morazán,+Tegucigalpa,+Honduras" target="_blank" class="contact-mobile-card">
+                  <div class="mobile-icon location-bg">
+                    <i class="fa-solid fa-map-marker-alt"></i>
+                  </div>
+                  <div class="mobile-info">
+                    <span class="mobile-title">Tegucigalpa</span>
+                    <span class="mobile-detail">Torre Agalta</span>
+                  </div>
+                </a>
+                
+                <a href="https://www.google.com/maps/dir/?api=1&destination=Edificio+Yude+Canahuati,+San+Pedro+Sula,+Honduras" target="_blank" class="contact-mobile-card">
+                  <div class="mobile-icon location-bg">
+                    <i class="fa-solid fa-map-marker-alt"></i>
+                  </div>
+                  <div class="mobile-info">
+                    <span class="mobile-title">San Pedro Sula</span>
+                    <span class="mobile-detail">Edif. Yude</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+
+        <!-- Mapa y ubicación -->
+        <div class="col-lg col-md-4">
+          <div class="space30 d-lg-none d-block"></div>
+          <div class="footer-widget-area">
+            <h3 style="color: #333; font-weight: 600; margin-bottom: 24px;">Nuestra Ubicación</h3>
+            
+            <!-- Mapa mejorado -->
+            <div style="position: relative; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3870.2013599117143!2d-87.19811622584712!3d14.099289890077592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f6fdba9392025ab%3A0x71584976450f0172!2sTorre%20Agalta!5e0!3m2!1ses-419!2shn!4v1716650892846!5m2!1ses-419!2shn"
+                width="100%" 
+                height="250" 
+                style="border:0; border-radius: 12px;"
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+
+            <!-- Botón de navegación mejorado -->
+            <div style="margin-top: 16px; text-align: center;">
+              <a href="https://www.google.com/maps/dir/?api=1&destination=Torre+Agalta,+Boulevard+Morazan,+Tegucigalpa,+Honduras"
+                target="_blank"
+                style="display: inline-flex; align-items: center; background: linear-gradient(135deg, #FF6B00, #ff8533); color: white; padding: 12px 24px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);">
+                <i class="fa-solid fa-route" style="margin-right: 8px;"></i>
+                Cómo llegar en Google Maps
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="space24"></div>
+      <div class="col-lg-12">
+        <div class="copyright-area" style="border-top: 1px solid #eee; padding-top: 24px; text-align: center;">
+          <p style="color: #666; margin: 0;">© 2025 Easyoffice. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--===== FOOTER AREA ENDS =======-->
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Efectos de hover mejorados para desktop
+  const compactCards = document.querySelectorAll('.contact-compact-amazing');
+  
+  compactCards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      // Efecto de brillo en el icono
+      const icon = this.querySelector('.icon-compact');
+      if (icon) {
+        icon.style.transform = 'scale(1.1) rotate(5deg)';
+        icon.style.boxShadow = '0 6px 20px rgba(0,0,0,0.25)';
+      }
+      
+      // Efecto de texto
+      const title = this.querySelector('.info-compact span');
+      if (title) {
+        title.style.color = '#FF6B00';
+      }
+    });
+    
+    card.addEventListener('mouseleave', function() {
+      // Restaurar estado normal
+      const icon = this.querySelector('.icon-compact');
+      if (icon) {
+        icon.style.transform = 'scale(1) rotate(0deg)';
+        icon.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+      }
+      
+      const title = this.querySelector('.info-compact span');
+      if (title) {
+        title.style.color = '#333';
+      }
+    });
+  });
+  
+  // Efectos para móvil
+  const mobileCards = document.querySelectorAll('.contact-mobile-card');
+  
+  mobileCards.forEach(card => {
+    card.addEventListener('touchstart', function() {
+      this.style.transform = 'translateY(-2px) scale(0.98)';
+    });
+    
+    card.addEventListener('touchend', function() {
+      setTimeout(() => {
+        this.style.transform = '';
+      }, 150);
+    });
+  });
+  
+  // Animación de entrada escalonada
+  function animateCardsIn() {
+    const allCards = document.querySelectorAll('.contact-compact-amazing, .contact-mobile-card');
+    
+    allCards.forEach((card, index) => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(20px)';
+      
+      setTimeout(() => {
+        card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      }, index * 100);
+    });
+  }
+  
+  // Ejecutar animación cuando el footer sea visible
+  const footerObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCardsIn();
+        footerObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  
+  const footerSection = document.querySelector('.footer-widget-area');
+  if (footerSection) {
+    footerObserver.observe(footerSection);
+  }
+  
+  // Efecto de click con ondas
+  function createRipple(event) {
+    const button = event.currentTarget;
+    const circle = document.createElement('span');
+    const diameter = Math.max(button.clientWidth, button.clientHeight);
+    const radius = diameter / 2;
+    
+    circle.style.width = circle.style.height = `${diameter}px`;
+    circle.style.left = `${event.clientX - button.offsetLeft - radius}px`;
+    circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
+    circle.classList.add('ripple');
+    
+    const rippleStyle = document.createElement('style');
+    rippleStyle.textContent = `
+      .ripple {
+        position: absolute;
+        border-radius: 50%;
+        transform: scale(0);
+        animation: ripple-animation 0.6s linear;
+        background-color: rgba(255, 107, 0, 0.3);
+        pointer-events: none;
+      }
+      @keyframes ripple-animation {
+        to {
+          transform: scale(4);
+          opacity: 0;
+        }
+      }
+    `;
+    
+    if (!document.querySelector('.ripple-style')) {
+      rippleStyle.classList.add('ripple-style');
+      document.head.appendChild(rippleStyle);
+    }
+    
+    const existingRipple = button.getElementsByClassName('ripple')[0];
+    if (existingRipple) {
+      existingRipple.remove();
+    }
+    
+    button.appendChild(circle);
+    
+    setTimeout(() => {
+      circle.remove();
+    }, 600);
+  }
+  
+  // Agregar efecto ripple a todas las tarjetas
+  const allContactCards = document.querySelectorAll('.contact-compact-amazing, .contact-mobile-card');
+  allContactCards.forEach(card => {
+    card.style.position = 'relative';
+    card.style.overflow = 'hidden';
+    card.addEventListener('click', createRipple);
+  });
+});
+</script>

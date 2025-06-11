@@ -1,0 +1,257 @@
+@use '../../utils/' as * ;
+
+/*============= LISTING CSS AREA ===============*/
+.listing1 {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+
+    .listing-slider-area{
+        position: relative;
+        z-index: 1;
+        .owl-nav {
+            position: absolute;
+            top: -130px;
+            right: 0;
+            @media #{$xs} {
+                position: relative;
+                text-align: center;
+                margin-top: 30px;
+                top: 0;
+            }
+            @media #{$md} {
+                position: relative;
+                text-align: center;
+                margin-top: 30px;
+                top: 0;
+            }
+            button {
+                height: 56px;
+                width: 56px;
+                text-align: center;
+                line-height: 56px;
+                display: inline-block;
+                transition: all .4s;
+                background: rgba(237, 132, 56, 0.20);
+                border-radius: 50%;
+                color: var(--ztc-text-text-4);
+                font-size: var(--ztc-font-size-font-s20);
+                &:hover {
+                    background: var(--ztc-bg-bg-3);
+                    color: var(--ztc-text-text-1);
+                    transition: all .4s;
+                }
+                &.owl-prev {
+                    margin: 0 16px 0 0;
+                }
+            }
+        }
+        .img1 {
+            position: relative;
+            z-index: 1;
+            border-radius: 16px;
+            transition: all .4s;
+            img {
+                height: 310px;
+                width: 80%;
+                object-fit: cover;
+                border-radius: 16px;
+                transition: all .4s;
+                @media #{$xs} {
+                    width: 100%;
+                }
+            }
+        }
+        .content-area {
+            border-radius: 16px;
+            background: var(--ztc-bg-bg-1);
+            box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.10);
+            padding: 28px 24px;
+            position: absolute;
+            top: 20px;
+            z-index: 2;
+            right: 0;
+            left: 200px;
+            @media #{$xs} {
+                position: relative;
+                top: 0;
+                left: 0;
+
+            }
+            a.head {
+                color: var(--ztc-text-text-2);
+                font-family: var(--ztc-family-font1);
+                font-size: var(--ztc-font-size-font-s24);
+                font-style: normal;
+                font-weight: var(--ztc-weight-semibold);
+                line-height: 24px; 
+                display: inline-block;
+                transition: all .4s;
+                &:hover {
+                    color: var(--ztc-text-text-4);
+                    transition: all .4s;
+                }       
+            }
+            p {
+                color: var(--ztc-text-text-3);
+                font-family: var(--ztc-family-font1);
+                font-size: var(--ztc-font-size-font-s16);
+                font-style: normal;
+                font-weight: var(--medium);
+                line-height: 16px;   
+                svg {
+                    height: 20px;
+                    width: 20px;
+                    object-fit: cover;
+                    margin: -4px 0 0 0;
+                }     
+            }
+            ul {
+                padding-top: 30px;
+                padding-bottom: 20px;
+                border-bottom: 1px solid #E8E8E8;
+                li {
+                    display: inline-block;
+                    a {
+                        color: var(--ztc-text-text-2);
+                        font-family: var(--ztc-family-font1);
+                        font-size: var(--ztc-font-size-font-s16);
+                        font-style: normal;
+                        font-weight: var(--medium);
+                        line-height: 16px;
+                        transition: all .4s;
+                        display: inline-block;
+                        span.line {
+                            color: #F2F3F3;
+                            transition: all .4s;
+                            display: inline-block;
+                            margin: 0 16px;
+                            @media #{$xs} {
+                                margin: 0 4px;
+                            }
+                            @media #{$md} {
+                                margin: 0 4px;
+                            }
+                        }
+                        span.icon {
+                            height: 36px;
+                            width: 36px;
+                            text-align: center;
+                            line-height: 32px;
+                            display: inline-block;
+                            transition: all .5s;
+                            border-radius: 50%;
+                            background: var(--ztc-bg-bg-2);
+                            margin: 0 5px  0 0;
+                            svg {
+                                filter: brightness(0) invert(1);
+                                height: 20px;
+                                width: 20px;
+                                text-align: center;
+                                display: inline-block;
+                            }  
+                        }
+                    }
+                }
+            }
+            .btn-area {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .nm-btn {
+                    a {
+                    border-radius: 8px;
+                    background: var(--ztc-bg-bg-3);
+                    padding: 12px 16px;
+                    display: inline-block;
+                    transition: all .4s;
+                    color: var(--ztc-text-text-1);
+                    font-family: var(--ztc-family-font1);
+                    font-size: var(--ztc-font-size-font-s16);
+                    font-style: normal;
+                    font-weight: var(--ztc-weight-medium);
+                    line-height: 16px;
+                    }             
+                }   
+                .love-share {
+                    .heart {
+                        height: 40px;
+                        width: 40px;
+                        text-align: center;
+                        line-height: 40px;
+                        display: inline-block;
+                        transition: all .4s;
+                        background: #FBE6D7;
+                        border-radius: 50%;
+                        position: relative;
+                        &.active {
+                            .heart2 {
+                                visibility: hidden;
+                                opacity: 0;
+                                transition: all .4s;
+                            }
+                            .heart1 {
+                                visibility: visible;
+                                opacity: 1;
+                                transition: all .4s;
+                            }
+                        }
+                        &:hover {
+                            transition: all .4s;
+                            .heart2 {
+                                visibility: hidden;
+                                opacity: 0;
+                                transition: all .4s;
+                            }
+                            .heart1 {
+                                visibility: visible;
+                                opacity: 1;
+                                transition: all .4s;
+                            }
+                        }
+                        .heart2 {
+                            visibility: visible;
+                            opacity: 1;
+                            transition: all .4s;
+                            height: 21px;
+                            width: 21px;
+                            object-fit: contain;
+                            display: inline-block;
+                        }
+                        .heart1 {
+                            visibility: hidden;
+                            opacity: 0;
+                            transition: all .4s;
+                            position: absolute;
+                            top: 12px;
+                            left: 10px;
+                            height: 18px;
+                            width: 18px;
+                            object-fit: contain;
+                            display: inline-block;
+                        }
+                    }         
+                    .share {
+                        height: 40px;
+                        width: 40px;
+                        text-align: center;
+                        line-height: 37px;
+                        display: inline-block;
+                        transition: all .4s;
+                        background: #FBE6D7;
+                        border-radius: 50%;
+                        position: relative; 
+                        color: var(--ztc-text-text-7);
+                        svg {
+                            height: 22px;
+                            width: 22px;
+                            object-fit: cover;
+                        }      
+                    }  
+                }
+            }
+            
+        }
+    }
+}
+/*============= LISTING CSS AREA ===============*/

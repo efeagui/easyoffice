@@ -1,0 +1,391 @@
+@use '../../utils/' as *;
+
+/*============= CTA CSS AREA ===============*/
+.cta2-section-area {
+    background: var(--ztc-bg-bg-3);
+    padding: 60px;
+    border-radius: 10px;
+    margin: 0 auto -150px auto;
+    max-width: 1376px;
+    position: relative;
+    z-index: 2;
+
+    @media #{$xs} {
+        padding: 40px 0 40px;
+        margin: 0 0 -150px 0;
+        border-radius: 0;
+    }
+
+    @media #{$md} {
+        padding: 40px 0 40px;
+        margin: 0 0 -150px 0;
+        border-radius: 0;
+    }
+
+    .heading1 {
+        h2 {
+            color: var(--ztc-text-text-1)
+        }
+
+        p {
+            color: var(--ztc-text-text-1);
+            opacity: 90%;
+        }
+
+        .btn-area1 {
+            .vl-btn1 {
+                background: var(--ztc-bg-bg-1);
+                color: var(--ztc-text-text-2);
+
+                &:hover {
+                    color: var(--ztc-text-text-1);
+                    transition: all .4s;
+                }
+            }
+
+        }
+    }
+
+    .form-area {
+        position: relative;
+        z-index: 2;
+
+        @media #{$xs} {
+            margin-top: 32px;
+        }
+
+        @media #{$md} {
+            margin-top: 32px;
+        }
+
+        form {
+            position: relative;
+            z-index: 1;
+
+            input {
+                width: 100%;
+                color: var(--ztc-text-text-1);
+                font-family: var(--ztc-family-font1);
+                font-size: var(--ztc-font-size-font-s16);
+                ;
+                font-style: normal;
+                font-weight: var(--ztc-weight-medium);
+                line-height: 16px;
+                border-radius: 50px;
+                border: 1px solid rgba(255, 255, 255, 0.10);
+                background: rgba(255, 255, 255, 0.20);
+                padding: 16px 20px;
+                width: 355px;
+
+                @media #{$xs} {
+                    width: 100%;
+                }
+
+                &::placeholder {
+                    color: var(--ztc-text-text-1);
+                    font-family: var(--ztc-family-font1);
+                    font-size: var(--ztc-font-size-font-s16);
+                    ;
+                    font-style: normal;
+                    font-weight: var(--ztc-weight-medium);
+                    line-height: 16px;
+                    opacity: 90%;
+                }
+            }
+
+            button {
+                border: none;
+                outline: none;
+                margin: 0 0 0 16px;
+
+                @media #{$xs} {
+                    margin: 20px 0 0 0;
+                }
+
+                &.vl-btn1 {
+                    background: var(--ztc-bg-bg-1);
+                    color: var(--ztc-text-text-2);
+
+                    &:hover {
+                        color: var(--ztc-text-text-1);
+                        transition: all .4s;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Homepage 03 //
+.cta3-section-area {
+    position: relative;
+    margin-bottom: -140px;
+    z-index: 2;
+
+    .cta-row {
+        background: var(--ztc-bg-bg-3);
+        padding: 60px 40px;
+        border-radius: 40px;
+    }
+
+    .heading1 {
+        h2 {
+            color: var(--ztc-text-text-1)
+        }
+
+        p {
+            color: var(--ztc-text-text-1);
+            opacity: 90%;
+        }
+    }
+
+    .form-area {
+        @media #{$xs} {
+            margin-top: 32px;
+        }
+
+        @media #{$md} {
+            margin-top: 32px;
+        }
+
+        form {
+            position: relative;
+            z-index: 1;
+
+            input {
+                width: 100%;
+                color: var(--ztc-text-text-2);
+                font-family: var(--ztc-family-font1);
+                font-size: var(--ztc-font-size-font-s16);
+                ;
+                font-style: normal;
+                font-weight: var(--ztc-weight-medium);
+                line-height: 16px;
+                border-radius: 100px;
+                border: 1px solid var(--ztc-bg-bg-1);
+                background: var(--ztc-bg-bg-1);
+                padding: 28px 29px;
+                width: 100%;
+                position: relative;
+
+                @media #{$xs} {
+                    width: 100%;
+                }
+
+                &::placeholder {
+                    color: var(--ztc-text-text-2);
+                    font-family: var(--ztc-family-font1);
+                    font-size: var(--ztc-font-size-font-s16);
+                    ;
+                    font-style: normal;
+                    font-weight: var(--ztc-weight-medium);
+                    line-height: 16px;
+                    opacity: 90%;
+                }
+            }
+
+            button {
+                border: none;
+                outline: none;
+                margin: 0 0 0 16px;
+                position: absolute;
+                right: 10px;
+                top: 10px;
+                z-index: 2;
+
+                @media #{$xs} {
+                    margin: 20px 0 0 0;
+                }
+            }
+        }
+    }
+}
+
+// Homepage 04 //
+.cat4-section-area {
+    position: relative;
+    z-index: 1;
+
+    .cta-bg-area {
+        position: relative;
+        z-index: 1;
+        background: var(--ztc-bg-bg-3);
+        padding: 45px 24px 24px 85px;
+        border-radius: 40px;
+
+        @media #{$xs} {
+            padding: 30px;
+        }
+
+        .heading2 {
+            h2 {
+                color: var(--ztc-text-text-1);
+            }
+
+            form {
+                position: relative;
+                z-index: 1;
+                width: 510px;
+
+                @media #{$xs} {
+                    width: 100%;
+                }
+
+                @media #{$md} {
+                    width: 100%;
+                }
+
+                input {
+                    width: 100%;
+                    color: var(--ztc-text-text-2);
+                    font-family: var(--ztc-family-font1);
+                    font-size: var(--ztc-font-size-font-s16);
+                    ;
+                    font-style: normal;
+                    font-weight: var(--ztc-weight-medium);
+                    line-height: 16px;
+                    border-radius: 100px;
+                    border: 1px solid var(--ztc-bg-bg-1);
+                    background: var(--ztc-bg-bg-1);
+                    padding: 28px 29px;
+                    width: 100%;
+                    position: relative;
+
+                    @media #{$xs} {
+                        width: 100%;
+                    }
+
+                    &::placeholder {
+                        color: var(--ztc-text-text-2);
+                        font-family: var(--ztc-family-font1);
+                        font-size: var(--ztc-font-size-font-s16);
+                        ;
+                        font-style: normal;
+                        font-weight: var(--ztc-weight-medium);
+                        line-height: 16px;
+                        opacity: 90%;
+                    }
+                }
+
+                button {
+                    border: none;
+                    outline: none;
+                    margin: 0 0 0 16px;
+                    position: absolute;
+                    right: 10px;
+                    top: 10px;
+                    z-index: 2;
+
+                }
+            }
+        }
+    }
+
+    .cta-images-area {
+        position: relative;
+        z-index: 1;
+
+        @media #{$xs} {
+            margin-top: 30px;
+        }
+
+        .elements7 {
+            position: absolute;
+            left: 0;
+        }
+
+        .villa-listing {
+            display: inline-block;
+            position: absolute;
+            bottom: 30px;
+            left: 30%;
+            z-index: 2;
+
+            @media #{$xs} {
+                display: none;
+            }
+
+            @media #{$md} {
+                display: none;
+            }
+
+            .list {
+                text-align: center;
+
+                a {
+                    height: 32px;
+                    width: 32px;
+                    text-align: center;
+                    display: inline-block;
+                    transition: all .4s;
+                    background: var(--ztc-text-text-1);
+                    border-radius: 50%;
+                    color: var(--ztc-text-text-2);
+                    position: relative;
+                    z-index: 1;
+
+                    &::after {
+                        position: absolute;
+                        content: "";
+                        height: 100%;
+                        width: 100%;
+                        left: 16px;
+                        top: 16px;
+                        background: var(--ztc-bg-bg-1);
+                        transition: all .4s;
+                        z-index: -1;
+                        border-radius: 50%;
+                        animation: pulse-border 1500ms ease-out infinite;
+                        opacity: 40%;
+                        display: inline-block;
+                    }
+                }
+            }
+
+            .villa-images {
+                display: flex;
+                align-items: center;
+                background: var(--ztc-bg-bg-1);
+                padding: 10px;
+                border-radius: 12px;
+
+                .img1 {
+                    img {
+                        height: 50px;
+                        width: 50px;
+                        object-fit: cover;
+                        border-radius: 50%;
+                    }
+                }
+
+                .text {
+                    padding-left: 10px;
+
+                    a {
+                        color: var(--ztc-text-text-2);
+                        font-family: var(--ztc-family-font1);
+                        font-size: var(--ztc-font-size-font-s16);
+                        font-style: normal;
+                        font-weight: var(--ztc-weight-medium);
+                        line-height: 15.441px;
+                        display: inline-block;
+                        transition: all .4s;
+                    }
+
+                    p {
+                        color: var(--ztc-text-text-2);
+                        font-family: var(--ztc-family-font1);
+                        font-size: var(--ztc-font-size-font-s12);
+                        font-style: normal;
+                        font-weight: var(--ztc-weight-medium);
+                        line-height: 12.868px;
+                        /* 100% */
+                        opacity: 80%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*============= CTA CSS AREA ENDS===============*/

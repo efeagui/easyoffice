@@ -1,0 +1,196 @@
+@use '../../utils/' as *;
+
+/*============= WORK CSS AREA ===============*/
+// PRIVAVCY_POLICY //
+.privacy-policy-area {
+    position: relative;
+    z-index: 1;
+    max-width: 1376px;
+    margin: 0 auto;
+    border-radius: 40px;
+    background-color: var(--ztc-bg-bg-1);
+
+    .policy-details {
+        padding: 0 40px 0 0;
+
+        @media #{$xs} {
+            padding: 0;
+            margin-bottom: 30px;
+        }
+
+        @media #{$md} {
+            padding: 0;
+            margin-bottom: 30px;
+        }
+
+        h3 {
+            color: var(--ztc-text-text-3);
+            font-family: var(--ztc-family-font1);
+            font-size: var(--ztc-font-size-font-s32);
+            font-style: normal;
+            font-weight: var(--ztc-weight-semibold);
+            line-height: 32px;
+        }
+
+        h4 {
+            color: var(--ztc-text-text-3);
+            font-family: var(--ztc-family-font1);
+            font-size: var(--ztc-font-size-font-s20);
+            font-style: normal;
+            font-weight: var(--ztc-weight-semibold);
+            line-height: 20px;
+        }
+
+        ul {
+            li {
+                color: var(--ztc-text-text-3);
+                font-family: var(--ztc-family-font1);
+                font-size: var(--ztc-font-size-font-s16);
+                font-style: normal;
+                font-weight: var(--ztc-weight-regular);
+                line-height: 16px;
+                margin-top: 16px;
+
+                svg {
+                    height: 18px;
+                    width: 18px;
+                    object-fit: cover;
+                    margin: 0 4px 0 0;
+                }
+            }
+        }
+    }
+
+    .all-category {
+        position: sticky;
+        top: 160px;
+
+        .categories-area {
+            position: relative;
+            z-index: 1;
+            background: var(--ztc-bg-bg-1);
+            padding: 32px 24px;
+            border-radius: 16px;
+
+            h3 {
+                color: var(--ztc-text-text-2);
+                font-family: var(--ztc-family-font1);
+                font-size: var(--ztc-font-size-font-s24);
+                font-style: normal;
+                font-weight: var(--ztc-weight-semibold);
+                line-height: 24px;
+            }
+
+            ul {
+                li {
+                    a {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        color: var(--ztc-text-text-2);
+                        font-family: var(--ztc-family-font1);
+                        font-size: var(--ztc-font-size-font-s16);
+                        font-style: normal;
+                        font-weight: var(--ztc-weight-semibold);
+                        line-height: 16px;
+                        padding: 20px 16px;
+                        background: #F1F2F3;
+                        border-radius: 4px;
+                        margin-top: 16px;
+                        transition: all .4s;
+
+                        &:hover {
+                            background: var(--ztc-bg-bg-3);
+                            transition: all .4s;
+                            color: var(--ztc-text-text-1);
+
+                        }
+
+                        svg {
+                            height: 18px;
+                            width: 18px;
+                            object-fit: cover;
+                        }
+                    }
+                }
+            }
+        }
+
+        .contact-us-box {
+            position: relative;
+            z-index: 1;
+            background: var(--ztc-bg-bg-1);
+            padding: 32px 24px;
+            border-radius: 16px;
+
+            h3 {
+                color: var(--ztc-text-text-2);
+                font-family: var(--ztc-family-font1);
+                font-size: var(--ztc-font-size-font-s24);
+                font-style: normal;
+                font-weight: var(--ztc-weight-semibold);
+                line-height: 24px;
+            }
+
+            .btn-area1 {
+                a {
+                    width: 100%;
+                    text-align: center;
+
+                    svg {
+                        margin: -4px 4px 0 0;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .policy-details {
+        position: relative;
+        z-index: 1;
+        background: var(--ztc-bg-bg-1);
+        border-radius: 16px;
+        padding: 30px;
+        margin: 0 0 0 30px;
+
+        @media #{$xs} {
+            margin: 30px 0 0 0;
+        }
+
+        @media #{$md} {
+            margin: 30px 0 0 0;
+        }
+
+        h3 {
+            color: var(--ztc-text-text-2);
+            font-family: var(--ztc-family-font1);
+            font-size: var(--ztc-font-size-font-s32);
+            font-style: normal;
+            font-weight: var(--ztc-weight-semibold);
+            line-height: 32px;
+        }
+
+        h4 {
+            color: var(--ztc-text-text-3);
+            font-family: var(--ztc-family-font1);
+            font-size: var(--ztc-font-size-font-s20);
+            font-style: normal;
+            font-weight: var(--ztc-weight-semibold);
+            line-height: 20px;
+        }
+
+        ul {
+            li {
+                color: var(--ztc-text-text-2);
+                font-family: var(--ztc-family-font1);
+                font-size: var(--ztc-font-size-font-s16);
+                font-style: normal;
+                font-weight: var(--ztc-weight-regular);
+                line-height: 16px;
+            }
+        }
+    }
+}
+
+/*============= WORK CSS AREA ===============*/

@@ -1,0 +1,361 @@
+@use '../utils' as *;
+
+/*============= ABOUT CSS AREA ===============*/
+.about1-section-area {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    background: var(--ztc-bg-bg-1);
+    padding: 32px 16px;
+    border-radius: 30px;
+    max-width: 1376px;
+    margin: 0 auto;
+
+    @media #{$xs} {
+        margin: 0;
+        padding: 24px;
+    }
+
+    .about-img1 {
+        img {
+            height: 612px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 30px;
+
+            @media #{$xs} {
+                height: 100%;
+                margin-bottom: 30px;
+            }
+
+            @media #{$md} {
+                height: 100%;
+                margin-bottom: 30px;
+            }
+        }
+    }
+
+    .heading1 {
+        .head {
+            background: #F1F2F3;
+            border-radius: 30px;
+            padding: 32px 34px;
+            text-align: center;
+
+            @media #{$xl} {
+                padding: 24px 16px;
+            }
+
+            @media #{$xxl} {
+                padding: 24px 16px;
+            }
+
+            @media #{$xxxl} {
+                padding: 24px 16px;
+            }
+
+            h2 {
+                @media #{$xxl} {
+                    font-size: var(--ztc-font-size-font-s40);
+                    line-height: 50px;
+                }
+
+                @media #{$xxxl} {
+                    font-size: var(--ztc-font-size-font-s40);
+                    line-height: 50px;
+                }
+            }
+        }
+    }
+
+    .perag-bg {
+        text-align: center;
+        position: relative;
+        padding: 58px 40px;
+        border-radius: 30px;
+        background: #F1F2F3;
+
+        @media #{$xl} {
+            padding: 50px 24px;
+        }
+
+        @media #{$xxl} {
+            padding: 22px;
+        }
+    }
+
+    .about-img2 {
+        img {
+            height: 612px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 30px;
+
+            @media #{$xs} {
+                height: 100%;
+                margin-top: 30px;
+            }
+
+            @media #{$md} {
+                height: 100%;
+                margin-top: 30px;
+            }
+        }
+    }
+}
+
+// Homepage2 //
+.about2 {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    background: #F1F2F3;
+
+    .heading1 {
+        .img1 {
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                border-radius: 8px;
+            }
+        }
+
+        .arrow-btnarea {
+            a {
+                border-width: 1px;
+                border: 1px solid var(--ztc-bg-bg-3);
+                backdrop-filter: blur(5px);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all .4s;
+                border-radius: 50%;
+                padding: 8px;
+                height: 160px;
+                width: 160px;
+
+                .arrow1 {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    height: 40px;
+                    width: 40px;
+                    margin-top: -20px;
+                    margin-left: -20px;
+                }
+
+                .circle {
+                    position: absolute;
+                    margin-bottom: 0;
+                    font-size: var(--ztc-font-size-font-s14);
+                    text-transform: uppercase;
+                    left: 50%;
+                    top: 50%;
+                    -webkit-transform: translate(-50%, -50%);
+                    -moz-transform: translate(-50%, -50%);
+                    -ms-transform: translate(-50%, -50%);
+                    -o-transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%);
+                    color: var(--ztc-text-text-4);
+
+                    span {
+                        position: absolute;
+                        top: -70px;
+                        display: inline-block;
+                        transform-origin: 0 70px;
+                        color: var(--ztc-text-text-4);
+
+                    }
+                }
+
+                @media #{$xs} {
+                    margin-top: 15px;
+                }
+            }
+        }
+    }
+
+    .img2 {
+        img {
+            height: 585px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+    }
+}
+
+// Homepage 03 //
+.about3-section-area {
+    position: relative;
+    z-index: 1;
+
+    .about-images-area {
+        position: relative;
+        z-index: 1;
+
+        .img1 {
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                border-radius: 180px;
+            }
+        }
+
+        .img2 {
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                border-radius: 180px;
+            }
+        }
+
+        .author-img {
+            .elements10 {
+                position: absolute;
+                left: 45%;
+                top: 30px;
+                z-index: -1;
+
+                @media #{$xs} {
+                    top: 46%;
+                }
+            }
+
+            .arrow-btnarea {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                margin-left: -120px;
+
+                a {
+                    background: var(--ztc-bg-bg-3);
+                    border-width: 1px;
+                    border: var(--ztc-bg-bg-3);
+                    backdrop-filter: blur(5px);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: all .4s;
+                    border-radius: 50%;
+                    padding: 8px;
+                    height: 160px;
+                    width: 160px;
+
+                    .arrow1 {
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        height: 40px;
+                        width: 40px;
+                        filter: brightness(0) invert(1);
+                        margin-top: -20px;
+                        margin-left: -20px;
+                    }
+
+                    .circle {
+                        position: absolute;
+                        margin-bottom: 0;
+                        font-size: var(--ztc-font-size-font-s14);
+                        text-transform: uppercase;
+                        left: 50%;
+                        top: 50%;
+                        -webkit-transform: translate(-50%, -50%);
+                        -moz-transform: translate(-50%, -50%);
+                        -ms-transform: translate(-50%, -50%);
+                        -o-transform: translate(-50%, -50%);
+                        transform: translate(-50%, -50%);
+                        color: var(--tg-color-white-default);
+
+                        span {
+                            position: absolute;
+                            top: -70px;
+                            display: inline-block;
+                            transform-origin: 0 70px;
+                            color: var(--ztc-text-text-1);
+                        }
+                    }
+
+                    @media #{$xs} {
+                        margin-top: 15px;
+                    }
+                }
+            }
+        }
+    }
+
+    .about-heading {
+        padding: 0 0 0 40px;
+
+        @media #{$xs} {
+            padding: 0;
+            margin-top: 50px;
+        }
+
+        @media #{$md} {
+            padding: 0;
+            margin-top: 50px;
+        }
+
+        .btn-area1 {
+            display: flex;
+            align-items: center;
+
+            @media #{$xs} {
+                display: inline-block;
+            }
+
+            .man-images-text {
+                display: flex;
+                align-items: center;
+                padding-left: 20px;
+
+                @media #{$xs} {
+                    padding-left: 0;
+                    margin-top: 24px;
+                }
+
+                .mans-img {
+                    img {
+                        height: 60px;
+                        width: 60px;
+                        text-align: center;
+                        line-height: 60px;
+                        border-radius: 50%;
+                    }
+                }
+
+                .man-text {
+                    padding-left: 16px;
+
+                    a {
+                        color: var(--ztc-text-text-2);
+                        font-family: var(--ztc-family-font1);
+                        font-size: var(--ztc-font-size-font-s20);
+                        font-style: normal;
+                        font-weight: var(--ztc-weight-semibold);
+                        line-height: 20px;
+                        display: inline-block;
+                        transition: all .4s;
+                    }
+
+                    p {
+                        color: var(--ztc-text-text-3);
+                        font-family: var(--ztc-family-font1);
+                        font-size: var(--ztc-font-size-font-s16);
+                        font-style: normal;
+                        font-weight: var(--ztc-weight-medium);
+                        line-height: 16px;
+                        transition: all .4s;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+/*============= ABOUT CSS AREA ENDS ===============*/

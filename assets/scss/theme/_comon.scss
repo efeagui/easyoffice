@@ -1,0 +1,303 @@
+@use '../utils/' as *;
+
+/*============= COMMON CSS AREA ===============*/
+// HEADING AREA //
+.heading1 {
+  h5 {
+    color: var(--ztc-text-text-4);
+    font-family: var(--ztc-family-font1);
+    font-size: var(--ztc-font-size-font-s16);
+    font-style: normal;
+    font-weight: var(--ztc-weight-medium);
+    line-height: 16px;
+  }
+
+  h1 {
+    color: var(--ztc-text-text-2);
+    font-family: var(--ztc-family-font1);
+    font-size: var(--ztc-font-size-font-s64);
+    font-style: normal;
+    font-weight: var(--ztc-weight-semibold);
+    line-height: 75px;
+
+    @media #{$xs} {
+      font-size: var(--ztc-font-size-font-s38);
+      line-height: 50px;
+    }
+  }
+
+  h2 {
+    color: var(--ztc-text-text-2);
+    font-family: var(--ztc-family-font1);
+    font-size: var(--ztc-font-size-font-s44);
+    font-style: normal;
+    font-weight: var(--ztc-weight-semibold);
+    line-height: 52px;
+
+    @media #{$xs} {
+      font-size: var(--ztc-font-size-font-s32);
+      line-height: 40px;
+    }
+
+    @media #{$xl} {
+      font-size: var(--ztc-font-size-font-s30);
+      line-height: 40px;
+    }
+  }
+
+  p {
+    color: var(--ztc-text-text-3);
+    font-family: var(--ztc-family-font1);
+    font-size: var(--ztc-font-size-font-s16);
+    font-style: normal;
+    font-weight: var(--ztc-weight-regular);
+    line-height: 26px;
+  }
+}
+
+.heading2 {
+  h5 {
+    color: var(--ztc-text-text-4);
+    font-family: var(--ztc-family-font1);
+    font-size: var(--ztc-font-size-font-s16);
+    font-style: normal;
+    font-weight: var(--ztc-weight-semibold);
+    line-height: 16px;
+    border-radius: 8px;
+    background: rgba(237, 132, 56, 0.10);
+    display: inline-block;
+    padding: 8px 12px;
+
+    svg {
+      margin: -4px 4px 0 0;
+    }
+  }
+
+  h1 {
+    color: var(--ztc-text-text-2);
+    font-family: var(--ztc-family-font1);
+    font-size: var(--ztc-font-size-font-s56);
+    font-style: normal;
+    font-weight: var(--ztc-weight-bold);
+    line-height: 68px;
+
+    @media #{$xs} {
+      font-size: var(--ztc-font-size-font-s38);
+      line-height: 50px;
+    }
+  }
+
+  h2 {
+    color: var(--ztc-text-text-2);
+    font-family: var(--ztc-family-font1);
+    font-size: var(--ztc-font-size-font-s44);
+    font-style: normal;
+    font-weight: var(--ztc-weight-bold);
+    line-height: 52px;
+
+    @media #{$xs} {
+      font-size: var(--ztc-font-size-font-s32);
+      line-height: 40px;
+    }
+
+    @media #{$xl} {
+      font-size: var(--ztc-font-size-font-s30);
+      line-height: 40px;
+    }
+  }
+
+  p {
+    color: var(--ztc-text-text-3);
+    font-family: var(--ztc-family-font1);
+    font-size: var(--ztc-font-size-font-s16);
+    font-style: normal;
+    font-weight: var(--ztc-weight-medium);
+    line-height: 26px;
+  }
+}
+
+// BTN AREA //
+.vl-btn1 {
+  display: inline-block;
+  padding: 20px 16px 20px 24px;
+  color: var(--ztc-text-text-1);
+  font-size: var(--ztc-font-size-font-s16);
+  font-style: normal;
+  font-weight: var(--ztc-weight-bold);
+  line-height: 16px;
+  position: relative;
+  z-index: 2;
+  font-family: var(--ztc-family-font1);
+  border: none;
+  overflow: hidden;
+  background-color: var(--ztc-bg-bg-3);
+  transition: all 0.4s;
+  border-radius: 70px;
+  position: relative;
+  z-index: 1;
+
+  &::after {
+    position: absolute;
+    content: "";
+    height: 100%;
+    left: 50%;
+    top: 0;
+    transition: all .4s;
+    background: var(--ztc-bg-bg-2);
+    width: 10px;
+    border-radius: 70px;
+    z-index: -1;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  span {
+    display: inline-block;
+    transform: rotate(-45deg) translateX(0px) translateY(1px);
+    transition: all .4s;
+  }
+
+  .arrow2 {
+    transform: translateY(-4px) rotate(-45deg) translateX(-48px);
+    transition: all .4s;
+    opacity: 0;
+  }
+
+  .arrow1 {
+    transition: all .4s;
+    opacity: 1;
+  }
+
+  &:hover {
+    .arrow2 {
+      transform: translateY(-12px) rotate(-45deg) translateX(-18px);
+      transition: all .4s;
+      opacity: 1;
+    }
+
+    .arrow1 {
+      transition: all .4s;
+      transform: translateY(-7px) rotate(-45deg) translateX(45px);
+      opacity: 0;
+    }
+  }
+
+  &:hover {
+    color: var(--ztc-text-text-1);
+    transition: all .4s;
+
+    &::after {
+      visibility: visible;
+      opacity: 1;
+      transition: all .4s;
+      left: 0;
+      width: 100%;
+    }
+  }
+}
+
+
+// Pagination //
+.pagination-area {
+  ul {
+    justify-content: center;
+    margin-top: 20px;
+
+    li {
+      display: inline-block;
+
+      a {
+        border: none;
+        outline: none;
+        color: var(--ztc-text-text-2);
+        text-align: center;
+        font-family: var(--ztc-family-font1);
+        font-size: var(--ztc-font-size-font-s20);
+        font-style: normal;
+        font-weight: var(--ztc-weight-medium);
+        line-height: 20px;
+        display: inline-block;
+        transition: all .4s;
+        border-radius: 4px;
+        background: #FDF3EB;
+        padding: 0;
+        height: 50px;
+        width: 50px;
+        text-align: center;
+        line-height: 50px;
+        box-shadow: none;
+        margin: 0 12px 0 0;
+        border-radius: 4px;
+
+        &.active {
+          background: var(--ztc-bg-bg-3);
+          transition: all .4s;
+          color: var(--ztc-text-text-1);
+          border: none;
+        }
+
+        &:hover {
+          background: var(--ztc-bg-bg-3);
+          transition: all .4s;
+          color: var(--ztc-text-text-1);
+        }
+
+        svg {
+          height: 24px;
+          width: 24px;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+
+// BG AREA //
+.body1.b-bg1 {
+  overflow-x: hidden !important;
+}
+
+.b-bg1 {
+  background: #F1F2F3;
+}
+
+.image-anime {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-anime:after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 0%;
+  left: 50%;
+  top: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%) rotate(-45deg);
+  z-index: 1;
+}
+
+.image-anime:hover:after {
+  height: 250%;
+  transition: all 300ms linear;
+  background-color: transparent;
+}
+
+.reveal {
+  position: relative;
+  display: -ms-inline-flexbox;
+  visibility: hidden;
+  overflow: hidden;
+}
+
+.reveal img {
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  transform-origin: left;
+}
+
+/*============= COMMON CSS AREA ENDS ===============*/

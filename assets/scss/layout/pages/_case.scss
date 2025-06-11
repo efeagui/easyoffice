@@ -1,0 +1,80 @@
+@use '../../utils/' as * ;
+
+/*============= CASE STUDY CSS AREA ENDS ===============*/
+.case1 {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    background: #F6F8FA;
+    .case-btn-area {
+        .nav {
+            text-align: start !important;  
+            .nav-item {
+                text-align: start !important;  
+                margin-bottom: 20px;
+                text-align: start !important;  
+                &:nth-last-child(1) {
+                    margin-bottom: 0;
+                }
+                button {
+                    background: var(--ztc-bg-bg-1);
+                    border-radius: 8px;
+                    padding: 20px 24px;
+                    position: relative;
+                    z-index: 1;
+                    text-align: start !important;  
+                    &.active {
+                        background: var(--ztc-bg-bg-3);
+                        transition: all .4s;
+                        span {
+                            color: var(--ztc-text-text-1) !important;
+                        }
+                    }
+                    span.title {
+                        color: var(--ztc-text-text-2);
+                        font-family: var(--ztc-family-font1);
+                        font-size: var(--ztc-font-size-font-s20);
+                        font-style: normal;
+                        font-weight: var(--ztc-weight-semibold);
+                        line-height: 20px;
+                        text-transform: capitalize;    
+                        display: inline-block;
+                        text-align: start !important;  
+                    }
+                    span.pera {
+                        color: var(--ztc-text-text-3);
+                        font-family: var(--ztc-family-font1);
+                        font-size: var(--ztc-font-size-font-s16);
+                        font-style: normal;
+                        font-weight: var(--ztc-weight-regular);
+                        line-height: 26px;
+                        text-transform: capitalize;    
+                        display: inline-block;
+                        text-align: start;  
+                    }
+                }
+            }
+        }
+    }
+    
+    .tab-content {
+        .tab-pane {
+            position: relative;
+            right: -120px;
+            transition: all .4s;
+            &.fade.show.active {
+                left: 0;
+                transition: all .4s;
+            }
+            .img1 {
+                img {
+                    height: 588px;
+                    width: 100%;
+                    object-fit: cover;
+                    border-radius: 8px;
+                }
+            }
+        }
+    }
+}
+/*============= CASE STUDY CSS AREA ENDS ===============*/

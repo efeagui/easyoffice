@@ -1,0 +1,284 @@
+<div class="search-system-container">
+  <div class="tab-header-smart">
+    <button class="tab-btn-smart active" data-tab="servicios">
+      <i class="fas fa-briefcase"></i>
+      Servicios
+    </button>
+    <button class="tab-btn-smart" data-tab="proyectos">
+      <i class="fas fa-rocket"></i>
+      Proyectos
+    </button>
+  </div>
+
+  <div class="property-tab-section-smart">
+    
+    <!-- TAB SERVICIOS -->
+    <div class="tab-content-smart" id="servicios">
+      <div class="filters-smart-servicios" id="filters-container">
+        
+        <!-- TIPO DE SERVICIO -->
+        <div class="filter-group-smart">
+          <label class="filter-label-smart">
+            <i class="fas fa-building"></i>
+            Tipo de Servicio
+          </label>
+          <div class="select-wrapper-smart">
+            <select id="tipo-servicio" onchange="updateServicioOptions()">
+              <option value="">Seleccionar servicio</option>
+              <option value="oficina-virtual">🌐 Oficina Virtual</option>
+              <option value="sala-juntas">🤝 Sala de Juntas</option>
+              <option value="oficina-privada">🏢 Oficina Privada</option>
+              <option value="cowork">👥 Cowork</option>
+            </select>
+            <i class="fas fa-chevron-down select-arrow-smart"></i>
+          </div>
+        </div>
+
+        <!-- OPCIONES OFICINA VIRTUAL -->
+        <div class="filter-group-smart hidden" id="virtual-options">
+          <label class="filter-label-smart">
+            <i class="fas fa-box"></i>
+            Paquete
+          </label>
+          <div class="select-wrapper-smart">
+            <select id="paquete-virtual" onchange="updateCiudadOptions()">
+              <option value="">Seleccionar paquete</option>
+              <option value="basico">📦 Paquete básico</option>
+              <option value="plus">⭐ Paquete plus</option>
+            </select>
+            <i class="fas fa-chevron-down select-arrow-smart"></i>
+          </div>
+        </div>
+
+        <!-- CIUDAD -->
+        <div class="filter-group-smart hidden" id="ciudad-options">
+          <label class="filter-label-smart">
+            <i class="fas fa-map-marker-alt"></i>
+            Ciudad
+          </label>
+          <div class="select-wrapper-smart">
+            <select id="ciudad" onchange="updateCapacidadOptions()">
+              <option value="">Seleccionar ciudad</option>
+              <option value="tegucigalpa">🏙️ Tegucigalpa</option>
+              <option value="san-pedro-sula">🌆 San Pedro Sula</option>
+            </select>
+            <i class="fas fa-chevron-down select-arrow-smart"></i>
+          </div>
+        </div>
+
+        <!-- CAPACIDAD (para Sala de Juntas y Oficina Privada) -->
+        <div class="filter-group-smart hidden" id="capacidad-options">
+          <label class="filter-label-smart">
+            <i class="fas fa-users"></i>
+            <span id="capacidad-label">Capacidad</span>
+          </label>
+          <div class="select-wrapper-smart">
+            <select id="capacidad" onchange="updateReservaOptions()">
+              <option value="">Seleccionar capacidad</option>
+            </select>
+            <i class="fas fa-chevron-down select-arrow-smart"></i>
+          </div>
+        </div>
+
+        <!-- ESPACIOS (para Cowork) -->
+        <div class="filter-group-smart hidden" id="espacios-options">
+          <label class="filter-label-smart">
+            <i class="fas fa-chair"></i>
+            Espacios
+          </label>
+          <div class="select-wrapper-smart">
+            <select id="espacios" onchange="updateReservaOptions()">
+              <option value="">Seleccionar espacios</option>
+              <option value="1">1 espacio</option>
+              <option value="2">2 espacios</option>
+              <option value="3">3 espacios</option>
+              <option value="4">4 espacios</option>
+              <option value="5">5 espacios</option>
+              <option value="6">6 espacios</option>
+              <option value="7">7 espacios</option>
+              <option value="8">8 espacios</option>
+              <option value="9">9 espacios</option>
+              <option value="10+">10+ espacios</option>
+            </select>
+            <i class="fas fa-chevron-down select-arrow-smart"></i>
+          </div>
+        </div>
+
+        <!-- TIPO DE RESERVA -->
+        <div class="filter-group-smart hidden" id="reserva-options">
+          <label class="filter-label-smart">
+            <i class="fas fa-calendar-alt"></i>
+            Tipo de reserva
+          </label>
+          <div class="select-wrapper-smart">
+            <select id="tipo-reserva" onchange="updateTiempoOptions()">
+              <option value="">Seleccionar tipo</option>
+              <option value="hora">⏰ Por hora</option>
+              <option value="dia">📅 Por día</option>
+              <option value="semana">📅 Por semana</option>
+              <option value="mes">📅 Por mes</option>
+            </select>
+            <i class="fas fa-chevron-down select-arrow-smart"></i>
+          </div>
+        </div>
+
+        <!-- ELEGIR TIEMPO -->
+        <div class="filter-group-smart hidden" id="tiempo-options">
+          <label class="filter-label-smart">
+            <i class="fas fa-clock"></i>
+            <span id="tiempo-label">Elegir horario</span>
+          </label>
+          <div class="select-wrapper-smart">
+            <select id="tiempo-elegido" onchange="updateButtonState()">
+              <option value="">Seleccionar</option>
+            </select>
+            <i class="fas fa-chevron-down select-arrow-smart"></i>
+          </div>
+        </div>
+
+        <!-- BOTÓN PRINCIPAL SERVICIOS -->
+        <div class="search-button-smart">
+          <button id="btn-principal-servicios" type="button" onclick="procesarSolicitud()" class="btn-principal-smart">
+            <i class="fas fa-search"></i>
+            <span id="btn-text">Seleccionar Servicio</span>
+            <span class="btn-arrow-smart"><i class="fas fa-arrow-right"></i></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB PROYECTOS -->
+    <div class="tab-content-smart hidden" id="proyectos">
+      <div class="filters-smart-proyectos" id="filters-container-proyectos">
+        
+        <!-- TIPO DE PROYECTO -->
+        <div class="filter-group-smart">
+          <label class="filter-label-smart">
+            <i class="fas fa-lightbulb"></i>
+            Tipo de Proyecto
+          </label>
+          <div class="select-wrapper-smart">
+            <select id="tipo-proyecto" onchange="updateProyectoOptions()">
+              <option value="">Seleccionar proyecto</option>
+              <option value="llave-mano">🔑 Llave en Mano</option>
+              <option value="manos-catrachas">🇭🇳 Manos Catrachas</option>
+              <option value="proveedores-locales">🤝 Proveedores locales</option>
+            </select>
+            <i class="fas fa-chevron-down select-arrow-smart"></i>
+          </div>
+        </div>
+
+        <!-- OPCIONES MANOS CATRACHAS -->
+        <div class="filter-group-smart hidden" id="catrachas-options">
+          <label class="filter-label-smart">
+            <i class="fas fa-shopping-basket"></i>
+            Producto
+          </label>
+          <div class="select-wrapper-smart">
+            <select id="tipo-producto">
+              <option value="">Seleccionar</option>
+              <option value="cafe">☕ Café</option>
+              <option value="artesanias">🎨 Artesanías</option>
+              <option value="textiles">🧵 Textiles</option>
+              <option value="alimentos">🥘 Alimentos</option>
+            </select>
+            <i class="fas fa-chevron-down select-arrow-smart"></i>
+          </div>
+        </div>
+
+        <!-- DESCRIPCIÓN DEL PROYECTO -->
+        <div class="filter-group-smart filter-group-wide hidden" id="proyecto-descripcion">
+          <label class="filter-label-smart">
+            <i class="fas fa-file-alt"></i>
+            Descripción del proyecto
+          </label>
+          <div class="textarea-wrapper-smart">
+            <textarea id="descripcion-proyecto" placeholder="Cuéntanos tu idea de proyecto..." rows="4"></textarea>
+          </div>
+        </div>
+
+        <!-- BOTÓN PROYECTOS -->
+        <div class="search-button-smart">
+          <button id="btn-proyectos" type="button" onclick="enviarWhatsApp()" class="btn-principal-smart btn-whatsapp">
+            <i class="fab fa-whatsapp"></i>
+            Enviar por WhatsApp
+            <span class="btn-arrow-smart"><i class="fas fa-arrow-right"></i></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- MODAL DE RESUMEN COMPACTO -->
+<div id="modal-resumen" class="modal-overlay-smart hidden">
+  <div class="modal-container-smart">
+    <div class="modal-header-smart">
+      <h3><i class="fas fa-check-circle"></i> Tu Solicitud</h3>
+      <button onclick="cerrarModal('modal-resumen')" class="modal-close-smart">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="modal-body-smart" id="resumen-content">
+      <!-- Contenido dinámico -->
+    </div>
+    <div class="modal-footer-smart">
+      <button onclick="procederPago()" class="btn-pagar-smart">
+        <i class="fas fa-credit-card"></i>
+        Reservar
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL DE MANTENIMIENTO COMPACTO -->
+<div id="modal-mantenimiento" class="modal-overlay-smart hidden">
+  <div class="modal-container-smart maintenance-modal-smart">
+    <div class="modal-header-smart maintenance-header-smart">
+      <div class="maintenance-icon-smart">
+        <i class="fas fa-tools"></i>
+      </div>
+      <h3>Reservas en Construcción</h3>
+    </div>
+    <div class="modal-body-smart maintenance-body-smart">
+      <div class="maintenance-content-smart">
+        <div class="progress-bar-smart">
+          <div class="progress-fill-smart"></div>
+        </div>
+        <p><strong>Integrando sistema de reservas:</strong></p>
+        <div class="banks-grid-smart">
+          <div class="bank-item-smart">
+            <i class="fas fa-university"></i>
+            <span>BAC Credomatic</span>
+          </div>
+          <div class="bank-item-smart">
+            <i class="fas fa-university"></i>
+            <span>Ficohsa</span>
+          </div>
+          <div class="bank-item-smart">
+            <i class="fas fa-university"></i>
+            <span>Promerica</span>
+          </div>
+          <div class="bank-item-smart">
+            <i class="fas fa-mobile-alt"></i>
+            <span>Zora API</span>
+          </div>
+        </div>
+        <p class="maintenance-message-smart">
+          <strong>¡Muy pronto!</strong><br>
+          Contáctanos para procesar tu reserva.
+        </p>
+      </div>
+    </div>
+    <div class="modal-footer-smart">
+      <button onclick="contactarDirecto()" class="btn-contactar-smart">
+        <i class="fas fa-phone"></i>
+        Contactar
+      </button>
+      <button onclick="cerrarModal('modal-mantenimiento')" class="btn-cerrar-smart">
+        Cerrar
+      </button>
+    </div>
+  </div>
+</div>

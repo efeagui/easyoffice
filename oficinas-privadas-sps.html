@@ -1,0 +1,2625 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>easyOffice</title>
+    <!--=====FAB ICON=======-->
+    <link
+      rel="shortcut icon"
+      href="assets/img/logo/EasyOffice logo.png"
+      type="image/x-icon"
+    />
+    <!--===== CSS LINK =======-->
+    <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins/aos.css" />
+    <link rel="stylesheet" href="assets/css/plugins/fontawesome.css" />
+    <link rel="stylesheet" href="assets/css/plugins/magnific-popup.css" />
+    <link rel="stylesheet" href="assets/css/plugins/owlcarousel.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins/sidebar.css" />
+    <link rel="stylesheet" href="assets/css/plugins/slick-slider.css" />
+    <link rel="stylesheet" href="assets/css/plugins/nice-select.css" />
+    <link rel="stylesheet" href="assets/css/plugins/swiper-slider.css" />
+    <link rel="stylesheet" href="assets/css/plugins/odometer.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+      /* ===== ESTILOS PARA SEGUNDA TARJETA (ELEGANTE) ===== */
+      .pricing-container-elegant {
+        max-width: 100%;
+        margin: 0 auto;
+      }
+
+      .pricing-boxarea-elegant {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        position: relative;
+        transition: transform 0.3s ease;
+      }
+
+      .pricing-boxarea-elegant:hover {
+        transform: translateY(-5px);
+      }
+
+      .price-circle-elegant {
+        position: relative;
+        background: linear-gradient(135deg, #ff7b3d, #ff9f5a);
+        color: white;
+        text-align: center;
+        padding: 40px 20px;
+        border-radius: 0 0 50% 50%;
+        margin: 0 auto 30px;
+        width: 200px;
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 8px 25px rgba(255, 123, 61, 0.3);
+      }
+
+      .price-circle-elegant::before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        right: -10px;
+        bottom: -10px;
+        background: linear-gradient(135deg, #ff7b3d, #ff9f5a);
+        border-radius: 0 0 50% 50%;
+        z-index: -1;
+        opacity: 0.3;
+      }
+
+      .price-amount-elegant {
+        font-size: 2.2rem;
+        font-weight: bold;
+        margin-bottom: 5px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      .price-person-elegant {
+        font-size: 1rem;
+        opacity: 0.9;
+        font-weight: 300;
+      }
+
+      .pricing-content-elegant {
+        padding: 0 30px 30px;
+      }
+
+      .office-type-elegant {
+        color: #666;
+        font-size: 1rem;
+        margin-bottom: 10px;
+      }
+
+      .plan-title-elegant {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 25px;
+      }
+
+      .features-list-elegant {
+        list-style: none;
+        margin-bottom: 30px;
+        padding: 0;
+      }
+
+      .features-list-elegant li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+        font-size: 0.95rem;
+        color: #555;
+      }
+
+      .check-icon-elegant {
+        width: 20px;
+        height: 20px;
+        background: linear-gradient(135deg, #ff7b3d, #ff9f5a);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 12px;
+        flex-shrink: 0;
+      }
+
+      .check-icon-elegant i {
+        color: white;
+        font-size: 0.8rem;
+      }
+
+      .cta-button-elegant {
+        background: linear-gradient(135deg, #ff7b3d, #ff9f5a);
+        color: white;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 50px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+      }
+
+      .cta-button-elegant:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(255, 123, 61, 0.4);
+        color: white;
+        text-decoration: none;
+      }
+
+      .arrow-elegant {
+        display: inline-block;
+        margin-left: 8px;
+        transition: transform 0.3s ease;
+      }
+
+      .cta-button-elegant:hover .arrow-elegant {
+        transform: translateX(5px);
+      }
+
+      /* ===== ESTILOS PARA TERCERA TARJETA (FLOTANTE) ===== */
+      .pricing-boxarea-float {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        overflow: visible;
+        position: relative;
+        transition: transform 0.3s ease;
+        margin-top: 50px;
+      }
+
+      .pricing-boxarea-float:hover {
+        transform: translateY(-5px);
+      }
+
+      .price-circle-float {
+        position: absolute;
+        top: -30px;
+        right: 30px;
+        background: linear-gradient(135deg, #ff7b3d, #ff9f5a);
+        color: white;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 5px 15px rgba(255, 123, 61, 0.3);
+        z-index: 10;
+      }
+
+      .price-amount-float {
+        font-size: 1rem;
+        font-weight: bold;
+        margin: 0;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+      }
+
+      .price-person-float {
+        font-size: 0.7rem;
+        margin: 0;
+        opacity: 0.9;
+      }
+
+      .pricing-content-float {
+        padding: 50px 30px 30px;
+      }
+
+      .office-type-float {
+        color: #666;
+        font-size: 1rem;
+        margin-bottom: 10px;
+      }
+
+      .plan-title-float {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 25px;
+      }
+
+      .features-list-float {
+        list-style: none;
+        margin-bottom: 30px;
+        padding: 0;
+      }
+
+      .features-list-float li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+        font-size: 0.95rem;
+        color: #555;
+      }
+
+      .check-icon-float {
+        width: 20px;
+        height: 20px;
+        background: linear-gradient(135deg, #ff7b3d, #ff9f5a);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 12px;
+        flex-shrink: 0;
+      }
+
+      .check-icon-float i {
+        color: white;
+        font-size: 0.8rem;
+      }
+
+      .cta-button-float {
+        background: linear-gradient(135deg, #ff7b3d, #ff9f5a);
+        color: white;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 50px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+      }
+
+      .cta-button-float:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(255, 123, 61, 0.4);
+        color: white;
+        text-decoration: none;
+      }
+
+      .arrow-float {
+        display: inline-block;
+        margin-left: 8px;
+        transition: transform 0.3s ease;
+      }
+
+      .cta-button-float:hover .arrow-float {
+        transform: translateX(5px);
+      }
+    </style>
+    <!--===== fin PRICING AREA ENDS =======-->
+    <!--=====Style para cotizador =======-->
+    <style>
+      /* ===== SISTEMA INTELIGENTE Y COMPACTO ===== */
+      .search-system-container {
+        width: 100%;
+        max-width: 1200px;
+      }
+
+      .tab-header-smart {
+        display: inline-flex;
+        gap: 2px;
+        margin-bottom: 12px;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 3px;
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .tab-btn-smart {
+        padding: 6px 16px;
+        border: none;
+        border-radius: 17px;
+        background: transparent;
+        color: #666;
+        font-weight: 600;
+        font-size: 0.85rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        white-space: nowrap;
+      }
+
+      .tab-btn-smart.active {
+        background: linear-gradient(135deg, #ff7b3d, #ff9f5a);
+        color: white;
+        box-shadow: 0 2px 6px rgba(255, 123, 61, 0.3);
+      }
+
+      .tab-btn-smart:hover:not(.active) {
+        background: rgba(255, 123, 61, 0.1);
+        color: #ff7b3d;
+      }
+
+      .property-tab-section-smart {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 12px;
+        padding: 16px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        backdrop-filter: blur(10px);
+        width: fit-content;
+        min-width: 300px;
+      }
+
+      .filters-smart {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 12px;
+        align-items: end;
+        max-width: 600px;
+        transition: max-width 0.3s ease;
+      }
+
+      .filter-group-smart {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        min-width: 180px;
+      }
+
+      .filter-group-wide {
+        grid-column: 1 / -1;
+        min-width: 100%;
+      }
+
+      .filter-label-smart {
+        font-weight: 600;
+        color: #333;
+        font-size: 0.8rem;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .filter-label-smart i {
+        color: #ff7b3d;
+        width: 10px;
+        font-size: 0.8rem;
+      }
+
+      .select-wrapper-smart {
+        position: relative;
+      }
+
+      .select-wrapper-smart select {
+        width: 100%;
+        padding: 8px 30px 8px 10px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        font-size: 0.85rem;
+        background: white;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        appearance: none;
+        color: #333;
+      }
+
+      .select-wrapper-smart select:focus {
+        outline: none;
+        border-color: #ff7b3d;
+        box-shadow: 0 0 0 2px rgba(255, 123, 61, 0.1);
+      }
+
+      .select-wrapper-smart select:hover {
+        border-color: #ff7b3d;
+      }
+
+      .select-arrow-smart {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #666;
+        pointer-events: none;
+        font-size: 0.7rem;
+        transition: color 0.3s ease;
+      }
+
+      .select-wrapper-smart:hover .select-arrow-smart {
+        color: #ff7b3d;
+      }
+
+      .textarea-wrapper-smart textarea {
+        width: 100%;
+        padding: 8px 10px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        font-family: inherit;
+        font-size: 0.85rem;
+        resize: vertical;
+        min-height: 60px;
+        transition: all 0.3s ease;
+      }
+
+      .textarea-wrapper-smart textarea:focus {
+        outline: none;
+        border-color: #ff7b3d;
+        box-shadow: 0 0 0 2px rgba(255, 123, 61, 0.1);
+      }
+
+      .textarea-wrapper-smart textarea:hover {
+        border-color: #ff7b3d;
+      }
+
+      .search-button-smart {
+        grid-column: 1 / -1;
+        display: flex;
+        justify-content: center;
+        margin-top: 8px;
+      }
+
+      .btn-principal-smart {
+        background: linear-gradient(135deg, #ff7b3d, #ff9f5a);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        min-width: 150px;
+        justify-content: center;
+      }
+
+      .btn-whatsapp {
+        background: linear-gradient(135deg, #25d366, #128c7e);
+      }
+
+      .btn-principal-smart:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(255, 123, 61, 0.4);
+      }
+
+      .btn-whatsapp:hover {
+        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+      }
+
+      .btn-arrow-smart {
+        transition: transform 0.3s ease;
+      }
+
+      .btn-principal-smart:hover .btn-arrow-smart {
+        transform: translateX(2px);
+      }
+
+      .hidden {
+        display: none !important;
+      }
+
+      /* ===== MODALES INTELIGENTES ===== */
+      .modal-overlay-smart {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(3px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        padding: 12px;
+      }
+
+      .modal-container-smart {
+        background: white;
+        border-radius: 12px;
+        max-width: 360px;
+        width: 100%;
+        max-height: 75vh;
+        overflow-y: auto;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        animation: modalSlideInSmart 0.3s ease;
+      }
+
+      @keyframes modalSlideInSmart {
+        from {
+          opacity: 0;
+          transform: translateY(-20px) scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      .modal-header-smart {
+        padding: 16px 16px 10px;
+        border-bottom: 1px solid #eee;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .modal-header-smart h3 {
+        margin: 0;
+        color: #333;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .modal-header-smart h3 i {
+        color: #4caf50;
+      }
+
+      .modal-close-smart {
+        background: none;
+        border: none;
+        font-size: 1.1rem;
+        color: #666;
+        cursor: pointer;
+        padding: 3px;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+      }
+
+      .modal-close-smart:hover {
+        background: #f5f5f5;
+      }
+
+      .modal-body-smart {
+        padding: 12px 16px;
+      }
+
+      .resumen-items-smart {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .resumen-item-smart {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        background: #f8f9fa;
+        border-radius: 6px;
+        border-left: 3px solid #ff7b3d;
+      }
+
+      .resumen-item-smart i {
+        font-size: 1.1rem;
+        color: #ff7b3d;
+        width: 18px;
+      }
+
+      .resumen-item-smart strong {
+        color: #333;
+        font-size: 0.9rem;
+      }
+
+      .resumen-item-smart p {
+        margin: 1px 0 0;
+        color: #666;
+        font-size: 0.8rem;
+      }
+
+      .modal-footer-smart {
+        padding: 10px 16px 16px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .btn-pagar-smart {
+        background: linear-gradient(135deg, #4caf50, #45a049);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .btn-pagar-smart:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+      }
+
+      /* ===== MODAL DE MANTENIMIENTO INTELIGENTE ===== */
+      .maintenance-modal-smart {
+        max-width: 340px;
+      }
+
+      .maintenance-header-smart {
+        text-align: center;
+        flex-direction: column;
+        gap: 10px;
+        border-bottom: none;
+        padding-bottom: 12px;
+      }
+
+      .maintenance-icon-smart {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, #ff7b3d, #ff9f5a);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+      }
+
+      .maintenance-icon-smart i {
+        font-size: 1.3rem;
+        color: white;
+      }
+
+      .maintenance-body-smart {
+        text-align: center;
+        padding: 12px 16px;
+      }
+
+      .progress-bar-smart {
+        width: 100%;
+        height: 5px;
+        background: #eee;
+        border-radius: 3px;
+        overflow: hidden;
+        margin: 10px 0;
+      }
+
+      .progress-fill-smart {
+        width: 75%;
+        height: 100%;
+        background: linear-gradient(135deg, #ff7b3d, #ff9f5a);
+        animation: progressPulseSmart 2s ease-in-out infinite;
+      }
+
+      @keyframes progressPulseSmart {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.7;
+        }
+      }
+
+      .banks-grid-smart {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+        margin: 12px 0;
+      }
+
+      .bank-item-smart {
+        padding: 8px;
+        background: #f8f9fa;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-weight: 600;
+        color: #333;
+        font-size: 0.8rem;
+      }
+
+      .bank-item-smart i {
+        color: #ff7b3d;
+        font-size: 0.9rem;
+      }
+
+      .maintenance-message-smart {
+        margin-top: 12px;
+        padding: 10px;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 123, 61, 0.1),
+          rgba(255, 159, 90, 0.1)
+        );
+        border-radius: 6px;
+        border-left: 3px solid #ff7b3d;
+        font-size: 0.85rem;
+      }
+
+      .btn-contactar-smart {
+        background: linear-gradient(135deg, #25d366, #128c7e);
+        color: white;
+        border: none;
+        padding: 10px 18px;
+        border-radius: 20px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.85rem;
+      }
+
+      .btn-contactar-smart:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+      }
+
+      .btn-cerrar-smart {
+        background: #6c757d;
+        color: white;
+        border: none;
+        padding: 10px 18px;
+        border-radius: 20px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 0.85rem;
+      }
+
+      .btn-cerrar-smart:hover {
+        background: #5a6268;
+        transform: translateY(-1px);
+      }
+
+      /* ===== RESPONSIVE INTELIGENTE ===== */
+      @media (max-width: 768px) {
+        .filters-smart {
+          grid-template-columns: 1fr;
+          gap: 10px;
+          max-width: 100% !important;
+        }
+
+        .filter-group-smart {
+          min-width: 100%;
+        }
+
+        .tab-btn-smart {
+          font-size: 0.8rem;
+          padding: 5px 12px;
+        }
+
+        .property-tab-section-smart {
+          padding: 12px;
+          min-width: 100%;
+        }
+
+        .banks-grid-smart {
+          grid-template-columns: 1fr;
+        }
+
+        .modal-container-smart {
+          max-width: 95%;
+        }
+
+        .btn-principal-smart {
+          min-width: 140px;
+          font-size: 0.85rem;
+        }
+
+        .search-system-container {
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .tab-header-smart {
+          width: 100%;
+          justify-content: center;
+        }
+
+        .tab-btn-smart {
+          flex: 1;
+          justify-content: center;
+        }
+
+        .filters-smart {
+          gap: 8px;
+        }
+
+        .property-tab-section-smart {
+          padding: 10px;
+        }
+
+        .filter-group-smart {
+          gap: 4px;
+        }
+
+        .select-wrapper-smart select {
+          padding: 7px 25px 7px 8px;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="body1" style="overflow-x: hidden !important">
+    <div id="header-container"></div>
+
+    <script>
+      fetch("header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header-container").innerHTML = data;
+        });
+    </script>
+
+    <div class="header-search-form-wrapper">
+      <div class="tx-search-close tx-close">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <div class="header-search-container">
+        <form role="search" class="search-form">
+          <input
+            type="search"
+            class="search-field"
+            placeholder="Search …"
+            value=""
+            name="s"
+          />
+          <button type="submit" class="search-submit">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+            >
+              <path
+                d="M21.1855 21.1845L25.3337 25.3327M6.66699 14.9623C6.66699 17.1626 7.54106 19.2728 9.09692 20.8287C10.6528 22.3845 12.763 23.2586 14.9633 23.2586C17.1636 23.2586 19.2738 22.3845 20.8297 20.8287C22.3855 19.2728 23.2596 17.1626 23.2596 14.9623C23.2596 12.762 22.3855 10.6518 20.8297 9.09594C19.2738 7.54009 17.1636 6.66602 14.9633 6.66602C12.763 6.66602 10.6528 7.54009 9.09692 9.09594C7.54106 10.6518 6.66699 12.762 6.66699 14.9623Z"
+                stroke="#111111"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="body-overlay"></div>
+    <!--===== SEARCH ENDS STARTS=======-->
+    <!--===== HERO AREA STARTS =======-->
+    <div class="hero3-slider">
+      <div class="search-box-cover">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <!-- ===== SISTEMA DINÁMICO DE FILTROS MEJORADO ===== -->
+              <!-- ===== SISTEMA DINÁMICO COMPACTO E INTELIGENTE ===== -->
+              <div class="search-system-container">
+                <div class="tab-header-smart">
+                  <button class="tab-btn-smart active" data-tab="servicios">
+                    <i class="fas fa-briefcase"></i>
+                    Servicios
+                  </button>
+                  <button class="tab-btn-smart" data-tab="proyectos">
+                    <i class="fas fa-rocket"></i>
+                    Proyectos
+                  </button>
+                </div>
+
+                <div class="property-tab-section-smart">
+                  <!-- TAB SERVICIOS -->
+                  <div class="tab-content-smart" id="servicios">
+                    <div class="filters-smart" id="filters-container">
+                      <!-- TIPO DE SERVICIO -->
+                      <div class="filter-group-smart">
+                        <label class="filter-label-smart">
+                          <i class="fas fa-building"></i>
+                          Tipo de Servicio
+                        </label>
+                        <div class="select-wrapper-smart">
+                          <select
+                            id="tipo-servicio"
+                            onchange="updateServicioOptions()"
+                          >
+                            <option value="">Seleccionar</option>
+                            <option value="oficina-fisica">
+                              🏢 Oficina Física
+                            </option>
+                            <option value="oficina-virtual">
+                              💻 Oficina Virtual
+                            </option>
+                          </select>
+                          <i class="fas fa-chevron-down select-arrow-smart"></i>
+                        </div>
+                      </div>
+
+                      <!-- OPCIONES OFICINA VIRTUAL -->
+                      <div
+                        class="filter-group-smart hidden"
+                        id="virtual-options"
+                      >
+                        <label class="filter-label-smart">
+                          <i class="fas fa-key"></i>
+                          Permiso
+                        </label>
+                        <div class="select-wrapper-smart">
+                          <select
+                            id="tipo-permiso"
+                            onchange="updatePermisoOptions()"
+                          >
+                            <option value="">Seleccionar</option>
+                            <option value="solo-operaciones">
+                              📋 Solo operaciones
+                            </option>
+                            <option value="operaciones-instalaciones">
+                              🏢 Operaciones + instalaciones
+                            </option>
+                          </select>
+                          <i class="fas fa-chevron-down select-arrow-smart"></i>
+                        </div>
+                      </div>
+
+                      <!-- OPCIONES PARA USO DE INSTALACIONES -->
+                      <div
+                        class="filter-group-smart hidden"
+                        id="instalaciones-options"
+                      >
+                        <label class="filter-label-smart">
+                          <i class="fas fa-map-marker-alt"></i>
+                          Instalación
+                        </label>
+                        <div class="select-wrapper-smart">
+                          <select
+                            id="tipo-instalacion"
+                            onchange="updateInstalacionOptions()"
+                          >
+                            <option value="">Seleccionar</option>
+                            <option value="sala-juntas">
+                              🤝 Sala de Juntas
+                            </option>
+                            <option value="coworking">👥 Coworking</option>
+                          </select>
+                          <i class="fas fa-chevron-down select-arrow-smart"></i>
+                        </div>
+                      </div>
+
+                      <!-- OPCIONES OFICINA FÍSICA -->
+                      <div
+                        class="filter-group-smart hidden"
+                        id="fisica-modalidad"
+                      >
+                        <label class="filter-label-smart">
+                          <i class="fas fa-calendar-alt"></i>
+                          Modalidad
+                        </label>
+                        <div class="select-wrapper-smart">
+                          <select
+                            id="modalidad-fisica"
+                            onchange="updatePersonasOptions()"
+                          >
+                            <option value="">Seleccionar</option>
+                            <option value="permanente">🏠 Permanente</option>
+                            <option value="temporal">⏱️ Temporal</option>
+                          </select>
+                          <i class="fas fa-chevron-down select-arrow-smart"></i>
+                        </div>
+                      </div>
+
+                      <!-- CANTIDAD DE PERSONAS -->
+                      <div
+                        class="filter-group-smart hidden"
+                        id="personas-options"
+                      >
+                        <label class="filter-label-smart">
+                          <i class="fas fa-users"></i>
+                          Personas
+                        </label>
+                        <div class="select-wrapper-smart">
+                          <select
+                            id="cantidad-personas"
+                            onchange="updateTiempoOptions()"
+                          >
+                            <option value="">Seleccionar</option>
+                            <option value="1-4">👤 1 a 4 personas</option>
+                            <option value="2">👥 2 personas</option>
+                            <option value="3">👨‍👩‍👦 3 personas</option>
+                          </select>
+                          <i class="fas fa-chevron-down select-arrow-smart"></i>
+                        </div>
+                      </div>
+
+                      <!-- TIEMPO -->
+                      <div
+                        class="filter-group-smart hidden"
+                        id="tiempo-options"
+                      >
+                        <label class="filter-label-smart">
+                          <i class="fas fa-clock"></i>
+                          <span id="tiempo-label">Duración</span>
+                        </label>
+                        <div class="select-wrapper-smart">
+                          <select id="duracion-tiempo">
+                            <option value="">Seleccionar</option>
+                            <option value="1-hora">⏰ 1 hora</option>
+                            <option value="2-horas">⏰ 2 horas</option>
+                            <option value="3-horas">⏰ 3 horas</option>
+                            <option value="4-horas">⏰ 4 horas</option>
+                            <option value="5-horas">⏰ 5 horas</option>
+                            <option value="1-dia">📅 1 día</option>
+                            <option value="2-dias">📅 2 días</option>
+                            <option value="3-dias">📅 3 días</option>
+                            <option value="1-semana">📅 1 semana</option>
+                            <option value="15-dias">📅 15 días</option>
+                          </select>
+                          <i class="fas fa-chevron-down select-arrow-smart"></i>
+                        </div>
+                      </div>
+
+                      <!-- BOTÓN PRINCIPAL SERVICIOS -->
+                      <div class="search-button-smart">
+                        <button
+                          id="btn-principal-servicios"
+                          type="button"
+                          onclick="procesarSolicitud()"
+                          class="btn-principal-smart"
+                        >
+                          <i class="fas fa-search"></i>
+                          <span id="btn-text">Buscar Servicio</span>
+                          <span class="btn-arrow-smart"
+                            ><i class="fas fa-arrow-right"></i
+                          ></span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- TAB PROYECTOS -->
+                  <div class="tab-content-smart hidden" id="proyectos">
+                    <div class="filters-smart" id="filters-container-proyectos">
+                      <!-- TIPO DE PROYECTO -->
+                      <div class="filter-group-smart">
+                        <label class="filter-label-smart">
+                          <i class="fas fa-lightbulb"></i>
+                          Tipo de Proyecto
+                        </label>
+                        <div class="select-wrapper-smart">
+                          <select
+                            id="tipo-proyecto"
+                            onchange="updateProyectoOptions()"
+                          >
+                            <option value="">Seleccionar proyecto</option>
+                            <option value="llave-mano">🔑 Llave en Mano</option>
+                            <option value="manos-catrachas">
+                              🇭🇳 Manos Catrachas
+                            </option>
+                            <option value="proveedores-locales">
+                              🤝 Proveedores locales
+                            </option>
+                          </select>
+                          <i class="fas fa-chevron-down select-arrow-smart"></i>
+                        </div>
+                      </div>
+
+                      <!-- OPCIONES MANOS CATRACHAS -->
+                      <div
+                        class="filter-group-smart hidden"
+                        id="catrachas-options"
+                      >
+                        <label class="filter-label-smart">
+                          <i class="fas fa-shopping-basket"></i>
+                          Producto
+                        </label>
+                        <div class="select-wrapper-smart">
+                          <select id="tipo-producto">
+                            <option value="">Seleccionar</option>
+                            <option value="cafe">☕ Café</option>
+                            <option value="artesanias">🎨 Artesanías</option>
+                            <option value="textiles">🧵 Textiles</option>
+                            <option value="alimentos">🥘 Alimentos</option>
+                          </select>
+                          <i class="fas fa-chevron-down select-arrow-smart"></i>
+                        </div>
+                      </div>
+
+                      <!-- DESCRIPCIÓN DEL PROYECTO -->
+                      <div
+                        class="filter-group-smart filter-group-wide hidden"
+                        id="proyecto-descripcion"
+                      >
+                        <label class="filter-label-smart">
+                          <i class="fas fa-file-alt"></i>
+                          Descripción
+                        </label>
+                        <div class="textarea-wrapper-smart">
+                          <textarea
+                            id="descripcion-proyecto"
+                            placeholder="Cuéntanos tu idea..."
+                            rows="3"
+                          ></textarea>
+                        </div>
+                      </div>
+
+                      <!-- BOTÓN PROYECTOS -->
+                      <div class="search-button-smart">
+                        <button
+                          id="btn-proyectos"
+                          type="button"
+                          onclick="enviarWhatsApp()"
+                          class="btn-principal-smart btn-whatsapp"
+                        >
+                          <i class="fab fa-whatsapp"></i>
+                          Enviar por WhatsApp
+                          <span class="btn-arrow-smart"
+                            ><i class="fas fa-arrow-right"></i
+                          ></span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- MODAL DE RESUMEN COMPACTO -->
+              <div id="modal-resumen" class="modal-overlay-smart hidden">
+                <div class="modal-container-smart">
+                  <div class="modal-header-smart">
+                    <h3><i class="fas fa-check-circle"></i> Tu Solicitud</h3>
+                    <button
+                      onclick="cerrarModal('modal-resumen')"
+                      class="modal-close-smart"
+                    >
+                      <i class="fas fa-times"></i>
+                    </button>
+                  </div>
+                  <div class="modal-body-smart" id="resumen-content">
+                    <!-- Contenido dinámico -->
+                  </div>
+                  <div class="modal-footer-smart">
+                    <button onclick="procederPago()" class="btn-pagar-smart">
+                      <i class="fas fa-credit-card"></i>
+                      Pagar
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- MODAL DE MANTENIMIENTO COMPACTO -->
+              <div id="modal-mantenimiento" class="modal-overlay-smart hidden">
+                <div class="modal-container-smart maintenance-modal-smart">
+                  <div class="modal-header-smart maintenance-header-smart">
+                    <div class="maintenance-icon-smart">
+                      <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Pagos en Construcción</h3>
+                  </div>
+                  <div class="modal-body-smart maintenance-body-smart">
+                    <div class="maintenance-content-smart">
+                      <div class="progress-bar-smart">
+                        <div class="progress-fill-smart"></div>
+                      </div>
+                      <p><strong>Integrando métodos de pago:</strong></p>
+                      <div class="banks-grid-smart">
+                        <div class="bank-item-smart">
+                          <i class="fas fa-university"></i>
+                          <span>BAC Credomatic</span>
+                        </div>
+                        <div class="bank-item-smart">
+                          <i class="fas fa-university"></i>
+                          <span>Ficohsa</span>
+                        </div>
+                        <div class="bank-item-smart">
+                          <i class="fas fa-university"></i>
+                          <span>Promerica</span>
+                        </div>
+                        <div class="bank-item-smart">
+                          <i class="fas fa-mobile-alt"></i>
+                          <span>Zora API</span>
+                        </div>
+                      </div>
+                      <p class="maintenance-message-smart">
+                        <strong>¡Muy pronto!</strong><br />
+                        Contáctanos para procesar tu solicitud.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="modal-footer-smart">
+                    <button
+                      onclick="contactarDirecto()"
+                      class="btn-contactar-smart"
+                    >
+                      <i class="fas fa-phone"></i>
+                      Contactar
+                    </button>
+                    <button
+                      onclick="cerrarModal('modal-mantenimiento')"
+                      class="btn-cerrar-smart"
+                    >
+                      Cerrar
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- ===== fin SISTEMA DINÁMICO DE FILTROS MEJORADO ===== -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--search-box-cover-->
+      <div class="myswiper1-cover">
+        <div class="swiper myswiper1 overflow-hidden">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="hero3">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-5">
+                      <div class="hero3-heading heading2">
+                        <span>🏠 San Pedro Sula</span>
+                        <div class="space20"></div>
+                        <h1>Oficinas privadas</h1>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="absoulate-img">
+                  <img
+                    src="assets/img/all-images/hero/oficinas-coworking-torre-agalta-alquiler-1.webp"
+                    alt="housa"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="hero3">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-5">
+                      <div class="hero3-heading heading2">
+                        <span>🏠 San Pedro Sula</span>
+                        <div class="space20"></div>
+                        <h1>Oficinas Permanentes</h1>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="absoulate-img">
+                  <img
+                    src="assets/img/all-images/hero/1740079566853-mwmopk.webp"
+                    alt="housa"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="hero3">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-5">
+                      <div class="hero3-heading heading2">
+                        <span>🏠 San Pedro Sula</span>
+                        <div class="space20"></div>
+                        <h1>Oficinas Temporales</h1>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="absoulate-img">
+                  <img
+                    src="assets/img/all-images/hero/IMG_1293.webp"
+                    alt="housa"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="hero3">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-5">
+                      <div class="hero3-heading heading2">
+                        <span>🏠 San Pedro Sula</span>
+                        <div class="space20"></div>
+                        <h1>Beneficio competitivo</h1>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="absoulate-img">
+                  <img
+                    src="assets/img/all-images/hero/IMG004.jpeg"
+                    alt="housa"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Navigation Buttons -->
+        <div class="slide-btn d-none d-md-block">
+          <div class="swiper-button-prev custom-prev"></div>
+          <div class="swiper-button-next custom-next"></div>
+        </div>
+      </div>
+    </div>
+    <!--===== HERO AREA ENDS =======-->
+    <!--===== ABOUT AREA STARTS =======-->
+    <div class="about3-section-area sp1 overflow-hidden">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="about-images-area">
+              <div class="row">
+                <div class="col-lg-6 col-md-6">
+                  <div class="img2 image-anime reveal">
+                    <img
+                      src="assets/img/all-images/about/about-img5.png"
+                      alt="housa"
+                    />
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                  <div class="space100"></div>
+                  <div class="img1 image-anime reveal">
+                    <img
+                      src="assets/img/all-images/about/about-img6.png"
+                      alt="housa"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="author-img">
+                <img
+                  src="assets/img/elements/elements3.png"
+                  alt="housa"
+                  class="elements10"
+                />
+                <div class="arrow-btnarea">
+                  <a href="about-us.html">
+                    <div class="content keyframe5">
+                      <h6 class="circle rotateme">
+                        <span style="transform: rotate(0deg)">E</span>
+                        <span style="transform: rotate(17deg)">A</span>
+                        <span style="transform: rotate(34deg)">S</span>
+                        <span style="transform: rotate(51deg)">Y</span>
+                        <span style="transform: rotate(51deg)"></span>
+                        <span style="transform: rotate(68deg)">O</span>
+                        <span style="transform: rotate(85deg)">F</span>
+                        <span style="transform: rotate(102deg)">F</span>
+                        <span style="transform: rotate(119deg)">I</span>
+                        <span style="transform: rotate(136deg)">C</span>
+                        <span style="transform: rotate(153deg)">E</span>
+                        <span style="transform: rotate(170deg)">&</span>
+                        <span style="transform: rotate(187deg)">e</span>
+                        <span style="transform: rotate(204deg)">a</span>
+                        <span style="transform: rotate(221deg)">s</span>
+                        <span style="transform: rotate(238deg)">y</span>
+                        <span style="transform: rotate(255deg)">o</span>
+                        <span style="transform: rotate(272deg)">f</span>
+                        <span style="transform: rotate(289deg)">f</span>
+                        <span style="transform: rotate(306deg)">i</span>
+                        <span style="transform: rotate(323deg)">c</span>
+                        <span style="transform: rotate(340deg)">e</span>
+                        <span style="transform: rotate(340deg)">*</span>
+                        <span style="transform: rotate(340deg)">*</span>
+                        <span style="transform: rotate(340deg)">e</span>
+                        <span style="transform: rotate(340deg)">a</span>
+                        <span style="transform: rotate(340deg)"></span>
+                      </h6>
+                    </div>
+                    <img
+                      src="assets/img/icons/arrow1.svg"
+                      alt="housa"
+                      class="arrow1"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-1"></div>
+          <div class="col-lg-5">
+            <div class="about-heading heading2">
+              <h5 data-aos="fade-left" data-aos-duration="800">
+                Adquierelo ahora
+              </h5>
+              <div class="space26"></div>
+              <h2 class="text-anime-style-3">Renta mensual</h2>
+              <div class="space18"></div>
+              <p data-aos="fade-left" data-aos-duration="900">
+                Espacios completamente amueblados, listos para usarse, con
+                acceso 24/7 – y todos los servicios incluidos. Ideal para
+                equipos que valoran la estabilidad y la privacidad.
+              </p>
+              <div class="space32"></div>
+              <div
+                class="btn-area1"
+                data-aos="fade-left"
+                data-aos-duration="1200"
+              >
+                <a href="contact.html" class="vl-btn1"
+                  >Reservar ahora
+                  <span class="arrow1"
+                    ><i class="fa-solid fa-arrow-right"></i></span
+                  ><span class="arrow2"
+                    ><i class="fa-solid fa-arrow-right"></i></span
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--===== ABOUT AREA ENDS =======-->
+    <!--===== TESTIMONIAL AREA STARTS =======-->
+    <div class="testi2 sp1">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="testi-img image-anime reveal">
+              <img src="assets/img/all-images/hero/IMG_1293.webp" alt="housa" />
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="heading1">
+              <h5>Oficinas de uso temporal</h5>
+              <div class="space16"></div>
+              <h2 class="text-anime-style-3">Por hora o día</h2>
+              <div class="space50"></div>
+              <div class="testimonial-container">
+                <div class="swiper mySwiper">
+                  <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                      <div class="testimonial-card">
+                        <div class="stars">
+                          <ul>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                          </ul>
+                        </div>
+                        <div class="space20"></div>
+                        <p class="testimonial-text">
+                          "Perfecto para reuniones improvisadas o días puntuales
+                          de trabajo concentrado.<br />Solo pagas por el tiempo
+                          que necesitas, sin cargos ocultos."
+                        </p>
+                        <div class="space32"></div>
+                        <div class="profile-quito">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="50"
+                            height="50"
+                            viewBox="0 0 50 50"
+                            fill="none"
+                          >
+                            <g clip-path="url(#clip0_6058_76061)">
+                              <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M30 37.5L34 25.2273H30L30 15L40 15L40 25.2273L36 37.5H30Z"
+                                fill="#ED8438"
+                              />
+                              <path
+                                opacity="0.3"
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M12.5 37.5L16.5 25.2273H12.5L12.5 15L22.5 15L22.5 25.2273L18.5 37.5H12.5Z"
+                                fill="#ED8438"
+                              />
+                            </g>
+                            <defs>
+                              <clipPath id="clip0_6058_76061">
+                                <rect width="50" height="50" fill="white" />
+                              </clipPath>
+                            </defs>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                      <div class="testimonial-card">
+                        <div class="stars">
+                          <ul>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                          </ul>
+                        </div>
+                        <div class="space20"></div>
+                        <p class="testimonial-text">
+                          "Beneficio competitivo: Mayor flexibilidad, sin pagos
+                          innecesarios. Ambiente profesional y discreto, sin
+                          compartir espacio con extraños."
+                        </p>
+                        <div class="space32"></div>
+                        <div class="profile-quito">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="50"
+                            height="50"
+                            viewBox="0 0 50 50"
+                            fill="none"
+                          >
+                            <g clip-path="url(#clip0_6058_76061)">
+                              <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M30 37.5L34 25.2273H30L30 15L40 15L40 25.2273L36 37.5H30Z"
+                                fill="#ED8438"
+                              />
+                              <path
+                                opacity="0.3"
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M12.5 37.5L16.5 25.2273H12.5L12.5 15L22.5 15L22.5 25.2273L18.5 37.5H12.5Z"
+                                fill="#ED8438"
+                              />
+                            </g>
+                            <defs>
+                              <clipPath id="clip0_6058_76061b">
+                                <rect width="50" height="50" fill="white" />
+                              </clipPath>
+                            </defs>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Navigation Buttons -->
+                  <div class="swiper-button-prev custom-prev"></div>
+                  <div class="swiper-button-next custom-next"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--===== TESTIMONIAL AREA ENDS =======-->
+    <!--===== OTHERS AREA STARTS =======-->
+    <div class="step1 sp2">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10 m-auto">
+            <div class="heading2 text-center space-margin60">
+              <h5>Servicios Adicionales</h5>
+              <div class="space16"></div>
+              <h2>Mucho más que una oficina</h2>
+              <div class="space16"></div>
+              <p>
+                En EasyOffice no solo te damos un espacio de trabajo. Te
+                ofrecemos un entorno completo, cómodo y funcional que apoya tu
+                productividad, tu bienestar y el de tu equipo. Nuestros espacios
+                están equipados con una serie de servicios adicionales diseñados
+                para facilitar tu día a día y brindarte una experiencia sin
+                preocupaciones.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div
+            class="col-lg-3 col-md-6"
+            data-aos="zoom-in-up"
+            data-aos-duration="900"
+          >
+            <div class="work-single-boxarea">
+              <img
+                src="assets/img/elements/elements4.png"
+                alt="housa"
+                class="elements4"
+              />
+              <div class="img1">
+                <img
+                  src="assets/img/all-images/work/plantaelectrica.jpg"
+                  alt="housa"
+                />
+              </div>
+              <div class="space56"></div>
+              <div class="textarea">
+                <span>1</span>
+                <div class="space18"></div>
+                <a href="#">Planta eléctrica</a>
+                <p>
+                  Mantén tu operación activa en todo momento, incluso ante
+                  cortes de energía.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-3 col-md-6"
+            data-aos="zoom-in-up"
+            data-aos-duration="1000"
+          >
+            <div class="work-single-boxarea">
+              <img
+                src="assets/img/elements/elements4.png"
+                alt="housa"
+                class="elements4 d-lg-block d-none"
+              />
+              <div class="img1">
+                <img
+                  src="assets/img/all-images/work/guardia-seguridad-privada-uniforme-negro-900x600.jpg"
+                  alt="housa"
+                />
+              </div>
+              <div class="space56"></div>
+              <div class="textarea">
+                <span>2</span>
+                <div class="space18"></div>
+                <a href="#">Seguridad 24/7</a>
+                <p>
+                  Oficinas protegidas con sistemas de acceso controlado y
+                  vigilancia continua.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-3 col-md-6"
+            data-aos="zoom-in-up"
+            data-aos-duration="1100"
+          >
+            <div class="work-single-boxarea">
+              <img
+                src="assets/img/elements/elements4.png"
+                alt="housa"
+                class="elements4"
+              />
+              <div class="img1">
+                <img
+                  src="assets/img/all-images/work/Ubicación.jpg"
+                  alt="housa"
+                />
+              </div>
+              <div class="space56"></div>
+              <div class="textarea">
+                <span>3</span>
+                <div class="space18"></div>
+                <a href="#">Ubicaciones estratégicas</a>
+                <p>
+                  Estamos donde tu empresa necesita estar: zonas céntricas, de
+                  fácil acceso y conectadas con servicios clave.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-3 col-md-6"
+            data-aos="zoom-in-up"
+            data-aos-duration="1200"
+          >
+            <div class="work-single-boxarea box2">
+              <img
+                src="assets/img/elements/elements4.png"
+                alt="housa"
+                class="elements4"
+              />
+              <div class="img1">
+                <img
+                  src="assets/img/all-images/work/AAmado-ArqMatALG027.jpeg"
+                  alt="housa"
+                />
+              </div>
+              <div class="space56"></div>
+              <div class="textarea">
+                <span>4</span>
+                <div class="space18"></div>
+                <a href="#">Sala de maternidad</a>
+                <p>
+                  Espacio privado y cómodo para mujeres lactantes, porque el
+                  bienestar de tu equipo también es una prioridad.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-3 col-md-6"
+            data-aos="zoom-in-up"
+            data-aos-duration="1300"
+          >
+            <div class="work-single-boxarea">
+              <img
+                src="assets/img/elements/elements4.png"
+                alt="housa"
+                class="elements4"
+              />
+              <div class="img1">
+                <img
+                  src="assets/img/all-images/work/work-img1.png"
+                  alt="housa"
+                />
+              </div>
+              <div class="space56"></div>
+              <div class="textarea">
+                <span>5</span>
+                <div class="space18"></div>
+                <a href="#">Servicio de limpieza</a>
+                <p>
+                  Oficinas limpias, organizadas y listas para recibirte cada
+                  día.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-3 col-md-6"
+            data-aos="zoom-in-up"
+            data-aos-duration="1400"
+          >
+            <div class="work-single-boxarea">
+              <img
+                src="assets/img/elements/elements4.png"
+                alt="housa"
+                class="elements4 d-lg-block d-none"
+              />
+              <div class="img1">
+                <img
+                  src="assets/img/all-images/work/work-img2.png"
+                  alt="housa"
+                />
+              </div>
+              <div class="space56"></div>
+              <div class="textarea">
+                <span>6</span>
+                <div class="space18"></div>
+                <a href="#">Estación de agua y café ilimitados</a>
+                <p>
+                  Hidratación y energía a tu alcance todo el día, sin
+                  restricciones.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-3 col-md-6"
+            data-aos="zoom-in-up"
+            data-aos-duration="1500"
+          >
+            <div class="work-single-boxarea">
+              <img
+                src="assets/img/elements/elements4.png"
+                alt="housa"
+                class="elements4"
+              />
+              <div class="img1">
+                <img
+                  src="assets/img/all-images/work/work-img3.png"
+                  alt="housa"
+                />
+              </div>
+              <div class="space56"></div>
+              <div class="textarea">
+                <span>7</span>
+                <div class="space18"></div>
+                <a href="#">Acceso a cocina equipada</a>
+                <p>
+                  Con refrigeradora, microondas, comedor y todo lo necesario
+                  para tus momentos de descanso o almuerzo.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-3 col-md-6"
+            data-aos="zoom-in-up"
+            data-aos-duration="1600"
+          >
+            <div class="work-single-boxarea box2">
+              <img
+                src="assets/img/elements/elements4.png"
+                alt="housa"
+                class="elements4"
+              />
+              <div class="img1">
+                <img
+                  src="assets/img/all-images/work/work-img4.png"
+                  alt="housa"
+                />
+              </div>
+              <div class="space56"></div>
+              <div class="textarea">
+                <span>8</span>
+                <div class="space18"></div>
+                <a href="#">Impresora, escáner y papelería disponible</a>
+                <p>
+                  Accede a recursos de oficina cuando los necesites. (Puede
+                  incurrir en costos adicionales según uso).
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--===== OTHERS AREA ENDS =======-->
+
+    <!--===== CATEGORY AREA STARTS =======-->
+    <div
+      class="category3 sp2"
+      style="
+        background-image: url(assets/img/all-images/bg/team-bg1.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      "
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 m-auto">
+            <div class="heading2 text-center space-margin60">
+              <h5>Galeria de nuestras Oficinas privadas</h5>
+              <div class="space16"></div>
+              <h2>Explore y elija y cotice</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="cate-single-boxarea">
+              <div class="img1">
+                <img
+                  src="assets/img/all-images/category/ca-img7.png"
+                  alt="housa"
+                />
+              </div>
+              <div class="search">
+                <a href="property-details-v1.html"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                  >
+                    <path
+                      d="M22.6667 22.6667L28 28M4 14.6667C4 17.4956 5.12381 20.2088 7.12419 22.2091C9.12458 24.2095 11.8377 25.3333 14.6667 25.3333C17.4956 25.3333 20.2088 24.2095 22.2091 22.2091C24.2095 20.2088 25.3333 17.4956 25.3333 14.6667C25.3333 11.8377 24.2095 9.12458 22.2091 7.12419C20.2088 5.12381 17.4956 4 14.6667 4C11.8377 4 9.12458 5.12381 7.12419 7.12419C5.12381 9.12458 4 11.8377 4 14.6667Z"
+                      stroke="white"
+                      stroke-width="2.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    /></svg
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="cate-single-boxarea">
+              <div class="img1">
+                <img
+                  src="assets/img/all-images/category/ca-img8.png"
+                  alt="housa"
+                />
+              </div>
+              <div class="search">
+                <a href="property-details-v1.html"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                  >
+                    <path
+                      d="M22.6667 22.6667L28 28M4 14.6667C4 17.4956 5.12381 20.2088 7.12419 22.2091C9.12458 24.2095 11.8377 25.3333 14.6667 25.3333C17.4956 25.3333 20.2088 24.2095 22.2091 22.2091C24.2095 20.2088 25.3333 17.4956 25.3333 14.6667C25.3333 11.8377 24.2095 9.12458 22.2091 7.12419C20.2088 5.12381 17.4956 4 14.6667 4C11.8377 4 9.12458 5.12381 7.12419 7.12419C5.12381 9.12458 4 11.8377 4 14.6667Z"
+                      stroke="white"
+                      stroke-width="2.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    /></svg
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="cate-single-boxarea">
+              <div class="img1">
+                <img
+                  src="assets/img/all-images/category/ca-img9.png"
+                  alt="housa"
+                />
+              </div>
+              <div class="search">
+                <a href="property-details-v1.html"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                  >
+                    <path
+                      d="M22.6667 22.6667L28 28M4 14.6667C4 17.4956 5.12381 20.2088 7.12419 22.2091C9.12458 24.2095 11.8377 25.3333 14.6667 25.3333C17.4956 25.3333 20.2088 24.2095 22.2091 22.2091C24.2095 20.2088 25.3333 17.4956 25.3333 14.6667C25.3333 11.8377 24.2095 9.12458 22.2091 7.12419C20.2088 5.12381 17.4956 4 14.6667 4C11.8377 4 9.12458 5.12381 7.12419 7.12419C5.12381 9.12458 4 11.8377 4 14.6667Z"
+                      stroke="white"
+                      stroke-width="2.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    /></svg
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <div class="cate-single-boxarea">
+              <div class="img1">
+                <img
+                  src="assets/img/all-images/category/ca-img10.png"
+                  alt="housa"
+                />
+              </div>
+              <div class="search">
+                <a href="property-details-v1.html"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                  >
+                    <path
+                      d="M22.6667 22.6667L28 28M4 14.6667C4 17.4956 5.12381 20.2088 7.12419 22.2091C9.12458 24.2095 11.8377 25.3333 14.6667 25.3333C17.4956 25.3333 20.2088 24.2095 22.2091 22.2091C24.2095 20.2088 25.3333 17.4956 25.3333 14.6667C25.3333 11.8377 24.2095 9.12458 22.2091 7.12419C20.2088 5.12381 17.4956 4 14.6667 4C11.8377 4 9.12458 5.12381 7.12419 7.12419C5.12381 9.12458 4 11.8377 4 14.6667Z"
+                      stroke="white"
+                      stroke-width="2.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    /></svg
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <div class="cate-single-boxarea">
+              <div class="img1">
+                <img
+                  src="assets/img/all-images/category/ca-img11.png"
+                  alt="housa"
+                />
+              </div>
+              <div class="search">
+                <a href="property-details-v1.html"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                  >
+                    <path
+                      d="M22.6667 22.6667L28 28M4 14.6667C4 17.4956 5.12381 20.2088 7.12419 22.2091C9.12458 24.2095 11.8377 25.3333 14.6667 25.3333C17.4956 25.3333 20.2088 24.2095 22.2091 22.2091C24.2095 20.2088 25.3333 17.4956 25.3333 14.6667C25.3333 11.8377 24.2095 9.12458 22.2091 7.12419C20.2088 5.12381 17.4956 4 14.6667 4C11.8377 4 9.12458 5.12381 7.12419 7.12419C5.12381 9.12458 4 11.8377 4 14.6667Z"
+                      stroke="white"
+                      stroke-width="2.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    /></svg
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--===== CATEGORY AREA ENDS =======-->
+
+    <!--===== PRICING AREA STARTS =======-->
+    <div class="pricing1">
+      <div class="container">
+        <div class="row">
+          <!-- PRIMERA TARJETA - TU DISEÑO ORIGINAL -->
+          <div class="col-lg-4 col-md-6">
+            <div class="pricing-boxarea">
+              <div class="price">
+                <h2>L.12K</h2>
+                <div class="space14"></div>
+                <p>1 a 4 persona</p>
+              </div>
+              <div class="pricing-list-area">
+                <p>Oficina Privada</p>
+                <div class="space16"></div>
+                <h3>Plan Permanente</h3>
+                <div class="space8"></div>
+                <ul>
+                  <li>
+                    <img src="assets/img/icons/check2.svg" alt="housa" /> Acceso
+                    a su oficina 24/7
+                  </li>
+                  <li>
+                    <img src="assets/img/icons/check2.svg" alt="housa" />
+                    Servicio de Internet
+                  </li>
+                  <li>
+                    <img src="assets/img/icons/check2.svg" alt="housa" />
+                    Internet de alta velocidad
+                  </li>
+                  <li>
+                    <img src="assets/img/icons/check2.svg" alt="housa" />
+                    Control de accesos
+                  </li>
+                  <li>
+                    <img src="assets/img/icons/check2.svg" alt="housa" /> Horas
+                    de sala de juntas (Cortesía)
+                  </li>
+                  <li>
+                    <img src="assets/img/icons/check2.svg" alt="housa" /> Acceso
+                    a la sala de maternidad
+                  </li>
+                  <li>
+                    <img src="assets/img/icons/check2.svg" alt="housa" />
+                    Seguridad y privacidad
+                  </li>
+                  <li>
+                    <img src="assets/img/icons/check2.svg" alt="housa" /> Acceso
+                    a áreas comunes de Agalta
+                  </li>
+                </ul>
+                <div class="space32"></div>
+                <div class="btn-area1">
+                  <a href="#" class="vl-btn1">
+                    Contratar Plan
+                    <span class="arrow1"
+                      ><i class="fa-solid fa-arrow-right"></i></span
+                    ><span class="arrow2"
+                      ><i class="fa-solid fa-arrow-right"></i></span
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="space80 d-lg-none d-md-block"></div>
+          </div>
+
+          <!-- SEGUNDA TARJETA - DISEÑO ELEGANTE CON CÍRCULO GRANDE -->
+          <div class="col-lg-4 col-md-6">
+            <div class="pricing-container-elegant">
+              <div class="pricing-boxarea-elegant">
+                <div class="price-circle-elegant">
+                  <div class="price-amount-elegant">L. 20,000</div>
+                  <div class="price-person-elegant">2-3 Personas</div>
+                </div>
+
+                <div class="pricing-content-elegant">
+                  <p class="office-type-elegant">Oficina Privada</p>
+                  <h3 class="plan-title-elegant">Plan Permanente</h3>
+
+                  <ul class="features-list-elegant">
+                    <li>
+                      <div class="check-icon-elegant">
+                        <i class="fas fa-check"></i>
+                      </div>
+                      Acceso A Su Oficina 24/7
+                    </li>
+                    <li>
+                      <div class="check-icon-elegant">
+                        <i class="fas fa-check"></i>
+                      </div>
+                      Servicio De Internet
+                    </li>
+                    <li>
+                      <div class="check-icon-elegant">
+                        <i class="fas fa-check"></i>
+                      </div>
+                      Internet De Alta Velocidad
+                    </li>
+                    <li>
+                      <div class="check-icon-elegant">
+                        <i class="fas fa-check"></i>
+                      </div>
+                      Control De Accesos
+                    </li>
+                    <li>
+                      <div class="check-icon-elegant">
+                        <i class="fas fa-check"></i>
+                      </div>
+                      Horas De Sala De Juntas (Cortesía)
+                    </li>
+                    <li>
+                      <div class="check-icon-elegant">
+                        <i class="fas fa-check"></i>
+                      </div>
+                      Acceso A La Sala De Maternidad
+                    </li>
+                    <li>
+                      <div class="check-icon-elegant">
+                        <i class="fas fa-check"></i>
+                      </div>
+                      Seguridad Y Privacidad
+                    </li>
+                    <li>
+                      <div class="check-icon-elegant">
+                        <i class="fas fa-check"></i>
+                      </div>
+                      Acceso A Áreas Comunes De Agalta
+                    </li>
+                  </ul>
+
+                  <a href="#" class="cta-button-elegant">
+                    Contratar Plan
+                    <span class="arrow-elegant"
+                      ><i class="fas fa-arrow-right"></i
+                    ></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="space80 d-lg-none d-md-block"></div>
+          </div>
+
+          <!-- TERCERA TARJETA - CÍRCULO FLOTANTE -->
+          <div class="col-lg-4 col-md-6">
+            <div class="pricing-boxarea-float">
+              <div class="price-circle-float">
+                <div class="price-amount-float">L. 27K</div>
+                <div class="price-person-float">1-4 Pers</div>
+              </div>
+
+              <div class="pricing-content-float">
+                <p class="office-type-float">Oficina Privada</p>
+                <h3 class="plan-title-float">Plan Temporal</h3>
+
+                <ul class="features-list-float">
+                  <li>
+                    <div class="check-icon-float">
+                      <i class="fas fa-check"></i>
+                    </div>
+                    Acceso A Su Oficina 24/7
+                  </li>
+                  <li>
+                    <div class="check-icon-float">
+                      <i class="fas fa-check"></i>
+                    </div>
+                    Servicio De Internet
+                  </li>
+                  <li>
+                    <div class="check-icon-float">
+                      <i class="fas fa-check"></i>
+                    </div>
+                    Internet De Alta Velocidad
+                  </li>
+                  <li>
+                    <div class="check-icon-float">
+                      <i class="fas fa-check"></i>
+                    </div>
+                    Control De Accesos
+                  </li>
+                  <li>
+                    <div class="check-icon-float">
+                      <i class="fas fa-check"></i>
+                    </div>
+                    Horas De Sala De Juntas (Cortesía)
+                  </li>
+                  <li>
+                    <div class="check-icon-float">
+                      <i class="fas fa-check"></i>
+                    </div>
+                    Acceso A La Sala De Maternidad
+                  </li>
+                  <li>
+                    <div class="check-icon-float">
+                      <i class="fas fa-check"></i>
+                    </div>
+                    Seguridad Y Privacidad
+                  </li>
+                  <li>
+                    <div class="check-icon-float">
+                      <i class="fas fa-check"></i>
+                    </div>
+                    Acceso A Áreas Comunes De Agalta
+                  </li>
+                </ul>
+
+                <a href="#" class="cta-button-float">
+                  Contratar Plan
+                  <span class="arrow-float"
+                    ><i class="fas fa-arrow-right"></i
+                  ></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--===== Fin PRICING AREA STARTS =======-->
+    <!--===== FOOTER AREA STARTS =======-->
+    <div id="footer-container"></div>
+
+    <script>
+      fetch("footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer-container").innerHTML = data;
+        })
+        .catch((error) => {
+          console.error("Error cargando el footer:", error);
+        });
+    </script>
+
+    <div class="space32"></div>
+
+    <!-- ✅ WIDGET WHATSAPP MODULAR - UNA SOLA LÍNEA -->
+    <script src="/assets/js/plugins/whatsapp-widget.js"></script>
+    <!--===== FOOTER AREA ENDS =======-->
+
+    <!--===== JS SCRIPT LINK =======-->
+    <script src="assets/js/plugins/jquery-3-7-1.min.js"></script>
+    <script src="assets/js/plugins/bootstrap.min.js"></script>
+    <script src="assets/js/plugins/fontawesome.js"></script>
+    <script src="assets/js/plugins/aos.js"></script>
+    <script src="assets/js/plugins/jquery.appear.js"></script>
+    <script src="assets/js/plugins/jquery.odometer.min.js"></script>
+    <script src="assets/js/plugins/chart.js"></script>
+    <script src="assets/js/plugins/gsap.min.js"></script>
+    <script src="assets/js/plugins/ScrollTrigger.min.js"></script>
+    <script src="assets/js/plugins/textSplite-custom.js"></script>
+    <script src="assets/js/plugins/sidebar.js"></script>
+    <script src="assets/js/plugins/swiper-slider.js"></script>
+    <script src="assets/js/plugins/magnific-popup.js"></script>
+    <script src="assets/js/plugins/mobilemenu.js"></script>
+    <script src="assets/js/plugins/owlcarousel.min.js"></script>
+    <script src="assets/js/plugins/nice-select.js"></script>
+    <script src="assets/js/plugins/waypoints.js"></script>
+    <script src="assets/js/plugins/slick-slider.js"></script>
+    <script src="assets/js/plugins/circle-progress.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+      // ===== VARIABLES GLOBALES =====
+      let solicitudActual = {};
+      const WHATSAPP_NUMBER = "+50432484168";
+
+      // ===== SISTEMA DE TABS =====
+      document.querySelectorAll(".tab-btn-smart").forEach((button) => {
+        button.addEventListener("click", function () {
+          document
+            .querySelectorAll(".tab-btn-smart")
+            .forEach((btn) => btn.classList.remove("active"));
+          this.classList.add("active");
+
+          document
+            .querySelectorAll(".tab-content-smart")
+            .forEach((tab) => tab.classList.add("hidden"));
+          const targetTab = this.getAttribute("data-tab");
+          document.getElementById(targetTab).classList.remove("hidden");
+
+          resetearFormularios();
+        });
+      });
+
+      // ===== FUNCIONES PARA SERVICIOS =====
+      function updateServicioOptions() {
+        const tipoServicio = document.getElementById("tipo-servicio").value;
+
+        ocultarElementos([
+          "virtual-options",
+          "instalaciones-options",
+          "fisica-modalidad",
+          "personas-options",
+          "tiempo-options",
+        ]);
+
+        if (tipoServicio === "oficina-virtual") {
+          mostrarElemento("virtual-options");
+        } else if (tipoServicio === "oficina-fisica") {
+          mostrarElemento("fisica-modalidad");
+        }
+
+        updateButtonState();
+        adjustContainerWidth();
+      }
+
+      function updatePermisoOptions() {
+        const tipoPermiso = document.getElementById("tipo-permiso").value;
+
+        ocultarElementos(["instalaciones-options", "tiempo-options"]);
+
+        if (tipoPermiso === "operaciones-instalaciones") {
+          mostrarElemento("instalaciones-options");
+        }
+
+        updateButtonState();
+        adjustContainerWidth();
+      }
+
+      function updateInstalacionOptions() {
+        updateButtonState();
+        adjustContainerWidth();
+      }
+
+      function updatePersonasOptions() {
+        const modalidad = document.getElementById("modalidad-fisica").value;
+
+        ocultarElementos(["tiempo-options"]);
+
+        if (modalidad) {
+          mostrarElemento("personas-options");
+        }
+
+        updateButtonState();
+        adjustContainerWidth();
+      }
+
+      function updateTiempoOptions() {
+        const modalidad = document.getElementById("modalidad-fisica")?.value;
+        const personas = document.getElementById("cantidad-personas")?.value;
+
+        if (modalidad === "temporal" && personas) {
+          mostrarElemento("tiempo-options");
+        }
+
+        updateButtonState();
+        adjustContainerWidth();
+      }
+
+      function updateProyectoOptions() {
+        const tipoProyecto = document.getElementById("tipo-proyecto").value;
+
+        ocultarElementos(["catrachas-options", "proyecto-descripcion"]);
+
+        if (tipoProyecto === "manos-catrachas") {
+          mostrarElemento("catrachas-options");
+        } else if (tipoProyecto) {
+          mostrarElemento("proyecto-descripcion");
+        }
+
+        adjustContainerWidth();
+      }
+
+      // ===== AJUSTAR ANCHO DEL CONTENEDOR =====
+      function adjustContainerWidth() {
+        const activeTab = document.querySelector(
+          ".tab-content-smart:not(.hidden)"
+        );
+        const visibleFilters = activeTab.querySelectorAll(
+          ".filter-group-smart:not(.hidden)"
+        );
+        const container = activeTab.querySelector(".filters-smart");
+
+        // Calcular cuántas columnas necesitamos
+        const numColumns = Math.min(visibleFilters.length, 4);
+
+        if (numColumns <= 2) {
+          container.style.maxWidth = "600px";
+        } else if (numColumns <= 3) {
+          container.style.maxWidth = "900px";
+        } else {
+          container.style.maxWidth = "100%";
+        }
+      }
+
+      // ===== ACTUALIZAR ESTADO DEL BOTÓN =====
+      function updateButtonState() {
+        const tipoServicio = document.getElementById("tipo-servicio").value;
+        const tipoPermiso = document.getElementById("tipo-permiso")?.value;
+        const modalidad = document.getElementById("modalidad-fisica")?.value;
+        const personas = document.getElementById("cantidad-personas")?.value;
+        const instalacion = document.getElementById("tipo-instalacion")?.value;
+        const duracion = document.getElementById("duracion-tiempo")?.value;
+
+        const btnText = document.getElementById("btn-text");
+        const btnIcon = document.querySelector("#btn-principal-servicios i");
+
+        let readyToContract = false;
+
+        if (tipoServicio === "oficina-virtual") {
+          if (tipoPermiso === "solo-operaciones") {
+            readyToContract = true;
+          } else if (
+            tipoPermiso === "operaciones-instalaciones" &&
+            instalacion
+          ) {
+            readyToContract = true;
+          }
+        } else if (tipoServicio === "oficina-fisica" && modalidad && personas) {
+          if (modalidad === "permanente") {
+            readyToContract = true;
+          } else if (modalidad === "temporal" && duracion) {
+            readyToContract = true;
+          }
+        }
+
+        if (readyToContract) {
+          btnText.textContent = "Contratar";
+          btnIcon.className = "fas fa-shopping-cart";
+        } else {
+          btnText.textContent = "Buscar Servicio";
+          btnIcon.className = "fas fa-search";
+        }
+      }
+
+      // ===== PROCESAR SOLICITUD =====
+      function procesarSolicitud() {
+        const tipoServicio = document.getElementById("tipo-servicio").value;
+
+        if (!tipoServicio) {
+          alert("Seleccione un tipo de servicio");
+          return;
+        }
+
+        solicitudActual = {
+          tipo: "servicio",
+          servicio: tipoServicio,
+          permiso: document.getElementById("tipo-permiso")?.value,
+          modalidad: document.getElementById("modalidad-fisica")?.value,
+          personas: document.getElementById("cantidad-personas")?.value,
+          instalacion: document.getElementById("tipo-instalacion")?.value,
+          duracion: document.getElementById("duracion-tiempo")?.value,
+        };
+
+        mostrarResumen();
+      }
+
+      // ===== ENVIAR POR WHATSAPP =====
+      function enviarWhatsApp() {
+        const tipoProyecto = document.getElementById("tipo-proyecto").value;
+
+        if (!tipoProyecto) {
+          alert("Seleccione un tipo de proyecto");
+          return;
+        }
+
+        let mensaje = `¡Hola! Me interesa un proyecto de EasyOffice:\n\n`;
+
+        if (tipoProyecto === "llave-mano") {
+          mensaje += `🔑 *Proyecto Llave en Mano*\n`;
+        } else if (tipoProyecto === "manos-catrachas") {
+          mensaje += `🇭🇳 *Manos Catrachas*\n`;
+          const producto = document.getElementById("tipo-producto")?.value;
+          if (producto) {
+            mensaje += `Producto: ${producto}\n`;
+          }
+        } else if (tipoProyecto === "proveedores-locales") {
+          mensaje += `🤝 *Proveedores Locales*\n`;
+        }
+
+        const descripcion = document.getElementById(
+          "descripcion-proyecto"
+        )?.value;
+        if (descripcion) {
+          mensaje += `\n📝 *Descripción:*\n${descripcion}\n`;
+        }
+
+        mensaje += `\n¿Podrían contactarme para más información?`;
+
+        const url = `https://wa.me/${WHATSAPP_NUMBER.replace(
+          /[^\d]/g,
+          ""
+        )}?text=${encodeURIComponent(mensaje)}`;
+        window.open(url, "_blank");
+      }
+
+      // ===== MOSTRAR RESUMEN =====
+      function mostrarResumen() {
+        const content = document.getElementById("resumen-content");
+        let html = '<div class="resumen-items-smart">';
+
+        if (solicitudActual.servicio === "oficina-virtual") {
+          html += `
+      <div class="resumen-item-smart">
+        <i class="fas fa-laptop"></i>
+        <div>
+          <strong>Oficina Virtual</strong>
+          <p>${
+            solicitudActual.permiso === "solo-operaciones"
+              ? "Solo operaciones"
+              : "Operaciones + instalaciones"
+          }</p>
+        </div>
+      </div>
+    `;
+
+          if (solicitudActual.instalacion) {
+            html += `
+        <div class="resumen-item-smart">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <strong>Instalación</strong>
+            <p>${
+              solicitudActual.instalacion === "sala-juntas"
+                ? "Sala de Juntas"
+                : "Coworking"
+            }</p>
+          </div>
+        </div>
+      `;
+          }
+        } else if (solicitudActual.servicio === "oficina-fisica") {
+          html += `
+      <div class="resumen-item-smart">
+        <i class="fas fa-building"></i>
+        <div>
+          <strong>Oficina Física</strong>
+          <p>${solicitudActual.modalidad} - ${solicitudActual.personas}</p>
+        </div>
+      </div>
+    `;
+
+          if (solicitudActual.duracion) {
+            html += `
+        <div class="resumen-item-smart">
+          <i class="fas fa-clock"></i>
+          <div>
+            <strong>Duración</strong>
+            <p>${solicitudActual.duracion.replace("-", " ")}</p>
+          </div>
+        </div>
+      `;
+          }
+        }
+
+        html += "</div>";
+        content.innerHTML = html;
+
+        document.getElementById("modal-resumen").classList.remove("hidden");
+      }
+
+      // ===== PROCEDER AL PAGO =====
+      function procederPago() {
+        cerrarModal("modal-resumen");
+        setTimeout(() => {
+          document
+            .getElementById("modal-mantenimiento")
+            .classList.remove("hidden");
+        }, 200);
+      }
+
+      // ===== CONTACTAR DIRECTO =====
+      function contactarDirecto() {
+        const mensaje = `¡Hola! Me interesa contratar un servicio de EasyOffice. ¿Podrían contactarme?`;
+        const url = `https://wa.me/${WHATSAPP_NUMBER.replace(
+          /[^\d]/g,
+          ""
+        )}?text=${encodeURIComponent(mensaje)}`;
+        window.open(url, "_blank");
+        cerrarModal("modal-mantenimiento");
+      }
+
+      // ===== FUNCIONES AUXILIARES =====
+      function mostrarElemento(id) {
+        const elemento = document.getElementById(id);
+        if (elemento) elemento.classList.remove("hidden");
+      }
+
+      function ocultarElementos(ids) {
+        ids.forEach((id) => {
+          const elemento = document.getElementById(id);
+          if (elemento) elemento.classList.add("hidden");
+        });
+      }
+
+      function cerrarModal(modalId) {
+        document.getElementById(modalId).classList.add("hidden");
+      }
+
+      function resetearFormularios() {
+        document.querySelectorAll("select").forEach((select) => {
+          select.selectedIndex = 0;
+        });
+
+        const textarea = document.getElementById("descripcion-proyecto");
+        if (textarea) textarea.value = "";
+
+        ocultarElementos([
+          "virtual-options",
+          "instalaciones-options",
+          "fisica-modalidad",
+          "personas-options",
+          "tiempo-options",
+          "catrachas-options",
+          "proyecto-descripcion",
+        ]);
+
+        updateButtonState();
+        adjustContainerWidth();
+      }
+
+      // Inicializar al cargar
+      document.addEventListener("DOMContentLoaded", function () {
+        adjustContainerWidth();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EasyOffice</title>
+  <!--=====FAB ICON=======-->
+  <link rel="shortcut icon" href="assets/img/logo/EasyOffice logo.png" type="image/x-icon">
+  <!--===== CSS LINK =======-->
+  <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/plugins/aos.css">
+  <link rel="stylesheet" href="assets/css/plugins/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/plugins/magnific-popup.css">
+  <link rel="stylesheet" href="assets/css/plugins/owlcarousel.min.css">
+  <link rel="stylesheet" href="assets/css/plugins/sidebar.css">
+  <link rel="stylesheet" href="assets/css/plugins/slick-slider.css">
+  <link rel="stylesheet" href="assets/css/plugins/nice-select.css">
+  <link rel="stylesheet" href="assets/css/plugins/swiper-slider.css">
+  <link rel="stylesheet" href="assets/css/plugins/odometer.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  
+  <style>
+    .required-field {
+      border: 2px solid #dc3545 !important;
+    }
+    .success-message {
+      background-color: #d4edda;
+      border: 1px solid #c3e6cb;
+      color: #155724;
+      padding: 12px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      display: none;
+    }
+    .error-message {
+      background-color: #f8d7da;
+      border: 1px solid #f5c6cb;
+      color: #721c24;
+      padding: 12px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      display: none;
+    }
+    .whatsapp-btn {
+      background-color: #25d366;
+      border: none;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+    .whatsapp-btn:hover {
+      background-color: #128c7e;
+      transform: translateY(-2px);
+    }
+
+    /* ===== ARREGLO DE HORARIOS Y SIMETRÍA ===== */
+    .phone-number {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      height: 120px; /* ✅ Altura fija para simetría */
+      transition: all 0.3s ease;
+    }
+    
+    .phone-number:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    
+    .phone-number .img1 {
+      flex-shrink: 0;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      background: rgba(237, 132, 56, 0.1);
+      border-radius: 12px;
+    }
+    
+    .phone-number .content {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+    
+    .phone-number .content p {
+      margin: 0;
+      font-weight: 600;
+      color: #333;
+      font-size: 16px;
+    }
+    
+    .phone-number .content a {
+      font-size: 14px;
+      line-height: 1.4;
+      color: #666;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      margin: 0;
+      display: block;
+      text-align: left !important;
+    }
+    
+    .phone-number .content a:hover {
+      color: #ED8438;
+    }
+    
+    /* ✅ COMBOBOX SIMÉTRICOS Y MÁS LARGOS */
+    .input-area select {
+       height: 50px !important;
+      line-height: 50px !important;
+      padding: 12px 16px !important;
+      box-sizing: border-box !important;
+      width: 100% !important;
+      min-height: 50px !important;
+      padding: 12px 16px !important;
+      border: 2px solid #e0e0e0 !important;
+      border-radius: 8px !important;
+      font-size: 14px !important;
+      background-color: #fff !important;
+      transition: all 0.3s ease !important;
+    }
+
+    .input-area input {
+      height: 50px !important;
+      line-height: 50px !important;
+      padding: 12px 16px !important;
+      box-sizing: border-box !important;
+    }
+    
+    .input-area select:focus {
+      border-color: #ED8438 !important;
+      outline: none !important;
+      box-shadow: 0 0 0 3px rgba(237, 132, 56, 0.1) !important;
+    }
+    
+    .input-area input, .input-area textarea {
+      width: 100% !important;
+      min-height: 50px !important;
+      padding: 12px 16px !important;
+      border: 2px solid #e0e0e0 !important;
+      border-radius: 8px !important;
+      font-size: 14px !important;
+      transition: all 0.3s ease !important;
+    }
+    
+    .input-area textarea {
+      min-height: 100px !important;
+      resize: vertical !important;
+    }
+    
+    .input-area input:focus, .input-area textarea:focus {
+      border-color: #ED8438 !important;
+      outline: none !important;
+      box-shadow: 0 0 0 3px rgba(237, 132, 56, 0.1) !important;
+    }
+    
+    /* Responsive para horarios */
+    @media (max-width: 768px) {
+      .phone-number {
+        height: auto;
+        min-height: 120px;
+      }
+      .phone-number .content a {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body class="body1 b-bg1">
+  <!-- ✅ LOADER SIMPLE PARA EVITAR PROBLEMAS -->
+  <div id="pageLoader" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255,255,255,0.9); z-index: 9999; display: flex; align-items: center; justify-content: center; font-family: Arial, sans-serif;">
+    <div style="text-align: center;">
+      <div style="width: 50px; height: 50px; border: 3px solid #f3f3f3; border-top: 3px solid #ED8438; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 20px;"></div>
+      <p style="color: #666;">Cargando EasyOffice...</p>
+    </div>
+  </div>
+  
+  <style>
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+  
+  <script>
+    // ✅ OCULTAR LOADER CUANDO TODO ESTÉ LISTO
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        document.getElementById('pageLoader').style.display = 'none';
+      }, 500);
+    });
+  </script>
+
+  <div id="header-container"></div>
+
+  <script>
+    // ✅ HEADER CON MANEJO DE ERRORES MEJORADO
+    fetch('header.html')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.text();
+      })
+      .then(data => {
+        document.getElementById('header-container').innerHTML = data;
+      })
+      .catch(error => {
+        console.log('Header no encontrado o error al cargar:', error);
+        // ✅ NO BLOQUEAR LA PÁGINA SI FALLA EL HEADER
+        // La página continúa funcionando normalmente
+      });
+  </script>
+  
+  <!--===== HERO AREA STARTS =======-->
+  <div class="inner-header-area">
+    <div class="containe-fluid">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="inner-header heading1">
+            <h2>Contáctanos</h2>
+            <div class="space28"></div>
+            <p><a href="index.html">Home</a> <svg xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewBox="0 0 9 16" fill="none">
+                <path d="M1.5 1.74997L7.75 7.99997L1.5 14.25" stroke="#1B1B1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg> Contáctanos</p>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="inner-images">
+            <img src="assets/img/all-images/hero/hero-img9.png" alt="EasyOffice">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--===== HERO AREA ENDS =======-->
+  
+  <div class="space30"></div>
+  
+  <!--===== CONTACT AREA STARTS =======-->
+  <div class="contact-inner">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- ✅ EMAIL CON CLICK PERSONALIZADO -->
+        <div class="col-lg-4 col-md-6">
+          <div class="phone-number" onclick="enviarEmailPersonalizado()" style="cursor: pointer;">
+            <div class="img1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
+                <path
+                  d="M5.83333 24.0013L12.5 16.0013M27.1667 24.0013L20.5 16.0013M4.5 10.668L14.1333 17.0901C14.9887 17.6604 15.4163 17.9456 15.8785 18.0562C16.2871 18.1542 16.7129 18.1542 17.1215 18.0562C17.5837 17.9456 18.0113 17.6604 18.8667 17.0901L28.5 10.668M8.76667 25.3346H24.2333C25.7268 25.3346 26.4736 25.3346 27.044 25.044C27.5457 24.7884 27.9537 24.3804 28.2093 23.8786C28.5 23.3082 28.5 22.5614 28.5 21.068V10.9346C28.5 9.44117 28.5 8.69442 28.2093 8.124C27.9537 7.62222 27.5457 7.21428 27.044 6.95862C26.4736 6.66797 25.7268 6.66797 24.2333 6.66797H8.76667C7.2732 6.66797 6.52645 6.66797 5.95603 6.95862C5.45425 7.21428 5.04631 7.62222 4.79065 8.124C4.5 8.69442 4.5 9.44116 4.5 10.9346V21.068C4.5 22.5614 4.5 23.3082 4.79065 23.8786C5.04631 24.3804 5.45425 24.7884 5.95603 25.044C6.52645 25.3346 7.27319 25.3346 8.76667 25.3346Z"
+                  stroke="#ED8438" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="content">
+              <p>Email</p>
+              <a href="mailto:info@easyoffice.hn">info@easyoffice.hn</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- ✅ TELÉFONO -->
+        <div class="col-lg-4 col-md-6">
+          <div class="phone-number">
+            <div class="img1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <path
+                  d="M18.7333 7.99935C20.0357 8.25344 21.2325 8.89036 22.1708 9.8286C23.1091 10.7668 23.746 11.9637 24 13.266M18.7333 2.66602C21.4391 2.9666 23.9621 4.17824 25.8884 6.10203C27.8145 8.0258 29.0295 10.5474 29.3333 13.2527M24.6667 27.9993C13.2528 27.9993 4 18.7465 4 7.33268C4 6.81772 4.01884 6.30716 4.05585 5.80166C4.09833 5.22151 4.11957 4.93144 4.2716 4.66739C4.39752 4.4487 4.62067 4.2413 4.84797 4.13168C5.12241 3.99935 5.44251 3.99935 6.08268 3.99935H9.83909C10.3774 3.99935 10.6466 3.99935 10.8774 4.08795C11.0812 4.16622 11.2627 4.29334 11.4059 4.45815C11.568 4.64472 11.66 4.8977 11.844 5.40363L13.3988 9.67942C13.6128 10.2681 13.7199 10.5624 13.7017 10.8416C13.6857 11.0878 13.6016 11.3248 13.4589 11.5261C13.2971 11.7544 13.0286 11.9155 12.4915 12.2378L10.6667 13.3327C12.2692 16.8645 15.1335 19.7325 18.6667 21.3327L19.7616 19.5079C20.0839 18.9707 20.2449 18.7021 20.4732 18.5404C20.6745 18.3977 20.9115 18.3136 21.1577 18.2976C21.4369 18.2795 21.7313 18.3865 22.32 18.6005L26.5957 20.1553C27.1016 20.3393 27.3547 20.4313 27.5412 20.5935C27.706 20.7367 27.8332 20.9181 27.9113 21.122C28 21.3527 28 21.6219 28 22.1603V25.9167C28 26.5568 28 26.877 27.8676 27.1514C27.758 27.3787 27.5507 27.6019 27.332 27.7278C27.0679 27.8798 26.7779 27.9009 26.1977 27.9435C25.6921 27.9805 25.1816 27.9993 24.6667 27.9993Z"
+                  stroke="#ED8438" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="content">
+              <p>Teléfono</p>
+              <a href="tel:+50422627024">+504 2262-7024</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- ✅ HORARIOS SIMÉTRICOS -->
+        <div class="col-lg-4 col-md-6">
+          <div class="phone-number">
+            <div class="img1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <path d="M16.0013 29.3327C23.3651 29.3327 29.3346 23.3631 29.3346 15.9993C29.3346 8.63555 23.3651 2.66602 16.0013 2.66602C8.63751 2.66602 2.66797 8.63555 2.66797 15.9993C2.66797 23.3631 8.63751 29.3327 16.0013 29.3327Z" stroke="#ED8438" stroke-width="2.5" />
+                <path
+                  d="M16.6314 9.15785C16.6314 8.51839 16.113 8 15.4735 8C14.8341 8 14.3157 8.51839 14.3157 9.15785H16.6314ZM18.6079 18.3738C18.1557 17.9217 17.4227 17.9217 16.9706 18.3738C16.5184 18.826 16.5184 19.559 16.9706 20.0112L18.6079 18.3738ZM19.2862 22.3269C19.7384 22.7791 20.4714 22.7791 20.9236 22.3269C21.3758 21.8747 21.3758 21.1417 20.9236 20.6895L19.2862 22.3269ZM14.3157 9.15785V14.5611H16.6314V9.15785H14.3157ZM16.9706 20.0112L19.2862 22.3269L20.9236 20.6895L18.6079 18.3738L16.9706 20.0112ZM16.6314 16.8768C16.6314 17.5163 16.113 18.0347 15.4735 18.0347V20.3504C17.3919 20.3504 18.9471 18.7951 18.9471 16.8768H16.6314ZM15.4735 18.0347C14.8341 18.0347 14.3157 17.5163 14.3157 16.8768H12C12 18.7951 13.5552 20.3504 15.4735 20.3504V18.0347ZM14.3157 16.8768C14.3157 16.2374 14.8341 15.719 15.4735 15.719V13.4033C13.5552 13.4033 12 14.9585 12 16.8768H14.3157ZM15.4735 15.719C16.113 15.719 16.6314 16.2374 16.6314 16.8768H18.9471C18.9471 14.9585 17.3919 13.4033 15.4735 13.4033V15.719Z"
+                  fill="#ED8438" />
+              </svg>
+            </div>
+            <div class="content">
+              <p>Horarios de Atención</p>
+              <a href="#horarios">Lunes a Viernes: 8:00 AM – 5:00 PM</a>
+              <a href="#horarios">Sábado: 8:00 AM – 12:00 PM</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="space50"></div>
+      
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="chosse-images">
+            <img src="assets/img/elements/elements8.png" alt="EasyOffice" class="elements8">
+            <div class="img1 text-end">
+              <img src="assets/img/all-images/others/others-img9.png" alt="EasyOffice">
+            </div>
+            <div class="img2">
+              <img src="assets/img/all-images/others/others-img10.png" alt="EasyOffice">
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="contact-boxarea">
+            <div class="bg-area">
+              <h3>¿Quieres que nos comuniquemos contigo?</h3>
+              <div class="space8"></div>
+              
+              <!-- Mensajes de estado -->
+              <div id="successMessage" class="success-message">
+                ¡Perfecto! Tu información se ha enviado correctamente. 
+              </div>
+              <div id="errorMessage" class="error-message">
+                Por favor completa todos los campos obligatorios marcados con *
+              </div>
+              
+              <form id="contactForm">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="input-area">
+                      <input type="text" id="firstName" placeholder="Tu Nombre*" required>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="input-area">
+                      <input type="text" id="lastName" placeholder="Apellido*" required>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="input-area">
+                      <input type="tel" id="phone" placeholder="Número de Teléfono*" required>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="input-area">
+                      <input type="email" id="email" placeholder="Correo Electrónico*" required>
+                    </div>
+                  </div>
+                  <!-- ✅ COMBOBOX CIUDAD CON ID ÚNICO -->
+                  <div class="col-lg-6">
+                    <div class="input-area">
+                      <select id="city" required>
+                        <option value="">Selecciona tu Ciudad*</option>
+                        <option value="Tegucigalpa">Tegucigalpa</option>
+                        <option value="San Pedro Sula">San Pedro Sula</option>
+                      </select>
+                    </div>
+                  </div>
+                  <!-- ✅ COMBOBOX SERVICIO CON ID ÚNICO -->
+                  <div class="col-lg-6">
+                    <div class="input-area">
+                      <select id="serviceType" required>
+                        <option value="">Selecciona el Tipo de Servicio*</option>
+                        <option value="Oficina Privada">Oficina Privada</option>
+                        <option value="Oficina Virtual">Oficina Virtual</option>
+                        <option value="Sala de Juntas">Sala de Juntas</option>
+                        <option value="Coworking">Coworking</option>
+                        <option value="Proyecto Llave en Mano">Proyecto Llave en Mano</option>
+                        <option value="Servicios Adicionales">Servicios Adicionales</option>
+                        <option value="Otros">Otros</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-lg-12">
+                    <div class="input-area">
+                      <textarea id="message" placeholder="Tu Mensaje (opcional)" rows="4"></textarea>
+                    </div>
+                  </div>
+                  <div class="col-lg-12">
+                    <div class="space16"></div>
+                    <div class="input-area text-end">
+                      <button type="submit" class="whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i> Enviar por WhatsApp
+                        <span class="arrow2"><i class="fa-solid fa-arrow-right"></i></span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="space40"></div>
+  <center><h1>Sucursales</h1></center>
+  <div class="space30"></div>
+  
+  <!-- Mapa de ubicación con estilos ya incluidos -->
+  <div class="maps-area">
+    <div class="containe-fluid">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="maps">
+            <center><h1>Tegucigalpa</h1></center>
+            <div class="space20"></div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4942.811682100229!2d-87.18372672400048!3d14.100667789119017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f6fa329d23d87f3%3A0xdaf21e9488442ffe!2sAgalta!5e1!3m2!1ses-419!2shn!4v1748371449098!5m2!1ses-419!2shn" 
+                    width="100%" height="450" style="border:0; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div style="margin-top: 16px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+              <a href="https://www.google.com/maps/dir/?api=1&destination=Torre+Agalta,+Boulevard+Morazán,+Tegucigalpa,+Honduras"
+                target="_blank"
+                style="display: inline-flex; align-items: center; background: linear-gradient(135deg, #FF6B00, #ff8533); color: white; padding: 12px 20px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);">
+                <i class="fa-solid fa-route" style="margin-right: 8px;"></i>
+                Cómo llegar
+              </a>
+              <a href="https://www.google.com/maps/place/Torre+Agalta,+Boulevard+Morazán,+Tegucigalpa,+Honduras"
+                target="_blank"
+                style="display: inline-flex; align-items: center; background: linear-gradient(135deg, #4285f4, #34a853); color: white; padding: 12px 20px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(66, 133, 244, 0.3);">
+                <i class="fa-solid fa-expand" style="margin-right: 8px;"></i>
+                Ampliar
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="maps">
+            <center><h1>San Pedro Sula</h1></center>
+            <div class="space20"></div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3869.1234567890123!2d-88.03012345678901!3d15.508123456789012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f665b6e123f4567%3A0x89abcdef12345678!2sEdificio%20Yude%20Canahuati%2C%20San%20Pedro%20Sula%2C%20Honduras!5e0!3m2!1ses-419!2shn!4v1748371500000!5m2!1ses-419!2shn" 
+                    width="100%" height="450" style="border:0; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div style="margin-top: 16px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+              <a href="https://www.google.com/maps/dir/?api=1&destination=Edificio+Yude+Canahuati,+San+Pedro+Sula,+Honduras"
+                target="_blank"
+                style="display: inline-flex; align-items: center; background: linear-gradient(135deg, #FF6B00, #ff8533); color: white; padding: 12px 20px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);">
+                <i class="fa-solid fa-route" style="margin-right: 8px;"></i>
+                Cómo llegar
+              </a>
+              <a href="https://www.google.com/maps/place/Edificio+Yude+Canahuati,+San+Pedro+Sula,+Honduras"
+                target="_blank"
+                style="display: inline-flex; align-items: center; background: linear-gradient(135deg, #4285f4, #34a853); color: white; padding: 12px 20px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(66, 133, 244, 0.3);">
+                <i class="fa-solid fa-expand" style="margin-right: 8px;"></i>
+                Ampliar
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="space30"></div>
+  
+  <!--===== FOOTER AREA STARTS =======-->
+  <div id="footer-container"></div>
+
+  <script>
+    // ✅ FOOTER CON MANEJO DE ERRORES MEJORADO  
+    fetch('footer.html')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.text();
+      })
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      })
+      .catch(error => {
+        console.log('Footer no encontrado o error al cargar:', error);
+        // ✅ NO BLOQUEAR LA PÁGINA SI FALLA EL FOOTER
+        // La página continúa funcionando normalmente
+      });
+  </script>
+  
+  <div class="space32"></div>
+  
+  <!-- ✅ WIDGET WHATSAPP CON MANEJO DE ERRORES -->
+  <script>
+    // ✅ CARGAR WIDGET WHATSAPP SOLO SI EXISTE
+    const whatsappScript = document.createElement('script');
+    whatsappScript.src = '/assets/js/plugins/whatsapp-widget.js';
+    whatsappScript.onerror = function() {
+      console.log('WhatsApp widget no encontrado - continuando sin widget');
+    };
+    document.head.appendChild(whatsappScript);
+  </script>
+
+  <!-- ✅ FUNCIÓN PARA EMAIL PERSONALIZADO -->
+  <script>
+    function enviarEmailPersonalizado() {
+      const asunto = encodeURIComponent('Consulta sobre servicios de EasyOffice');
+      const cuerpo = encodeURIComponent(`Hola equipo de EasyOffice,
+
+Estoy interesado en conocer más sobre sus servicios de oficinas. Me gustaría que me contacten para:
+
+□ Oficina Privada
+□ Oficina Virtual  
+□ Sala de Juntas
+□ Coworking
+□ Proyecto Llave en Mano
+□ Servicios Adicionales
+□ Otros
+
+Mis datos de contacto:
+Nombre: 
+Teléfono: 
+Ciudad: 
+
+Comentarios adicionales:
+
+
+Quedo atento a su respuesta.
+
+Saludos cordiales.`);
+      
+      window.location.href = `mailto:info@easyoffice.hn?subject=${asunto}&body=${cuerpo}`;
+    }
+  </script>
+
+  <!-- ✅ JavaScript CORREGIDO - Versión Final -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(inicializarFormulario, 100);
+    });
+    
+    function inicializarFormulario() {
+      const form = document.getElementById('contactForm');
+      const successMessage = document.getElementById('successMessage');
+      const errorMessage = document.getElementById('errorMessage');
+      
+      if (!form || !successMessage || !errorMessage) {
+        setTimeout(inicializarFormulario, 500);
+        return;
+      }
+      
+      console.log('✅ Formulario inicializado correctamente');
+      
+      // ✅ CONFIGURACIÓN CON NUEVA URL
+      const whatsappNumber = '50432777777';
+      const googleSheetsURL = 'https://script.google.com/macros/s/AKfycbzML_uD7tZAiQ7kbWsc8aNRjSJWWEYMa2moFSxNC2-zDSa9Hs5iJd_C3ODJNf2VZN4K/exec';
+      
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        console.log('📝 Formulario enviado');
+        
+        successMessage.style.display = 'none';
+        errorMessage.style.display = 'none';
+        
+        // ✅ OBTENER DATOS DEL FORMULARIO
+        const formData = {
+          firstName: document.getElementById('firstName').value.trim(),
+          lastName: document.getElementById('lastName').value.trim(), 
+          phone: document.getElementById('phone').value.trim(),
+          email: document.getElementById('email').value.trim(),
+          city: document.getElementById('city').value,
+          serviceType: document.getElementById('serviceType').value,
+          message: document.getElementById('message').value.trim()
+        };
+        
+        console.log('📊 Datos del formulario:', formData);
+        
+        // ✅ VALIDACIÓN
+        const requiredFields = [
+          { field: document.getElementById('firstName'), value: formData.firstName, name: 'firstName' },
+          { field: document.getElementById('lastName'), value: formData.lastName, name: 'lastName' },
+          { field: document.getElementById('phone'), value: formData.phone, name: 'phone' },
+          { field: document.getElementById('email'), value: formData.email, name: 'email' },
+          { field: document.getElementById('city'), value: formData.city, name: 'city' },
+          { field: document.getElementById('serviceType'), value: formData.serviceType, name: 'serviceType' }
+        ];
+        
+        let isValid = true;
+        let camposFaltantes = [];
+        
+        requiredFields.forEach(item => {
+          if (!item.value) {
+            item.field.classList.add('required-field');
+            camposFaltantes.push(item.name);
+            isValid = false;
+          } else {
+            item.field.classList.remove('required-field');
+          }
+        });
+        
+        if (!isValid) {
+          console.log('❌ Campos faltantes:', camposFaltantes);
+          errorMessage.style.display = 'block';
+          errorMessage.scrollIntoView({ behavior: 'smooth' });
+          return;
+        }
+        
+        console.log('✅ Validación pasada, preparando WhatsApp...');
+        
+        // ✅ MENSAJE DE WHATSAPP CON EMOJIS BONITOS
+        let whatsappMessage = `🏢 CONSULTA EASYOFFICE\n\n`;
+        whatsappMessage += `👤 Cliente: ${formData.firstName} ${formData.lastName}\n`;
+        whatsappMessage += `📞 Telefono: ${formData.phone}\n`;
+        whatsappMessage += `✉ Email: ${formData.email}\n`;
+        whatsappMessage += `🌎 Ciudad: ${formData.city}\n`;
+        whatsappMessage += `🏗 Servicio: ${formData.serviceType}\n`;
+        
+        if (formData.message) {
+          whatsappMessage += `💬 Mensaje: ${formData.message}\n`;
+        }
+        
+        whatsappMessage += `\n⏰ Fecha: ${new Date().toLocaleString('es-HN')}`;
+        whatsappMessage += `\n🌐 Enviado desde easyoffice.hn`;
+        whatsappMessage += `\n\n⚡ FAVOR RESPONDER PRONTO ⚡`;
+        
+        console.log('📱 Mensaje WhatsApp preparado:', whatsappMessage);
+        
+        // ✅ BOTÓN DE LOADING
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fab fa-whatsapp"></i> Enviando...';
+        submitBtn.disabled = true;
+        
+        // ✅ ENVIAR A GOOGLE SHEETS EN PARALELO
+        const formDataToSend = new FormData();
+        Object.keys(formData).forEach(key => {
+          formDataToSend.append(key, formData[key]);
+        });
+        
+        fetch(googleSheetsURL, {
+          method: 'POST',
+          mode: 'no-cors',
+          body: formDataToSend
+        }).then(() => {
+          console.log('📊 Datos enviados a Google Sheets');
+        }).catch((error) => {
+          console.log('⚠️ Error en Sheets (continuando):', error);
+        });
+        
+        // ✅ PROCEDER CON WHATSAPP SIEMPRE
+        setTimeout(() => {
+          console.log('🚀 Abriendo WhatsApp...');
+          
+          // ✅ RESTAURAR BOTÓN
+          submitBtn.innerHTML = originalBtnText;
+          submitBtn.disabled = false;
+          
+          // ✅ MOSTRAR MENSAJE DE ÉXITO
+          successMessage.innerHTML = '✅ ¡Perfecto! Tu información se ha registrado. Te contactaremos pronto.';
+          successMessage.style.display = 'block';
+          successMessage.scrollIntoView({ behavior: 'smooth' });
+          
+          // ✅ ABRIR WHATSAPP
+          const encodedMessage = encodeURIComponent(whatsappMessage);
+          const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+          
+          console.log('🔗 URL WhatsApp:', whatsappUrl);
+          window.open(whatsappUrl, '_blank');
+          
+          // ✅ LIMPIAR FORMULARIO
+          form.reset();
+          
+          // ✅ OCULTAR MENSAJE DESPUÉS DE 5 SEGUNDOS
+          setTimeout(() => {
+            successMessage.style.display = 'none';
+          }, 5000);
+          
+        }, 1500);
+      });
+      
+      // ✅ LIMPIAR ERRORES AL ESCRIBIR
+      const inputs = form.querySelectorAll('input, select, textarea');
+      inputs.forEach(input => {
+        input.addEventListener('input', function() {
+          this.classList.remove('required-field');
+          errorMessage.style.display = 'none';
+        });
+        
+        input.addEventListener('change', function() {
+          this.classList.remove('required-field');
+          errorMessage.style.display = 'none';
+        });
+      });
+    }
+    
+    // ✅ FUNCIÓN PARA DEBUG
+    function debugFormulario() {
+      console.log('🔍 DEBUG - Estado del formulario:');
+      console.log('Form:', document.getElementById('contactForm'));
+      console.log('FirstName:', document.getElementById('firstName'));
+      console.log('City:', document.getElementById('city'));
+      console.log('ServiceType:', document.getElementById('serviceType'));
+      
+      const city = document.getElementById('city');
+      const serviceType = document.getElementById('serviceType');
+      
+      console.log('City value:', city ? city.value : 'No encontrado');
+      console.log('ServiceType value:', serviceType ? serviceType.value : 'No encontrado');
+      
+      if (city) {
+        console.log('City options:', Array.from(city.options).map(opt => opt.value));
+      }
+      if (serviceType) {
+        console.log('ServiceType options:', Array.from(serviceType.options).map(opt => opt.value));
+      }
+    }
+  </script>
+  
+  <!--===== JS SCRIPT LINK =======-->
+  <script src="assets/js/plugins/jquery-3-7-1.min.js"></script>
+  <script src="assets/js/plugins/bootstrap.min.js"></script>
+  <script src="assets/js/plugins/fontawesome.js"></script>
+  <script src="assets/js/plugins/aos.js"></script>
+  <script src="assets/js/plugins/jquery.appear.js"></script>
+  <script src="assets/js/plugins/jquery.odometer.min.js"></script>
+  <script src="assets/js/plugins/chart.js"></script>
+  <script src="assets/js/plugins/gsap.min.js"></script>
+  <script src="assets/js/plugins/ScrollTrigger.min.js"></script>
+  <script src="assets/js/plugins/textSplite-custom.js"></script>
+  <script src="assets/js/plugins/sidebar.js"></script>
+  <script src="assets/js/plugins/swiper-slider.js"></script>
+  <script src="assets/js/plugins/magnific-popup.js"></script>
+  <script src="assets/js/plugins/mobilemenu.js"></script>
+  <script src="assets/js/plugins/owlcarousel.min.js"></script>
+  <script src="assets/js/plugins/nice-select.js"></script>
+  <script src="assets/js/plugins/waypoints.js"></script>
+  <script src="assets/js/plugins/slick-slider.js"></script>
+  <script src="assets/js/plugins/circle-progress.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
