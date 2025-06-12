@@ -19,374 +19,285 @@
   <link rel="stylesheet" href="assets/css/plugins/swiper-slider.css">
   <link rel="stylesheet" href="assets/css/plugins/odometer.css">
   <link rel="stylesheet" href="assets/css/main.css">
+  <!-- Style empresas Afiliadas -->
   <style>
-/* ===== EMPRESAS QUE CONFÍAN EN NOSOTROS ===== */
-.trusted-companies-section {
-    padding: 100px 0;
-    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f1f3f4 100%);
-    overflow: hidden;
-    position: relative;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.trusted-companies-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 25% 25%, rgba(255, 123, 61, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, rgba(255, 159, 90, 0.05) 0%, transparent 50%);
-    animation: pulseBackground 8s ease-in-out infinite;
-}
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #fafbfc;
+        }
 
-@keyframes pulseBackground {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.7; }
-}
+        /* ===== SECCIÓN PRINCIPAL ===== */
+        .trusted-companies-section {
+            padding: 120px 0;
+            background: linear-gradient(135deg,rgb(158, 151, 136) 0%,rgb(224, 205, 163) 50%,rgb(241, 199, 108) 100%);
+            position: relative;
+            overflow: hidden;
+        }
 
-.container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 20px;
-    position: relative;
-    z-index: 2;
-}
+        .trusted-companies-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(147, 51, 234, 0.03) 0%, transparent 50%);
+            animation: gentleFloat 12s ease-in-out infinite;
+        }
 
-.section-header {
-    text-align: center;
-    margin-bottom: 80px;
-    position: relative;
-}
+        @keyframes gentleFloat {
+            0%, 100% { opacity: 1; transform: translateY(0px); }
+            50% { opacity: 0.8; transform: translateY(-10px); }
+        }
 
-.hashtag {
-    display: inline-block;
-    font-size: 14px;
-    font-weight: 600;
-    color: #ff7b3d;
-    background: linear-gradient(135deg, rgba(255, 123, 61, 0.1), rgba(255, 159, 90, 0.1));
-    padding: 10px 25px;
-    border-radius: 30px;
-    border: 2px solid rgba(255, 123, 61, 0.2);
-    margin-bottom: 25px;
-    letter-spacing: 1.5px;
-    backdrop-filter: blur(15px);
-    box-shadow: 0 8px 32px rgba(255, 123, 61, 0.1);
-    animation: floatBadge 6s ease-in-out infinite;
-    position: relative;
-    overflow: hidden;
-}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
 
-.hashtag::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-    animation: shimmerBadge 3s ease-in-out infinite;
-}
+        /* ===== ENCABEZADO ===== */
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
 
-@keyframes floatBadge {
-    0%, 100% { transform: translateY(0) scale(1); }
-    50% { transform: translateY(-5px) scale(1.02); }
-}
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%);
+            color: #0369a1;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 12px 24px;
+            border-radius: 50px;
+            border: 1px solid rgba(3, 105, 161, 0.1);
+            margin-bottom: 32px;
+            animation: slideInDown 0.8s ease-out;
+        }
 
-@keyframes shimmerBadge {
-    0% { left: -100%; }
-    100% { left: 100%; }
-}
+        .badge::before {
+            content: '✨';
+            font-size: 16px;
+        }
 
-.section-title {
-    font-size: 3.2rem;
-    font-weight: 900;
-    color: #2c3e50;
-    line-height: 1.1;
-    margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    position: relative;
-}
+        .section-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #1e293b;
+            line-height: 1.1;
+            margin-bottom: 16px;
+            animation: slideInUp 0.8s ease-out 0.2s both;
+        }
 
-.highlight {
-    background: linear-gradient(135deg, #ff7b3d, #ff9f5a, #ffb366);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    position: relative;
-    animation: gradientShift 4s ease-in-out infinite;
-}
+        .highlight {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s ease-in-out infinite;
+        }
 
-@keyframes gradientShift {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-}
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
 
-.highlight::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(135deg, #ff7b3d, #ff9f5a);
-    border-radius: 2px;
-    animation: expandLine 2s ease forwards;
-    box-shadow: 0 2px 10px rgba(255, 123, 61, 0.3);
-}
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+            animation: slideInUp 0.8s ease-out 0.4s both;
+        }
 
-@keyframes expandLine {
-    from { width: 0; margin: 0 auto; }
-    to { width: 100%; margin: 0; }
-}
+        /* ===== GRID DE LOGOS ===== */
+        .companies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+            margin-top: 60px;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
 
-/* ===== CARRUSELES DE LOGOS ===== */
-.companies-carousel {
-    margin: 60px 0;
-    overflow: hidden;
-    padding: 20px 0;
-    position: relative;
-}
+        .company-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 24px;
+            padding: 40px 20px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
 
-.companies-carousel::before,
-.companies-carousel::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 150px;
-    z-index: 3;
-    pointer-events: none;
-}
+        .company-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
 
-.companies-carousel::before {
-    left: 0;
-    background: linear-gradient(to right, rgba(248, 249, 250, 1) 0%, rgba(248, 249, 250, 0.8) 50%, transparent 100%);
-}
+        .company-card:hover::before {
+            opacity: 1;
+        }
 
-.companies-carousel::after {
-    right: 0;
-    background: linear-gradient(to left, rgba(248, 249, 250, 1) 0%, rgba(248, 249, 250, 0.8) 50%, transparent 100%);
-}
+        .company-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
 
-.companies-carousel.secondary {
-    margin: 40px 0 60px 0;
-}
+        .company-logo {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            transition: transform 0.4s ease;
+        }
 
-.carousel-track {
-    display: flex;
-    align-items: center;
-    animation: scrollRight 40s linear infinite;
-    gap: 80px;
-}
+        .company-card:hover .company-logo {
+            transform: scale(1.1) rotate(5deg);
+        }
 
-.carousel-track.reverse {
-    animation: scrollLeft 35s linear infinite;
-}
+        .company-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
 
-@keyframes scrollRight {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
+        .company-type {
+            font-size: 0.875rem;
+            color: #64748b;
+            font-weight: 500;
+        }
 
-@keyframes scrollLeft {
-    0% { transform: translateX(-50%); }
-    100% { transform: translateX(0); }
-}
+        /* ===== CARRUSEL MINIMALISTA ===== */
+        .companies-carousel {
+            margin-top: 80px;
+            overflow: hidden;
+            position: relative;
+            padding: 20px 0;
+        }
 
-.company-logo-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 160px;
-    height: 80px;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.7);
-    border-radius: 20px;
-    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-}
+        .carousel-track {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            animation: smoothScroll 30s linear infinite;
+        }
 
-.company-logo-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 123, 61, 0.1), transparent);
-    transition: left 0.8s ease;
-}
+        @keyframes smoothScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
 
-.company-logo-item:hover::before {
-    left: 100%;
-}
+        .carousel-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 120px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 16px;
+            font-size: 2rem;
+            color: #64748b;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
 
-.company-logo-item:hover {
-    transform: translateY(-8px) scale(1.05);
-    box-shadow: 0 25px 60px rgba(255, 123, 61, 0.15);
-    background: rgba(255, 255, 255, 0.95);
-    border-color: rgba(255, 123, 61, 0.3);
-}
+        .carousel-logo:hover {
+            background: rgba(255, 255, 255, 0.9);
+            transform: scale(1.05);
+            color: #3b82f6;
+        }
 
-.company-logo {
-    max-width: 120px;
-    max-height: 50px;
-    width: auto;
-    height: auto;
-    filter: grayscale(100%) contrast(1.1) brightness(0.9);
-    transition: all 0.5s ease;
-    object-fit: contain;
-}
+        /* ===== EFECTOS DE CARGA ===== */
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-.company-logo-item:hover .company-logo {
-    filter: grayscale(0%) contrast(1) brightness(1);
-    transform: scale(1.1);
-}
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-/* ===== EFECTOS ESPECIALES ===== */
-.companies-carousel:hover .carousel-track {
-    animation-play-state: paused;
-}
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-/* Partículas flotantes */
-.trusted-companies-section::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-        radial-gradient(circle at 20% 30%, rgba(255, 123, 61, 0.1) 2px, transparent 2px),
-        radial-gradient(circle at 80% 70%, rgba(255, 159, 90, 0.1) 1px, transparent 1px),
-        radial-gradient(circle at 40% 80%, rgba(255, 123, 61, 0.05) 3px, transparent 3px);
-    background-size: 300px 300px, 200px 200px, 400px 400px;
-    animation: floatParticles 20s linear infinite;
-    pointer-events: none;
-}
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .companies-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 20px;
+            }
+            
+            .company-card {
+                padding: 30px 15px;
+            }
+            
+            .company-logo {
+                font-size: 2rem;
+            }
+        }
 
-@keyframes floatParticles {
-    0% { transform: translateY(0px) translateX(0px); }
-    33% { transform: translateY(-10px) translateX(5px); }
-    66% { transform: translateY(-5px) translateX(-5px); }
-    100% { transform: translateY(0px) translateX(0px); }
-}
-
-/* ===== RESPONSIVE DESIGN ===== */
-@media (max-width: 1024px) {
-    .section-title {
-        font-size: 2.8rem;
-    }
-    
-    .company-logo-item {
-        min-width: 140px;
-        height: 70px;
-        padding: 15px;
-    }
-    
-    .company-logo {
-        max-width: 100px;
-        max-height: 40px;
-    }
-    
-    .carousel-track {
-        gap: 60px;
-    }
-}
-
-@media (max-width: 768px) {
-    .trusted-companies-section {
-        padding: 80px 0;
-    }
-    
-    .section-title {
-        font-size: 2.2rem;
-        letter-spacing: 2px;
-    }
-    
-    .section-header {
-        margin-bottom: 60px;
-    }
-    
-    .company-logo-item {
-        min-width: 120px;
-        height: 60px;
-        padding: 12px;
-    }
-    
-    .company-logo {
-        max-width: 80px;
-        max-height: 35px;
-    }
-    
-    .carousel-track {
-        gap: 40px;
-    }
-    
-    .companies-carousel::before,
-    .companies-carousel::after {
-        width: 80px;
-    }
-}
-
-@media (max-width: 480px) {
-    .section-title {
-        font-size: 1.8rem;
-        letter-spacing: 1px;
-    }
-    
-    .hashtag {
-        font-size: 12px;
-        padding: 8px 20px;
-    }
-    
-    .company-logo-item {
-        min-width: 100px;
-        height: 50px;
-        padding: 10px;
-    }
-    
-    .company-logo {
-        max-width: 70px;
-        max-height: 30px;
-    }
-    
-    .carousel-track {
-        gap: 30px;
-    }
-}
-
-/* ===== ANIMACIONES DE CARGA ===== */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.section-header {
-    animation: fadeInUp 1s ease 0.2s both;
-}
-
-.companies-carousel {
-    animation: fadeInUp 1s ease 0.4s both;
-}
-
-.companies-carousel.secondary {
-    animation: fadeInUp 1s ease 0.6s both;
-}
-</style>
+        @media (max-width: 480px) {
+            .trusted-companies-section {
+                padding: 80px 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .companies-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+  </style>
 </head>
 
 <body class="body1 b-bg1">
@@ -453,131 +364,87 @@
   <div class="space20"></div>
   <!--===== HERO AREA ENDS =======-->
 
-  <!-=====Empresas que confian en nosotros =======>
-<section class="trusted-companies-section">
-    <div class="container">
-        <div class="section-header">
-            <span class="hashtag">#AliadosEstratégicos</span>
-            <h2 class="section-title">
-                EMPRESAS QUE CONFÍAN<br>
-                <span class="highlight">EN NOSOTROS</span>
-            </h2>
-        </div>
-        
-        <!-- Carrusel Principal -->
-        <div class="companies-carousel">
-            <div class="carousel-track" id="carousel1">
-                <div class="company-logo-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoft/microsoft-original.svg" alt="Microsoft" class="company-logo">
+  <!--=====Empresas que confian en nosotros =======-->
+   <section class="trusted-companies-section">
+        <div class="container">
+            <!-- Encabezado -->
+            <div class="section-header">
+                <div class="badge">
+                    Aliados Estratégicos
                 </div>
-                <div class="company-logo-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Tesla_Motors.svg" alt="Tesla" class="company-logo">
-                </div>
-                <div class="company-logo-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Meta" class="company-logo">
-                </div>
-                <div class="company-logo-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Intel-logo.svg" alt="Intel" class="company-logo">
-                </div>
-                <div class="company-logo-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Mastercard-logo.svg" alt="Mastercard" class="company-logo">
-                </div>
-                <div class="company-logo-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg" alt="Apple" class="company-logo">
-                </div>
-                <div class="company-logo-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google" class="company-logo">
-                </div>
-                <div class="company-logo-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" class="company-logo">
-                </div>
-                <div class="company-logo-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Adobe_logo.svg" alt="Adobe" class="company-logo">
-                </div>
-                <div class="company-logo-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Spotify_logo_with_text.svg" alt="Spotify" class="company-logo">
-                </div>
-                <div class="company-logo-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Samsung_logo.svg" alt="Samsung" class="company-logo">
-                </div>
-                <div class="company-logo-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Coca-Cola_logo.svg" alt="Coca Cola" class="company-logo">
+                <h2 class="section-title">
+                    Empresas que Confían<br>
+                    <span class="highlight">en Nosotros</span>
+                </h2>
+                <p class="section-subtitle">
+                    Muchas empresas líderes han elegido nuestros espacios para impulsar su crecimiento y éxito empresarial.
+                </p>
+            </div>
+
+            <!-- Grid Principal de Empresas -->
+            <div class="companies-grid">
+                <div class="company-card" style="animation-delay: 0s">
+                    <div class="company-logo">🚀</div>
+                    <div class="company-name">Microsoft</div>
+                    <div class="company-type">Tecnología</div>
                 </div>
                 
-                <!-- Duplicamos para efecto infinito -->
-                <div class="company-logo-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoft/microsoft-original.svg" alt="Microsoft" class="company-logo">
+                <div class="company-card" style="animation-delay: 0.1s">
+                    <div class="company-logo">⚡</div>
+                    <div class="company-name">Tesla</div>
+                    <div class="company-type">Automoción</div>
                 </div>
-                <div class="company-logo-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Tesla_Motors.svg" alt="Tesla" class="company-logo">
+                
+                <div class="company-card" style="animation-delay: 0.2s">
+                    <div class="company-logo">📱</div>
+                    <div class="company-name">Apple</div>
+                    <div class="company-type">Tecnología</div>
                 </div>
-                <div class="company-logo-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Meta" class="company-logo">
+                
+                <div class="company-card" style="animation-delay: 0.3s">
+                    <div class="company-logo">🔍</div>
+                    <div class="company-name">Google</div>
+                    <div class="company-type">Internet</div>
                 </div>
-                <div class="company-logo-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Intel-logo.svg" alt="Intel" class="company-logo">
+                
+                <div class="company-card" style="animation-delay: 0.4s">
+                    <div class="company-logo">📦</div>
+                    <div class="company-name">Amazon</div>
+                    <div class="company-type">E-commerce</div>
                 </div>
-                <div class="company-logo-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Mastercard-logo.svg" alt="Mastercard" class="company-logo">
-                </div>
-                <div class="company-logo-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg" alt="Apple" class="company-logo">
+                
+            </div>
+
+            <!-- Carrusel Adicional -->
+            <div class="companies-carousel">
+                <div class="carousel-track">
+                    <div class="carousel-logo">💼</div>
+                    <div class="carousel-logo">🏢</div>
+                    <div class="carousel-logo">⭐</div>
+                    <div class="carousel-logo">🌟</div>
+                    <div class="carousel-logo">🎯</div>
+                    <div class="carousel-logo">🚀</div>
+                    <div class="carousel-logo">💡</div>
+                    <div class="carousel-logo">⚡</div>
+                    <div class="carousel-logo">🔥</div>
+                    <div class="carousel-logo">💎</div>
+                    
+                    <!-- Duplicados para efecto infinito -->
+                    <div class="carousel-logo">💼</div>
+                    <div class="carousel-logo">🏢</div>
+                    <div class="carousel-logo">⭐</div>
+                    <div class="carousel-logo">🌟</div>
+                    <div class="carousel-logo">🎯</div>
+                    <div class="carousel-logo">🚀</div>
+                    <div class="carousel-logo">💡</div>
+                    <div class="carousel-logo">⚡</div>
+                    <div class="carousel-logo">🔥</div>
+                    <div class="carousel-logo">💎</div>
                 </div>
             </div>
         </div>
-        
-        <!-- Carrusel Secundario (dirección opuesta) -->
-        <div class="companies-carousel secondary">
-            <div class="carousel-track reverse" id="carousel2">
-                <div class="company-logo-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Logo_of_YouTube_%282015-2017%29.svg" alt="YouTube" class="company-logo">
-                </div>
-                <div class="company-logo-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png" alt="Netflix" class="company-logo">
-                </div>
-                <div class="company-logo-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Puma_logo.svg" alt="Puma" class="company-logo">
-                </div>
-                <div class="company-logo-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" alt="Nike" class="company-logo">
-                </div>
-                <div class="company-logo-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Starbucks_Corporation_Logo_2011.svg" alt="Starbucks" class="company-logo">
-                </div>
-                <div class="company-logo-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Adidas_logo.svg" alt="Adidas" class="company-logo">
-                </div>
-                <div class="company-logo-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg" alt="X (Twitter)" class="company-logo">
-                </div>
-                <div class="company-logo-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/LinkedIn_Logo_2013.svg" alt="LinkedIn" class="company-logo">
-                </div>
-                <div class="company-logo-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/BMW_logo_%28gray%29.svg" alt="BMW" class="company-logo">
-                </div>
-                <div class="company-logo-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Mercedes-Benz_Logo_2010.svg" alt="Mercedes" class="company-logo">
-                </div>
-                
-                <!-- Duplicamos para efecto infinito -->
-                <div class="company-logo-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Logo_of_YouTube_%282015-2017%29.svg" alt="YouTube" class="company-logo">
-                </div>
-                <div class="company-logo-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png" alt="Netflix" class="company-logo">
-                </div>
-                <div class="company-logo-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Puma_logo.svg" alt="Puma" class="company-logo">
-                </div>
-                <div class="company-logo-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" alt="Nike" class="company-logo">
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-===== FIN Empresas que confian en nosotros =======>
+    </section>
+  <!--===== FIN Empresas que confian en nosotros =======-->
  
   <div class="space30"></div>
   <!--===== FOOTER AREA STARTS =======-->
@@ -622,161 +489,57 @@
   <script src="assets/js/plugins/jquery.appear.js"></script>
   <script src="assets/js/plugins/jquery.odometer.min.js"></script>
   <script src="assets/js/main.js"></script>
-  <script>
-// ===== ANIMACIONES AVANZADAS Y EFECTOS INTERACTIVOS =====
-document.addEventListener('DOMContentLoaded', function() {
-    
-    // ===== CONTROL DE VELOCIDAD DINÁMICO =====
-    const carousels = document.querySelectorAll('.carousel-track');
-    
-    carousels.forEach((carousel, index) => {
-        // Velocidades variables para más dinamismo
-        const baseSpeed = index % 2 === 0 ? 40 : 35;
-        carousel.style.animationDuration = `${baseSpeed}s`;
-        
-        // Pausar al hover
-        carousel.parentElement.addEventListener('mouseenter', () => {
-            carousel.style.animationPlayState = 'paused';
-        });
-        
-        carousel.parentElement.addEventListener('mouseleave', () => {
-            carousel.style.animationPlayState = 'running';
-        });
-    });
-    
-    // ===== EFECTO DE PULSO EN LOGOS AL SCROLL =====
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const logos = entry.target.querySelectorAll('.company-logo');
-                logos.forEach((logo, index) => {
-                    setTimeout(() => {
-                        logo.style.transform = 'scale(1.1)';
-                        setTimeout(() => {
-                            logo.style.transform = 'scale(1)';
-                        }, 200);
-                    }, index * 100);
+  
+  <!--===== ANIMACIONES AVANZADAS Y EFECTOS INTERACTIVOS =====-->
+   <script>
+        // Efectos interactivos mejorados
+        document.addEventListener('DOMContentLoaded', function() {
+            // Efecto de hover suave en las tarjetas
+            const cards = document.querySelectorAll('.company-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-12px) scale(1.03)';
                 });
-            }
-        });
-    }, {
-        threshold: 0.5
-    });
-    
-    // Observar carruseles
-    document.querySelectorAll('.companies-carousel').forEach(carousel => {
-        observer.observe(carousel);
-    });
-    
-    // ===== EFECTO PARALLAX EN EL TÍTULO =====
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const title = document.querySelector('.section-title');
-        const hashtag = document.querySelector('.hashtag');
-        
-        if (title && hashtag) {
-            const rate = scrolled * 0.3;
-            title.style.transform = `translateY(${rate}px)`;
-            hashtag.style.transform = `translateY(${rate * 0.5}px)`;
-        }
-    });
-    
-    // ===== CAMBIO DE VELOCIDAD AL FOCUS =====
-    document.addEventListener('visibilitychange', () => {
-        const carousels = document.querySelectorAll('.carousel-track');
-        carousels.forEach(carousel => {
-            if (document.hidden) {
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+
+            // Pausar carrusel al hover
+            const carousel = document.querySelector('.carousel-track');
+            const carouselContainer = document.querySelector('.companies-carousel');
+            
+            carouselContainer.addEventListener('mouseenter', () => {
                 carousel.style.animationPlayState = 'paused';
-            } else {
+            });
+            
+            carouselContainer.addEventListener('mouseleave', () => {
                 carousel.style.animationPlayState = 'running';
-            }
-        });
-    });
-    
-    // ===== EFECTO DE ONDAS AL CLICK =====
-    document.querySelectorAll('.company-logo-item').forEach(item => {
-        item.addEventListener('click', function(e) {
-            // Crear efecto de onda
-            const ripple = document.createElement('div');
-            ripple.style.position = 'absolute';
-            ripple.style.borderRadius = '50%';
-            ripple.style.background = 'rgba(255, 123, 61, 0.3)';
-            ripple.style.transform = 'scale(0)';
-            ripple.style.animation = 'ripple 0.6s linear';
-            ripple.style.left = '50%';
-            ripple.style.top = '50%';
-            ripple.style.width = ripple.style.height = '100px';
-            ripple.style.marginLeft = ripple.style.marginTop = '-50px';
-            
-            this.style.position = 'relative';
-            this.style.overflow = 'hidden';
-            this.appendChild(ripple);
-            
-            setTimeout(() => {
-                ripple.remove();
-            }, 600);
-        });
-    });
-    
-    // ===== ANIMACIÓN DE ENTRADA ESCALONADA =====
-    const logoItems = document.querySelectorAll('.company-logo-item');
-    logoItems.forEach((item, index) => {
-        item.style.animationDelay = `${index * 0.1}s`;
-        item.style.opacity = '0';
-        item.style.animation = 'fadeInScale 0.8s ease forwards';
-    });
-    
-    // ===== CONTADOR DE EMPRESAS ANIMADO =====
-    const createCounter = () => {
-        const totalLogos = document.querySelectorAll('.company-logo-item').length / 2; // Dividir por 2 porque están duplicados
-        console.log(`🏢 Mostrando ${totalLogos} empresas de confianza`);
-    };
-    
-    createCounter();
-    
-    // ===== EFECTO DE BRILLO ALEATORIO =====
-    setInterval(() => {
-        const randomLogo = Math.floor(Math.random() * logoItems.length);
-        const selectedItem = logoItems[randomLogo];
-        
-        if (selectedItem && !selectedItem.matches(':hover')) {
-            selectedItem.style.boxShadow = '0 0 30px rgba(255, 123, 61, 0.4)';
-            selectedItem.style.transform = 'scale(1.05)';
-            
-            setTimeout(() => {
-                selectedItem.style.boxShadow = '';
-                selectedItem.style.transform = '';
-            }, 1000);
-        }
-    }, 3000);
-});
+            });
 
-// ===== CSS DINÁMICO PARA ANIMACIONES =====
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes ripple {
-        to {
-            transform: scale(4);
-            opacity: 0;
-        }
-    }
-    
-    @keyframes fadeInScale {
-        from {
-            opacity: 0;
-            transform: scale(0.8) translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: scale(1) translateY(0);
-        }
-    }
-`;
-document.head.appendChild(style);
+            // Efecto de entrada escalonada mejorado
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
 
-// ===== LOG DE INICIALIZACIÓN =====
-console.log('🚀 Sección "Empresas que Confían" inicializada con efectos avanzados');
-</script>
+            // Observar elementos para animaciones
+            document.querySelectorAll('.company-card').forEach(card => {
+                observer.observe(card);
+            });
+
+            console.log('✨ Sección de empresas cargada con diseño elegante');
+        });
+   </script>
+
 </body>
 
 </html>

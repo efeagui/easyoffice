@@ -1,54 +1,16 @@
-<style>
-@media (max-width: 768px) {
-  body {
-    padding-top: 0 !important;
-    margin-top: 0 !important;
-  }
-  
-  #header-container {
-    margin-bottom: 0 !important;
-  }
-  
-  .inner-header-area {
-    padding-top: 80px !important; /* Ajustar según altura del header */
-    margin-top: 0 !important;
-  }
-  
-  .space30 {
-    height: 15px !important; /* Reducir espacios en móvil */
-  }
-}
-</style>
-
-<!--===== PRELOADER STARTS =======-->
-<div class="preloader">
-  <div class="loading-container">
-    <div class="loading"></div>
-    <div id="loading-icon"><img src="assets/img/logo/iniciales.png" alt="Easyoffice"></div>
-  </div>
-</div>
-<!--===== PRELOADER ENDS =======-->
-
-<!--===== PROGRESS STARTS=======-->
-<div class="paginacontainer">
-  <div class="progress-wrap">
-    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-    </svg>
-  </div>
-</div>
-<!--===== PROGRESS ENDS=======-->
-
-<!--=====HEADER START=======-->
+<!--===== HEADER START - VERSIÓN CORREGIDA =======-->
 <header class="homepage1-body">
   <div id="vl-header-sticky" class="vl-header-area vl-transparent-header">
     <div class="container-fluid">
       <div class="row align-items-center">
+        <!-- LOGO -->
         <div class="col-lg-2 col-md-6 col-6">
           <div class="vl-logo">
             <a href="index.html"><img src="assets/img/logo/EasyOffice logo.png" style="max-width: 80px; height: auto;" alt="Easyoffice"></a>
           </div>
         </div>
+        
+        <!-- MENÚ PRINCIPAL (SOLO SIMÉTRICO) -->
         <div class="col-lg-10 d-none d-lg-block">
           <div class="vl-main-menu text-center">
             <nav class="vl-mobile-menu-active">
@@ -113,7 +75,7 @@
                   </a>
                 </li>
 
-                <!-- Proyectos Oficiales -->
+                <!-- Proyectos Especiales -->
                 <li>
                   <a href="proyectos-oficiales.html" class="menu-item-with-icon">
                     <div class="menu-icon">
@@ -155,7 +117,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="about-us.html" class="submenu-item-with-icon">
+                      <a href="about-us.html" class="submenu-item-with-icon" style="text-align: left;">
                         <i class="fa-solid fa-heart"></i>
                         Acerca de Nosotros
                       </a>
@@ -173,7 +135,7 @@
           </div>
         </div>
 
-        <!-- Solo botón menú móvil - SIN WhatsApp desktop -->
+        <!-- BOTÓN MENÚ MÓVIL -->
         <div class="col-lg-0 col-md-6 col-6">
           <div class="vl-header-action-item d-block d-lg-none">
             <button type="button" class="vl-offcanvas-toggle">
@@ -188,7 +150,7 @@
 <br class="d-lg-block d-none">
 <!--=====HEADER END =======-->
 
-<!--===== MOBILE HEADER STARTS =======-->
+<!--===== MOBILE HEADER STARTS (SIMPLIFICADO SEGÚN NUEVOS CAMBIOS) =======-->
 <div class="homepage1-body">
   <div class="vl-offcanvas">
     <div class="vl-offcanvas-wrapper">
@@ -201,7 +163,7 @@
         </div>
       </div>
 
-      <!-- Grid móvil expandido -->
+      <!-- Grid móvil SIMPLIFICADO -->
       <div style="padding: 0 15px; margin-bottom: 20px;">
         <!-- Primera fila -->
         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 12px;">
@@ -216,48 +178,24 @@
             <div style="display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: linear-gradient(135deg, #FF6B00, #ff8533); border-radius: 50%; margin-bottom: 6px; color: white; font-size: 12px;">
               <i class="fa-solid fa-building"></i>
             </div>
-            <span style="font-size: 10px; font-weight: 600; text-align: center;">Oficinas TGU</span>
+            <span style="font-size: 10px; font-weight: 600; text-align: center;">Oficinas Privadas</span>
           </a>
           
-          <a href="oficinas-privadas-sps.html" class="mobile-hover-card" style="display: flex; flex-direction: column; align-items: center; padding: 12px 6px; background: rgba(255, 255, 255, 0.95); border-radius: 10px; text-decoration: none; color: #333; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" onmouseover="this.style.background='rgba(255, 255, 255, 1)'; this.style.border='2px solid #FF6B00'; this.style.color='#FF6B00'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 15px rgba(0, 0, 0, 0.15)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.95)'; this.style.border='none'; this.style.color='#333'; this.style.transform='translateY(0px)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'">
+          <a href="salas-juntas-tegucigalpa.html" class="mobile-hover-card" style="display: flex; flex-direction: column; align-items: center; padding: 12px 6px; background: rgba(255, 255, 255, 0.95); border-radius: 10px; text-decoration: none; color: #333; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" onmouseover="this.style.background='rgba(255, 255, 255, 1)'; this.style.border='2px solid #FF6B00'; this.style.color='#FF6B00'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 15px rgba(0, 0, 0, 0.15)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.95)'; this.style.border='none'; this.style.color='#333'; this.style.transform='translateY(0px)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'">
             <div style="display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: linear-gradient(135deg, #FF6B00, #ff8533); border-radius: 50%; margin-bottom: 6px; color: white; font-size: 12px;">
-              <i class="fa-solid fa-building"></i>
+              <i class="fa-solid fa-users"></i>
             </div>
-            <span style="font-size: 10px; font-weight: 600; text-align: center;">Oficinas SPS</span>
+            <span style="font-size: 10px; font-weight: 600; text-align: center;">Salas de Juntas</span>
           </a>
         </div>
 
         <!-- Segunda fila -->
         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 12px;">
-          <a href="salas-juntas-tegucigalpa.html" class="mobile-hover-card" style="display: flex; flex-direction: column; align-items: center; padding: 12px 6px; background: rgba(255, 255, 255, 0.95); border-radius: 10px; text-decoration: none; color: #333; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" onmouseover="this.style.background='rgba(255, 255, 255, 1)'; this.style.border='2px solid #FF6B00'; this.style.color='#FF6B00'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 15px rgba(0, 0, 0, 0.15)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.95)'; this.style.border='none'; this.style.color='#333'; this.style.transform='translateY(0px)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'">
-            <div style="display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: linear-gradient(135deg, #FF6B00, #ff8533); border-radius: 50%; margin-bottom: 6px; color: white; font-size: 12px;">
-              <i class="fa-solid fa-users"></i>
-            </div>
-            <span style="font-size: 10px; font-weight: 600; text-align: center;">Salas TGU</span>
-          </a>
-          
-          <a href="salas-juntas-sps.html" class="mobile-hover-card" style="display: flex; flex-direction: column; align-items: center; padding: 12px 6px; background: rgba(255, 255, 255, 0.95); border-radius: 10px; text-decoration: none; color: #333; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" onmouseover="this.style.background='rgba(255, 255, 255, 1)'; this.style.border='2px solid #FF6B00'; this.style.color='#FF6B00'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 15px rgba(0, 0, 0, 0.15)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.95)'; this.style.border='none'; this.style.color='#333'; this.style.transform='translateY(0px)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'">
-            <div style="display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: linear-gradient(135deg, #FF6B00, #ff8533); border-radius: 50%; margin-bottom: 6px; color: white; font-size: 12px;">
-              <i class="fa-solid fa-users"></i>
-            </div>
-            <span style="font-size: 10px; font-weight: 600; text-align: center;">Salas SPS</span>
-          </a>
-          
           <a href="coworking-tegucigalpa.html" class="mobile-hover-card" style="display: flex; flex-direction: column; align-items: center; padding: 12px 6px; background: rgba(255, 255, 255, 0.95); border-radius: 10px; text-decoration: none; color: #333; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" onmouseover="this.style.background='rgba(255, 255, 255, 1)'; this.style.border='2px solid #FF6B00'; this.style.color='#FF6B00'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 15px rgba(0, 0, 0, 0.15)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.95)'; this.style.border='none'; this.style.color='#333'; this.style.transform='translateY(0px)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'">
             <div style="display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: linear-gradient(135deg, #FF6B00, #ff8533); border-radius: 50%; margin-bottom: 6px; color: white; font-size: 12px;">
               <i class="fa-solid fa-people-group"></i>
             </div>
-            <span style="font-size: 10px; font-weight: 600; text-align: center;">Cowork TGU</span>
-          </a>
-        </div>
-
-        <!-- Tercera fila -->
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 12px;">
-          <a href="coworking-sps.html" class="mobile-hover-card" style="display: flex; flex-direction: column; align-items: center; padding: 12px 6px; background: rgba(255, 255, 255, 0.95); border-radius: 10px; text-decoration: none; color: #333; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" onmouseover="this.style.background='rgba(255, 255, 255, 1)'; this.style.border='2px solid #FF6B00'; this.style.color='#FF6B00'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 15px rgba(0, 0, 0, 0.15)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.95)'; this.style.border='none'; this.style.color='#333'; this.style.transform='translateY(0px)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'">
-            <div style="display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: linear-gradient(135deg, #FF6B00, #ff8533); border-radius: 50%; margin-bottom: 6px; color: white; font-size: 12px;">
-              <i class="fa-solid fa-people-group"></i>
-            </div>
-            <span style="font-size: 10px; font-weight: 600; text-align: center;">Cowork SPS</span>
+            <span style="font-size: 10px; font-weight: 600; text-align: center;">Coworking</span>
           </a>
           
           <a href="oficina-virtual.html" class="mobile-hover-card" style="display: flex; flex-direction: column; align-items: center; padding: 12px 6px; background: rgba(255, 255, 255, 0.95); border-radius: 10px; text-decoration: none; color: #333; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" onmouseover="this.style.background='rgba(255, 255, 255, 1)'; this.style.border='2px solid #FF6B00'; this.style.color='#FF6B00'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 15px rgba(0, 0, 0, 0.15)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.95)'; this.style.border='none'; this.style.color='#333'; this.style.transform='translateY(0px)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'">
@@ -275,13 +213,13 @@
           </a>
         </div>
 
-        <!-- Cuarta fila -->
+        <!-- Tercera fila -->
         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 12px;">
           <a href="proyectos-oficiales.html" class="mobile-hover-card" style="display: flex; flex-direction: column; align-items: center; padding: 12px 6px; background: rgba(255, 255, 255, 0.95); border-radius: 10px; text-decoration: none; color: #333; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" onmouseover="this.style.background='rgba(255, 255, 255, 1)'; this.style.border='2px solid #FF6B00'; this.style.color='#FF6B00'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 15px rgba(0, 0, 0, 0.15)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.95)'; this.style.border='none'; this.style.color='#333'; this.style.transform='translateY(0px)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'">
             <div style="display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: linear-gradient(135deg, #FF6B00, #ff8533); border-radius: 50%; margin-bottom: 6px; color: white; font-size: 12px;">
               <i class="fa-solid fa-clipboard-check"></i>
             </div>
-            <span style="font-size: 10px; font-weight: 600; text-align: center;">Proy. Oficiales</span>
+            <span style="font-size: 10px; font-weight: 600; text-align: center;">Proy. Especiales</span>
           </a>
           
           <a href="servicios-adicionales.html" class="mobile-hover-card" style="display: flex; flex-direction: column; align-items: center; padding: 12px 6px; background: rgba(255, 255, 255, 0.95); border-radius: 10px; text-decoration: none; color: #333; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" onmouseover="this.style.background='rgba(255, 255, 255, 1)'; this.style.border='2px solid #FF6B00'; this.style.color='#FF6B00'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 15px rgba(0, 0, 0, 0.15)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.95)'; this.style.border='none'; this.style.color='#333'; this.style.transform='translateY(0px)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'">
@@ -299,7 +237,7 @@
           </a>
         </div>
 
-        <!-- Quinta fila -->
+        <!-- Cuarta fila -->
         <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 20px;">
           <a href="faq.html" class="mobile-hover-card" style="display: flex; flex-direction: column; align-items: center; padding: 12px 6px; background: rgba(255, 255, 255, 0.95); border-radius: 10px; text-decoration: none; color: #333; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" onmouseover="this.style.background='rgba(255, 255, 255, 1)'; this.style.border='2px solid #FF6B00'; this.style.color='#FF6B00'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 15px rgba(0, 0, 0, 0.15)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.95)'; this.style.border='none'; this.style.color='#333'; this.style.transform='translateY(0px)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'">
             <div style="display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: linear-gradient(135deg, #FF6B00, #ff8533); border-radius: 50%; margin-bottom: 6px; color: white; font-size: 12px;">
@@ -365,15 +303,65 @@
 </div>
 <!--===== MOBILE HEADER ENDS =======-->
 
+<!-- ===== ESTILOS SOLO PARA SIMETRÍA ===== -->
 <style>
-/* Estilos para el menú desktop con iconos */
+/* Responsive para móvil */
+@media (max-width: 768px) {
+  body {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+  
+  #header-container {
+    margin-bottom: 0 !important;
+  }
+  
+  .inner-header-area {
+    padding-top: 80px !important;
+    margin-top: 0 !important;
+  }
+  
+  .space30 {
+    height: 15px !important;
+  }
+}
+
+/* ===== SOLO SIMETRÍA DESKTOP ===== */
+.vl-main-menu {
+  width: 100% !important;
+  padding: 0 20px !important;
+}
+
+.vl-main-menu nav ul {
+  display: flex !important;
+  justify-content: space-evenly !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+  width: 100% !important;
+}
+
+.vl-main-menu nav ul li {
+  flex: 1 !important;
+  margin: 0 !important;
+  padding: 0 5px !important;
+  text-align: center !important;
+  position: relative !important;
+}
+
+/* Menu items con iconos */
 .menu-item-with-icon {
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
+  justify-content: center !important;
   text-decoration: none !important;
   padding: 8px 12px !important;
   transition: all 0.3s ease !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
 }
 
 .menu-icon {
@@ -388,6 +376,16 @@
   color: white;
   font-size: 14px;
   transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.menu-item-with-icon span {
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: #333 !important;
+  margin-top: 2px !important;
+  white-space: nowrap !important;
+  text-align: center !important;
 }
 
 .menu-item-with-icon:hover .menu-icon {
@@ -395,54 +393,65 @@
   box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
 }
 
-.menu-item-with-icon span {
-  font-size: 12px;
-  font-weight: 500;
-  color: #333;
-  margin-top: 2px;
-}
-
 .menu-item-with-icon:hover span {
-  color: #FF6B00;
+  color: #FF6B00 !important;
 }
 
-/* Dropdown positioning */
+/* Dropdown positioning ARREGLADO - VERTICAL */
 .has-dropdown {
   position: relative !important;
 }
 
 .has-dropdown .sub-menu {
   position: absolute !important;
-  top: calc(100% + 5px) !important;
+  top: 100% !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
   background: white !important;
   border-radius: 10px !important;
   box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
-  padding: 15px 0 !important;
-  min-width: 180px !important;
+  padding: 10px 0 !important;
+  min-width: 200px !important;
   opacity: 0 !important;
   visibility: hidden !important;
   transition: all 0.3s ease !important;
-  z-index: 9999 !important;
-  margin-top: 10px !important;
+  z-index: 99999 !important;
+  margin-top: 15px !important;
   border: 1px solid #eee !important;
+  list-style: none !important;
+  display: block !important;
+}
+
+.has-dropdown .sub-menu li {
+  display: block !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  float: none !important;
+  flex: none !important;
 }
 
 .has-dropdown:hover .sub-menu {
   opacity: 1 !important;
   visibility: visible !important;
-  margin-top: 0 !important;
+  margin-top: 5px !important;
   transform: translateX(-50%) translateY(0) !important;
 }
 
 .submenu-item-with-icon {
   display: flex !important;
   align-items: center !important;
-  padding: 10px 15px !important;
+  width: 100% !important;
+  padding: 12px 20px !important;
   text-decoration: none !important;
   transition: all 0.3s ease !important;
   color: #333 !important;
+  border-bottom: 1px solid #f5f5f5 !important;
+  box-sizing: border-box !important;
+}
+
+.submenu-item-with-icon:last-child {
+  border-bottom: none !important;
 }
 
 .submenu-item-with-icon:hover {
@@ -451,36 +460,55 @@
 }
 
 .submenu-item-with-icon i {
-  margin-right: 8px;
+  margin-right: 12px;
   color: #FF6B00;
-  width: 14px;
-  font-size: 12px;
+  width: 16px;
+  font-size: 14px;
+  display: inline-block;
+  text-align: center;
+  flex-shrink: 0;
 }
 
-/* Active state */
+/* Estados activos */
 .menu-item-with-icon.active .menu-icon {
-  background: linear-gradient(135deg, #333, #555);
+  background: linear-gradient(135deg, #333, #555) !important;
 }
 
 .menu-item-with-icon.active span {
-  color: #333;
-  font-weight: 600;
+  color: #333 !important;
+  font-weight: 600 !important;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-  .vl-main-menu ul li {
-    margin: 0 5px;
+/* Responsive */
+@media (max-width: 1400px) {
+  .menu-item-with-icon span {
+    font-size: 11px !important;
   }
   
   .menu-icon {
-    width: 30px;
-    height: 30px;
-    font-size: 12px;
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 13px !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .vl-main-menu {
+    padding: 0 10px !important;
+  }
+  
+  .vl-main-menu nav ul li {
+    padding: 0 3px !important;
+  }
+  
+  .menu-icon {
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 12px !important;
   }
   
   .menu-item-with-icon span {
-    font-size: 11px;
+    font-size: 10px !important;
   }
   
   .has-dropdown .sub-menu {
@@ -488,46 +516,38 @@
   }
 }
 
-@media (max-width: 991px) {
-  .vl-main-menu ul li {
-    margin: 0 3px;
+@media (max-width: 1024px) {
+  .menu-item-with-icon span {
+    font-size: 9px !important;
   }
   
   .menu-icon {
-    width: 28px;
-    height: 28px;
-    font-size: 11px;
-  }
-  
-  .menu-item-with-icon span {
-    font-size: 10px;
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 11px !important;
   }
 }
 </style>
 
+<!-- ===== JAVASCRIPT ===== -->
 <script>
-// Script mejorado para marcar página activa y prevenir clicks
 document.addEventListener('DOMContentLoaded', function() {
-  // Obtener página actual de manera más robusta
   const currentPath = window.location.pathname;
   const currentPage = currentPath.split('/').pop() || 'index.html';
   
-  console.log('Página actual detectada:', currentPage); // Para debug
+  console.log('Página actual detectada:', currentPage);
   
   const menuLinks = document.querySelectorAll('.menu-item-with-icon, .submenu-item-with-icon');
   const mobileLinks = document.querySelectorAll('.mobile-hover-card');
   
-  // Función para procesar links
   function processLinks(links) {
     links.forEach(link => {
       const href = link.getAttribute('href');
       
       if (!href || href === '#') return;
       
-      // Verificar si es la página actual
       let isCurrentPage = false;
       
-      // Casos específicos mejorados
       if (href === currentPage) {
         isCurrentPage = true;
       } else if (currentPage === '' && href === 'index.html') {
@@ -537,20 +557,18 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       
       if (isCurrentPage) {
-        console.log('Página activa encontrada:', href); // Para debug
+        console.log('Página activa encontrada:', href);
         
         link.classList.add('active');
         
-        // Prevenir el click de manera más efectiva
         link.addEventListener('click', function(e) {
           e.preventDefault();
           e.stopPropagation();
           e.stopImmediatePropagation();
           console.log('Click prevenido en página activa:', href);
           return false;
-        }, true); // Usar capture para mayor efectividad
+        }, true);
         
-        // Estilos para página activa
         if (link.classList.contains('menu-item-with-icon')) {
           link.style.pointerEvents = 'none';
           link.style.cursor = 'default';
@@ -567,11 +585,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // Procesar tanto links de desktop como móvil
   processLinks(menuLinks);
   processLinks(mobileLinks);
   
-  // Asegurar que el header se mantenga visible
   const header = document.querySelector('#vl-header-sticky');
   if (header) {
     header.style.display = 'block';
@@ -579,7 +595,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// Función adicional para forzar visibilidad del header
 function ensureHeaderVisibility() {
   const header = document.querySelector('#vl-header-sticky');
   const headerContainer = document.getElementById('header-container');
@@ -602,7 +617,6 @@ function ensureHeaderVisibility() {
   }
 }
 
-// Ejecutar después de cargar el DOM y después de un pequeño delay
 window.addEventListener('load', function() {
   setTimeout(ensureHeaderVisibility, 100);
 });
