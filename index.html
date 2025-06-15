@@ -4,303 +4,408 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Easyoffice</title>
+  <title>Easyoffice - En Construcción</title>
   <!--=====FAB ICON=======-->
   <link rel="shortcut icon" href="assets/img/logo/EasyOffice logo.png" type="image/x-icon">
   <!--===== CSS LINK =======-->
   <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/plugins/aos.css">
   <link rel="stylesheet" href="assets/css/plugins/fontawesome.css">
-  <link rel="stylesheet" href="assets/css/plugins/magnific-popup.css">
-  <link rel="stylesheet" href="assets/css/plugins/owlcarousel.min.css">
-  <link rel="stylesheet" href="assets/css/plugins/sidebar.css">
-  <link rel="stylesheet" href="assets/css/plugins/slick-slider.css">
-  <link rel="stylesheet" href="assets/css/plugins/nice-select.css">
-  <link rel="stylesheet" href="assets/css/plugins/swiper-slider.css">
-  <link rel="stylesheet" href="assets/css/plugins/odometer.css">
   <link rel="stylesheet" href="assets/css/main.css">
-  <!-- Style empresas Afiliadas -->
+  
+  <!-- Fuentes Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
   <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #fafbfc;
-        }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #fafbfc;
+      overflow-x: hidden;
+    }
 
-        /* ===== SECCIÓN PRINCIPAL ===== */
-        .trusted-companies-section {
-            padding: 120px 0;
-            background: linear-gradient(135deg,rgb(158, 151, 136) 0%,rgb(224, 205, 163) 50%,rgb(241, 199, 108) 100%);
-            position: relative;
-            overflow: hidden;
-        }
+    /* ===== SECCIÓN EN CONSTRUCCIÓN ===== */
+    .construction-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgb(158, 151, 136) 0%, rgb(224, 205, 163) 50%, rgb(241, 199, 108) 100%);
+      position: relative;
+      overflow: hidden;
+      padding: 80px 20px;
+    }
 
-        .trusted-companies-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(147, 51, 234, 0.03) 0%, transparent 50%);
-            animation: gentleFloat 12s ease-in-out infinite;
-        }
+    /* Efectos de fondo animados */
+    .construction-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 40% 60%, rgba(241, 199, 108, 0.3) 0%, transparent 40%);
+      animation: gentleFloat 15s ease-in-out infinite;
+    }
 
-        @keyframes gentleFloat {
-            0%, 100% { opacity: 1; transform: translateY(0px); }
-            50% { opacity: 0.8; transform: translateY(-10px); }
-        }
+    .floating-shapes {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            position: relative;
-            z-index: 2;
-        }
+    .shape {
+      position: absolute;
+      opacity: 0.1;
+      animation: floatUpDown 8s ease-in-out infinite;
+    }
 
-        /* ===== ENCABEZADO ===== */
-        .section-header {
-            text-align: center;
-            margin-bottom: 80px;
-        }
+    .shape:nth-child(1) {
+      top: 10%;
+      left: 10%;
+      animation-delay: 0s;
+      font-size: 3rem;
+    }
 
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%);
-            color: #0369a1;
-            font-size: 14px;
-            font-weight: 600;
-            padding: 12px 24px;
-            border-radius: 50px;
-            border: 1px solid rgba(3, 105, 161, 0.1);
-            margin-bottom: 32px;
-            animation: slideInDown 0.8s ease-out;
-        }
+    .shape:nth-child(2) {
+      top: 20%;
+      right: 15%;
+      animation-delay: 2s;
+      font-size: 2.5rem;
+    }
 
-        .badge::before {
-            content: '✨';
-            font-size: 16px;
-        }
+    .shape:nth-child(3) {
+      bottom: 20%;
+      left: 20%;
+      animation-delay: 4s;
+      font-size: 4rem;
+    }
 
-        .section-title {
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: #1e293b;
-            line-height: 1.1;
-            margin-bottom: 16px;
-            animation: slideInUp 0.8s ease-out 0.2s both;
-        }
+    .shape:nth-child(4) {
+      bottom: 30%;
+      right: 10%;
+      animation-delay: 6s;
+      font-size: 2rem;
+    }
 
-        .highlight {
-            background: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradientShift 3s ease-in-out infinite;
-        }
+    @keyframes floatUpDown {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      33% { transform: translateY(-20px) rotate(10deg); }
+      66% { transform: translateY(10px) rotate(-5deg); }
+    }
 
-        @keyframes gradientShift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
+    @keyframes gentleFloat {
+      0%, 100% { opacity: 1; transform: translateY(0px) scale(1); }
+      50% { opacity: 0.8; transform: translateY(-15px) scale(1.02); }
+    }
 
-        .section-subtitle {
-            font-size: 1.125rem;
-            color: #64748b;
-            max-width: 600px;
-            margin: 0 auto;
-            animation: slideInUp 0.8s ease-out 0.4s both;
-        }
+    /* ===== CONTENIDO PRINCIPAL ===== */
+    .construction-container {
+      max-width: 800px;
+      text-align: center;
+      position: relative;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-radius: 32px;
+      padding: 80px 60px;
+      box-shadow: 
+        0 25px 60px rgba(0, 0, 0, 0.1),
+        0 0 0 1px rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      animation: slideInUp 1s ease-out;
+    }
 
-        /* ===== GRID DE LOGOS ===== */
-        .companies-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 32px;
-            margin-top: 60px;
-            animation: fadeInUp 1s ease-out 0.6s both;
-        }
+    /* Icono principal animado */
+    .construction-icon {
+      font-size: 5rem;
+      margin-bottom: 32px;
+      display: inline-block;
+      animation: constructionPulse 2s ease-in-out infinite;
+    }
 
-        .company-card {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 24px;
-            padding: 40px 20px;
-            text-align: center;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-        }
+    @keyframes constructionPulse {
+      0%, 100% { transform: scale(1) rotate(0deg); }
+      50% { transform: scale(1.1) rotate(5deg); }
+    }
 
-        .company-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1));
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
+    /* Badge de estado */
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #fef3c7, #fbbf24);
+      color: #92400e;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 12px 28px;
+      border-radius: 50px;
+      margin-bottom: 32px;
+      border: 1px solid rgba(146, 64, 14, 0.2);
+      animation: slideInDown 1s ease-out 0.3s both;
+    }
 
-        .company-card:hover::before {
-            opacity: 1;
-        }
+    .status-badge::before {
+      content: '⚡';
+      font-size: 16px;
+      animation: sparkle 1.5s ease-in-out infinite;
+    }
 
-        .company-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
-            border-color: rgba(59, 130, 246, 0.3);
-        }
+    @keyframes sparkle {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
 
-        .company-logo {
-            font-size: 2.5rem;
-            margin-bottom: 16px;
-            transition: transform 0.4s ease;
-        }
+    /* Título principal */
+    .main-title {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: #1e293b;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      animation: slideInUp 1s ease-out 0.5s both;
+    }
 
-        .company-card:hover .company-logo {
-            transform: scale(1.1) rotate(5deg);
-        }
+    .title-highlight {
+      background: linear-gradient(135deg, #f59e0b, #d97706, #92400e);
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: gradientShift 3s ease-in-out infinite;
+    }
 
-        .company-name {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #1e293b;
-            margin-bottom: 8px;
-        }
+    @keyframes gradientShift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
 
-        .company-type {
-            font-size: 0.875rem;
-            color: #64748b;
-            font-weight: 500;
-        }
+    /* Subtítulo */
+    .subtitle {
+      font-size: 1.25rem;
+      color: #64748b;
+      font-weight: 500;
+      margin-bottom: 40px;
+      line-height: 1.6;
+      animation: slideInUp 1s ease-out 0.7s both;
+    }
 
-        /* ===== CARRUSEL MINIMALISTA ===== */
-        .companies-carousel {
-            margin-top: 80px;
-            overflow: hidden;
-            position: relative;
-            padding: 20px 0;
-        }
+    /* Mensaje inspirador */
+    .inspiring-message {
+      background: linear-gradient(135deg, rgba(249, 250, 251, 0.8), rgba(243, 244, 246, 0.8));
+      border-radius: 20px;
+      padding: 40px;
+      margin: 40px 0;
+      border: 1px solid rgba(229, 231, 235, 0.5);
+      animation: slideInUp 1s ease-out 0.9s both;
+    }
 
-        .carousel-track {
-            display: flex;
-            align-items: center;
-            gap: 60px;
-            animation: smoothScroll 30s linear infinite;
-        }
+    .inspiring-message h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #374151;
+      margin-bottom: 16px;
+    }
 
-        @keyframes smoothScroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
+    .inspiring-message p {
+      font-size: 1.1rem;
+      color: #6b7280;
+      line-height: 1.7;
+    }
 
-        .carousel-logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 120px;
-            height: 80px;
-            background: rgba(255, 255, 255, 0.6);
-            border-radius: 16px;
-            font-size: 2rem;
-            color: #64748b;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
+    /* Barra de progreso animada */
+    .progress-container {
+      margin: 48px 0;
+      animation: slideInUp 1s ease-out 1.1s both;
+    }
 
-        .carousel-logo:hover {
-            background: rgba(255, 255, 255, 0.9);
-            transform: scale(1.05);
-            color: #3b82f6;
-        }
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #374151;
+    }
 
-        /* ===== EFECTOS DE CARGA ===== */
-        @keyframes slideInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    .progress-bar {
+      height: 12px;
+      background: rgba(229, 231, 235, 0.5);
+      border-radius: 6px;
+      overflow: hidden;
+      position: relative;
+    }
 
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: 6px;
+      width: 0%;
+      animation: progressFill 3s ease-out 2s forwards;
+      position: relative;
+    }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    .progress-fill::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      animation: progressShine 2s ease-in-out infinite;
+    }
 
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 768px) {
-            .section-title {
-                font-size: 2.5rem;
-            }
-            
-            .companies-grid {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-                gap: 20px;
-            }
-            
-            .company-card {
-                padding: 30px 15px;
-            }
-            
-            .company-logo {
-                font-size: 2rem;
-            }
-        }
+    @keyframes progressFill {
+      to { width: 75%; }
+    }
 
-        @media (max-width: 480px) {
-            .trusted-companies-section {
-                padding: 80px 0;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .companies-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
+    @keyframes progressShine {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    /* Lista de características */
+    .features-list {
+      text-align: left;
+      margin: 40px 0;
+      animation: slideInUp 1s ease-out 1.3s both;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(229, 231, 235, 0.3);
+    }
+
+    .feature-item:last-child {
+      border-bottom: none;
+    }
+
+    .feature-icon {
+      font-size: 1.5rem;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #fef3c7, #fbbf24);
+      border-radius: 12px;
+      color: #92400e;
+    }
+
+    .feature-text {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #374151;
+    }
+
+    /* Botón de notificación */
+    .notify-button {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 600;
+      padding: 18px 40px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 32px;
+      box-shadow: 0 10px 30px rgba(245, 158, 11, 0.3);
+      animation: slideInUp 1s ease-out 1.5s both;
+    }
+
+    .notify-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(245, 158, 11, 0.4);
+    }
+
+    /* Efectos de entrada */
+    @keyframes slideInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .construction-container {
+        padding: 60px 40px;
+        margin: 20px;
+      }
+
+      .main-title {
+        font-size: 2.5rem;
+      }
+
+      .construction-icon {
+        font-size: 4rem;
+      }
+
+      .subtitle {
+        font-size: 1.1rem;
+      }
+
+      .inspiring-message {
+        padding: 30px 25px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .construction-container {
+        padding: 40px 25px;
+      }
+
+      .main-title {
+        font-size: 2rem;
+      }
+
+      .construction-icon {
+        font-size: 3rem;
+      }
+
+      .features-list {
+        text-align: center;
+      }
+
+      .feature-item {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 
 <body class="body1 b-bg1">
+  <!-- Header Container -->
   <div id="header-container"></div>
 
   <script>
@@ -308,147 +413,97 @@
       .then(response => response.text())
       .then(data => {
         document.getElementById('header-container').innerHTML = data;
+      })
+      .catch(error => {
+        console.error('Error cargando el header:', error);
       });
   </script>
-  <!--===== HERO AREA STARTS =======-->
-  <div class="hero1-section-area">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="hero-heading-content heading1">
-            <h1 class="text-anime-style-3">Easy Office <br class="d-lg-block d-none"> Coworking</h1>
-            <div class="space20"></div>
-            <p class="text-anime-style-1" style="text-align: justify;">Descubre la solución perfecta para tu negocio en nuestro espacio de coworking. Ofrecemos alquiler de oficinas flexibles y personalizadas que se adaptan a tus necesidades. ¿Buscas una dirección comercial y un servicio de recepción de llamadas? ¿O tal vez un espacio para reuniones y eventos? ¡Nosotros tenemos la solución ideal para ti! </p>
-            <div class="space32"></div>
-            <div class="btn-area1" data-aos="fade-left" data-aos-duration="1000">
-              <a href="add-property.html" class="vl-btn1">contactanos ahora <span class="arrow1"><i class="fa-solid fa-arrow-right"></i></span><span class="arrow2"><i class="fa-solid fa-arrow-right"></i></span></a>
-            </div>
-            <div class="space80 d-lg-block d-none"></div>
-            <div class="space40 d-lg-none d-block"></div>
-            <div class="counter-boxarea">
-              <div class="row">
-                <div class="col-lg-4 col-md-4 col-6" data-aos="fade-up" data-aos-duration="300">
-                  <div class="counter-box">
-                    <h1><span class="odometer text-nowrap" data-count="180"></span>+</h1>
-                    <div class="space10"></div>
-                    <p>Selling Property</p>
-                  </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-6" data-aos="fade-up" data-aos-duration="500">
-                  <div class="counter-box">
-                    <h1><span class="odometer text-nowrap" data-count="120"></span>+</h1>
-                    <div class="space10"></div>
-                    <p>Buying Property</p>
-                  </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-12" data-aos="fade-up" data-aos-duration="700">
-                  <div class="space30 d-md-none d-block"></div>
-                  <div class="counter-box">
-                    <h1><span class="odometer text-nowrap" data-count="150"></span>+</h1>
-                    <div class="space10"></div>
-                    <p>Property Available</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+
+  <br>
+  <br>
+  <br>
+
+  <!-- ===== SECCIÓN EN CONSTRUCCIÓN ===== -->
+  <section class="construction-section">
+    <!-- Formas flotantes animadas -->
+    <div class="floating-shapes">
+      <div class="shape">🏢</div>
+      <div class="shape">💼</div>
+      <div class="shape">🚀</div>
+      <div class="shape">⭐</div>
+    </div>
+
+    <div class="construction-container">
+      <!-- Icono principal -->
+      <div class="construction-icon">🚧</div>
+
+      <!-- Badge de estado -->
+      <div class="status-badge">
+        Trabajando en algo increíble
+      </div>
+
+      <!-- Título principal -->
+      <h1 class="main-title">
+        Estamos Construyendo<br>
+        <span class="title-highlight">Algo Extraordinario</span>
+      </h1>
+
+      <!-- Subtítulo -->
+      <p class="subtitle">
+        Nuestro equipo está trabajando día y noche para traerte la mejor experiencia de coworking. 
+        Muy pronto podrás disfrutar de espacios únicos diseñados para tu éxito.
+      </p>
+
+      <!-- Mensaje inspirador -->
+      <div class="inspiring-message">
+        <h3>💫 Tu Futuro Espacio de Trabajo Te Espera</h3>
+        <p>
+          Estamos creando más que oficinas, estamos construyendo el lugar donde tus ideas cobrarán vida, 
+          donde conocerás personas extraordinarias y donde cada día será una oportunidad para crecer. 
+          ¡La espera valdrá la pena!
+        </p>
+      </div>
+
+      <!-- Barra de progreso -->
+      <div class="progress-container">
+        <div class="progress-label">
+          <span>Progreso del Proyecto</span>
+          <span>75%</span>
         </div>
-        <div class="col-lg-6">
-          <div class="hero-images-area image-anime">
-            <img src="assets/img/all-images/hero/hero-img1.png" alt="housa">
-          </div>
+        <div class="progress-bar">
+          <div class="progress-fill"></div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="space20"></div>
-  <!--===== HERO AREA ENDS =======-->
 
-  <!--=====Empresas que confian en nosotros =======-->
-   <section class="trusted-companies-section">
-        <div class="container">
-            <!-- Encabezado -->
-            <div class="section-header">
-                <div class="badge">
-                    Aliados Estratégicos
-                </div>
-                <h2 class="section-title">
-                    Empresas que Confían<br>
-                    <span class="highlight">en Nosotros</span>
-                </h2>
-                <p class="section-subtitle">
-                    Muchas empresas líderes han elegido nuestros espacios para impulsar su crecimiento y éxito empresarial.
-                </p>
-            </div>
-
-            <!-- Grid Principal de Empresas -->
-            <div class="companies-grid">
-                <div class="company-card" style="animation-delay: 0s">
-                    <div class="company-logo">🚀</div>
-                    <div class="company-name">Microsoft</div>
-                    <div class="company-type">Tecnología</div>
-                </div>
-                
-                <div class="company-card" style="animation-delay: 0.1s">
-                    <div class="company-logo">⚡</div>
-                    <div class="company-name">Tesla</div>
-                    <div class="company-type">Automoción</div>
-                </div>
-                
-                <div class="company-card" style="animation-delay: 0.2s">
-                    <div class="company-logo">📱</div>
-                    <div class="company-name">Apple</div>
-                    <div class="company-type">Tecnología</div>
-                </div>
-                
-                <div class="company-card" style="animation-delay: 0.3s">
-                    <div class="company-logo">🔍</div>
-                    <div class="company-name">Google</div>
-                    <div class="company-type">Internet</div>
-                </div>
-                
-                <div class="company-card" style="animation-delay: 0.4s">
-                    <div class="company-logo">📦</div>
-                    <div class="company-name">Amazon</div>
-                    <div class="company-type">E-commerce</div>
-                </div>
-                
-            </div>
-
-            <!-- Carrusel Adicional -->
-            <div class="companies-carousel">
-                <div class="carousel-track">
-                    <div class="carousel-logo">💼</div>
-                    <div class="carousel-logo">🏢</div>
-                    <div class="carousel-logo">⭐</div>
-                    <div class="carousel-logo">🌟</div>
-                    <div class="carousel-logo">🎯</div>
-                    <div class="carousel-logo">🚀</div>
-                    <div class="carousel-logo">💡</div>
-                    <div class="carousel-logo">⚡</div>
-                    <div class="carousel-logo">🔥</div>
-                    <div class="carousel-logo">💎</div>
-                    
-                    <!-- Duplicados para efecto infinito -->
-                    <div class="carousel-logo">💼</div>
-                    <div class="carousel-logo">🏢</div>
-                    <div class="carousel-logo">⭐</div>
-                    <div class="carousel-logo">🌟</div>
-                    <div class="carousel-logo">🎯</div>
-                    <div class="carousel-logo">🚀</div>
-                    <div class="carousel-logo">💡</div>
-                    <div class="carousel-logo">⚡</div>
-                    <div class="carousel-logo">🔥</div>
-                    <div class="carousel-logo">💎</div>
-                </div>
-            </div>
+      <!-- Lista de características que vendrán -->
+      <div class="features-list">
+        <div class="feature-item">
+          <div class="feature-icon">🏢</div>
+          <div class="feature-text">Oficinas flexibles y modernas</div>
         </div>
-    </section>
-  <!--===== FIN Empresas que confian en nosotros =======-->
- 
-  <div class="space30"></div>
-  <!--===== FOOTER AREA STARTS =======-->
-   <div id="footer-container"></div>
+        <div class="feature-item">
+          <div class="feature-icon">🤝</div>
+          <div class="feature-text">Espacios de networking y colaboración</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">📞</div>
+          <div class="feature-text">Servicios de recepción profesional</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🎯</div>
+          <div class="feature-text">Salas de juntas equipadas</div>
+        </div>
+      </div>
+
+      <!-- Botón de notificación -->
+      <button class="notify-button" onclick="notifyMe()">
+        Notifícame cuando esté listo ✨
+      </button>
+    </div>
+  </section>
+
+  <!-- Footer Container -->
+  <div id="footer-container"></div>
 
   <script>
     fetch('footer.html')
@@ -460,86 +515,45 @@
         console.error('Error cargando el footer:', error);
       });
   </script>
-  
-  <div class="space32"></div>
- 
-  <!-- ✅ WIDGET WHATSAPP MODULAR - UNA SOLA LÍNEA -->
-   <script src="/assets/js/plugins/whatsapp-widget.js"></script>
-  <!--===== FOOTER AREA ENDS =======-->
 
-  <div class="space32"></div>
-  <!--===== JS SCRIPT LINK =======-->
+  <!-- Scripts -->
   <script src="assets/js/plugins/jquery-3-7-1.min.js"></script>
   <script src="assets/js/plugins/bootstrap.min.js"></script>
-  <script src="assets/js/plugins/fontawesome.js"></script>
   <script src="assets/js/plugins/aos.js"></script>
-  <script src="assets/js/plugins/chart.js"></script>
-  <script src="assets/js/plugins/gsap.min.js"></script>
-  <script src="assets/js/plugins/ScrollTrigger.min.js"></script>
-  <script src="assets/js/plugins/textSplite-custom.js"></script>
-  <script src="assets/js/plugins/sidebar.js"></script>
-  <script src="assets/js/plugins/swiper-slider.js"></script>
-  <script src="assets/js/plugins/magnific-popup.js"></script>
-  <script src="assets/js/plugins/mobilemenu.js"></script>
-  <script src="assets/js/plugins/owlcarousel.min.js"></script>
-  <script src="assets/js/plugins/nice-select.js"></script>
-  <script src="assets/js/plugins/waypoints.js"></script>
-  <script src="assets/js/plugins/slick-slider.js"></script>
-  <script src="assets/js/plugins/circle-progress.js"></script>
-  <script src="assets/js/plugins/jquery.appear.js"></script>
-  <script src="assets/js/plugins/jquery.odometer.min.js"></script>
   <script src="assets/js/main.js"></script>
-  
-  <!--===== ANIMACIONES AVANZADAS Y EFECTOS INTERACTIVOS =====-->
-   <script>
-        // Efectos interactivos mejorados
-        document.addEventListener('DOMContentLoaded', function() {
-            // Efecto de hover suave en las tarjetas
-            const cards = document.querySelectorAll('.company-card');
-            
-            cards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-12px) scale(1.03)';
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0) scale(1)';
-                });
-            });
 
-            // Pausar carrusel al hover
-            const carousel = document.querySelector('.carousel-track');
-            const carouselContainer = document.querySelector('.companies-carousel');
-            
-            carouselContainer.addEventListener('mouseenter', () => {
-                carousel.style.animationPlayState = 'paused';
-            });
-            
-            carouselContainer.addEventListener('mouseleave', () => {
-                carousel.style.animationPlayState = 'running';
-            });
+  <script>
+    // Función para el botón de notificación
+    function notifyMe() {
+      // Aquí puedes agregar la lógica para suscribirse a notificaciones
+      alert('¡Gracias! Te notificaremos cuando EasyOffice esté listo para ti. 🚀');
+    }
 
-            // Efecto de entrada escalonada mejorado
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, {
-                threshold: 0.1
-            });
+    // Efectos adicionales al cargar la página
+    document.addEventListener('DOMContentLoaded', function() {
+      // Añadir efecto de particulas sutiles
+      const shapes = document.querySelectorAll('.shape');
+      shapes.forEach((shape, index) => {
+        shape.style.animationDelay = `${index * 0.5}s`;
+      });
 
-            // Observar elementos para animaciones
-            document.querySelectorAll('.company-card').forEach(card => {
-                observer.observe(card);
-            });
+      console.log('✨ Página En Construcción cargada exitosamente');
+    });
 
-            console.log('✨ Sección de empresas cargada con diseño elegante');
-        });
-   </script>
+    // Efecto de typing para el título (opcional)
+    function typeWriter(element, text, speed = 100) {
+      element.innerHTML = '';
+      let i = 0;
+      function type() {
+        if (i < text.length) {
+          element.innerHTML += text.charAt(i);
+          i++;
+          setTimeout(type, speed);
+        }
+      }
+      type();
+    }
+  </script>
 
 </body>
-
 </html>

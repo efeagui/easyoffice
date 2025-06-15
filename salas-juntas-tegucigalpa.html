@@ -18,792 +18,362 @@
   <link rel="stylesheet" href="assets/css/plugins/nice-select.css">
   <link rel="stylesheet" href="assets/css/plugins/swiper-slider.css">
   <link rel="stylesheet" href="assets/css/plugins/odometer.css">
+  <link rel="stylesheet" href="assets/css/plugins/cotizador-easyoffice.css">
   <link rel="stylesheet" href="assets/css/main.css">
 
   <!--===== CSS Para espacios de juntas =======-->
   <style>
-    /* ===== GALERÍA MÁS COMPACTA ===== */
-    .compact-gallery .big-img {
-      height: 280px;
-      overflow: hidden;
-    }
-
-    .compact-gallery .big-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* ===== PESTAÑAS SECCIÓN 1 (CON COLOR SÓLIDO DE TEMPLATE) ===== */
-    .elegant-room-tabs-1 ul {
-      display: flex !important;
-      gap: 8px !important;
-      margin: 0 !important;
-      padding: 0 !important;
-      list-style: none !important;
-    }
-
-    .elegant-room-tabs-1 ul li {
-      flex: 1 !important;
-    }
-
-    .elegant-room-tabs-1 ul li a {
-      display: block !important;
-      padding: 12px 16px !important;
-      background: #f8f9fa !important;
-      color: #333 !important;
-      text-decoration: none !important;
-      border-radius: 25px !important;
-      text-align: center !important;
-      font-weight: 600 !important;
-      font-size: 0.9rem !important;
-      line-height: 1.3 !important;
-      transition: all 0.3s ease !important;
-      border: 2px solid transparent !important;
-    }
-
-    .elegant-room-tabs-1 ul li a.tab-active-1 {
-      background: #ff7b3d !important;
-      color: white !important;
-      box-shadow: 0 4px 15px rgba(255, 123, 61, 0.3) !important;
-      transform: translateY(-2px) !important;
-    }
-
-    .elegant-room-tabs-1 ul li a:hover:not(.tab-active-1) {
-      background: rgba(255, 123, 61, 0.1) !important;
-      color: #ff7b3d !important;
-      border-color: rgba(255, 123, 61, 0.2) !important;
-      transform: translateY(-1px) !important;
-    }
-
-    /* ===== PESTAÑAS SECCIÓN 2 (CON COLOR SÓLIDO DE TEMPLATE) ===== */
-    .elegant-room-tabs-2 ul {
-      display: flex !important;
-      gap: 8px !important;
-      margin: 0 !important;
-      padding: 0 !important;
-      list-style: none !important;
-    }
-
-    .elegant-room-tabs-2 ul li {
-      flex: 1 !important;
-    }
-
-    .elegant-room-tabs-2 ul li a {
-      display: block !important;
-      padding: 12px 16px !important;
-      background: #f8f9fa !important;
-      color: #333 !important;
-      text-decoration: none !important;
-      border-radius: 25px !important;
-      text-align: center !important;
-      font-weight: 600 !important;
-      font-size: 0.9rem !important;
-      line-height: 1.3 !important;
-      transition: all 0.3s ease !important;
-      border: 2px solid transparent !important;
-    }
-
-    .elegant-room-tabs-2 ul li a.tab-active-2 {
-      background: #ff7b3d !important;
-      color: white !important;
-      box-shadow: 0 4px 15px rgba(255, 123, 61, 0.3) !important;
-      transform: translateY(-2px) !important;
-    }
-
-    .elegant-room-tabs-2 ul li a:hover:not(.tab-active-2) {
-      background: rgba(255, 123, 61, 0.1) !important;
-      color: #ff7b3d !important;
-      border-color: rgba(255, 123, 61, 0.2) !important;
-      transform: translateY(-1px) !important;
-    }
-
-    /* ===== CONTENIDO DINÁMICO ===== */
-    .room-title {
-      color: #ff7b3d;
-      font-weight: 700;
-      font-size: 1.8rem;
-      margin-bottom: 15px;
-    }
-
-    .capacity-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(255, 123, 61, 0.1);
-      color: #ff7b3d;
-      padding: 8px 16px;
-      border-radius: 25px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      border: 1px solid rgba(255, 123, 61, 0.2);
-      margin-bottom: 20px;
-    }
-
-    .amenities-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin: 20px 0;
-    }
-
-    .amenity-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 15px;
-      background: rgba(248, 249, 250, 0.8);
-      border-radius: 10px;
-      border-left: 3px solid #ff7b3d;
-      transition: all 0.3s ease;
-    }
-
-    .amenity-item:hover {
-      background: rgba(255, 123, 61, 0.05);
-      transform: translateX(5px);
-    }
-
-    .amenity-icon {
-      color: #ff7b3d;
-      font-size: 1.1rem;
-      width: 20px;
-      text-align: center;
-    }
-
-    .amenity-text {
-      color: #333;
-      font-weight: 500;
-      font-size: 0.9rem;
-    }
-
-    /* ===== BOTONES CON HOVER NEGRO ===== */
-    .price-box {
-      background: #333;
-      color: white;
-      padding: 9px 10px;
-      border-radius: 12px;
-      text-align: center;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      transition: all 0.3s ease;
-    }
-
-    .price-box:hover {
-      background: #222;
-      transform: translateY(-2px);
-    }
-
-    .price-amount {
-      font-size: 1.4rem;
-      font-weight: bold;
-      margin-bottom: 3px;
-    }
-
-    .price-box small {
-      opacity: 0.8;
-      font-size: 0.8rem;
-    }
-
-    .reserve-btn {
-      background: #ff7b3d;
-      color: white;
-      padding: 15px 10px;
-      border-radius: 12px;
-      text-decoration: none;
-      display: block;
-      font-weight: 600;
-      text-align: center;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(255, 123, 61, 0.3);
-    }
-
-    .reserve-btn:hover {
-      background: #333;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-      color: white;
-      text-decoration: none;
-    }
-
-    .reserve-btn .arrow1 {
-      margin-left: 8px;
-      transition: transform 0.3s ease;
-    }
-
-    .reserve-btn:hover .arrow1 {
-      transform: translateX(3px);
-    }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 768px) {
-      .elegant-room-tabs-1 ul, .elegant-room-tabs-2 ul {
-        flex-direction: column;
-        gap: 6px;
-      }
-      
-      .elegant-room-tabs-1 ul li a, .elegant-room-tabs-2 ul li a {
-        padding: 10px 14px;
-        font-size: 0.85rem;
-      }
-      
-      .amenities-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .room-title {
-        font-size: 1.5rem;
-      }
-      
+      /* ===== CSS UNIFICADO PARA TODAS LAS CIUDADES ===== */
       .compact-gallery .big-img {
-        height: 220px;
+          height: 320px;
+          overflow: hidden;
+          border-radius: 10px;
+          transition: transform 0.2s ease; /* Solo transform para hover */
+      }
+
+      .compact-gallery .big-img:hover {
+          transform: scale(1.02);
+      }
+
+      .compact-gallery .big-img img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          /* Removido transition innecesario */
+      }
+
+      /* ===== PESTAÑAS UNIVERSALES (TGU + SPS) ===== */
+      .elegant-room-tabs-1 ul,
+      .elegant-room-tabs-2 ul {
+          display: flex !important;
+          gap: 8px !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          list-style: none !important;
+      }
+
+      .elegant-room-tabs-1 ul li,
+      .elegant-room-tabs-2 ul li {
+          flex: 1 !important;
+      }
+
+      .elegant-room-tabs-1 ul li a,
+      .elegant-room-tabs-2 ul li a {
+          display: block !important;
+          padding: 12px 16px !important;
+          background: #f8f9fa !important;
+          color: #333 !important;
+          text-decoration: none !important;
+          border-radius: 25px !important;
+          text-align: center !important;
+          font-weight: 600 !important;
+          font-size: 0.9rem !important;
+          line-height: 1.3 !important;
+          transition: all 0.2s ease !important; /* Transición más rápida */
+          border: 2px solid transparent !important;
+      }
+
+      .elegant-room-tabs-1 ul li a.tab-active-1,
+      .elegant-room-tabs-2 ul li a.tab-active-2 {
+          background: #ff7b3d !important;
+          color: white !important;
+          box-shadow: 0 4px 15px rgba(255, 123, 61, 0.3) !important;
+          transform: translateY(-2px) !important;
+      }
+
+      .elegant-room-tabs-1 ul li a:hover:not(.tab-active-1),
+      .elegant-room-tabs-2 ul li a:hover:not(.tab-active-2) {
+          background: rgba(255, 123, 61, 0.1) !important;
+          color: #ff7b3d !important;
+          border-color: rgba(255, 123, 61, 0.2) !important;
+          transform: translateY(-1px) !important;
+      }
+
+      /* ===== CONTENIDO DINÁMICO UNIVERSAL ===== */
+      .room-title {
+          color: #ff7b3d;
+          font-weight: 700;
+          font-size: 1.8rem;
+          margin-bottom: 15px;
+          /* Removido transition innecesario */
+      }
+
+      .capacity-badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          background: rgba(255, 123, 61, 0.1);
+          color: #ff7b3d;
+          padding: 8px 16px;
+          border-radius: 25px;
+          font-weight: 600;
+          font-size: 0.9rem;
+          border: 1px solid rgba(255, 123, 61, 0.2);
+          margin-bottom: 20px;
+      }
+
+      .amenities-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 12px;
+          margin: 20px 0;
+      }
+
+      .amenity-item {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding: 10px 15px;
+          background: rgba(248, 249, 250, 0.8);
+          border-radius: 10px;
+          border-left: 3px solid #ff7b3d;
+          transition: all 0.2s ease; /* Transición más rápida */
+      }
+
+      .amenity-item:hover {
+          background: rgba(255, 123, 61, 0.05);
+          transform: translateX(5px);
+      }
+
+      .amenity-icon {
+          color: #ff7b3d;
+          font-size: 1.1rem;
+          width: 20px;
+          text-align: center;
+      }
+
+      .amenity-text {
+          color: #333;
+          font-weight: 500;
+          font-size: 0.9rem;
+      }
+
+      /* ===== BOTONES UNIVERSALES ===== */
+      .price-box {
+          background: #333;
+          color: white;
+          padding: 9px 10px;
+          border-radius: 12px;
+          text-align: center;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          transition: all 0.2s ease; /* Transición más rápida */
+      }
+
+      .price-box:hover {
+          background: #222;
+          transform: translateY(-2px);
+      }
+
+      .price-amount {
+          font-size: 1.4rem;
+          font-weight: bold;
+          margin-bottom: 3px;
+      }
+
+      .price-box small {
+          opacity: 0.8;
+          font-size: 0.8rem;
+      }
+
+      .reserve-btn {
+          background: #ff7b3d;
+          color: white;
+          padding: 15px 10px;
+          border-radius: 12px;
+          text-decoration: none;
+          display: block;
+          font-weight: 600;
+          text-align: center;
+          transition: all 0.2s ease; /* Transición más rápida */
+          box-shadow: 0 4px 15px rgba(255, 123, 61, 0.3);
+      }
+
+      .reserve-btn:hover {
+          background: #333;
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+          color: white;
+          text-decoration: none;
+      }
+
+      .reserve-btn .arrow1 {
+          margin-left: 8px;
+          transition: transform 0.2s ease; /* Transición más rápida */
+      }
+
+      .reserve-btn:hover .arrow1 {
+          transform: translateX(3px);
+      }
+
+      /* ===== GALERÍA BOTTOM UNIVERSAL - MINIATURAS MÁS ALTAS ===== */
+      .bottom-galler-images {
+          display: flex;
+          gap: 10px;
+          margin-top: 15px;
+          flex-wrap: wrap;
+      }
+
+      .small-img {
+          flex: 1;
+          min-width: 80px;
+          height: 95px; /* INCREMENTADO de 60px a 95px - MÁS ALTO */
+          border-radius: 8px;
+          overflow: hidden;
+          cursor: pointer;
+          transition: all 0.2s ease; /* Transición más rápida */
+          border: 2px solid transparent;
+      }
+
+      .small-img:hover {
+          border-color: #ff7b3d;
+          transform: translateY(-2px);
+      }
+
+      .small-img img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          /* Removido transition innecesario */
+      }
+
+      .space16 { height: 16px; }
+      .space32 { height: 32px; }
+      .space-margin60 { margin-bottom: 60px; }
+
+      /* ===== RESPONSIVE UNIVERSAL ===== */
+      @media (max-width: 768px) {
+          .elegant-room-tabs-1 ul,
+          .elegant-room-tabs-2 ul {
+              flex-direction: column;
+              gap: 6px;
+          }
+          
+          .elegant-room-tabs-1 ul li a,
+          .elegant-room-tabs-2 ul li a {
+              padding: 10px 14px;
+              font-size: 0.85rem;
+          }
+          
+          .amenities-grid {
+              grid-template-columns: 1fr;
+          }
+          
+          .room-title {
+              font-size: 1.5rem;
+          }
+          
+          .compact-gallery .big-img {
+              height: 220px;
+          }
+          
+          .price-amount {
+              font-size: 1.2rem;
+          }
+          
+          /* Miniaturas más altas también en móvil */
+          .small-img {
+              height: 80px; /* Incrementado de 60px a 80px en móvil */
+          }
+
+          /* Orden responsive para SPS (galería izquierda, contenido derecha) */
+          .order-lg-1 {
+              order: 1;
+          }
+          
+          .order-lg-2 {
+              order: 2;
+          }
+          
+          .order-1 {
+              order: 1;
+          }
+          
+          .order-2 {
+              order: 2;
+          }
+      }
+
+      /* ===== ESTILOS GENERALES UNIVERSALES ===== */
+      body { 
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
       }
       
-      .price-amount {
-        font-size: 1.2rem;
+      .properties2 { 
+          padding: 60px 0; 
       }
-    }
+      
+      .sp1 { 
+          background: #f8f9fa; 
+      }
+      
+      .heading1 h5 { 
+          color: #ff7b3d; 
+          font-weight: 600; 
+      }
+      
+      .heading1 h2 { 
+          color: #333; 
+          font-weight: 700; 
+      }
+
+      /* Estilo especial para h2 con clase text-anime-style-3 (SPS) */
+      .text-anime-style-3 {
+          background: linear-gradient(45deg, #ff7b3d, #ff9a56);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+      }
+
+      /* ===== OPTIMIZACIONES UNIVERSALES PARA RENDIMIENTO ===== */
+      * {
+          box-sizing: border-box;
+      }
+
+      img {
+          max-width: 100%;
+          height: auto;
+      }
+
+      /* Eliminar transiciones innecesarias en elementos dinámicos */
+      #room-content-1,
+      #room-content-2 {
+          /* Removido transition que causaba lentitud */
+      }
+
+      /* Mejorar rendering de imágenes */
+      .big-img img,
+      .small-img img {
+          image-rendering: -webkit-optimize-contrast;
+          image-rendering: optimize-contrast;
+      }
+
+      /* ===== ANIMACIONES AOS (si están disponibles) ===== */
+      [data-aos="fade-right"] {
+          opacity: 0;
+          transform: translateX(-50px);
+          transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+
+      [data-aos="fade-right"].aos-animate {
+          opacity: 1;
+          transform: translateX(0);
+      }
+
+      [data-aos="fade-left"] {
+          opacity: 0;
+          transform: translateX(50px);
+          transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+
+      [data-aos="fade-left"].aos-animate {
+          opacity: 1;
+          transform: translateX(0);
+      }
   </style>
   <!--===== Fin CSS Para espacios de juntas =======-->
-
-  <!--===== CSS Para Cotizador =======-->
-  <style>
-    /* ===== SISTEMA INTELIGENTE Y COMPACTO ===== */
-    .search-system-container {
-      width: 100%;
-      max-width: 1200px;
-    }
-
-    .tab-header-smart {
-      display: inline-flex;
-      gap: 2px;
-      margin-bottom: 12px;
-      background: rgba(255, 255, 255, 0.95);
-      padding: 3px;
-      border-radius: 20px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .tab-btn-smart {
-      padding: 6px 16px;
-      border: none;
-      border-radius: 17px;
-      background: transparent;
-      color: #666;
-      font-weight: 600;
-      font-size: 0.85rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      white-space: nowrap;
-    }
-
-    .tab-btn-smart.active {
-      background: linear-gradient(135deg, #ff7b3d, #ff9f5a);
-      color: white;
-      box-shadow: 0 2px 6px rgba(255, 123, 61, 0.3);
-    }
-
-    .tab-btn-smart:hover:not(.active) {
-      background: rgba(255, 123, 61, 0.1);
-      color: #ff7b3d;
-    }
-
-    .property-tab-section-smart {
-      background: rgba(255, 255, 255, 0.95);
-      border-radius: 12px;
-      padding: 16px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-      backdrop-filter: blur(10px);
-      width: fit-content;
-      min-width: 300px;
-    }
-
-    .filters-smart {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 12px;
-      align-items: end;
-      max-width: 600px;
-      transition: max-width 0.3s ease;
-    }
-
-    .filter-group-smart {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-      min-width: 180px;
-    }
-
-    .filter-group-wide {
-      grid-column: 1 / -1;
-      min-width: 100%;
-    }
-
-    .filter-label-smart {
-      font-weight: 600;
-      color: #333;
-      font-size: 0.8rem;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .filter-label-smart i {
-      color: #ff7b3d;
-      width: 10px;
-      font-size: 0.8rem;
-    }
-
-    .select-wrapper-smart {
-      position: relative;
-    }
-
-    .select-wrapper-smart select {
-      width: 100%;
-      padding: 8px 30px 8px 10px;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      font-size: 0.85rem;
-      background: white;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      appearance: none;
-      color: #333;
-    }
-
-    .select-wrapper-smart select:focus {
-      outline: none;
-      border-color: #ff7b3d;
-      box-shadow: 0 0 0 2px rgba(255, 123, 61, 0.1);
-    }
-
-    .select-wrapper-smart select:hover {
-      border-color: #ff7b3d;
-    }
-
-    .select-arrow-smart {
-      position: absolute;
-      right: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #666;
-      pointer-events: none;
-      font-size: 0.7rem;
-      transition: color 0.3s ease;
-    }
-
-    .select-wrapper-smart:hover .select-arrow-smart {
-      color: #ff7b3d;
-    }
-
-    .textarea-wrapper-smart textarea {
-      width: 100%;
-      padding: 8px 10px;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      font-family: inherit;
-      font-size: 0.85rem;
-      resize: vertical;
-      min-height: 60px;
-      transition: all 0.3s ease;
-    }
-
-    .textarea-wrapper-smart textarea:focus {
-      outline: none;
-      border-color: #ff7b3d;
-      box-shadow: 0 0 0 2px rgba(255, 123, 61, 0.1);
-    }
-
-    .textarea-wrapper-smart textarea:hover {
-      border-color: #ff7b3d;
-    }
-
-    .search-button-smart {
-      grid-column: 1 / -1;
-      display: flex;
-      justify-content: center;
-      margin-top: 8px;
-    }
-
-    .btn-principal-smart {
-      background: linear-gradient(135deg, #ff7b3d, #ff9f5a);
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      min-width: 150px;
-      justify-content: center;
-    }
-
-    .btn-whatsapp {
-      background: linear-gradient(135deg, #25D366, #128C7E);
-    }
-
-    .btn-principal-smart:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(255, 123, 61, 0.4);
-    }
-
-    .btn-whatsapp:hover {
-      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-    }
-
-    .btn-arrow-smart {
-      transition: transform 0.3s ease;
-    }
-
-    .btn-principal-smart:hover .btn-arrow-smart {
-      transform: translateX(2px);
-    }
-
-    .hidden {
-      display: none !important;
-    }
-
-    /* ===== MODALES INTELIGENTES ===== */
-    .modal-overlay-smart {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(3px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-      padding: 12px;
-    }
-
-    .modal-container-smart {
-      background: white;
-      border-radius: 12px;
-      max-width: 360px;
-      width: 100%;
-      max-height: 75vh;
-      overflow-y: auto;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-      animation: modalSlideInSmart 0.3s ease;
-    }
-
-    @keyframes modalSlideInSmart {
-      from {
-        opacity: 0;
-        transform: translateY(-20px) scale(0.95);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
-
-    .modal-header-smart {
-      padding: 16px 16px 10px;
-      border-bottom: 1px solid #eee;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .modal-header-smart h3 {
-      margin: 0;
-      color: #333;
-      font-size: 1.1rem;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .modal-header-smart h3 i {
-      color: #4CAF50;
-    }
-
-    .modal-close-smart {
-      background: none;
-      border: none;
-      font-size: 1.1rem;
-      color: #666;
-      cursor: pointer;
-      padding: 3px;
-      border-radius: 50%;
-      transition: all 0.3s ease;
-    }
-
-    .modal-close-smart:hover {
-      background: #f5f5f5;
-    }
-
-    .modal-body-smart {
-      padding: 12px 16px;
-    }
-
-    .resumen-items-smart {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .resumen-item-smart {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px;
-      background: #f8f9fa;
-      border-radius: 6px;
-      border-left: 3px solid #ff7b3d;
-    }
-
-    .resumen-item-smart i {
-      font-size: 1.1rem;
-      color: #ff7b3d;
-      width: 18px;
-    }
-
-    .resumen-item-smart strong {
-      color: #333;
-      font-size: 0.9rem;
-    }
-
-    .resumen-item-smart p {
-      margin: 1px 0 0;
-      color: #666;
-      font-size: 0.8rem;
-    }
-
-    .modal-footer-smart {
-      padding: 10px 16px 16px;
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-    }
-
-    .btn-pagar-smart {
-      background: linear-gradient(135deg, #4CAF50, #45a049);
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .btn-pagar-smart:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
-    }
-
-    /* ===== MODAL DE MANTENIMIENTO INTELIGENTE ===== */
-    .maintenance-modal-smart {
-      max-width: 340px;
-    }
-
-    .maintenance-header-smart {
-      text-align: center;
-      flex-direction: column;
-      gap: 10px;
-      border-bottom: none;
-      padding-bottom: 12px;
-    }
-
-    .maintenance-icon-smart {
-      width: 50px;
-      height: 50px;
-      background: linear-gradient(135deg, #ff7b3d, #ff9f5a);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto;
-    }
-
-    .maintenance-icon-smart i {
-      font-size: 1.3rem;
-      color: white;
-    }
-
-    .maintenance-body-smart {
-      text-align: center;
-      padding: 12px 16px;
-    }
-
-    .progress-bar-smart {
-      width: 100%;
-      height: 5px;
-      background: #eee;
-      border-radius: 3px;
-      overflow: hidden;
-      margin: 10px 0;
-    }
-
-    .progress-fill-smart {
-      width: 75%;
-      height: 100%;
-      background: linear-gradient(135deg, #ff7b3d, #ff9f5a);
-      animation: progressPulseSmart 2s ease-in-out infinite;
-    }
-
-    @keyframes progressPulseSmart {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.7; }
-    }
-
-    .banks-grid-smart {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 6px;
-      margin: 12px 0;
-    }
-
-    .bank-item-smart {
-      padding: 8px;
-      background: #f8f9fa;
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-weight: 600;
-      color: #333;
-      font-size: 0.8rem;
-    }
-
-    .bank-item-smart i {
-      color: #ff7b3d;
-      font-size: 0.9rem;
-    }
-
-    .maintenance-message-smart {
-      margin-top: 12px;
-      padding: 10px;
-      background: linear-gradient(135deg, rgba(255, 123, 61, 0.1), rgba(255, 159, 90, 0.1));
-      border-radius: 6px;
-      border-left: 3px solid #ff7b3d;
-      font-size: 0.85rem;
-    }
-
-    .btn-contactar-smart {
-      background: linear-gradient(135deg, #25D366, #128C7E);
-      color: white;
-      border: none;
-      padding: 10px 18px;
-      border-radius: 20px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.85rem;
-    }
-
-    .btn-contactar-smart:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-    }
-
-    .btn-cerrar-smart {
-      background: #6c757d;
-      color: white;
-      border: none;
-      padding: 10px 18px;
-      border-radius: 20px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      font-size: 0.85rem;
-    }
-
-    .btn-cerrar-smart:hover {
-      background: #5a6268;
-      transform: translateY(-1px);
-    }
-
-    /* ===== RESPONSIVE INTELIGENTE ===== */
-    @media (max-width: 768px) {
-      .filters-smart {
-        grid-template-columns: 1fr;
-        gap: 10px;
-        max-width: 100% !important;
-      }
-      
-      .filter-group-smart {
-        min-width: 100%;
-      }
-      
-      .tab-btn-smart {
-        font-size: 0.8rem;
-        padding: 5px 12px;
-      }
-      
-      .property-tab-section-smart {
-        padding: 12px;
-        min-width: 100%;
-      }
-      
-      .banks-grid-smart {
-        grid-template-columns: 1fr;
-      }
-      
-      .modal-container-smart {
-        max-width: 95%;
-      }
-      
-      .btn-principal-smart {
-        min-width: 140px;
-        font-size: 0.85rem;
-      }
-      
-      .search-system-container {
-        width: 100%;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .tab-header-smart {
-        width: 100%;
-        justify-content: center;
-      }
-      
-      .tab-btn-smart {
-        flex: 1;
-        justify-content: center;
-      }
-      
-      .filters-smart {
-        gap: 8px;
-      }
-      
-      .property-tab-section-smart {
-        padding: 10px;
-      }
-      
-      .filter-group-smart {
-        gap: 4px;
-      }
-      
-      .select-wrapper-smart select {
-        padding: 7px 25px 7px 8px;
-      }
-    }
-  </style>
-   <!--===== Fin Para Cotizador =======-->
 </head>
 
 <body class="body1 b-bg1">
@@ -821,318 +391,83 @@
 
   <div class="space30"></div>
 
-
-  
-  <!--===== HERO AREA STARTS =======-->
-  <div class="hero3-slider">
-    <div class="search-box-cover">
+    <!--===== Slide Oficina Privada =======-->
+  <div class="hero4-slider-sectionarea">
+    <div class="hero4-slider-area" style="background-image: url(assets/img/EasyOffice/Sala%20de%20juntas%20/SPS/2.jpg); background-position: center; background-repeat: no-repeat; background-size: cover;">
+      <img src="assets/img/all-images/bg/h-bg1.png" alt="housa" class="h-bg1">
+      <img src="assets/img/elements/elements5.png" alt="housa" class="elements5">
       <div class="container">
         <div class="row">
-          <div class="col-lg-12">
-            
-            <!-- ===== SISTEMA DINÁMICO COMPACTO E INTELIGENTE ===== -->
-            <div class="search-system-container">
-              <div class="tab-header-smart">
-                <button class="tab-btn-smart active" data-tab="servicios">
-                  <i class="fas fa-briefcase"></i>
-                  Servicios
-                </button>
-                <button class="tab-btn-smart" data-tab="proyectos">
-                  <i class="fas fa-rocket"></i>
-                  Proyectos
-                </button>
-              </div>
-
-              <div class="property-tab-section-smart">
-                
-                <!-- TAB SERVICIOS -->
-                <div class="tab-content-smart" id="servicios">
-                  <div class="filters-smart" id="filters-container">
-                    
-                    <!-- TIPO DE SERVICIO -->
-                    <div class="filter-group-smart">
-                      <label class="filter-label-smart">
-                        <i class="fas fa-building"></i>
-                        Tipo de Servicio
-                      </label>
-                      <div class="select-wrapper-smart">
-                        <select id="tipo-servicio" onchange="updateServicioOptions()">
-                          <option value="">Seleccionar</option>
-                          <option value="oficina-fisica">🏢 Oficina Física</option>
-                          <option value="oficina-virtual">💻 Oficina Virtual</option>
-                        </select>
-                        <i class="fas fa-chevron-down select-arrow-smart"></i>
-                      </div>
-                    </div>
-
-                    <!-- OPCIONES OFICINA VIRTUAL -->
-                    <div class="filter-group-smart hidden" id="virtual-options">
-                      <label class="filter-label-smart">
-                        <i class="fas fa-key"></i>
-                        Permiso
-                      </label>
-                      <div class="select-wrapper-smart">
-                        <select id="tipo-permiso" onchange="updatePermisoOptions()">
-                          <option value="">Seleccionar</option>
-                          <option value="solo-operaciones">📋 Solo operaciones</option>
-                          <option value="operaciones-instalaciones">🏢 Operaciones + instalaciones</option>
-                        </select>
-                        <i class="fas fa-chevron-down select-arrow-smart"></i>
-                      </div>
-                    </div>
-
-                    <!-- OPCIONES PARA USO DE INSTALACIONES -->
-                    <div class="filter-group-smart hidden" id="instalaciones-options">
-                      <label class="filter-label-smart">
-                        <i class="fas fa-map-marker-alt"></i>
-                        Instalación
-                      </label>
-                      <div class="select-wrapper-smart">
-                        <select id="tipo-instalacion" onchange="updateInstalacionOptions()">
-                          <option value="">Seleccionar</option>
-                          <option value="sala-juntas">🤝 Sala de Juntas</option>
-                          <option value="coworking">👥 Coworking</option>
-                        </select>
-                        <i class="fas fa-chevron-down select-arrow-smart"></i>
-                      </div>
-                    </div>
-
-                    <!-- OPCIONES OFICINA FÍSICA -->
-                    <div class="filter-group-smart hidden" id="fisica-modalidad">
-                      <label class="filter-label-smart">
-                        <i class="fas fa-calendar-alt"></i>
-                        Modalidad
-                      </label>
-                      <div class="select-wrapper-smart">
-                        <select id="modalidad-fisica" onchange="updatePersonasOptions()">
-                          <option value="">Seleccionar</option>
-                          <option value="permanente">🏠 Permanente</option>
-                          <option value="temporal">⏱️ Temporal</option>
-                        </select>
-                        <i class="fas fa-chevron-down select-arrow-smart"></i>
-                      </div>
-                    </div>
-
-                    <!-- CANTIDAD DE PERSONAS -->
-                    <div class="filter-group-smart hidden" id="personas-options">
-                      <label class="filter-label-smart">
-                        <i class="fas fa-users"></i>
-                        Personas
-                      </label>
-                      <div class="select-wrapper-smart">
-                        <select id="cantidad-personas" onchange="updateTiempoOptions()">
-                          <option value="">Seleccionar</option>
-                          <option value="1-4">👤 1 a 4 personas</option>
-                          <option value="2">👥 2 personas</option>
-                          <option value="3">👨‍👩‍👦 3 personas</option>
-                        </select>
-                        <i class="fas fa-chevron-down select-arrow-smart"></i>
-                      </div>
-                    </div>
-
-                    <!-- TIEMPO -->
-                    <div class="filter-group-smart hidden" id="tiempo-options">
-                      <label class="filter-label-smart">
-                        <i class="fas fa-clock"></i>
-                        <span id="tiempo-label">Duración</span>
-                      </label>
-                      <div class="select-wrapper-smart">
-                        <select id="duracion-tiempo">
-                          <option value="">Seleccionar</option>
-                          <option value="1-hora">⏰ 1 hora</option>
-                          <option value="2-horas">⏰ 2 horas</option>
-                          <option value="3-horas">⏰ 3 horas</option>
-                          <option value="4-horas">⏰ 4 horas</option>
-                          <option value="5-horas">⏰ 5 horas</option>
-                          <option value="1-dia">📅 1 día</option>
-                          <option value="2-dias">📅 2 días</option>
-                          <option value="3-dias">📅 3 días</option>
-                          <option value="1-semana">📅 1 semana</option>
-                          <option value="15-dias">📅 15 días</option>
-                        </select>
-                        <i class="fas fa-chevron-down select-arrow-smart"></i>
-                      </div>
-                    </div>
-
-                    <!-- BOTÓN PRINCIPAL SERVICIOS -->
-                    <div class="search-button-smart">
-                      <button id="btn-principal-servicios" type="button" onclick="procesarSolicitud()" class="btn-principal-smart">
-                        <i class="fas fa-search"></i>
-                        <span id="btn-text">Buscar Servicio</span>
-                        <span class="btn-arrow-smart"><i class="fas fa-arrow-right"></i></span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- TAB PROYECTOS -->
-                <div class="tab-content-smart hidden" id="proyectos">
-                  <div class="filters-smart" id="filters-container-proyectos">
-                    
-                    <!-- TIPO DE PROYECTO -->
-                    <div class="filter-group-smart">
-                      <label class="filter-label-smart">
-                        <i class="fas fa-lightbulb"></i>
-                        Tipo de Proyecto
-                      </label>
-                      <div class="select-wrapper-smart">
-                        <select id="tipo-proyecto" onchange="updateProyectoOptions()">
-                          <option value="">Seleccionar proyecto</option>
-                          <option value="llave-mano">🔑 Llave en Mano</option>
-                          <option value="manos-catrachas">🇭🇳 Manos Catrachas</option>
-                          <option value="proveedores-locales">🤝 Proveedores locales</option>
-                        </select>
-                        <i class="fas fa-chevron-down select-arrow-smart"></i>
-                      </div>
-                    </div>
-
-                    <!-- OPCIONES MANOS CATRACHAS -->
-                    <div class="filter-group-smart hidden" id="catrachas-options">
-                      <label class="filter-label-smart">
-                        <i class="fas fa-shopping-basket"></i>
-                        Producto
-                      </label>
-                      <div class="select-wrapper-smart">
-                        <select id="tipo-producto">
-                          <option value="">Seleccionar</option>
-                          <option value="cafe">☕ Café</option>
-                          <option value="artesanias">🎨 Artesanías</option>
-                          <option value="textiles">🧵 Textiles</option>
-                          <option value="alimentos">🥘 Alimentos</option>
-                        </select>
-                        <i class="fas fa-chevron-down select-arrow-smart"></i>
-                      </div>
-                    </div>
-
-                    <!-- DESCRIPCIÓN DEL PROYECTO -->
-                    <div class="filter-group-smart filter-group-wide hidden" id="proyecto-descripcion">
-                      <label class="filter-label-smart">
-                        <i class="fas fa-file-alt"></i>
-                        Descripción
-                      </label>
-                      <div class="textarea-wrapper-smart">
-                        <textarea id="descripcion-proyecto" placeholder="Cuéntanos tu idea..." rows="3"></textarea>
-                      </div>
-                    </div>
-
-                    <!-- BOTÓN PROYECTOS -->
-                    <div class="search-button-smart">
-                      <button id="btn-proyectos" type="button" onclick="enviarWhatsApp()" class="btn-principal-smart btn-whatsapp">
-                        <i class="fab fa-whatsapp"></i>
-                        Enviar por WhatsApp
-                        <span class="btn-arrow-smart"><i class="fas fa-arrow-right"></i></span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
+          <div class="col-lg-6">
+            <div class="hero2-header heading2">
+              <h5><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M2 20H4M4 20H10M4 20V11.452C4 10.918 4 10.651 4.065 10.402C4.12256 10.1819 4.21725 9.97322 4.345 9.78497C4.49 9.57197 4.691 9.39497 5.093 9.04397L9.894 4.84197C10.64 4.18997 11.013 3.86397 11.432 3.73997C11.802 3.62997 12.197 3.62997 12.567 3.73997C12.987 3.86397 13.361 4.18997 14.107 4.84397L18.907 9.04397C19.309 9.39597 19.51 9.57197 19.655 9.78397C19.783 9.9753 19.8763 10.1813 19.935 10.402C20 10.651 20 10.918 20 11.452V20M10 20H14M10 20V16C10 15.4695 10.2107 14.9608 10.5858 14.5858C10.9609 14.2107 11.4696 14 12 14C12.5304 14 13.0391 14.2107 13.4142 14.5858C13.7893 14.9608 14 15.4695 14 16V20M20 20H14M20 20H22" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                </svg> Tu espacio para crear </h5>
+              <div class="space28"></div>
+              <h1>Internet y equipo multimedia</h1>
+              <div class="space36"></div>
             </div>
-
-            <!-- MODAL DE RESUMEN COMPACTO -->
-            <div id="modal-resumen" class="modal-overlay-smart hidden">
-              <div class="modal-container-smart">
-                <div class="modal-header-smart">
-                  <h3><i class="fas fa-check-circle"></i> Tu Solicitud</h3>
-                  <button onclick="cerrarModal('modal-resumen')" class="modal-close-smart">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-                <div class="modal-body-smart" id="resumen-content">
-                  <!-- Contenido dinámico -->
-                </div>
-                <div class="modal-footer-smart">
-                  <button onclick="procederPago()" class="btn-pagar-smart">
-                    <i class="fas fa-credit-card"></i>
-                    Pagar
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <!-- MODAL DE MANTENIMIENTO COMPACTO -->
-            <div id="modal-mantenimiento" class="modal-overlay-smart hidden">
-              <div class="modal-container-smart maintenance-modal-smart">
-                <div class="modal-header-smart maintenance-header-smart">
-                  <div class="maintenance-icon-smart">
-                    <i class="fas fa-tools"></i>
-                  </div>
-                  <h3>Pagos en Construcción</h3>
-                </div>
-                <div class="modal-body-smart maintenance-body-smart">
-                  <div class="maintenance-content-smart">
-                    <div class="progress-bar-smart">
-                      <div class="progress-fill-smart"></div>
-                    </div>
-                    <p><strong>Integrando métodos de pago:</strong></p>
-                    <div class="banks-grid-smart">
-                      <div class="bank-item-smart">
-                        <i class="fas fa-university"></i>
-                        <span>BAC Credomatic</span>
-                      </div>
-                      <div class="bank-item-smart">
-                        <i class="fas fa-university"></i>
-                        <span>Ficohsa</span>
-                      </div>
-                      <div class="bank-item-smart">
-                        <i class="fas fa-university"></i>
-                        <span>Promerica</span>
-                      </div>
-                      <div class="bank-item-smart">
-                        <i class="fas fa-mobile-alt"></i>
-                        <span>Zora API</span>
-                      </div>
-                    </div>
-                    <p class="maintenance-message-smart">
-                      <strong>¡Muy pronto!</strong><br>
-                      Contáctanos para procesar tu solicitud.
-                    </p>
-                  </div>
-                </div>
-                <div class="modal-footer-smart">
-                  <button onclick="contactarDirecto()" class="btn-contactar-smart">
-                    <i class="fas fa-phone"></i>
-                    Contactar
-                  </button>
-                  <button onclick="cerrarModal('modal-mantenimiento')" class="btn-cerrar-smart">
-                    Cerrar
-                  </button>
-                </div>
-              </div>
-            </div>
-            <!-- ===== fin SISTEMA DINÁMICO DE FILTROS MEJORADO ===== -->
           </div>
         </div>
       </div>
     </div>
-    <!--search-box-cover-->
-    <div class="myswiper1-cover">
-      <div class="swiper myswiper1  overflow-hidden">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-          <div class="swiper-slide">
-            <div class="hero3">
-              <div class="container">
-                <div class="row">
-                  <div class="col-lg-5">
-                    <div class="hero3-heading heading2">
-                      <span>🏠 Tegucigalpa</span>
-                      <div class="space20"></div>
-                      <h1>Encuentra la sala de juntas que necesitas</h1>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="absoulate-img">
-                <img src="assets/img/all-images/hero/IMG_1293.webp" alt="housa">
-              </div>
+    <div class="hero4-slider-area" style="background-image: url(assets/img/EasyOffice/Sala%20de%20juntas%20/SPS/3.jpg); background-position: center; background-repeat: no-repeat; background-size: cover;">
+      <img src="assets/img/all-images/bg/h-bg1.png" alt="housa" class="h-bg1">
+      <img src="assets/img/elements/elements5.png" alt="housa" class="elements5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="hero2-header heading2">
+              <h5><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M2 20H4M4 20H10M4 20V11.452C4 10.918 4 10.651 4.065 10.402C4.12256 10.1819 4.21725 9.97322 4.345 9.78497C4.49 9.57197 4.691 9.39497 5.093 9.04397L9.894 4.84197C10.64 4.18997 11.013 3.86397 11.432 3.73997C11.802 3.62997 12.197 3.62997 12.567 3.73997C12.987 3.86397 13.361 4.18997 14.107 4.84397L18.907 9.04397C19.309 9.39597 19.51 9.57197 19.655 9.78397C19.783 9.9753 19.8763 10.1813 19.935 10.402C20 10.651 20 10.918 20 11.452V20M10 20H14M10 20V16C10 15.4695 10.2107 14.9608 10.5858 14.5858C10.9609 14.2107 11.4696 14 12 14C12.5304 14 13.0391 14.2107 13.4142 14.5858C13.7893 14.9608 14 15.4695 14 16V20M20 20H14M20 20H22" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                </svg> Tu espacio para crear </h5>
+              <div class="space28"></div>
+              <h1>Perfecta para reuniones ejecutivas</h1>
+              <div class="space36"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero4-slider-area" style="background-image: url(assets/img/EasyOffice/Sala%20de%20juntas%20/TGU/Sinergia/IMG_0354.png); background-position: center; background-repeat: no-repeat; background-size: cover;">
+      <img src="assets/img/all-images/bg/h-bg1.png" alt="housa" class="h-bg1">
+      <img src="assets/img/elements/elements5.png" alt="housa" class="elements5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="hero2-header heading2">
+              <h5><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M2 20H4M4 20H10M4 20V11.452C4 10.918 4 10.651 4.065 10.402C4.12256 10.1819 4.21725 9.97322 4.345 9.78497C4.49 9.57197 4.691 9.39497 5.093 9.04397L9.894 4.84197C10.64 4.18997 11.013 3.86397 11.432 3.73997C11.802 3.62997 12.197 3.62997 12.567 3.73997C12.987 3.86397 13.361 4.18997 14.107 4.84397L18.907 9.04397C19.309 9.39597 19.51 9.57197 19.655 9.78397C19.783 9.9753 19.8763 10.1813 19.935 10.402C20 10.651 20 10.918 20 11.452V20M10 20H14M10 20V16C10 15.4695 10.2107 14.9608 10.5858 14.5858C10.9609 14.2107 11.4696 14 12 14C12.5304 14 13.0391 14.2107 13.4142 14.5858C13.7893 14.9608 14 15.4695 14 16V20M20 20H14M20 20H22" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                </svg> Tu espacio para crear </h5>
+              <div class="space28"></div>
+              <h1>Privacidad y comodidad</h1>
+              <div class="space36"></div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <!--===== HERO AREA ENDS =======-->
+  <div class="hero4-small-img">
+    <div class="img1">
+      <img src="assets/img/EasyOffice/Sala de juntas /SPS/2.jpg" alt="housa">
+    </div>
+    <div class="img1">
+      <img src="assets/img/EasyOffice/Sala de juntas /SPS/3.jpg" alt="housa">
+    </div>
+    <div class="img1">
+      <img src="assets/img/EasyOffice/Sala de juntas /TGU/Sinergia/IMG_0354.png" alt="housa">
+    </div>
+    <div class="img1">
+      <img src="assets/img/EasyOffice/Sala de juntas /TGU/Inspiracion/IMG_2505.jpg" alt="housa">
+    </div>
+  </div>
+  <!--=====  Slide Oficina Privada =======-->
+  <br>
+   <div id="cotizador-container"></div>
+   <br>
+  
+  
   <!--===== ABOUT AREA STARTS =======-->
   <div class="about3-section-area sp1 overflow-hidden">
     <div class="container">
@@ -1142,13 +477,13 @@
             <div class="row">
               <div class="col-lg-6 col-md-6">
                 <div class="img2 image-anime reveal">
-                  <img src="assets/img/all-images/about/about-img5.png" alt="housa">
+                  <img src="assets/img/EasyOffice/Sala de juntas /IMG_0004 (1).jpg" alt="housa">
                 </div>
               </div>
               <div class="col-lg-6 col-md-6">
                 <div class="space100"></div>
                 <div class="img1 image-anime reveal">
-                  <img src="assets/img/all-images/about/about-img6.png" alt="housa">
+                  <img src="assets/img/EasyOffice/Sala de juntas /IMG_9971.jpg" alt="housa">
                 </div>
               </div>
             </div>
@@ -1198,7 +533,7 @@
           <div class="about-heading heading2">
             <h5 data-aos="fade-left" data-aos-duration="800">Descubre el lugar perfecto para tus reuniones</h5>
             <div class="space26"></div>
-            <h2 class="text-anime-style-3">Sala de Juntas</h2>
+            <h2 class="text-anime-style-2">Sala de Juntas</h2>
             <div class="space18"></div>
             <p data-aos="fade-left" data-aos-duration="900">¿Buscás una sala de reuniones equipada con reserva flexible para tus encuentros de trabajo? En EasyOffice  encontrás el espacio ideal para entrevistas, presentaciones, sesiones estratégicas o capacitaciones. Con un ambiente privado y profesiona con capacidad de 1- 18 personas.</p>
             <div class="space32"></div>
@@ -1218,267 +553,309 @@
   <!--===== Sala de Juntas Tegucigalpa=======-->
   <div class="properties2 sp1">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-6 m-auto">
-          <div class="heading1 text-center space-margin60">
-            <h5>Salas de Juntas Tegucigalpa</h5>
-            <div class="space16"></div>
-            <h2 class="text-anime-style-3">Espacios Profesionales Para Ti</h2>
-          </div>
+        <div class="row">
+            <div class="col-lg-6 m-auto">
+                <div class="heading1 text-center space-margin60">
+                    <h5>Salas de Juntas Tegucigalpa</h5>
+                    <div class="space16"></div>
+                    <h2>Espacios Profesionales Para Ti</h2>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-5">
-          <div class="heading1">
-            <div class="content-area">
-              <!-- ===== PESTAÑAS SECCIÓN 1 ===== -->
-              <div class="rent-sale-area elegant-room-tabs-1">
-                <ul>
-                  <li><a href="#" class="room-tab-1 tab-active-1" data-room="vanguardia" id="tab1-vanguardia">1-4 personas</a></li>
-                  <li><a href="#" class="room-tab-1" data-room="inspiracion" id="tab1-inspiracion">5-8 personas</a></li>
-                  <li><a href="#" class="room-tab-1" data-room="sinergia" id="tab1-sinergia">9-18 personas</a></li>
-                </ul>
-              </div>
-              
-              <div class="space32"></div>
-              
-              <!-- ===== CONTENIDO DINÁMICO SECCIÓN 1 ===== -->
-              <div id="room-content-1">
-                <h3 class="room-title" id="room-name-1">Vanguardia</h3>
-                
-                <div class="capacity-badge" id="room-capacity-1">
-                  <i class="fas fa-users"></i>
-                  <span>Capacidad Sala de juntas: 1-4 personas</span>
-                </div>
-                
-                <div class="amenities-grid">
-                  <div class="amenity-item">
-                    <i class="fas fa-chalkboard amenity-icon"></i>
-                    <span class="amenity-text">Pizarra</span>
-                  </div>
-                  <div class="amenity-item">
-                    <i class="fas fa-snowflake amenity-icon"></i>
-                    <span class="amenity-text">Aire acondicionado</span>
-                  </div>
-                  <div class="amenity-item">
-                    <i class="fas fa-plug amenity-icon"></i>
-                    <span class="amenity-text">Planta eléctrica</span>
-                  </div>
-                  <div class="amenity-item">
-                    <i class="fas fa-desktop amenity-icon"></i>
-                    <span class="amenity-text">Equipo multimedia</span>
-                  </div>
-                  <div class="amenity-item">
-                    <i class="fas fa-coffee amenity-icon"></i>
-                    <span class="amenity-text">Estación de agua, café, té</span>
-                  </div>
-                  <div class="amenity-item">
-                    <i class="fas fa-cookie-bite amenity-icon"></i>
-                    <span class="amenity-text">Galletas ilimitado</span>
-                  </div>
-                </div>
-                
-                <div class="space16"></div>
+        
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="heading1">
+                    <div class="content-area">
+                        <!-- ===== PESTAÑAS TGU ULTRA OPTIMIZADAS ===== -->
+                        <div class="rent-sale-area elegant-room-tabs-1">
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0)" 
+                                       class="room-tab-1 tab-active-1" 
+                                       data-room="vanguardia"
+                                       role="button"
+                                       tabindex="0">1-4 personas</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" 
+                                       class="room-tab-1" 
+                                       data-room="inspiracion"
+                                       role="button"
+                                       tabindex="0">5-8 personas</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" 
+                                       class="room-tab-1" 
+                                       data-room="sinergia"
+                                       role="button"
+                                       tabindex="0">9-18 personas</a>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="space32"></div>
+                        
+                        <!-- ===== CONTENIDO DINÁMICO TGU ===== -->
+                        <div id="room-content-1">
+                            <h3 class="room-title" id="room-name-1">Vanguardia</h3>
+                            
+                            <div class="capacity-badge" id="room-capacity-1">
+                                <i class="fas fa-users"></i>
+                                <span>Capacidad Sala de juntas: 1-4 personas</span>
+                            </div>
+                            
+                            <div class="amenities-grid">
+                                <div class="amenity-item">
+                                    <i class="fas fa-chalkboard amenity-icon"></i>
+                                    <span class="amenity-text">Pizarra</span>
+                                </div>
+                                <div class="amenity-item">
+                                    <i class="fas fa-snowflake amenity-icon"></i>
+                                    <span class="amenity-text">Aire acondicionado</span>
+                                </div>
+                                <div class="amenity-item">
+                                    <i class="fas fa-plug amenity-icon"></i>
+                                    <span class="amenity-text">Planta eléctrica</span>
+                                </div>
+                                <div class="amenity-item">
+                                    <i class="fas fa-desktop amenity-icon"></i>
+                                    <span class="amenity-text">Equipo multimedia</span>
+                                </div>
+                                <div class="amenity-item">
+                                    <i class="fas fa-coffee amenity-icon"></i>
+                                    <span class="amenity-text">Estación de agua, café, té</span>
+                                </div>
+                                <div class="amenity-item">
+                                    <i class="fas fa-cookie-bite amenity-icon"></i>
+                                    <span class="amenity-text">Galletas ilimitado</span>
+                                </div>
+                            </div>
+                            
+                            <div class="space16"></div>
 
-                <!-- ===== BOTONES SECCIÓN 1 ===== -->
-                <div class="text-center">
-                  <div class="row">
-                    <div class="col-6">
-                      <div class="price-box">
-                        <div class="price-amount" id="room-price-1">L490 <small>por hora</small></div>
-                      </div>
+                            <!-- ===== BOTONES TGU ===== -->
+                            <div class="text-center">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="price-box">
+                                            <div class="price-amount" id="room-price-1">L490 <small>por hora</small></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <a href="#" class="reserve-btn">
+                                            Reservar <span class="arrow1"><i class="fa-solid fa-arrow-right"></i></span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-6">
-                      <a href="contact.html" class="reserve-btn">
-                        Reservar <span class="arrow1"><i class="fa-solid fa-arrow-right"></i></span>
-                      </a>
-                    </div>
-                  </div>
                 </div>
-              </div>
             </div>
-          </div>
+            
+            <div class="col-lg-7">
+                <div class="all-galler-images compact-gallery">
+                    <!-- ✅ IMÁGENES GRANDES - CARGADAS POR SCRIPT -->
+                    <div class="big-img">
+                        <img src="" alt="Sala TGU imagen 1" loading="lazy">
+                    </div>
+                    <div class="big-img">
+                        <img src="" alt="Sala TGU imagen 2" loading="lazy">
+                    </div>
+                    <div class="big-img">
+                        <img src="" alt="Sala TGU imagen 3" loading="lazy">
+                    </div>
+                    <div class="big-img">
+                        <img src="" alt="Sala TGU imagen 4" loading="lazy">
+                    </div>
+                    <div class="big-img">
+                        <img src="" alt="Sala TGU imagen 5" loading="lazy">
+                    </div>
+                    <div class="big-img">
+                        <img src="" alt="Sala TGU imagen 6" loading="lazy">
+                    </div>
+                </div>
+                
+                <div class="bottom-galler-images">
+                    <!-- ✅ MINIATURAS MÁS ALTAS - CARGADAS POR SCRIPT -->
+                    <div class="small-img">
+                        <img src="" alt="Miniatura TGU 1" loading="lazy">
+                    </div>
+                    <div class="small-img">
+                        <img src="" alt="Miniatura TGU 2" loading="lazy">
+                    </div>
+                    <div class="small-img">
+                        <img src="" alt="Miniatura TGU 3" loading="lazy">
+                    </div>
+                    <div class="small-img">
+                        <img src="" alt="Miniatura TGU 4" loading="lazy">
+                    </div>
+                    <div class="small-img">
+                        <img src="" alt="Miniatura TGU 5" loading="lazy">
+                    </div>
+                    <div class="small-img">
+                        <img src="" alt="Miniatura TGU 6" loading="lazy">
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-lg-7">
-          <div class="all-galler-images compact-gallery" data-aos="fade-left" data-aos-duration="1000">
-            <div class="big-img">
-              <img src="assets/img/all-images/properties/property-img7.png" alt="housa">
-            </div>
-            <div class="big-img">
-              <img src="assets/img/all-images/properties/property-img8.png" alt="housa">
-            </div>
-            <div class="big-img">
-              <img src="assets/img/all-images/properties/property-img9.png" alt="housa">
-            </div>
-            <div class="big-img">
-              <img src="assets/img/all-images/properties/property-img7.png" alt="housa">
-            </div>
-            <div class="big-img">
-              <img src="assets/img/all-images/properties/property-img8.png" alt="housa">
-            </div>
-            <div class="big-img">
-              <img src="assets/img/all-images/properties/property-img9.png" alt="housa">
-            </div>
-          </div>
-          <div class="bottom-galler-images" data-aos="fade-right" data-aos-duration="1100">
-            <div class="small-img">
-              <img src="assets/img/all-images/properties/property-img10.png" alt="housa">
-            </div>
-            <div class="small-img">
-              <img src="assets/img/all-images/properties/property-img11.png" alt="housa">
-            </div>
-            <div class="small-img">
-              <img src="assets/img/all-images/properties/property-img12.png" alt="housa">
-            </div>
-            <div class="small-img">
-              <img src="assets/img/all-images/properties/property-img10.png" alt="housa">
-            </div>
-            <div class="small-img">
-              <img src="assets/img/all-images/properties/property-img11.png" alt="housa">
-            </div>
-            <div class="small-img">
-              <img src="assets/img/all-images/properties/property-img12.png" alt="housa">
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
+</div>
+   <!--===== FIN Sala de Juntas Tegucigalpa=======-->
 
   <div class="space60"></div>
 
-  <!--===== SEGUNDA SECCIÓN: Sala de Juntas (IZQUIERDA) =======-->
+  <!--===== Sala de Juntas San Pedro Sula (IZQUIERDA) =======-->
   <div class="properties2 sp1">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-6 m-auto">
-          <div class="heading1 text-center space-margin60">
-            <h5>Salas de Juntas San Pedro Sula</h5>
-            <div class="space16"></div>
-            <h2 class="text-anime-style-3">Espacios Cómodos y Amplios</h2>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <!-- ===== GALERÍA A LA IZQUIERDA ===== -->
-        <div class="col-lg-7 order-lg-1 order-2">
-          <div class="all-galler-images compact-gallery" data-aos="fade-right" data-aos-duration="1000">
-            <div class="big-img">
-              <img src="assets/img/all-images/properties/property-img7.png" alt="housa">
+        <div class="row">
+            <div class="col-lg-6 m-auto">
+                <div class="heading1 text-center space-margin60">
+                    <h5 color>Salas de Juntas San Pedro Sula</h5>
+                    <div class="space16"></div>
+                    <h2 class="text-anime-style-3" style="color: #111; -webkit-text-fill-color: initial; background: none;">Espacios Cómodos y Amplios</h2>
+                </div>
             </div>
-            <div class="big-img">
-              <img src="assets/img/all-images/properties/property-img8.png" alt="housa">
-            </div>
-            <div class="big-img">
-              <img src="assets/img/all-images/properties/property-img9.png" alt="housa">
-            </div>
-            <div class="big-img">
-              <img src="assets/img/all-images/properties/property-img7.png" alt="housa">
-            </div>
-            <div class="big-img">
-              <img src="assets/img/all-images/properties/property-img8.png" alt="housa">
-            </div>
-            <div class="big-img">
-              <img src="assets/img/all-images/properties/property-img9.png" alt="housa">
-            </div>
-          </div>
-          <div class="bottom-galler-images" data-aos="fade-left" data-aos-duration="1100">
-            <div class="small-img">
-              <img src="assets/img/all-images/properties/property-img10.png" alt="housa">
-            </div>
-            <div class="small-img">
-              <img src="assets/img/all-images/properties/property-img11.png" alt="housa">
-            </div>
-            <div class="small-img">
-              <img src="assets/img/all-images/properties/property-img12.png" alt="housa">
-            </div>
-            <div class="small-img">
-              <img src="assets/img/all-images/properties/property-img10.png" alt="housa">
-            </div>
-            <div class="small-img">
-              <img src="assets/img/all-images/properties/property-img11.png" alt="housa">
-            </div>
-            <div class="small-img">
-              <img src="assets/img/all-images/properties/property-img12.png" alt="housa">
-            </div>
-          </div>
         </div>
         
-        <!-- ===== CONTENIDO A LA DERECHA ===== -->
-        <div class="col-lg-5 order-lg-2 order-1">
-          <div class="heading1">
-            <div class="content-area">
-              <!-- ===== PESTAÑAS SECCIÓN 2 (SOLO 2 PESTAÑAS) ===== -->
-              <div class="rent-sale-area elegant-room-tabs-2">
-                <ul>
-                  <li><a href="#" class="room-tab-2 tab-active-2" data-room="comoda" id="tab2-comoda">1-4 personas</a></li>
-                  <li><a href="#" class="room-tab-2" data-room="megaconfort" id="tab2-megaconfort">1-18 personas</a></li>
-                </ul>
-              </div>
-              
-              <div class="space32"></div>
-              
-              <!-- ===== CONTENIDO DINÁMICO SECCIÓN 2 ===== -->
-              <div id="room-content-2">
-                <h3 class="room-title" id="room-name-2">Cómoda</h3>
-                
-                <div class="capacity-badge" id="room-capacity-2">
-                  <i class="fas fa-users"></i>
-                  <span>Capacidad Sala de juntas: 1-4 personas</span>
-                </div>
-                
-                <div class="amenities-grid">
-                  <div class="amenity-item">
-                    <i class="fas fa-chalkboard amenity-icon"></i>
-                    <span class="amenity-text">Pizarra</span>
-                  </div>
-                  <div class="amenity-item">
-                    <i class="fas fa-snowflake amenity-icon"></i>
-                    <span class="amenity-text">Aire acondicionado</span>
-                  </div>
-                  <div class="amenity-item">
-                    <i class="fas fa-plug amenity-icon"></i>
-                    <span class="amenity-text">Planta eléctrica</span>
-                  </div>
-                  <div class="amenity-item">
-                    <i class="fas fa-desktop amenity-icon"></i>
-                    <span class="amenity-text">Equipo multimedia</span>
-                  </div>
-                  <div class="amenity-item">
-                    <i class="fas fa-coffee amenity-icon"></i>
-                    <span class="amenity-text">Estación de agua, café, té</span>
-                  </div>
-                  <div class="amenity-item">
-                    <i class="fas fa-cookie-bite amenity-icon"></i>
-                    <span class="amenity-text">Galletas ilimitado</span>
-                  </div>
-                </div>
-                
-                <div class="space16"></div>
-
-                <!-- ===== BOTONES SECCIÓN 2 ===== -->
-                <div class="text-center">
-                  <div class="row">
-                    <div class="col-6">
-                      <div class="price-box">
-                        <div class="price-amount" id="room-price-2">L450 <small>por hora</small></div>
-                      </div>
+        <div class="row">
+            <!-- ===== GALERÍA A LA IZQUIERDA ===== -->
+            <div class="col-lg-7 order-lg-1 order-2">
+                <div class="all-galler-images compact-gallery" data-aos="fade-right" data-aos-duration="1000">
+                    <!-- ✅ IMÁGENES GRANDES - CARGADAS POR SCRIPT -->
+                    <div class="big-img">
+                        <img src="" alt="Sala SPS imagen 1" loading="lazy">
                     </div>
-                    <div class="col-6">
-                      <a href="reservas.html" class="reserve-btn">
-                        Reservar <span class="arrow1"><i class="fa-solid fa-arrow-right"></i></span>
-                      </a>
+                    <div class="big-img">
+                        <img src="" alt="Sala SPS imagen 2" loading="lazy">
                     </div>
-                  </div>
+                    <div class="big-img">
+                        <img src="" alt="Sala SPS imagen 3" loading="lazy">
+                    </div>
+                    <div class="big-img">
+                        <img src="" alt="Sala SPS imagen 4" loading="lazy">
+                    </div>
+                    <div class="big-img">
+                        <img src="" alt="Sala SPS imagen 5" loading="lazy">
+                    </div>
+                    <div class="big-img">
+                        <img src="" alt="Sala SPS imagen 6" loading="lazy">
+                    </div>
                 </div>
-              </div>
+                
+                <div class="bottom-galler-images" data-aos="fade-left" data-aos-duration="1100">
+                    <!-- ✅ MINIATURAS MÁS ALTAS - CARGADAS POR SCRIPT -->
+                    <div class="small-img">
+                        <img src="" alt="Miniatura SPS 1" loading="lazy">
+                    </div>
+                    <div class="small-img">
+                        <img src="" alt="Miniatura SPS 2" loading="lazy">
+                    </div>
+                    <div class="small-img">
+                        <img src="" alt="Miniatura SPS 3" loading="lazy">
+                    </div>
+                    <div class="small-img">
+                        <img src="" alt="Miniatura SPS 4" loading="lazy">
+                    </div>
+                    <div class="small-img">
+                        <img src="" alt="Miniatura SPS 5" loading="lazy">
+                    </div>
+                    <div class="small-img">
+                        <img src="" alt="Miniatura SPS 6" loading="lazy">
+                    </div>
+                </div>
             </div>
-          </div>
+            
+            <!-- ===== CONTENIDO A LA DERECHA ===== -->
+            <div class="col-lg-5 order-lg-2 order-1">
+                <div class="heading1">
+                    <div class="content-area">
+                        <!-- ===== PESTAÑAS SPS ULTRA OPTIMIZADAS ===== -->
+                        <div class="rent-sale-area elegant-room-tabs-2">
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0)" 
+                                       class="room-tab-2 tab-active-2" 
+                                       data-room="comoda" 
+                                       id="tab2-comoda"
+                                       role="button"
+                                       tabindex="0">1-4 personas</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" 
+                                       class="room-tab-2" 
+                                       data-room="megaconfort" 
+                                       id="tab2-megaconfort"
+                                       role="button"
+                                       tabindex="0">1-18 personas</a>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="space32"></div>
+                        
+                        <!-- ===== CONTENIDO DINÁMICO SPS ===== -->
+                        <div id="room-content-2">
+                            <h3 class="room-title" id="room-name-2">Cómoda</h3>
+                            
+                            <div class="capacity-badge" id="room-capacity-2">
+                                <i class="fas fa-users"></i>
+                                <span>Capacidad Sala de juntas: 1-4 personas</span>
+                            </div>
+                            
+                            <div class="amenities-grid">
+                                <div class="amenity-item">
+                                    <i class="fas fa-chalkboard amenity-icon"></i>
+                                    <span class="amenity-text">Pizarra</span>
+                                </div>
+                                <div class="amenity-item">
+                                    <i class="fas fa-snowflake amenity-icon"></i>
+                                    <span class="amenity-text">Aire acondicionado</span>
+                                </div>
+                                <div class="amenity-item">
+                                    <i class="fas fa-plug amenity-icon"></i>
+                                    <span class="amenity-text">Planta eléctrica</span>
+                                </div>
+                                <div class="amenity-item">
+                                    <i class="fas fa-desktop amenity-icon"></i>
+                                    <span class="amenity-text">Equipo multimedia</span>
+                                </div>
+                                <div class="amenity-item">
+                                    <i class="fas fa-coffee amenity-icon"></i>
+                                    <span class="amenity-text">Estación de agua, café, té</span>
+                                </div>
+                                <div class="amenity-item">
+                                    <i class="fas fa-cookie-bite amenity-icon"></i>
+                                    <span class="amenity-text">Galletas ilimitado</span>
+                                </div>
+                            </div>
+                            
+                            <div class="space16"></div>
+
+                            <!-- ===== BOTONES SPS ===== -->
+                            <div class="text-center">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="price-box">
+                                            <div class="price-amount" id="room-price-2">L450 <small>por hora</small></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <a href="reservas.html" class="reserve-btn">
+                                            Reservar <span class="arrow1"><i class="fa-solid fa-arrow-right"></i></span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-  <!--===== Fin Sala de Juntas Tegucigalpa =======-->
+</div>
+  <!--===== Fin Sala de Juntas San Pedro Sula =======-->
 
   <div class="space60"></div>
 
@@ -1524,465 +901,268 @@
   <script src="assets/js/plugins/waypoints.js"></script>
   <script src="assets/js/plugins/slick-slider.js"></script>
   <script src="assets/js/plugins/circle-progress.js"></script>
+  <script src="assets/js/plugins/cotizador-easyoffice.js"></script>
   <script src="assets/js/main.js"></script>
-
-  <!-- ===== SCRIPT PARA PESTAÑAS DINÁMICAS ===== --> 
   <script>
-    // ===== DATOS SECCIÓN 1 =====
-    const roomsData1 = {
-      vanguardia: {
-        name: "Vanguardia",
-        capacity: "Capacidad Sala de juntas: 1-4 personas",
-        price: "L490"
-      },
-      inspiracion: {
-        name: "Inspiración", 
-        capacity: "Capacidad Sala de juntas: 5-8 personas",
-        price: "L690"
-      },
-      sinergia: {
-        name: "Sinergia",
-        capacity: "Capacidad Sala de juntas: 9-18 personas", 
-        price: "L920"
-      }
+    // Cargar el HTML del cotizador y luego inicializarlo
+    fetch('cotizador-easyoffice.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('cotizador-container').innerHTML = data;
+            // IMPORTANTE: Inicializar DESPUÉS de cargar el HTML
+            if (typeof initializeCotizadorFromFetch === 'function') {
+                initializeCotizadorFromFetch();
+            } else {
+                // Fallback si la función no existe todavía
+                setTimeout(() => {
+                    if (typeof initializeCotizadorFromFetch === 'function') {
+                        initializeCotizadorFromFetch();
+                    }
+                }, 100);
+            }
+        })
+        .catch(error => {
+            console.error('Error cargando el cotizador:', error);
+            document.getElementById('cotizador-container').innerHTML = 
+                '<p>Error cargando el sistema de cotización. Por favor, recarga la página.</p>';
+        });
+  </script>
+
+  <!-- ===== PESTAÑAS DINÁMICAS Sala de juntas===== --> 
+  <script>
+
+    // Datos EXACTOS como en el script de emergencia que funcionó
+    const tguData = {
+        vanguardia: {
+            name: "Vanguardia",
+            capacity: "Capacidad Sala de juntas: 1-4 personas",
+            price: "L490",
+            images: [
+                "assets/img/EasyOffice/Sala de juntas /TGU/Inspiracion/IMG_2505.jpg",
+                "assets/img/EasyOffice/Sala de juntas /TGU/Inspiracion/IMG_2511.jpg"
+            ]
+        },
+        inspiracion: {
+            name: "Inspiración", 
+            capacity: "Capacidad Sala de juntas: 5-8 personas",
+            price: "L690",
+            images: [
+                "assets/img/EasyOffice/Sala de juntas /TGU/Vanguardia/IMG_2533.jpg",
+                "assets/img/EasyOffice/Sala de juntas /TGU/Vanguardia/IMG_2540.jpg"
+            ]
+        },
+        sinergia: {
+            name: "Sinergia",
+            capacity: "Capacidad Sala de juntas: 9-18 personas", 
+            price: "L920",
+            images: [
+                "assets/img/EasyOffice/Sala de juntas /TGU/Sinergia/IMG_0354.png",
+                "assets/img/EasyOffice/Sala de juntas /TGU/Sinergia/IMG_2531.jpg"
+            ]
+        }
     };
 
-    // ===== DATOS SECCIÓN 2 =====
-    const roomsData2 = {
-      comoda: {
-        name: "Cómoda",
-        capacity: "Capacidad Sala de juntas: 1-4 personas",
-        price: "L450"
-      },
-      megaconfort: {
-        name: "Megaconfort",
-        capacity: "Capacidad Sala de juntas: 1-18 personas",
-        price: "L850"
-      }
+    const spsData = {
+        comoda: {
+            name: "Cómoda",
+            capacity: "Capacidad Sala de juntas: 1-4 personas",
+            price: "L450",
+            images: ["assets/img/EasyOffice/Sala de juntas /SPS/1.jpg"]
+        },
+        megaconfort: {
+            name: "Mega Confort", 
+            capacity: "Capacidad Sala de juntas: 1-18 personas",
+            price: "L920",
+            images: [
+                "assets/img/EasyOffice/Sala de juntas /SPS/2.jpg",
+                "assets/img/EasyOffice/Sala de juntas /SPS/3.jpg"
+            ]
+        }
     };
 
-    // ===== FUNCIONES PARA CAMBIAR CONTENIDO =====
-    function updateRoomContent1(roomKey) {
-      const room = roomsData1[roomKey];
-      const roomName = document.getElementById('room-name-1');
-      const roomCapacity = document.getElementById('room-capacity-1');
-      const roomPrice = document.getElementById('room-price-1');
-      const content = document.getElementById('room-content-1');
-      
-      content.style.opacity = '0.7';
-      
-      setTimeout(() => {
-        roomName.textContent = room.name;
-        roomCapacity.innerHTML = `<i class="fas fa-users"></i><span>${room.capacity}</span>`;
-        roomPrice.innerHTML = `${room.price} <small>por hora</small>`;
-        content.style.opacity = '1';
-      }, 150);
+    // Función EXACTA del script de emergencia que funcionó
+    function updateTGU(roomKey) {
+        const room = tguData[roomKey];
+        if (!room) return;
+        
+        // Actualizar textos
+        const nameEl = document.getElementById('room-name-1');
+        const capacityEl = document.getElementById('room-capacity-1');
+        const priceEl = document.getElementById('room-price-1');
+        
+        if (nameEl) nameEl.textContent = room.name;
+        if (capacityEl) capacityEl.innerHTML = `<i class="fas fa-users"></i><span>${room.capacity}</span>`;
+        if (priceEl) priceEl.innerHTML = `${room.price} <small>por hora</small>`;
+        
+        // Actualizar imágenes
+        const bigImgs = document.querySelectorAll('.all-galler-images .big-img img');
+        const smallImgs = document.querySelectorAll('.bottom-galler-images .small-img img');
+        
+        bigImgs.forEach((img, index) => {
+            const imageIndex = index % room.images.length;
+            img.src = room.images[imageIndex];
+        });
+        
+        smallImgs.forEach((img, index) => {
+            const imageIndex = index % room.images.length;
+            img.src = room.images[imageIndex];
+        });
     }
 
-    function updateRoomContent2(roomKey) {
-      const room = roomsData2[roomKey];
-      const roomName = document.getElementById('room-name-2');
-      const roomCapacity = document.getElementById('room-capacity-2');
-      const roomPrice = document.getElementById('room-price-2');
-      const content = document.getElementById('room-content-2');
-      
-      content.style.opacity = '0.7';
-      
-      setTimeout(() => {
-        roomName.textContent = room.name;
-        roomCapacity.innerHTML = `<i class="fas fa-users"></i><span>${room.capacity}</span>`;
-        roomPrice.innerHTML = `${room.price} <small>por hora</small>`;
-        content.style.opacity = '1';
-      }, 150);
+    // Función EXACTA del script de emergencia que funcionó para SPS
+    function updateSPS(roomKey) {
+        const room = spsData[roomKey];
+        if (!room) return;
+        
+        // Actualizar textos
+        const nameEl = document.getElementById('room-name-2');
+        const capacityEl = document.getElementById('room-capacity-2');
+        const priceEl = document.getElementById('room-price-2');
+        
+        if (nameEl) nameEl.textContent = room.name;
+        if (capacityEl) capacityEl.innerHTML = `<i class="fas fa-users"></i><span>${room.capacity}</span>`;
+        if (priceEl) priceEl.innerHTML = `${room.price} <small>por hora</small>`;
+        
+        // Actualizar imágenes
+        const bigImgs = document.querySelectorAll('.all-galler-images .big-img img');
+        const smallImgs = document.querySelectorAll('.bottom-galler-images .small-img img');
+        
+        bigImgs.forEach((img, index) => {
+            const imageIndex = index % room.images.length;
+            img.src = room.images[imageIndex];
+        });
+        
+        smallImgs.forEach((img, index) => {
+            const imageIndex = index % room.images.length;
+            img.src = room.images[imageIndex];
+        });
     }
 
-    // ===== JAVASCRIPT PARA SECCIÓN 1 =====
+    // Función para activar pestaña TGU
+    function activateTabTGU(activeTab, roomKey) {
+        const allTabs = document.querySelectorAll('.room-tab-1');
+        allTabs.forEach(tab => tab.classList.remove('tab-active-1'));
+        activeTab.classList.add('tab-active-1');
+        updateTGU(roomKey);
+    }
+
+    // Función EXACTA del script de emergencia que funcionó para SPS
+    function activateTabSPS(activeTab, roomKey) {
+        const allTabs = document.querySelectorAll('.room-tab-2');
+        allTabs.forEach(tab => tab.classList.remove('tab-active-2'));
+        activeTab.classList.add('tab-active-2');
+        updateSPS(roomKey);
+    }
+
+    // Configuración DOM Ready
     document.addEventListener('DOMContentLoaded', function() {
-      const tabs1 = document.querySelectorAll('.room-tab-1');
-      
-      function clearAllTabs1() {
-        tabs1.forEach(tab => {
-          tab.classList.remove('tab-active-1');
-          tab.style.background = '#f8f9fa';
-          tab.style.color = '#333';
-          tab.style.boxShadow = 'none';
-          tab.style.transform = 'none';
-        });
-      }
-      
-      function activateTab1(clickedTab) {
-        clickedTab.classList.add('tab-active-1');
-        clickedTab.style.background = '#ff7b3d';
-        clickedTab.style.color = 'white';
-        clickedTab.style.boxShadow = '0 4px 15px rgba(255, 123, 61, 0.3)';
-        clickedTab.style.transform = 'translateY(-2px)';
-      }
-      
-      tabs1.forEach(tab => {
-        tab.addEventListener('click', function(e) {
-          e.preventDefault();
-          clearAllTabs1();
-          activateTab1(this);
-          const roomType = this.getAttribute('data-room');
-          updateRoomContent1(roomType);
-        });
-      });
-      
-      // ===== JAVASCRIPT PARA SECCIÓN 2 =====
-      const tabs2 = document.querySelectorAll('.room-tab-2');
-      
-      function clearAllTabs2() {
-        tabs2.forEach(tab => {
-          tab.classList.remove('tab-active-2');
-          tab.style.background = '#f8f9fa';
-          tab.style.color = '#333';
-          tab.style.boxShadow = 'none';
-          tab.style.transform = 'none';
-        });
-      }
-      
-      function activateTab2(clickedTab) {
-        clickedTab.classList.add('tab-active-2');
-        clickedTab.style.background = '#ff7b3d';
-        clickedTab.style.color = 'white';
-        clickedTab.style.boxShadow = '0 4px 15px rgba(255, 123, 61, 0.3)';
-        clickedTab.style.transform = 'translateY(-2px)';
-      }
-      
-      tabs2.forEach(tab => {
-        tab.addEventListener('click', function(e) {
-          e.preventDefault();
-          clearAllTabs2();
-          activateTab2(this);
-          const roomType = this.getAttribute('data-room');
-          updateRoomContent2(roomType);
-        });
-      });
-      
-      // Aplicar transiciones
-      const content1 = document.getElementById('room-content-1');
-      const content2 = document.getElementById('room-content-2');
-      content1.style.transition = 'all 0.3s ease';
-      content2.style.transition = 'all 0.3s ease';
+        
+        // DETECTAR SI ES TEGUCIGALPA
+        const tguTab1 = document.querySelector('[data-room="vanguardia"]');
+        const tguTab2 = document.querySelector('[data-room="inspiracion"]'); 
+        const tguTab3 = document.querySelector('[data-room="sinergia"]');
+        
+        if (tguTab1 || tguTab2 || tguTab3) {
+            // CONFIGURAR TEGUCIGALPA
+            if (tguTab1) {
+                tguTab1.onclick = function(e) {
+                    e.preventDefault();
+                    activateTabTGU(this, 'vanguardia');
+                    return false;
+                };
+            }
+            
+            if (tguTab2) {
+                tguTab2.onclick = function(e) {
+                    e.preventDefault();
+                    activateTabTGU(this, 'inspiracion');
+                    return false;
+                };
+            }
+            
+            if (tguTab3) {
+                tguTab3.onclick = function(e) {
+                    e.preventDefault();
+                    activateTabTGU(this, 'sinergia');
+                    return false;
+                };
+            }
+            
+            // Inicializar TGU
+            updateTGU('vanguardia');
+        }
+        
+        // DETECTAR SI ES SAN PEDRO SULA
+        const spsTab1 = document.querySelector('[data-room="comoda"]');
+        const spsTab2 = document.querySelector('[data-room="megaconfort"]');
+        
+        if (spsTab1 || spsTab2) {
+            // CONFIGURAR SAN PEDRO SULA - LÓGICA EXACTA QUE FUNCIONÓ
+            if (spsTab1) {
+                spsTab1.onclick = function(e) {
+                    e.preventDefault();
+                    activateTabSPS(this, 'comoda');
+                    return false;
+                };
+            }
+            
+            if (spsTab2) {
+                spsTab2.onclick = function(e) {
+                    e.preventDefault();
+                    activateTabSPS(this, 'megaconfort');
+                    return false;
+                };
+            }
+            
+            // Inicializar SPS
+            updateSPS('comoda');
+        }
+    });
+
+    // Respaldo window.load - LÓGICA EXACTA QUE FUNCIONÓ PARA SPS
+    window.addEventListener('load', function() {
+        setTimeout(() => {
+            
+            // Respaldo para TGU
+            const tguTabs = document.querySelectorAll('.room-tab-1');
+            tguTabs.forEach(tab => {
+                if (!tab.onclick) {
+                    const roomType = tab.getAttribute('data-room');
+                    if (roomType && tguData[roomType]) {
+                        tab.onclick = function(e) {
+                            e.preventDefault();
+                            activateTabTGU(this, roomType);
+                            return false;
+                        };
+                    }
+                }
+            });
+            
+            // Respaldo para SPS - EXACTO COMO FUNCIONÓ
+            const spsTab2 = document.getElementById('tab2-megaconfort');
+            if (spsTab2 && !spsTab2.onclick) {
+                spsTab2.onclick = function(e) {
+                    e.preventDefault();
+                    activateTabSPS(this, 'megaconfort');
+                    return false;
+                };
+            }
+            
+            const spsTab1 = document.getElementById('tab2-comoda');
+            if (spsTab1 && !spsTab1.onclick) {
+                spsTab1.onclick = function(e) {
+                    e.preventDefault();
+                    activateTabSPS(this, 'comoda');
+                    return false;
+                };
+            }
+            
+        }, 500);
     });
   </script>
   <!-- ===== SCRIPT fin PESTAÑAS DINÁMICAS ===== -->
 
-  <script>
-    // ===== VARIABLES GLOBALES =====
-    let solicitudActual = {};
-    const WHATSAPP_NUMBER = '+50432484168';
-
-    // ===== SISTEMA DE TABS =====
-    document.querySelectorAll('.tab-btn-smart').forEach(button => {
-      button.addEventListener('click', function() {
-        document.querySelectorAll('.tab-btn-smart').forEach(btn => btn.classList.remove('active'));
-        this.classList.add('active');
-        
-        document.querySelectorAll('.tab-content-smart').forEach(tab => tab.classList.add('hidden'));
-        const targetTab = this.getAttribute('data-tab');
-        document.getElementById(targetTab).classList.remove('hidden');
-        
-        resetearFormularios();
-      });
-    });
-
-    // ===== FUNCIONES PARA SERVICIOS =====
-    function updateServicioOptions() {
-      const tipoServicio = document.getElementById('tipo-servicio').value;
-      
-      ocultarElementos(['virtual-options', 'instalaciones-options', 'fisica-modalidad', 'personas-options', 'tiempo-options']);
-      
-      if (tipoServicio === 'oficina-virtual') {
-        mostrarElemento('virtual-options');
-      } else if (tipoServicio === 'oficina-fisica') {
-        mostrarElemento('fisica-modalidad');
-      }
-      
-      updateButtonState();
-      adjustContainerWidth();
-    }
-
-    function updatePermisoOptions() {
-      const tipoPermiso = document.getElementById('tipo-permiso').value;
-      
-      ocultarElementos(['instalaciones-options', 'tiempo-options']);
-      
-      if (tipoPermiso === 'operaciones-instalaciones') {
-        mostrarElemento('instalaciones-options');
-      }
-      
-      updateButtonState();
-      adjustContainerWidth();
-    }
-
-    function updateInstalacionOptions() {
-      updateButtonState();
-      adjustContainerWidth();
-    }
-
-    function updatePersonasOptions() {
-      const modalidad = document.getElementById('modalidad-fisica').value;
-      
-      ocultarElementos(['tiempo-options']);
-      
-      if (modalidad) {
-        mostrarElemento('personas-options');
-      }
-      
-      updateButtonState();
-      adjustContainerWidth();
-    }
-
-    function updateTiempoOptions() {
-      const modalidad = document.getElementById('modalidad-fisica')?.value;
-      const personas = document.getElementById('cantidad-personas')?.value;
-      
-      if (modalidad === 'temporal' && personas) {
-        mostrarElemento('tiempo-options');
-      }
-      
-      updateButtonState();
-      adjustContainerWidth();
-    }
-
-    function updateProyectoOptions() {
-      const tipoProyecto = document.getElementById('tipo-proyecto').value;
-      
-      ocultarElementos(['catrachas-options', 'proyecto-descripcion']);
-      
-      if (tipoProyecto === 'manos-catrachas') {
-        mostrarElemento('catrachas-options');
-      } else if (tipoProyecto) {
-        mostrarElemento('proyecto-descripcion');
-      }
-      
-      adjustContainerWidth();
-    }
-
-    // ===== AJUSTAR ANCHO DEL CONTENEDOR =====
-    function adjustContainerWidth() {
-      const activeTab = document.querySelector('.tab-content-smart:not(.hidden)');
-      const visibleFilters = activeTab.querySelectorAll('.filter-group-smart:not(.hidden)');
-      const container = activeTab.querySelector('.filters-smart');
-      
-      // Calcular cuántas columnas necesitamos
-      const numColumns = Math.min(visibleFilters.length, 4);
-      
-      if (numColumns <= 2) {
-        container.style.maxWidth = '600px';
-      } else if (numColumns <= 3) {
-        container.style.maxWidth = '900px';
-      } else {
-        container.style.maxWidth = '100%';
-      }
-    }
-
-    // ===== ACTUALIZAR ESTADO DEL BOTÓN =====
-    function updateButtonState() {
-      const tipoServicio = document.getElementById('tipo-servicio').value;
-      const tipoPermiso = document.getElementById('tipo-permiso')?.value;
-      const modalidad = document.getElementById('modalidad-fisica')?.value;
-      const personas = document.getElementById('cantidad-personas')?.value;
-      const instalacion = document.getElementById('tipo-instalacion')?.value;
-      const duracion = document.getElementById('duracion-tiempo')?.value;
-      
-      const btnText = document.getElementById('btn-text');
-      const btnIcon = document.querySelector('#btn-principal-servicios i');
-      
-      let readyToContract = false;
-      
-      if (tipoServicio === 'oficina-virtual') {
-        if (tipoPermiso === 'solo-operaciones') {
-          readyToContract = true;
-        } else if (tipoPermiso === 'operaciones-instalaciones' && instalacion) {
-          readyToContract = true;
-        }
-      } else if (tipoServicio === 'oficina-fisica' && modalidad && personas) {
-        if (modalidad === 'permanente') {
-          readyToContract = true;
-        } else if (modalidad === 'temporal' && duracion) {
-          readyToContract = true;
-        }
-      }
-      
-      if (readyToContract) {
-        btnText.textContent = 'Contratar';
-        btnIcon.className = 'fas fa-shopping-cart';
-      } else {
-        btnText.textContent = 'Buscar Servicio';
-        btnIcon.className = 'fas fa-search';
-      }
-    }
-
-    // ===== PROCESAR SOLICITUD =====
-    function procesarSolicitud() {
-      const tipoServicio = document.getElementById('tipo-servicio').value;
-      
-      if (!tipoServicio) {
-        alert('Seleccione un tipo de servicio');
-        return;
-      }
-      
-      solicitudActual = {
-        tipo: 'servicio',
-        servicio: tipoServicio,
-        permiso: document.getElementById('tipo-permiso')?.value,
-        modalidad: document.getElementById('modalidad-fisica')?.value,
-        personas: document.getElementById('cantidad-personas')?.value,
-        instalacion: document.getElementById('tipo-instalacion')?.value,
-        duracion: document.getElementById('duracion-tiempo')?.value
-      };
-      
-      mostrarResumen();
-    }
-
-    // ===== ENVIAR POR WHATSAPP =====
-    function enviarWhatsApp() {
-      const tipoProyecto = document.getElementById('tipo-proyecto').value;
-      
-      if (!tipoProyecto) {
-        alert('Seleccione un tipo de proyecto');
-        return;
-      }
-      
-      let mensaje = `¡Hola! Me interesa un proyecto de EasyOffice:\n\n`;
-      
-      if (tipoProyecto === 'llave-mano') {
-        mensaje += `🔑 *Proyecto Llave en Mano*\n`;
-      } else if (tipoProyecto === 'manos-catrachas') {
-        mensaje += `🇭🇳 *Manos Catrachas*\n`;
-        const producto = document.getElementById('tipo-producto')?.value;
-        if (producto) {
-          mensaje += `Producto: ${producto}\n`;
-        }
-      } else if (tipoProyecto === 'proveedores-locales') {
-        mensaje += `🤝 *Proveedores Locales*\n`;
-      }
-      
-      const descripcion = document.getElementById('descripcion-proyecto')?.value;
-      if (descripcion) {
-        mensaje += `\n📝 *Descripción:*\n${descripcion}\n`;
-      }
-      
-      mensaje += `\n¿Podrían contactarme para más información?`;
-      
-      const url = `https://wa.me/${WHATSAPP_NUMBER.replace(/[^\d]/g, '')}?text=${encodeURIComponent(mensaje)}`;
-      window.open(url, '_blank');
-    }
-
-    // ===== MOSTRAR RESUMEN =====
-    function mostrarResumen() {
-      const content = document.getElementById('resumen-content');
-      let html = '<div class="resumen-items-smart">';
-      
-      if (solicitudActual.servicio === 'oficina-virtual') {
-        html += `
-          <div class="resumen-item-smart">
-            <i class="fas fa-laptop"></i>
-            <div>
-              <strong>Oficina Virtual</strong>
-              <p>${solicitudActual.permiso === 'solo-operaciones' ? 'Solo operaciones' : 'Operaciones + instalaciones'}</p>
-            </div>
-          </div>
-        `;
-        
-        if (solicitudActual.instalacion) {
-          html += `
-            <div class="resumen-item-smart">
-              <i class="fas fa-map-marker-alt"></i>
-              <div>
-                <strong>Instalación</strong>
-                <p>${solicitudActual.instalacion === 'sala-juntas' ? 'Sala de Juntas' : 'Coworking'}</p>
-              </div>
-            </div>
-          `;
-        }
-      } else if (solicitudActual.servicio === 'oficina-fisica') {
-        html += `
-          <div class="resumen-item-smart">
-            <i class="fas fa-building"></i>
-            <div>
-              <strong>Oficina Física</strong>
-              <p>${solicitudActual.modalidad} - ${solicitudActual.personas}</p>
-            </div>
-          </div>
-        `;
-        
-        if (solicitudActual.duracion) {
-          html += `
-            <div class="resumen-item-smart">
-              <i class="fas fa-clock"></i>
-              <div>
-                <strong>Duración</strong>
-                <p>${solicitudActual.duracion.replace('-', ' ')}</p>
-              </div>
-            </div>
-          `;
-        }
-      }
-      
-      html += '</div>';
-      content.innerHTML = html;
-      
-      document.getElementById('modal-resumen').classList.remove('hidden');
-    }
-
-    // ===== PROCEDER AL PAGO =====
-    function procederPago() {
-      cerrarModal('modal-resumen');
-      setTimeout(() => {
-        document.getElementById('modal-mantenimiento').classList.remove('hidden');
-      }, 200);
-    }
-
-    // ===== CONTACTAR DIRECTO =====
-    function contactarDirecto() {
-      const mensaje = `¡Hola! Me interesa contratar un servicio de EasyOffice. ¿Podrían contactarme?`;
-      const url = `https://wa.me/${WHATSAPP_NUMBER.replace(/[^\d]/g, '')}?text=${encodeURIComponent(mensaje)}`;
-      window.open(url, '_blank');
-      cerrarModal('modal-mantenimiento');
-    }
-
-    // ===== FUNCIONES AUXILIARES =====
-    function mostrarElemento(id) {
-      const elemento = document.getElementById(id);
-      if (elemento) elemento.classList.remove('hidden');
-    }
-
-    function ocultarElementos(ids) {
-      ids.forEach(id => {
-        const elemento = document.getElementById(id);
-        if (elemento) elemento.classList.add('hidden');
-      });
-    }
-
-    function cerrarModal(modalId) {
-      document.getElementById(modalId).classList.add('hidden');
-    }
-
-    function resetearFormularios() {
-      document.querySelectorAll('select').forEach(select => {
-        select.selectedIndex = 0;
-      });
-      
-      const textarea = document.getElementById('descripcion-proyecto');
-      if (textarea) textarea.value = '';
-      
-      ocultarElementos([
-        'virtual-options', 'instalaciones-options', 'fisica-modalidad', 
-        'personas-options', 'tiempo-options', 'catrachas-options', 'proyecto-descripcion'
-      ]);
-      
-      updateButtonState();
-      adjustContainerWidth();
-    }
-
-    // Inicializar al cargar
-    document.addEventListener('DOMContentLoaded', function() {
-      adjustContainerWidth();
-    });
-  </script>
+ 
 </body>
 
 </html>

@@ -311,7 +311,7 @@ function enviarWhatsApp() {
   window.open(url, '_blank');
 }
 
-// ===== MOSTRAR RESUMEN =====
+// ===== MOSTRAR RESUMEN (MODIFICADO) =====
 function mostrarResumen() {
   const content = document.getElementById('resumen-content');
   if (!content) return;
@@ -356,6 +356,20 @@ function mostrarResumen() {
   }
   
   html += '</div>';
+  
+  // MODIFICACIÓN: Agregar botones directamente en el modal
+  html += `
+    <div style="margin-top: 30px; display: flex; gap: 15px; justify-content: center; align-items: center;">
+      <button onclick="contactarDirecto()" style="background: linear-gradient(135deg, #ff6b35, #ff8c42); color: white; border: none; padding: 14px 28px; border-radius: 25px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease; font-size: 16px;">
+        <i class="fas fa-calendar-check"></i>
+        Reservar
+      </button>
+      <button onclick="cerrarModal('modal-resumen')" style="background: #6c757d; color: white; border: none; padding: 14px 28px; border-radius: 25px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; font-size: 16px;">
+        Cerrar
+      </button>
+    </div>
+  `;
+  
   content.innerHTML = html;
   
   const modal = document.getElementById('modal-resumen');
@@ -395,7 +409,10 @@ function getServiceDetails() {
     if (solicitudActual.capacidad.includes('comodas')) return 'Sala Cómodas (1-4 personas)';
     if (solicitudActual.capacidad.includes('confort')) return 'Sala Confort (1-18 personas)';
     if (solicitudActual.capacidad.includes('amplias')) return 'Sala Amplias (9-18 personas)';
-    return solicitudActual.capacidad.replace('-', ' ').replace('_', ' ');
+    // Arreglar formato para oficina privada: "1-2" y "3-4"
+    if (solicitudActual.capacidad === '1-2') return '1-2 personas';
+    if (solicitudActual.capacidad === '3-4') return '3-4 personas';
+    return solicitudActual.capacidad.replace('_', ' ');
   } else if (solicitudActual.espacios) {
     return `${solicitudActual.espacios} espacio${solicitudActual.espacios === '1' ? '' : 's'}`;
   }
@@ -437,20 +454,9 @@ function getReservaText(tipo, tiempo) {
   return `${tipos[tipo] || tipo} - ${tiempoFormateado}`;
 }
 
-// ===== PROCEDER AL PAGO =====
-function procederPago() {
-  cerrarModal('modal-resumen');
-  setTimeout(() => {
-    const modal = document.getElementById('modal-mantenimiento');
-    if (modal) {
-      modal.classList.remove('hidden');
-    }
-  }, 200);
-}
-
-// ===== CONTACTAR DIRECTO =====
+// ===== CONTACTAR DIRECTO (SIMPLIFICADO) =====
 function contactarDirecto() {
-  let mensaje = `¡Hola! Me interesa contratar un servicio de EasyOffice.\n\n`;
+  let mensaje = `¡Hola! Me interesa reservar un servicio de EasyOffice.\n\n`;
   
   if (solicitudActual.servicio) {
     mensaje += `📋 *Servicio:* ${getServiceName(solicitudActual.servicio)}\n`;
@@ -471,11 +477,13 @@ function contactarDirecto() {
     }
   }
   
-  mensaje += `\n¿Podrían contactarme para más información?`;
+  mensaje += `\n¿Podrían contactarme para confirmar disponibilidad y proceder con la reserva?`;
   
   const url = `https://wa.me/${WHATSAPP_NUMBER.replace(/[^\d]/g, '')}?text=${encodeURIComponent(mensaje)}`;
   window.open(url, '_blank');
-  cerrarModal('modal-mantenimiento');
+  
+  // Cerrar el modal después de enviar
+  cerrarModal('modal-resumen');
 }
 
 // ===== FUNCIONES AUXILIARES =====
@@ -547,4 +555,4 @@ if (document.readyState === 'loading') {
 }
 
 // Hacer la función global para poder llamarla desde el fetch
-window.initializeCotizadorFromFetch = initializeCotizadorFromFetch;
+window.initializeCotizadorFromFetch = initializeCotizador;
