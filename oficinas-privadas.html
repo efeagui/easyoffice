@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>easyOffice</title>
   <!--===== SOLUCION PARPADEO SLIDE =======-->
-    <style>
+  <style>
     /* Prevenir FOUC (Flash of Unstyled Content) */
     html {
         visibility: hidden;
@@ -342,43 +342,43 @@
   <div id="header-container"></div>
 
   <script>
-        // ✅ CARGAR HEADER SIN PARPADEO
-        document.addEventListener('DOMContentLoaded', function() {
+    // ✅ CARGAR HEADER SIN PARPADEO
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        // Cargar header inmediatamente
+        fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-container').innerHTML = data;
             
-            // Cargar header inmediatamente
-            fetch('header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header-container').innerHTML = data;
-                
-                // Marcar header como cargado
-                setTimeout(() => {
-                const sliderSection = document.querySelector('.hero4-slider-sectionarea');
-                if (sliderSection) {
-                    sliderSection.classList.add('loaded');
-                }
-                }, 100);
-                
-                // Activar sliders después de cargar header
-                setTimeout(() => {
-                document.querySelectorAll('.hero4-slider-area').forEach(area => {
-                    area.classList.add('ready');
-                });
-                }, 200);
-            })
-            .catch(error => {
-                console.error('Error cargando header:', error);
-                // Si falla, mostrar página de todas formas
-                document.documentElement.classList.add('loaded');
-            });
-        });
-
-        // ✅ MOSTRAR PÁGINA CUANDO TODO ESTÉ LISTO
-        window.addEventListener('load', function() {
+            // Marcar header como cargado
             setTimeout(() => {
-            document.documentElement.classList.add('loaded');
+            const sliderSection = document.querySelector('.hero4-slider-sectionarea');
+            if (sliderSection) {
+                sliderSection.classList.add('loaded');
+            }
             }, 100);
+            
+            // Activar sliders después de cargar header
+            setTimeout(() => {
+            document.querySelectorAll('.hero4-slider-area').forEach(area => {
+                area.classList.add('ready');
+            });
+            }, 200);
+        })
+        .catch(error => {
+            console.error('Error cargando header:', error);
+            // Si falla, mostrar página de todas formas
+            document.documentElement.classList.add('loaded');
         });
+    });
+
+    // ✅ MOSTRAR PÁGINA CUANDO TODO ESTÉ LISTO
+    window.addEventListener('load', function() {
+        setTimeout(() => {
+        document.documentElement.classList.add('loaded');
+        }, 100);
+    });
   </script>
 
   
