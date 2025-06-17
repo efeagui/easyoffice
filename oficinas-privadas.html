@@ -5,6 +5,49 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>easyOffice</title>
+  <!--===== SOLUCION PARPADEO SLIDE =======-->
+    <style>
+    /* Prevenir FOUC (Flash of Unstyled Content) */
+    html {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    html.loaded {
+        visibility: visible;
+        opacity: 1;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    /* Reservar espacio para el header */
+    #header-container {
+        min-height: 80px;
+        background: transparent;
+        transition: all 0.3s ease;
+    }
+
+    /* Prevenir jump durante carga del header */
+    .hero4-slider-sectionarea {
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+
+    .hero4-slider-sectionarea.loaded {
+        opacity: 1;
+    }
+
+    /* Prevenir parpadeo del slider */
+    .hero4-slider-area {
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+
+    .hero4-slider-area.ready {
+        opacity: 1;
+    }
+    </style>
+ <!--===== SOLUCION PARPADEO SLIDE =======-->
+
   <!--=====FAB ICON=======-->
   <link rel="shortcut icon" href="assets/img/logo/EasyOffice logo.png" type="image/x-icon">
   <!--===== CSS LINK =======-->
@@ -299,16 +342,47 @@
   <div id="header-container"></div>
 
   <script>
-    fetch('header.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('header-container').innerHTML = data;
-      });
+        // ✅ CARGAR HEADER SIN PARPADEO
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // Cargar header inmediatamente
+            fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+                
+                // Marcar header como cargado
+                setTimeout(() => {
+                const sliderSection = document.querySelector('.hero4-slider-sectionarea');
+                if (sliderSection) {
+                    sliderSection.classList.add('loaded');
+                }
+                }, 100);
+                
+                // Activar sliders después de cargar header
+                setTimeout(() => {
+                document.querySelectorAll('.hero4-slider-area').forEach(area => {
+                    area.classList.add('ready');
+                });
+                }, 200);
+            })
+            .catch(error => {
+                console.error('Error cargando header:', error);
+                // Si falla, mostrar página de todas formas
+                document.documentElement.classList.add('loaded');
+            });
+        });
+
+        // ✅ MOSTRAR PÁGINA CUANDO TODO ESTÉ LISTO
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+            document.documentElement.classList.add('loaded');
+            }, 100);
+        });
   </script>
 
-
-  <div class="space30"></div>
-  <!--===== Slide Oficina Privada =======-->
+  
+  <!-- ===== Slide Oficina Privada =======-->
   <div class="hero4-slider-sectionarea">
     <div class="hero4-slider-area" style="background-image: url(assets/img/EasyOffice/Oficina%20privada%20/TGU/3.png); background-position: center; background-repeat: no-repeat; background-size: cover;">
       <img src="assets/img/all-images/bg/h-bg1.png" alt="housa" class="h-bg1">
@@ -317,9 +391,9 @@
         <div class="row">
           <div class="col-lg-6">
             <div class="hero2-header heading2">
-              <h5><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <h5 style="text-transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path d="M2 20H4M4 20H10M4 20V11.452C4 10.918 4 10.651 4.065 10.402C4.12256 10.1819 4.21725 9.97322 4.345 9.78497C4.49 9.57197 4.691 9.39497 5.093 9.04397L9.894 4.84197C10.64 4.18997 11.013 3.86397 11.432 3.73997C11.802 3.62997 12.197 3.62997 12.567 3.73997C12.987 3.86397 13.361 4.18997 14.107 4.84397L18.907 9.04397C19.309 9.39597 19.51 9.57197 19.655 9.78397C19.783 9.9753 19.8763 10.1813 19.935 10.402C20 10.651 20 10.918 20 11.452V20M10 20H14M10 20V16C10 15.4695 10.2107 14.9608 10.5858 14.5858C10.9609 14.2107 11.4696 14 12 14C12.5304 14 13.0391 14.2107 13.4142 14.5858C13.7893 14.9608 14 15.4695 14 16V20M20 20H14M20 20H22" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-                </svg> Tu espacio para crear </h5>
+                </svg> Oficina Privada</h5>
               <div class="space28"></div>
               <h1>Completamente amuebladas</h1>
               <div class="space36"></div>
@@ -335,9 +409,9 @@
         <div class="row">
           <div class="col-lg-6">
             <div class="hero2-header heading2">
-              <h5><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <h5 style="text-transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path d="M2 20H4M4 20H10M4 20V11.452C4 10.918 4 10.651 4.065 10.402C4.12256 10.1819 4.21725 9.97322 4.345 9.78497C4.49 9.57197 4.691 9.39497 5.093 9.04397L9.894 4.84197C10.64 4.18997 11.013 3.86397 11.432 3.73997C11.802 3.62997 12.197 3.62997 12.567 3.73997C12.987 3.86397 13.361 4.18997 14.107 4.84397L18.907 9.04397C19.309 9.39597 19.51 9.57197 19.655 9.78397C19.783 9.9753 19.8763 10.1813 19.935 10.402C20 10.651 20 10.918 20 11.452V20M10 20H14M10 20V16C10 15.4695 10.2107 14.9608 10.5858 14.5858C10.9609 14.2107 11.4696 14 12 14C12.5304 14 13.0391 14.2107 13.4142 14.5858C13.7893 14.9608 14 15.4695 14 16V20M20 20H14M20 20H22" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-                </svg> Tu espacio para crear </h5>
+                </svg> Oficina Privada</h5>
               <div class="space28"></div>
               <h1>Todos los servicios incluidos</h1>
               <div class="space36"></div>
@@ -353,9 +427,9 @@
         <div class="row">
           <div class="col-lg-6">
             <div class="hero2-header heading2">
-              <h5><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <h5 style="text-transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path d="M2 20H4M4 20H10M4 20V11.452C4 10.918 4 10.651 4.065 10.402C4.12256 10.1819 4.21725 9.97322 4.345 9.78497C4.49 9.57197 4.691 9.39497 5.093 9.04397L9.894 4.84197C10.64 4.18997 11.013 3.86397 11.432 3.73997C11.802 3.62997 12.197 3.62997 12.567 3.73997C12.987 3.86397 13.361 4.18997 14.107 4.84397L18.907 9.04397C19.309 9.39597 19.51 9.57197 19.655 9.78397C19.783 9.9753 19.8763 10.1813 19.935 10.402C20 10.651 20 10.918 20 11.452V20M10 20H14M10 20V16C10 15.4695 10.2107 14.9608 10.5858 14.5858C10.9609 14.2107 11.4696 14 12 14C12.5304 14 13.0391 14.2107 13.4142 14.5858C13.7893 14.9608 14 15.4695 14 16V20M20 20H14M20 20H22" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-                </svg> Tu espacio para crear </h5>
+                </svg> Oficina Privada</h5>
               <div class="space28"></div>
               <h1>Privacidad y comodidad</h1>
               <div class="space36"></div>
@@ -366,7 +440,7 @@
     </div>
   </div>
   <div class="hero4-small-img">
-    <div class="img1">
+    <!-- <div class="img1">
       <img src="assets/img/EasyOffice/Oficina privada /TGU/3.png" alt="housa">
     </div>
     <div class="img1">
@@ -377,14 +451,14 @@
     </div>
     <div class="img1">
       <img src="assets/img/EasyOffice/Oficina privada /TGU/3.png" alt="housa">
-    </div>
+    </div> -->
   </div>
-  <!--=====  Slide Oficina Privada =======-->
+  <!--=====  Slide Oficina Privada ======= -->
   <br>
    <div id="cotizador-container"></div>
    <br>
   <!--===== ABOUT AREA STARTS =======-->
-  <div class="about3-section-area sp1 overflow-hidden">
+  <div class="about3-section-area pro-location1">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6">
@@ -449,7 +523,7 @@
             <div class="space26"></div>
             <h2 class="text-anime-style-3">Renta mensual</h2>
             <div class="space18"></div>
-            <p data-aos="fade-left" data-aos-duration="900">Espacios completamente amueblados, listos para usarse, con acceso 24/7  – y todos los servicios incluidos. Ideal para equipos que valoran la estabilidad y la privacidad.</p>
+            <p data-aos="fade-left" data-aos-duration="900" style="text-align: justify;">Espacios completamente amueblados, listos para usarse, con acceso 24/7  – y todos los servicios incluidos. Ideal para equipos que valoran la estabilidad y la privacidad.</p>
             <div class="space32"></div>
             <div class="btn-area1" data-aos="fade-left" data-aos-duration="1200">
               <a href="contact.html" class="vl-btn1">Cotiza ahora <span class="arrow1"><i class="fa-solid fa-arrow-right"></i></span><span class="arrow2"><i class="fa-solid fa-arrow-right"></i></span></a>
@@ -459,12 +533,12 @@
         </div>
       </div>
     </div>
+    <div style="margin-top: -130px;"></div>
   </div>
-  
-  <div class="space50"></div>
+
 
    <!--===== PROPERTIES Tegucigalpa =======-->
-  <div class="properties-images sp1">
+  <div class="properties-images sp1" style="background: white; padding: 30px; margin: 30px auto; max-width: 1375px; border-radius: 20px;">
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-6">
@@ -553,9 +627,9 @@
     </div>
   </div>
   <!--===== PROPERTIES Tegucigalpa =======-->
-<div class="space70"></div>
+  
   <!--===== PROPERTIES San Pedro Sula =======-->
-  <div class="properties-images sp1">
+  <div class="properties-images sp1" style="background: white; padding: 30px; margin: 30px auto; max-width: 1375px; border-radius: 20px;">
     <div class="container-fluid">
       <div class="row">
        
@@ -597,7 +671,7 @@
       <div class="space40"></div>
       <div class="col-lg-12">
         <div class="botton-heading heading1">
-          <h2>San Pedro Sula</h2>
+          <h2>San Pedro Sula 1-4 personas</h2>
           <p style="font-size: 2.35rem;">
             Desde $500 <span style="color:#424140; font-size: 0.45em;">+ ISV</span>
           </p>
@@ -648,7 +722,7 @@
   <!--===== PROPERTIES Tegucigalpa =======-->
   
   <!--===== OTHERS AREA STARTS =======-->
-  <div class="step1 sp2">
+  <div class="step1 sp2" style="background: white; padding: 30px; margin: 30px auto; max-width: 1375px; border-radius: 20px;">
     <div class="container">
       <div class="row">
         <div class="col-lg-10 m-auto">
@@ -689,7 +763,7 @@
             <div class="textarea">
               <span>2</span>
               <div class="space18"></div>
-              <a href="#">Seguridad 24/7</a>
+              <a href="#">Seguridad</a>
               <p>Oficinas protegidas con sistemas de acceso controlado y vigilancia continua.</p>
             </div>
           </div>
@@ -704,7 +778,7 @@
             <div class="textarea">
               <span>3</span>
               <div class="space18"></div>
-              <a href="#">Ubicaciones estratégicas</a>
+              <a href="#">Ubicación</a>
               <p>Estamos donde tu empresa necesita estar: zonas céntricas, de fácil acceso y conectadas con servicios clave.</p>
             </div>
           </div>
@@ -788,8 +862,6 @@
     </div>
   </div>
   <!--===== OTHERS AREA ENDS =======-->
-  
- 
 
   <!--===== PRICING AREA STARTS =======-->
   <div class="pricing1">
@@ -901,7 +973,7 @@
   </div>
   <!--===== Fin PRICING AREA STARTS =======-->
 
-  
+  <div class="space28"></div>
   
    <!--===== FOOTER AREA STARTS =======-->
    <div id="footer-container"></div>

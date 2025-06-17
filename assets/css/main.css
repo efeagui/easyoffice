@@ -8768,7 +8768,7 @@ only screen and (min-width: 768px) and (max-width: 991px),
   color: var(--ztc-text-text-1);
   font-family: var(--ztc-family-font1);
   font-weight: var(--ztc-weight-medium);
-  background: var(--ztc-bg-bg-2);
+  background: #0284b4;
   border-radius: 50%;
   font-size: var(--ztc-font-size-font-s24);
 }

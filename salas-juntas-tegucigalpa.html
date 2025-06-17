@@ -4,6 +4,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <!--===== SOLUCION PARPADEO SLIDE =======-->
+    <style>
+    /* Prevenir FOUC (Flash of Unstyled Content) */
+    html {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    html.loaded {
+        visibility: visible;
+        opacity: 1;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    /* Reservar espacio para el header */
+    #header-container {
+        min-height: 80px;
+        background: transparent;
+        transition: all 0.3s ease;
+    }
+
+    /* Prevenir jump durante carga del header */
+    .hero4-slider-sectionarea {
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+
+    .hero4-slider-sectionarea.loaded {
+        opacity: 1;
+    }
+
+    /* Prevenir parpadeo del slider */
+    .hero4-slider-area {
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+
+    .hero4-slider-area.ready {
+        opacity: 1;
+    }
+    </style>
+ <!--===== SOLUCION PARPADEO SLIDE =======-->
  <title>Easyoffice</title>
   <!--=====FAB ICON=======-->
   <link rel="shortcut icon" href="assets/img/logo/EasyOffice logo.png" type="image/x-icon">
@@ -20,6 +63,8 @@
   <link rel="stylesheet" href="assets/css/plugins/odometer.css">
   <link rel="stylesheet" href="assets/css/plugins/cotizador-easyoffice.css">
   <link rel="stylesheet" href="assets/css/main.css">
+
+  
 
   <!--===== CSS Para espacios de juntas =======-->
   <style>
@@ -150,7 +195,7 @@
 
       /* ===== BOTONES UNIVERSALES ===== */
       .price-box {
-          background: #333;
+          background: #0284b4;
           color: white;
           padding: 9px 10px;
           border-radius: 12px;
@@ -163,7 +208,7 @@
       }
 
       .price-box:hover {
-          background: #222;
+          background: #ff7b3d;
           transform: translateY(-2px);
       }
 
@@ -380,16 +425,48 @@
 
    <div id="header-container"></div>
 
-  <script>
-    fetch('header.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('header-container').innerHTML = data;
-      });
-  </script>
+    <script>
+        // ✅ CARGAR HEADER SIN PARPADEO
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // Cargar header inmediatamente
+            fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+                
+                // Marcar header como cargado
+                setTimeout(() => {
+                const sliderSection = document.querySelector('.hero4-slider-sectionarea');
+                if (sliderSection) {
+                    sliderSection.classList.add('loaded');
+                }
+                }, 100);
+                
+                // Activar sliders después de cargar header
+                setTimeout(() => {
+                document.querySelectorAll('.hero4-slider-area').forEach(area => {
+                    area.classList.add('ready');
+                });
+                }, 200);
+            })
+            .catch(error => {
+                console.error('Error cargando header:', error);
+                // Si falla, mostrar página de todas formas
+                document.documentElement.classList.add('loaded');
+            });
+        });
+
+        // ✅ MOSTRAR PÁGINA CUANDO TODO ESTÉ LISTO
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+            document.documentElement.classList.add('loaded');
+            }, 100);
+        });
+    </script>
   
 
-  <div class="space30"></div>
+
 
     <!--===== Slide Oficina Privada =======-->
   <div class="hero4-slider-sectionarea">
@@ -400,9 +477,9 @@
         <div class="row">
           <div class="col-lg-6">
             <div class="hero2-header heading2">
-              <h5><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <h5 style="text-transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path d="M2 20H4M4 20H10M4 20V11.452C4 10.918 4 10.651 4.065 10.402C4.12256 10.1819 4.21725 9.97322 4.345 9.78497C4.49 9.57197 4.691 9.39497 5.093 9.04397L9.894 4.84197C10.64 4.18997 11.013 3.86397 11.432 3.73997C11.802 3.62997 12.197 3.62997 12.567 3.73997C12.987 3.86397 13.361 4.18997 14.107 4.84397L18.907 9.04397C19.309 9.39597 19.51 9.57197 19.655 9.78397C19.783 9.9753 19.8763 10.1813 19.935 10.402C20 10.651 20 10.918 20 11.452V20M10 20H14M10 20V16C10 15.4695 10.2107 14.9608 10.5858 14.5858C10.9609 14.2107 11.4696 14 12 14C12.5304 14 13.0391 14.2107 13.4142 14.5858C13.7893 14.9608 14 15.4695 14 16V20M20 20H14M20 20H22" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-                </svg> Tu espacio para crear </h5>
+                </svg> Sala de Juntas</h5>
               <div class="space28"></div>
               <h1>Internet y equipo multimedia</h1>
               <div class="space36"></div>
@@ -418,9 +495,9 @@
         <div class="row">
           <div class="col-lg-6">
             <div class="hero2-header heading2">
-              <h5><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <h5 style="text-transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path d="M2 20H4M4 20H10M4 20V11.452C4 10.918 4 10.651 4.065 10.402C4.12256 10.1819 4.21725 9.97322 4.345 9.78497C4.49 9.57197 4.691 9.39497 5.093 9.04397L9.894 4.84197C10.64 4.18997 11.013 3.86397 11.432 3.73997C11.802 3.62997 12.197 3.62997 12.567 3.73997C12.987 3.86397 13.361 4.18997 14.107 4.84397L18.907 9.04397C19.309 9.39597 19.51 9.57197 19.655 9.78397C19.783 9.9753 19.8763 10.1813 19.935 10.402C20 10.651 20 10.918 20 11.452V20M10 20H14M10 20V16C10 15.4695 10.2107 14.9608 10.5858 14.5858C10.9609 14.2107 11.4696 14 12 14C12.5304 14 13.0391 14.2107 13.4142 14.5858C13.7893 14.9608 14 15.4695 14 16V20M20 20H14M20 20H22" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-                </svg> Tu espacio para crear </h5>
+                </svg> Sala de Juntas </h5>
               <div class="space28"></div>
               <h1>Perfecta para reuniones ejecutivas</h1>
               <div class="space36"></div>
@@ -436,9 +513,9 @@
         <div class="row">
           <div class="col-lg-6">
             <div class="hero2-header heading2">
-              <h5><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <h5 style="text-transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" style="text-transform: none;"></svg>
                   <path d="M2 20H4M4 20H10M4 20V11.452C4 10.918 4 10.651 4.065 10.402C4.12256 10.1819 4.21725 9.97322 4.345 9.78497C4.49 9.57197 4.691 9.39497 5.093 9.04397L9.894 4.84197C10.64 4.18997 11.013 3.86397 11.432 3.73997C11.802 3.62997 12.197 3.62997 12.567 3.73997C12.987 3.86397 13.361 4.18997 14.107 4.84397L18.907 9.04397C19.309 9.39597 19.51 9.57197 19.655 9.78397C19.783 9.9753 19.8763 10.1813 19.935 10.402C20 10.651 20 10.918 20 11.452V20M10 20H14M10 20V16C10 15.4695 10.2107 14.9608 10.5858 14.5858C10.9609 14.2107 11.4696 14 12 14C12.5304 14 13.0391 14.2107 13.4142 14.5858C13.7893 14.9608 14 15.4695 14 16V20M20 20H14M20 20H22" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-                </svg> Tu espacio para crear </h5>
+                </svg> Sala de juntas</h5>
               <div class="space28"></div>
               <h1>Privacidad y comodidad</h1>
               <div class="space36"></div>
@@ -449,7 +526,7 @@
     </div>
   </div>
   <div class="hero4-small-img">
-    <div class="img1">
+    <!-- <div class="img1">
       <img src="assets/img/EasyOffice/Sala de juntas /SPS/2.jpg" alt="housa">
     </div>
     <div class="img1">
@@ -460,7 +537,7 @@
     </div>
     <div class="img1">
       <img src="assets/img/EasyOffice/Sala de juntas /TGU/Inspiracion/IMG_2505.jpg" alt="housa">
-    </div>
+    </div> -->
   </div>
   <!--=====  Slide Oficina Privada =======-->
   <br>
@@ -555,8 +632,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 m-auto">
-                <div class="heading1 text-center space-margin60">
-                    <h5>Salas de Juntas Tegucigalpa</h5>
+                <div class="heading1 text-center space-margin60"><div class="about-heading heading2">
+                    <h5 data-aos="fade-left" data-aos-duration="800">Salas de Juntas Tegucigalpa</h5></div>
                     <div class="space16"></div>
                     <h2>Espacios Profesionales Para Ti</h2>
                 </div>
@@ -711,8 +788,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 m-auto">
-                <div class="heading1 text-center space-margin60">
-                    <h5 color>Salas de Juntas San Pedro Sula</h5>
+                <div class="heading1 text-center space-margin60"><div class="about-heading heading2">
+                    <h5 data-aos="fade-left" data-aos-duration="800">Salas de Juntas San Pedro Sula</h5></div>
                     <div class="space16"></div>
                     <h2 class="text-anime-style-3" style="color: #111; -webkit-text-fill-color: initial; background: none;">Espacios Cómodos y Amplios</h2>
                 </div>
