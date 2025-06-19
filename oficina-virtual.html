@@ -61,6 +61,220 @@
   <link rel="stylesheet" href="assets/css/plugins/swiper-slider.css">
   <link rel="stylesheet" href="assets/css/plugins/odometer.css">
   <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px 0;
+        }
+
+        .pricing1 {
+            padding: 60px 0;
+        }
+
+        .heading2 {
+            margin-bottom: 60px;
+        }
+
+        .heading2 h5 {
+            color: #ff7b3d;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .heading2 h2 {
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .heading2 p {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* ===== ESTILOS PARA TARJETAS ELEGANTES ===== */
+        .pricing-container-elegant {
+            max-width: 100%;
+            margin: 0 auto;
+            height: 100%; /* Asegurar altura consistente */
+        }
+
+        .pricing-boxarea-elegant {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s ease;
+            height: 100%; /* Altura consistente */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pricing-boxarea-elegant:hover {
+            transform: translateY(-5px);
+        }
+
+        .price-circle-elegant {
+            position: relative;
+            background: linear-gradient(135deg, #ff7b3d, #ff9f5a);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 0 0 50% 50%;
+            margin: 0 auto 30px;
+            width: 200px;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 8px 25px rgba(255, 123, 61, 0.3);
+        }
+
+        .price-circle-elegant::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(135deg, #ff7b3d, #ff9f5a);
+            border-radius: 0 0 50% 50%;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .price-amount-elegant {
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .price-person-elegant {
+            font-size: 1rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .pricing-content-elegant {
+            padding: 0 30px 30px;
+            flex-grow: 1; /* Permitir que el contenido crezca */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .office-type-elegant {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .plan-title-elegant {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        .features-list-elegant {
+            list-style: none;
+            margin-bottom: 30px;
+            padding: 0;
+            flex-grow: 1; /* Permitir que la lista crezca */
+        }
+
+        .features-list-elegant li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        .check-icon-elegant {
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, #ff7b3d, #ff9f5a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .check-icon-elegant i {
+            color: white;
+            font-size: 0.8rem;
+        }
+
+        .cta-button-elegant {
+            background: linear-gradient(135deg, #ff7b3d, #ff9f5a);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+            margin-top: auto; /* Empujar el botón hacia abajo */
+        }
+
+        .cta-button-elegant:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 123, 61, 0.4);
+            color: white;
+            text-decoration: none;
+        }
+
+        .arrow-elegant {
+            display: inline-block;
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button-elegant:hover .arrow-elegant {
+            transform: translateX(5px);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .pricing1 {
+                padding: 40px 0;
+            }
+            
+            .col-lg-4.col-md-6 {
+                margin-bottom: 30px;
+            }
+            
+            .col-lg-4.col-md-6:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        /* Asegurar que las columnas tengan la misma altura */
+        .row-equal-height {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .row-equal-height > [class*='col-'] {
+            display: flex;
+        }
+    </style>
+    <!--===== fin PRICING AREA ENDS =======-->
 </head>
 
 <body class="body1 b-bg1">
@@ -178,417 +392,366 @@
     </div> -->
   </div>
   <!--=====  Slide Oficina Privada ======= -->
-  
-  <!--===== PROPERTY AREA STARTS =======-->
-  <div class="property-inner-section-find">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="property-mapgrid-area">
-            <div class="space32"></div>
-            <div class="row">
-             
-              <div class="col-lg-12">
-                <div class="property-widget-sidebar">
-                  <div class="img1">
-                    <img src="assets/img/EasyOffice/Oficina virtual/Grandeimagen1.png" alt="housa" >
-                  </div>
-                  <div class="space40"></div>
-                  <div class="padding-side">
-                    <h3>Servicio de oficina virtual</h3>
-                    <div class="space24"></div>
-                    <p style="text-align: justify;">Adquiere tu oficina virtual en Honduras y accede a una dirección fiscal sin los altos costos de una oficina física. En EasyOffice te ofrecemos una solución práctica y profesional con ubicaciones estratégicas en Tegucigalpa y San Pedro Sula, ideal para tramitar tu permiso de operación y proyectar una imagen empresarial sólida desde el primer día.</p>
-                    <div class="space30"></div>
-                    <h3>¿Qué incluye tu oficina virtual?</h3>
-                    <div class="space12"></div>
-                    <div class="row">
-                      <div class="col-lg-6">
-                        <div class="others-box">
-                          <img src="assets/img/icons/check1.svg" alt="housa">
-                          <div class="text">
-                            <p><span>Domicilio fiscal:</span> Dirección estratégica aprobada  para trámites legales como el permiso de operaciones.</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-6">
-                        <div class="others-box">
-                          <img src="assets/img/icons/check1.svg" alt="housa">
-                          <div class="text">
-                            <p><span>Servicio de recepción:</span> Recepción de llamadas, paquetes y documentos en nuestras sucursales.</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-12">
-                        <div class="others-box">
-                          <img src="assets/img/icons/check1.svg" alt="housa">
-                          <div class="text">
-                            <p><span> Acceso a las instalaciones:</span> Banco de horas para uso de espacio de cowork y Salas de juntas</p>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- <div class="col-lg-6">
-                        <div class="others-box">
-                          <img src="assets/img/icons/check1.svg" alt="housa">
-                          <div class="text">
-                            <p><span>Energy Efficient:</span> Equipped with smart home features and sustainable elements.</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-6">
-                        <div class="others-box">
-                          <img src="assets/img/icons/check1.svg" alt="housa">
-                          <div class="text">
-                            <p><span>Secure & Private: </span> Gated community security features for peace of mind.</p>
-                          </div>
-                        </div>
-                      </div> -->
-                    </div>
-                    <div class="space30"></div>
-                   <!-- <h3>Property Gallery, Explore The Space</h3>
-                    <div class="space32"></div>
-                    <div class="img2">
-                      <img src="assets/img/all-images/properties/property-img26.png" alt="housa">
-                      <div class="plus">
-                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                            <path d="M12.7143 13.7143C13.2666 13.7143 13.7143 13.2666 13.7143 12.7143V1C13.7143 0.447715 14.162 0 14.7143 0H17.2857C17.838 0 18.2857 0.447715 18.2857 1V12.7143C18.2857 13.2666 18.7334 13.7143 19.2857 13.7143H31C31.5523 13.7143 32 14.162 32 14.7143V17.2857C32 17.838 31.5523 18.2857 31 18.2857H19.2857C18.7334 18.2857 18.2857 18.7334 18.2857 19.2857V31C18.2857 31.5523 17.838 32 17.2857 32H14.7143C14.162 32 13.7143 31.5523 13.7143 31V19.2857C13.7143 18.7334 13.2666 18.2857 12.7143 18.2857H1C0.447715 18.2857 0 17.838 0 17.2857V14.7143C0 14.162 0.447715 13.7143 1 13.7143H12.7143Z" fill="white" />
-                          </svg></a>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-lg-4 col-md-6">
-                        <div class="img2">
-                          <img src="assets/img/all-images/properties/property-img27.png" alt="housa">
-                          <div class="plus">
-                            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                                <path d="M12.7143 13.7143C13.2666 13.7143 13.7143 13.2666 13.7143 12.7143V1C13.7143 0.447715 14.162 0 14.7143 0H17.2857C17.838 0 18.2857 0.447715 18.2857 1V12.7143C18.2857 13.2666 18.7334 13.7143 19.2857 13.7143H31C31.5523 13.7143 32 14.162 32 14.7143V17.2857C32 17.838 31.5523 18.2857 31 18.2857H19.2857C18.7334 18.2857 18.2857 18.7334 18.2857 19.2857V31C18.2857 31.5523 17.838 32 17.2857 32H14.7143C14.162 32 13.7143 31.5523 13.7143 31V19.2857C13.7143 18.7334 13.2666 18.2857 12.7143 18.2857H1C0.447715 18.2857 0 17.838 0 17.2857V14.7143C0 14.162 0.447715 13.7143 1 13.7143H12.7143Z" fill="white" />
-                              </svg></a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-4 col-md-6">
-                        <div class="img2">
-                          <img src="assets/img/all-images/properties/property-img28.png" alt="housa">
-                          <div class="plus">
-                            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                                <path d="M12.7143 13.7143C13.2666 13.7143 13.7143 13.2666 13.7143 12.7143V1C13.7143 0.447715 14.162 0 14.7143 0H17.2857C17.838 0 18.2857 0.447715 18.2857 1V12.7143C18.2857 13.2666 18.7334 13.7143 19.2857 13.7143H31C31.5523 13.7143 32 14.162 32 14.7143V17.2857C32 17.838 31.5523 18.2857 31 18.2857H19.2857C18.7334 18.2857 18.2857 18.7334 18.2857 19.2857V31C18.2857 31.5523 17.838 32 17.2857 32H14.7143C14.162 32 13.7143 31.5523 13.7143 31V19.2857C13.7143 18.7334 13.2666 18.2857 12.7143 18.2857H1C0.447715 18.2857 0 17.838 0 17.2857V14.7143C0 14.162 0.447715 13.7143 1 13.7143H12.7143Z" fill="white" />
-                              </svg></a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-4 col-md-6">
-                        <div class="img2">
-                          <img src="assets/img/all-images/properties/property-img29.png" alt="housa">
-                          <div class="plus">
-                            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                                <path d="M12.7143 13.7143C13.2666 13.7143 13.7143 13.2666 13.7143 12.7143V1C13.7143 0.447715 14.162 0 14.7143 0H17.2857C17.838 0 18.2857 0.447715 18.2857 1V12.7143C18.2857 13.2666 18.7334 13.7143 19.2857 13.7143H31C31.5523 13.7143 32 14.162 32 14.7143V17.2857C32 17.838 31.5523 18.2857 31 18.2857H19.2857C18.7334 18.2857 18.2857 18.7334 18.2857 19.2857V31C18.2857 31.5523 17.838 32 17.2857 32H14.7143C14.162 32 13.7143 31.5523 13.7143 31V19.2857C13.7143 18.7334 13.2666 18.2857 12.7143 18.2857H1C0.447715 18.2857 0 17.838 0 17.2857V14.7143C0 14.162 0.447715 13.7143 1 13.7143H12.7143Z" fill="white" />
-                              </svg></a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="space30"></div>
-                    <h3>Everything You Need, Just Steps Away</h3>
-                    <div class="space12"></div>
-                    <div class="row">
-                      <div class="col-lg-6">
-                        <div class="others-box">
-                          <img src="assets/img/icons/check1.svg" alt="housa">
-                          <div class="text">
-                            <p><span>Schools:</span> Apartment Nearby Schools</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-6">
-                        <div class="others-box">
-                          <img src="assets/img/icons/check1.svg" alt="housa">
-                          <div class="text">
-                            <p><span>Healthcare: </span> Nearby Hospitals and Clinic.</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-6">
-                        <div class="others-box">
-                          <img src="assets/img/icons/check1.svg" alt="housa">
-                          <div class="text">
-                            <p><span> Transport:</span> Metro, Bus Station, Highway
-                              & Nearby International Airport.</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-6">
-                        <div class="others-box">
-                          <img src="assets/img/icons/check1.svg" alt="housa">
-                          <div class="text">
-                            <p><span>Shopping & Entertainment: </span> Malls, Markets, Entertainment Centers.</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-6">
-                        <div class="others-box">
-                          <img src="assets/img/icons/check1.svg" alt="housa">
-                          <div class="text">
-                            <p><span>Park & Recreation: </span> Parks Sport Center, Fitness Club, Swimming Center.</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div> -->
-                    <div class="space30"></div>
-                    <h3>Plan para oficina Virtual</h3>
-                    <div class="accordion-area">
-                      <div class="accordion accordion-flush" id="accordionFlushExample">
-                        <div class="accordion-item">
-                          <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                              <span>Oficina virtual Básico</span>
-                              <span class="list">
-                                <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M8 9H16M8 15H16" stroke="#1B1B1B" stroke-width="1.5" stroke-linejoin="round" />
-                                    <path d="M3 21H21V3.00046L3 3V21Z" stroke="#1B1B1B" stroke-width="1.5" stroke-linejoin="round" />
-                                  </svg> Incluye: </span>
-                                <!--<span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M22 17.5H2" stroke="#1B1B1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M22 21V16C22 14.1144 22 13.1716 21.4142 12.5858C20.8284 12 19.8856 12 18 12H6C4.11438 12 3.17157 12 2.58579 12.5858C2 13.1716 2 14.1144 2 16V21" stroke="#1B1B1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M16 12V10.6178C16 10.1103 15.9085 9.94054 15.4396 9.7405C14.4631 9.32389 13.2778 9 12 9C10.7222 9 9.53688 9.32389 8.5604 9.7405C8.09154 9.94054 8 10.1103 8 10.6178V12" stroke="#1B1B1B" stroke-width="1.5" stroke-linecap="round" />
-                                    <path d="M20 12V7.36057C20 6.66893 20 6.32311 19.8292 5.99653C19.6584 5.66995 19.4151 5.50091 18.9284 5.16283C16.9661 3.79978 14.5772 3 12 3C9.42282 3 7.03391 3.79978 5.07163 5.16283C4.58492 5.50091 4.34157 5.66995 4.17079 5.99653C4 6.32311 4 6.66893 4 7.36057V12" stroke="#1B1B1B" stroke-width="1.5" stroke-linecap="round" />
-                                  </svg>5 Beds</span>
-                                <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M6 20L5 21M18 20L19 21" stroke="#1B1B1B" stroke-width="1.5" stroke-linecap="round" />
-                                    <path d="M3 12V13C3 16.2998 3 17.9497 4.02513 18.9749C5.05025 20 6.70017 20 10 20H14C17.2998 20 18.9497 20 19.9749 18.9749C21 17.9497 21 16.2998 21 13V12" stroke="#1B1B1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M2 12H22" stroke="#1B1B1B" stroke-width="1.5" stroke-linecap="round" />
-                                    <path d="M4 12V5.5234C4 4.12977 5.12977 3 6.5234 3C7.64166 3 8.62654 3.73598 8.94339 4.80841L9 5" stroke="#1B1B1B" stroke-width="1.5" stroke-linecap="round" />
-                                    <path d="M8 6L10.5 4" stroke="#1B1B1B" stroke-width="1.5" stroke-linecap="round" />
-                                  </svg>3 Baths</span>-->
-                              </span>
-                            </button>
-                          </h2>
-                          <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">
-                              <div class="img1">
-                                <img src="assets/img/all-images/properties/SERVICIOS OFICINAS VIRTUALES.jpg" alt="housa">
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="accordion-item">
-                          <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                              <span>Oficina virtual Plus</span>
-                              <span class="list">
-                                <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M8 9H16M8 15H16" stroke="#1B1B1B" stroke-width="1.5" stroke-linejoin="round" />
-                                    <path d="M3 21H21V3.00046L3 3V21Z" stroke="#1B1B1B" stroke-width="1.5" stroke-linejoin="round" />
-                                  </svg> Incluye: </span>
-                                <!--<span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M22 17.5H2" stroke="#1B1B1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M22 21V16C22 14.1144 22 13.1716 21.4142 12.5858C20.8284 12 19.8856 12 18 12H6C4.11438 12 3.17157 12 2.58579 12.5858C2 13.1716 2 14.1144 2 16V21" stroke="#1B1B1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M16 12V10.6178C16 10.1103 15.9085 9.94054 15.4396 9.7405C14.4631 9.32389 13.2778 9 12 9C10.7222 9 9.53688 9.32389 8.5604 9.7405C8.09154 9.94054 8 10.1103 8 10.6178V12" stroke="#1B1B1B" stroke-width="1.5" stroke-linecap="round" />
-                                    <path d="M20 12V7.36057C20 6.66893 20 6.32311 19.8292 5.99653C19.6584 5.66995 19.4151 5.50091 18.9284 5.16283C16.9661 3.79978 14.5772 3 12 3C9.42282 3 7.03391 3.79978 5.07163 5.16283C4.58492 5.50091 4.34157 5.66995 4.17079 5.99653C4 6.32311 4 6.66893 4 7.36057V12" stroke="#1B1B1B" stroke-width="1.5" stroke-linecap="round" />
-                                  </svg>5 Beds</span>
-                                <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M6 20L5 21M18 20L19 21" stroke="#1B1B1B" stroke-width="1.5" stroke-linecap="round" />
-                                    <path d="M3 12V13C3 16.2998 3 17.9497 4.02513 18.9749C5.05025 20 6.70017 20 10 20H14C17.2998 20 18.9497 20 19.9749 18.9749C21 17.9497 21 16.2998 21 13V12" stroke="#1B1B1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M2 12H22" stroke="#1B1B1B" stroke-width="1.5" stroke-linecap="round" />
-                                    <path d="M4 12V5.5234C4 4.12977 5.12977 3 6.5234 3C7.64166 3 8.62654 3.73598 8.94339 4.80841L9 5" stroke="#1B1B1B" stroke-width="1.5" stroke-linecap="round" />
-                                    <path d="M8 6L10.5 4" stroke="#1B1B1B" stroke-width="1.5" stroke-linecap="round" />
-                                  </svg>3 Baths</span>-->
-                              </span>
-                            </button>
-                          </h2>
-                          <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">
-                              <div class="img1">
-                                <img src="assets/img/all-images/properties//SERVICIOS OFICINAS VIRTUALES.jpg" alt="housa">
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    
-                    <div class="space16"></div>
-                    
+
+  <!--===== ABOUT AREA STARTS =======-->
+  <div class="about2 sp1" style="background: white; padding: 30px; margin: 30px auto; max-width: 1375px; border-radius: 20px;">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-4">
+            <div class="heading1">
+                <div class="arrow-btnarea" data-aos="fade-left" data-aos-duration="900">
+                  <div class="heading1">
+                      <h2 style="color: #ED8438;">Oficina Virtual </h2>
+                      <div class="space16"></div>
+                      <h3 class="text-anime-style-3">Para permiso de operaciones</h3>
                   </div>
                 </div>
+                <div class="space30"></div>
+                <p data-aos="fade-left" data-aos-duration="1000" style="text-align: justify;">¿Buscás una oficina virtual con dirección fiscal en Honduras? En EasyOffice te brindamos una solución profesional y accesible para registrar tu empresa sin ocupar un espacio físico. Obtené dirección comercial, recepción de documentos y acceso a nuestras instalaciones. Ideal para emprendedores y negocios que desean proyectar seriedad y ahorrar costos.</p>
+                <div class="space32"></div>
+                <div class="btn-area1" data-aos="fade-left" data-aos-duration="1200">
+                  <a href="contact.html" class="vl-btn1">Reservá tu espacio para crear  <span class="arrow1"><i class="fa-solid fa-arrow-right"></i></span><span class="arrow2"><i class="fa-solid fa-arrow-right"></i></span></a>
+                </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+              <div class="space30 d-lg-none d-block"></div>
+              <div class="img2 image-anime reveal">
+                  <img src="assets/img/EasyOffice/Coworking /1FP.png" alt="housa">
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="heading1">
+                  <img src="assets/img/EasyOffice/EasyOfficeco3.png" alt="EasyOffice Logo" class="logo1 image-anime reveal" style="width: 450px;">
+                  
+                  <div class="space10"></div>
+                  <div class="img1 image-anime reveal">
+                  <img src="assets/img/EasyOffice/Coworking /2FP.png" alt="housa">
+                  </div>
+              </div>
+            </div>
+            
+            
+        </div>
+      </div>
+  </div>
+  <!--===== ABOUT AREA ENDS =======-->
+  
+  <!--===== CASE AREA STARTS =======-->
+  <div class="case1 sp1" style="background: white; padding: 30px; margin: 30px auto; max-width: 1375px; border-radius: 20px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 m-auto">
+          <div class="heading1 text-center space-margin60">
+            <div class="heading2">
+              <h5 data-aos="fade-left" data-aos-duration="800">¿Qué incluye?</h5>
+            </div>
+            <div style="margin-top: -65px;">
+              <h2 class="text-anime-style-3">Todo lo que necesitas</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-7">
+          <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+              <div class="img1 image-anime reveal">
+                <img src="assets/img/EasyOffice/Proyecto llave en mano/Que incluye/1.png" alt="housa">
+              </div>
+            </div>
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+              <div class="img1">
+                <img src="assets/img/EasyOffice/Proyecto llave en mano/Que incluye/2.png" alt="housa">
+              </div>
+            </div>
+            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+              <div class="img1">
+                <img src="assets/img/EasyOffice/Proyecto llave en mano/Que incluye/3.png" alt="housa">
+              </div>
+            </div>
+            <div class="tab-pane fade" id="pills-contact1" role="tabpanel" aria-labelledby="pills-contact1-tab" tabindex="0">
+              <div class="img1">
+                <img src="assets/img/EasyOffice/Proyecto llave en mano/Que incluye/4.png" alt="housa">
               </div>
             </div>
           </div>
         </div>
+        <div class="col-lg-5">
+          <div class="case-btn-area">
+        <ul class="nav nav-pills" id="pills-tab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+          <span class="title" style="text-transform: none;">Búsqueda y selección del espacio ideal</span>
+          <span class="space16 d-block"></span>
+          <span class="pera" style="text-align: justify; text-transform: none;">Te ayudamos a encontrar la ubicación que mejor se alinee con tu cultura, necesidades operativas y proyección de marca.</span>
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
+          <span class="title" style="text-transform: none;">Diseño y acondicionamiento personalizado</span>
+          <span class="space16 d-block"></span>
+          <span class="pera" style="text-align: justify; text-transform: none;">Adaptamos el espacio a tu imagen, funcionalidad y requerimientos técnicos, cuidando cada detalle desde el diseño arquitectónico hasta los acabados.</span>
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">
+          <span class="title" style="text-transform: none;">Mobiliario ergonómico y funcional</span>
+          <span class="space16 d-block"></span>
+          <span class="pera" style="text-align: justify; text-transform: none;">Equipamos tu oficina con mobiliario moderno, cómodo y pensado para impulsar la productividad y el bienestar de tu equipo.</span>
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-contact1-tab" data-bs-toggle="pill" data-bs-target="#pills-contact1" type="button" role="tab" aria-controls="pills-contact1" aria-selected="false">
+          <span class="title" style="text-transform: none;">Servicios conectados y operativos día uno</span>
+          <span class="space16 d-block"></span>
+          <span class="pera" style="text-align: justify; text-transform: none;">Nos encargamos de que todos los servicios esenciales como internet, energía, agua y más estén listos y operativos para que no tengas que gestionar contrataciones ni instalaciones.</span>
+            </button>
+          </li>
+        </ul>
+          </div>
+        </div>
+        
       </div>
     </div>
   </div>
-  <!--===== PROPERTY AREA ENDS =======-->
+  <!--===== CASE AREA ENDS =======-->
 
-  <div class="space60"></div>
+  <!--===== PRICING AREA STARTS =======-->
+  <div class="pricing1">
+        <div class="container">
+            <div class="row">
+                <!-- ENCABEZADO -->
+                <div class="col-12">
+                    <div class="heading2 text-center">
+                        <h5>Válido en toda Honduras</h5>
+                        <h2>Planes de oficina virtual</h2>
+                        <p>Contamos con dos planes de oficina virtual para que puedas elegir el que más se adapte a tus necesidades.<br>Ambos son válidos para tramitar permiso de operaciones.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- TARJETAS DE PRECIOS -->
+            <div class="row row-equal-height justify-content-center">
+                <!-- PLAN BÁSICO -->
+                <div class="col-lg-4 col-md-6 col-sm-8 mb-4">
+                    <div class="pricing-container-elegant">
+                        <div class="pricing-boxarea-elegant">
+                            <div class="price-circle-elegant">
+                                <div class="price-amount-elegant">Básico</div>
+                                <div class="price-person-elegant">Oficina virtual</div>
+                            </div>
+                            
+                            <div class="pricing-content-elegant">
+                                <h3 class="plan-title-elegant">L. 2,500<small> +ISV</small></h3>
+                                
+                                <ul class="features-list-elegant">
+                                    <li>
+                                        <div class="check-icon-elegant"><i class="fas fa-check"></i></div>
+                                        <span>Domicilio fiscal para permiso de operaciones</span>
+                                    </li>
+                                    <li>
+                                        <div class="check-icon-elegant"><i class="fas fa-check"></i></div>
+                                        <span>2 horas de sala de juntas para 4 personas</span>
+                                    </li>
+                                    <li>
+                                        <div class="check-icon-elegant"><i class="fas fa-check"></i></div>
+                                        <span>4 horas de cowork</span>
+                                    </li>
+                                    <li>
+                                        <div class="check-icon-elegant"><i class="fas fa-check"></i></div>
+                                        <span>Recepción de documentos, llamadas y paquetes</span>
+                                    </li>
+                                    <li>
+                                        <div class="check-icon-elegant"><i class="fas fa-check"></i></div>
+                                        <span>Acceso a la sala de maternidad</span>
+                                    </li>
+                                </ul>
+                                
+                                <a href="contact.html" class="cta-button-elegant">
+                                    Cotizar
+                                    <span class="arrow-elegant"><i class="fas fa-arrow-right"></i></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-  <!--===== OTHERS AREA STARTS =======-->
-  <div class="step1 sp2">
-    <div class="container">
+                <!-- PLAN PLUS -->
+                <div class="col-lg-4 col-md-6 col-sm-8 mb-4">
+                    <div class="pricing-container-elegant">
+                        <div class="pricing-boxarea-elegant">
+                            <div class="price-circle-elegant">
+                                <div class="price-amount-elegant">Plus</div>
+                                <div class="price-person-elegant">Oficina virtual</div>
+                            </div>
+                            
+                            <div class="pricing-content-elegant">
+                                <h3 class="plan-title-elegant">L. 3,000<small> +ISV</small></h3>
+                                
+                                <ul class="features-list-elegant">
+                                    <li>
+                                        <div class="check-icon-elegant"><i class="fas fa-check"></i></div>
+                                        <span>Domicilio fiscal para permiso de operaciones</span>
+                                    </li>
+                                    <li>
+                                        <div class="check-icon-elegant"><i class="fas fa-check"></i></div>
+                                        <span>4 horas de sala de juntas para 4 personas</span>
+                                    </li>
+                                    <li>
+                                        <div class="check-icon-elegant"><i class="fas fa-check"></i></div>
+                                        <span>8 horas de cowork</span>
+                                    </li>
+                                    <li>
+                                        <div class="check-icon-elegant"><i class="fas fa-check"></i></div>
+                                        <span>Recepción de documentos, llamadas y paquetes</span>
+                                    </li>
+                                    <li>
+                                        <div class="check-icon-elegant"><i class="fas fa-check"></i></div>
+                                        <span>8 horas mensuales de asesorías entre las áreas contables, legales, administrativas y financieras</span>
+                                    </li>
+                                </ul>
+                                
+                                <a href="contact.html" class="cta-button-elegant">
+                                    Cotizar
+                                    <span class="arrow-elegant"><i class="fas fa-arrow-right"></i></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  <!--===== Fin PRICING AREA STARTS =======-->
+
+  <div class="space28"></div>
+  <!--===== PROPERTIES_LOCATION AREA STARTS =======-->
+  <div class="p-location1">
+    <div class="conatainer">
       <div class="row">
         <div class="col-lg-10 m-auto">
-          <div class="heading2 text-center space-margin60">
-            
+          <div class="heading1 text-center space-margin60">
+            <h5>Our Location</h5>
             <div class="space16"></div>
-            <h2>Como tramitar un permiso de operación</h2>
-            <div class="space16"></div>
+            <h2 class="text-anime-style-3">Find Your Properties In This Cities</h2>
           </div>
         </div>
       </div>
       <div class="row">
-        
-         <div class="col-lg-3 col-md-6" data-aos="zoom-in-up" data-aos-duration="1300">
-          <div class="work-single-boxarea">
-            <img src="assets/img/elements/elements4.png" alt="housa" class="elements4">
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-duration="800">
+          <div class="p-location-boxarea">
             <div class="img1">
-              <img src="assets/img/EasyOffice/Oficina virtual/Pasos/Solicitud .png" alt="housa" style="width:173px; height:173px; object-fit:contain; border-radius:15%;">
+              <img src="assets/img/all-images/p-location/p-loaction-img1.png" alt="housa">
             </div>
-            <div class="space56"></div>
-            <div class="textarea">
-              <span>1</span>
-              <div class="space18"></div>
-              <a href="#">Adquiere una dirección fiscal en EasyOffice</a>
-              <div class="space18"></div>
-              <p>Elige uno de nuestros planes de oficina virtual y obtén una dirección comercial aprobada por la alcaldía.</p>
+            <div class="content-area">
+              <a href="#">Los Angles</a>
+              <div class="space12"></div>
+              <p>8 Properties</p>
+            </div>
+            <div class="arrow">
+              <a href="property-halfmap-list.html"><svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
+                  <path d="M6.52264 22.168L20.5226 8.16797" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M9.14764 8.16797H20.5226V19.543" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+                </svg></a>
             </div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-6" data-aos="zoom-in-up" data-aos-duration="1400">
-          <div class="work-single-boxarea">
-            <img src="assets/img/elements/elements4.png" alt="housa" class="elements4 d-lg-block d-none">
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-duration="900">
+          <div class="p-location-boxarea">
             <div class="img1">
-              <img src="assets/img/EasyOffice/Oficina virtual/Pasos/Soporte .png" style="width:173px; height:173px; object-fit:contain; border-radius:15%;" alt="housa">
+              <img src="assets/img/all-images/p-location/p-loaction-img2.png" alt="housa">
             </div>
-            <div class="space56"></div>
-            <div class="textarea">
-              <span>2</span>
-              <div class="space18"></div>
-              <a href="#">Reune la documentación requerida</a>
-              <div class="space18"></div>
-              <p>Te asesoramos para reunir los requisitos necesarios y llenar los formularios correspondientes sin complicaciones.</p>
+            <div class="content-area">
+              <a href="#">Los Angles</a>
+              <div class="space12"></div>
+              <p>8 Properties</p>
+            </div>
+            <div class="arrow">
+              <a href="property-halfmap-list.html"><svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
+                  <path d="M6.52264 22.168L20.5226 8.16797" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M9.14764 8.16797H20.5226V19.543" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+                </svg></a>
             </div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-6" data-aos="zoom-in-up" data-aos-duration="1500">
-          <div class="work-single-boxarea">
-            <img src="assets/img/elements/elements4.png" alt="housa" class="elements4">
+        <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-duration="1000">
+          <div class="p-location-boxarea">
             <div class="img1">
-              <img src="assets/img/EasyOffice/Oficina virtual/Pasos/3.png" style="width:173px; height:173px; object-fit:contain; border-radius:15%;" alt="housa">
+              <img src="assets/img/all-images/p-location/p-loaction-img3.png" alt="housa">
             </div>
-            <div class="space56"></div>
-            <div class="textarea">
-              <span>3</span>
-              <div class="space18"></div>
-              <a href="#">Presentá tu solicitud ante la alcaldía</a>
-              <div class="space18"></div>
-              <p>Con nuestra dirección fiscal válida, podrás realizar el trámite formal de tu permiso de operación en la municipalidad.</p>
+            <div class="content-area">
+              <a href="property-details-v1.html">Los Angles</a>
+              <div class="space12"></div>
+              <p>8 Properties</p>
+            </div>
+            <div class="arrow">
+              <a href="property-halfmap-list.html"><svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
+                  <path d="M6.52264 22.168L20.5226 8.16797" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M9.14764 8.16797H20.5226V19.543" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+                </svg></a>
             </div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-6" data-aos="zoom-in-up" data-aos-duration="1600">
-          <div class="work-single-boxarea box2">
-            <img src="assets/img/elements/elements4.png" alt="housa" class="elements4">
+        <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-duration="1100">
+          <div class="p-location-boxarea">
             <div class="img1">
-              <img src="assets/img/EasyOffice/Oficina virtual/Pasos/4.png" style="width:173px; height:173px; object-fit:contain; border-radius:15%;" alt="housa">
+              <img src="assets/img/all-images/p-location/p-loaction-img4.png" alt="housa">
             </div>
-            <div class="space56"></div>
-            <div class="textarea">
-              <span>4</span>
-              <div class="space18"></div>
-              <a href="#">Recibe soporte y seguimiento</a>
-              <div class="space18"></div>
-              <p>Nuestro equipo te acompaña si necesitas emitir constancias o realizar renovaciones futuras.</p>
+            <div class="content-area">
+              <a href="#">Los Angles</a>
+              <div class="space12"></div>
+              <p>8 Properties</p>
+            </div>
+            <div class="arrow">
+              <a href="property-halfmap-list.html"><svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
+                  <path d="M6.52264 22.168L20.5226 8.16797" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M9.14764 8.16797H20.5226V19.543" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+                </svg></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-duration="1200">
+          <div class="p-location-boxarea">
+            <div class="img1">
+              <img src="assets/img/all-images/p-location/p-loaction-img5.png" alt="housa">
+            </div>
+            <div class="content-area">
+              <a href="property-details-v1.html">Los Angles</a>
+              <div class="space12"></div>
+              <p>8 Properties</p>
+            </div>
+            <div class="arrow">
+              <a href="property-halfmap-list.html"><svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
+                  <path d="M6.52264 22.168L20.5226 8.16797" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M9.14764 8.16797H20.5226V19.543" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+                </svg></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-duration="1300">
+          <div class="p-location-boxarea">
+            <div class="img1">
+              <img src="assets/img/all-images/p-location/p-loaction-img6.png" alt="housa">
+            </div>
+            <div class="content-area">
+              <a href="property-details-v1.html">Los Angles</a>
+              <div class="space12"></div>
+              <p>8 Properties</p>
+            </div>
+            <div class="arrow">
+              <a href="property-halfmap-list.html"><svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
+                  <path d="M6.52264 22.168L20.5226 8.16797" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M9.14764 8.16797H20.5226V19.543" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+                </svg></a>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <!--===== OTHERS AREA ENDS =======-->
-
-  <!--===== PROPERTIES AREA STARTS =======-->
-  <div class="properties2-details sp1">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-6">
-          <h3 class="text-center mb-4">Tegucigalpa</h3>
-          <div class="all-galler-images2" data-aos="fade-left" data-aos-duration="1000">
-            <div class="big-img">
-              <img src="assets/img/EasyOffice/Oficina virtual/TGU /Instalaciones TGU/1.png" alt="housa">
-            </div>
-            <div class="big-img">
-              <img src="assets/img/EasyOffice/Oficina virtual/TGU /Instalaciones TGU/2.png" alt="housa">
-            </div>
-            <div class="big-img">
-              <img src="assets/img/EasyOffice/Oficina virtual/TGU /Instalaciones TGU/3.png" alt="housa">
-            </div>
-            <div class="big-img">
-              <img src="assets/img/EasyOffice/Oficina virtual/TGU /Instalaciones TGU/1.png" alt="housa">
-            </div>
-            <div class="big-img">
-              <img src="assets/img/EasyOffice/Oficina virtual/TGU /Instalaciones TGU/2.png" alt="housa">
-            </div>
-            <div class="big-img">
-              <img src="assets/img/EasyOffice/Oficina virtual/TGU /Instalaciones TGU/3.png" alt="housa">
-            </div>
-          </div>
-          <div class="bottom-galler-images2" data-aos="fade-right" data-aos-duration="1100">
-            <div class="small-img">
-              <img src="assets/img/EasyOffice/Oficina virtual/TGU /Instalaciones TGU/1.png" alt="housa">
-            </div>
-            <div class="small-img">
-              <img src="assets/img/EasyOffice/Oficina virtual/TGU /Instalaciones TGU/2.png" alt="housa">
-            </div>
-            <div class="small-img">
-              <img src="assets/img/EasyOffice/Oficina virtual/TGU /Instalaciones TGU/3.png" alt="housa">
-            </div>
-            <div class="small-img">
-              <img src="assets/img/EasyOffice/Oficina virtual/TGU /Instalaciones TGU/1.png" alt="housa">
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-6">
-          <h3 class="text-center mb-4">San Pedro Sula</h3>
-          <div class="all-galler-images2" data-aos="fade-left" data-aos-duration="1000">
-            <div class="big-img">
-              <img src="assets/img/EasyOffice/Oficina virtual/SPS/Instalaciones SPS/1.png" alt="housa">
-            </div>
-            <div class="big-img">
-              <img src="assets/img/EasyOffice/Oficina virtual/SPS/Instalaciones SPS/2.png" alt="housa">
-            </div>
-            <div class="big-img">
-              <img src="assets/img/EasyOffice/Oficina virtual/SPS/Instalaciones SPS/3.png" alt="housa">
-            </div>
-            <div class="big-img">
-              <img src="assets/img/EasyOffice/Oficina virtual/SPS/Instalaciones SPS/1.png" alt="housa">
-            </div>
-            <div class="big-img">
-              <img src="assets/img/EasyOffice/Oficina virtual/SPS/Instalaciones SPS/2.png" alt="housa">
-            </div>
-            <div class="big-img">
-              <img src="assets/img/EasyOffice/Oficina virtual/SPS/Instalaciones SPS/3.png" alt="housa">
-            </div>
-          </div>
-          <div class="bottom-galler-images2" data-aos="fade-right" data-aos-duration="1100">
-            <div class="small-img">
-              <img src="assets/img/EasyOffice/Oficina virtual/SPS/Instalaciones SPS/1.png" alt="housa">
-            </div>
-            <div class="small-img">
-              <img src="assets/img/EasyOffice/Oficina virtual/SPS/Instalaciones SPS/2.png" alt="housa">
-            </div>
-            <div class="small-img">
-              <img src="assets/img/EasyOffice/Oficina virtual/SPS/Instalaciones SPS/3.png" alt="housa">
-            </div>
-            <div class="small-img">
-              <img src="assets/img/EasyOffice/Oficina virtual/SPS/Instalaciones SPS/1.png" alt="housa">
-            </div>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </div>
-  <!--===== PROPERTIES AREA ENDS =======-->
+  <!--===== PROPERTIES_LOCATION AREA ENDS =======-->
   <div class="space30"></div>
 
   <!--===== FOOTER AREA STARTS =======-->

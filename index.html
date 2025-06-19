@@ -300,7 +300,383 @@
         }
     </style>
   <!-- Fin Style empresas Afiliadas -->
-  
+   <!-- Hero Principal -->
+    <style>
+        /* SOLO estos estilos mínimos para simetría de contadores */
+        .counter-boxarea .row {
+            display: flex;
+            align-items: stretch; /* Para que las cajas tengan la misma altura */
+        }
+        
+        .counter-box {
+            height: 100%; /* Para simetría */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        /* Espaciadores originales */
+        .space10 { height: 10px; }
+        .space20 { height: 20px; }
+        .space30 { height: 30px; }
+        .space32 { height: 32px; }
+        .space40 { height: 40px; }
+        .space80 { height: 80px; }
+    </style>
+    <!-- Hero Principal -->
+    <!-- prolocation1  Sala de Junta Oficina privda y coworking -->
+    <style>
+/* ===== CSS ESPECÍFICO MEJORADO - REALMENTE FUNCIONAL ===== */
+
+/* TABLET - 768px a 1024px */
+@media (max-width: 1024px) and (min-width: 769px) {
+    
+    .pro-location1 .cs_case_study_1_list {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 0 20px;
+    }
+    
+    .pro-location1 .cs_case_study {
+        display: flex;
+        align-items: center;
+        background: #fff;
+        border-radius: 20px;
+        padding: 25px;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        transition: transform 0.3s ease;
+    }
+    
+    .pro-location1 .cs_case_study:hover {
+        transform: translateY(-5px);
+    }
+    
+    .pro-location1 .cs_case_study_thumb {
+        width: 300px;
+        height: 220px;
+        flex-shrink: 0;
+        margin-right: 30px;
+        border-radius: 15px;
+        background-size: cover !important;
+        background-position: center !important;
+    }
+    
+    .pro-location1 .content-area {
+        flex: 1;
+    }
+    
+    .pro-location1 .features-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 15px 0;
+    }
+    
+    /* Oficina Virtual - Tablet */
+    .pro-location1 .chosse-images {
+        min-height: 350px !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .pro-location1 .chosse-images img {
+        transform: scale(0.9) !important;
+    }
+}
+
+/* MÓVIL - AQUÍ ESTÁ LA MAGIA */
+@media (max-width: 768px) {
+    
+    /* Contenedor principal */
+    .pro-location1 {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    .pro-location1 .container,
+    .pro-location1 .container-fluid {
+        padding: 0 15px !important;
+        margin: 0 !important;
+    }
+    
+    /* Encabezado principal */
+    .pro-location1 .heading1 {
+        padding: 30px 15px !important;
+        margin: 0 !important;
+    }
+    
+    .pro-location1 .heading1 h2 {
+        font-size: 2.2rem !important;
+        line-height: 1.3 !important;
+        margin: 0 !important;
+        text-align: center;
+    }
+    
+    .pro-location1 .heading1 h5 {
+        font-size: 1.1rem !important;
+        margin-bottom: 20px !important;
+    }
+    
+    /* SECCIÓN DE SERVICIOS - COMPLETAMENTE REDISEÑADA */
+    .pro-location1 .cs_case_study_1_list {
+        padding: 0 15px !important;
+        margin: 0 !important;
+    }
+    
+    .pro-location1 .cs_case_study {
+        margin-bottom: 25px !important;
+        padding: 0 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        display: block !important;
+    }
+    
+    .pro-location1 .cs_case_study_thumb {
+        width: 100% !important;
+        height: 220px !important;
+        margin: 0 0 15px 0 !important;
+        border-radius: 20px !important;
+        background-size: cover !important;
+        background-position: center !important;
+        display: block !important;
+    }
+    
+    .pro-location1 .content-area {
+        background: #fff !important;
+        padding: 25px 20px !important;
+        border-radius: 20px !important;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
+        margin: 0 !important;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .pro-location1 .content-area .title {
+        font-size: 1.6rem !important;
+        font-weight: 700 !important;
+        color: #2c3e50 !important;
+        margin-bottom: 10px !important;
+        text-align: left !important;
+    }
+    
+    .pro-location1 .highlight-hover {
+        margin-bottom: 20px !important;
+    }
+    
+    .pro-location1 .highlight-hover a {
+        color: #7f8c8d !important;
+        font-size: 1rem !important;
+    }
+    
+    .pro-location1 .features-list {
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 20px 0 !important;
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+    
+    .pro-location1 .features-list li {
+        display: flex !important;
+        align-items: center !important;
+        font-size: 0.95rem !important;
+        color: #555 !important;
+        padding: 10px 0 !important;
+        border-bottom: 1px solid #f1f2f6;
+    }
+    
+    .pro-location1 .features-list li:last-child {
+        border-bottom: none;
+    }
+    
+    .pro-location1 .features-list li span {
+        margin-right: 15px !important;
+        flex-shrink: 0 !important;
+    }
+    
+    .pro-location1 .btn-area {
+        margin-top: 25px !important;
+    }
+    
+    .pro-location1 .vl-btn1 {
+        width: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 15px 20px !important;
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
+        border-radius: 25px !important;
+        text-decoration: none !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    /* Espaciado entre tarjetas */
+    .pro-location1 .space100.d-lg-none {
+        height: 30px !important;
+    }
+    
+    .pro-location1 .space40.d-lg-none {
+        height: 15px !important;
+    }
+    
+    /* SECCIÓN OFICINA VIRTUAL - COMPLETAMENTE REDISEÑADA */
+    .pro-location1 .row.align-items-center {
+        margin: 0 !important;
+        padding: 30px 15px !important;
+    }
+    
+    .pro-location1 .row.align-items-center .col-lg-6 {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    /* Texto de oficina virtual */
+    .pro-location1 .about-heading {
+        text-align: center !important;
+        margin-bottom: 30px !important;
+    }
+    
+    .pro-location1 .about-heading h2 {
+        font-size: 2.5rem !important;
+        line-height: 1.2 !important;
+        margin-bottom: 20px !important;
+        color: #2c3e50 !important;
+        font-weight: 700 !important;
+    }
+    
+    .pro-location1 .about-heading p {
+        font-size: 1.1rem !important;
+        line-height: 1.6 !important;
+        color: #666 !important;
+        margin-bottom: 25px !important;
+        text-align: center !important;
+        padding: 0 10px !important;
+    }
+    
+    .pro-location1 .btn-area1 {
+        text-align: center !important;
+        margin-bottom: 40px !important;
+    }
+    
+    .pro-location1 .btn-area1 .vl-btn1 {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 15px 35px !important;
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
+        border-radius: 25px !important;
+        min-width: 200px !important;
+        text-decoration: none !important;
+    }
+    
+    /* IMÁGENES DE OFICINA VIRTUAL - REDISEÑO COMPLETO */
+    .pro-location1 .chosse-images {
+        position: relative !important;
+        width: 100% !important;
+        height: 300px !important;
+        min-height: 300px !important;
+        padding: 0 !important;
+        margin: 0 auto !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        overflow: hidden !important;
+        border-radius: 20px !important;
+    }
+    
+    /* Ocultar todos los elementos decorativos */
+    .pro-location1 .chosse-images div[style*="background"] {
+        display: none !important;
+    }
+    
+    /* Imagen principal - UNA SOLA IMAGEN CENTRADA */
+    .pro-location1 .chosse-images img:first-of-type {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        border-radius: 20px !important;
+        transform: none !important;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.2) !important;
+    }
+    
+    /* Ocultar la segunda imagen en móvil */
+    .pro-location1 .chosse-images img:nth-of-type(2) {
+        display: none !important;
+    }
+    
+    /* Eliminar márgenes negativos problemáticos */
+    .pro-location1 + .space28 + div[style*="margin-top"] {
+        margin-top: 0 !important;
+        display: none !important;
+    }
+    
+    div[style*="margin-top: -250px"] {
+        margin-top: 0 !important;
+        display: none !important;
+    }
+    
+    /* Eliminar hover effects en móvil */
+    .pro-location1 .chosse-images img:hover {
+        transform: none !important;
+    }
+    
+    /* Espaciado general mejorado */
+    .pro-location1 .space16,
+    .pro-location1 .space18,
+    .pro-location1 .space20,
+    .pro-location1 .space24,
+    .pro-location1 .space26,
+    .pro-location1 .space28,
+    .pro-location1 .space32 {
+        height: 15px !important;
+    }
+}
+
+/* MÓVILES MUY PEQUEÑOS */
+@media (max-width: 480px) {
+    
+    .pro-location1 .heading1 h2 {
+        font-size: 1.9rem !important;
+    }
+    
+    .pro-location1 .about-heading h2 {
+        font-size: 2.1rem !important;
+    }
+    
+    .pro-location1 .content-area {
+        padding: 20px 15px !important;
+    }
+    
+    .pro-location1 .content-area .title {
+        font-size: 1.4rem !important;
+    }
+    
+    .pro-location1 .features-list li {
+        font-size: 0.9rem !important;
+    }
+    
+    .pro-location1 .vl-btn1 {
+        padding: 12px 16px !important;
+        font-size: 1rem !important;
+    }
+    
+    .pro-location1 .chosse-images {
+        height: 250px !important;
+        min-height: 250px !important;
+    }
+}
+
+/* ===== FIN CSS MEJORADO ===== */
+</style>
+    
 </head>
 
 <body class="body1 b-bg1">
@@ -316,53 +692,56 @@
     <!--===== HERO AREA STARTS =======-->
     <div class="hero1-section-area">
         <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-6">
-            <div class="hero-heading-content heading1">
-                <h1 style="text-align: justify;" class="text-anime-style-3" >Conoce tu nueva forma de trabajar</h1>
-                <div class="space20"></div>
-                <p class="text-anime-style-1" style="text-align: justify;">EasyOffice es el espacio ideal para trabajar, crecer y conectar. Ofrecemos oficinas privadas, coworking, salas de juntas y dirección fiscal, todo en ubicaciones estratégicas de Honduras. Con atención personalizada, espacios listos para usarse y servicios incluidos, facilitamos tu trabajo desde el primer día. Un espacio para crear, sin complicaciones.</p>
-                <div class="space32"></div>
-                <div class="btn-area1" data-aos="fade-left" data-aos-duration="1000">
-                 <a href="about-us.html" class="vl-btn1">Conocer mas <span class="arrow1"><i class="fa-solid fa-arrow-right"></i></span><span class="arrow2"><i class="fa-solid fa-arrow-right"></i></span></a>
-                <!-- <a href="#cotizador-container" class="vl-btn1" onclick="document.getElementById('cotizador-container').scrollIntoView({behavior:'smooth'}); return false;">Conocer mas <span class="arrow1"><i class="fa-solid fa-arrow-right"></i></span><span class="arrow2"><i class="fa-solid fa-arrow-right"></i></span></a> -->
-                </div>
-                <div class="space80 d-lg-block d-none"></div>
-                <div class="space40 d-lg-none d-block"></div>
-                <div class="counter-boxarea">
-                    <div class="row justify-content-center text-center">
-                        <div class="col-lg-4 col-md-4 col-6" data-aos="fade-up" data-aos-duration="300">
-                            <div class="counter-box">
-                                <h1><span class="odometer text-nowrap" data-count="2"></span></h1>
-                                <div class="space10"></div>
-                                <p>Ciudades</p>
-                            </div>
+            <div class="row">
+            
+                <!-- SOLO agregué: order-2 order-lg-1 para responsive -->
+                <div class="col-lg-6 order-2 order-lg-1">
+                    <div class="hero-heading-content heading1">
+                        <h1 style="text-align: justify;" class="text-anime-style-3">Conoce tu nueva forma de trabajar</h1>
+                        <div class="space20"></div>
+                        <p class="text-anime-style-1" style="text-align: justify;">EasyOffice es el espacio ideal para trabajar, crecer y conectar. Ofrecemos oficinas privadas, coworking, salas de juntas y dirección fiscal, todo en ubicaciones estratégicas de Honduras. Con atención personalizada, espacios listos para usarse y servicios incluidos, facilitamos tu trabajo desde el primer día. Un espacio para crear, sin complicaciones.</p>
+                        <div class="space32"></div>
+                        <div class="btn-area1" data-aos="fade-left" data-aos-duration="1000">
+                            <a href="about-us.html" class="vl-btn1">Conocer mas <span class="arrow1"><i class="fa-solid fa-arrow-right"></i></span><span class="arrow2"><i class="fa-solid fa-arrow-right"></i></span></a>
                         </div>
-                        <div class="col-lg-4 col-md-4 col-6" data-aos="fade-up" data-aos-duration="500">
-                            <div class="counter-box">
-                                <h1>+<span class="odometer text-nowrap" data-count="250"></span></h1>
-                                <div class="space10"></div>
-                                <p>clientes</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-12" data-aos="fade-up" data-aos-duration="700">
-                            <div class="space30 d-md-none d-block"></div>
-                            <div class="counter-box">
-                                <h1>+<span class="odometer text-nowrap" data-count="5"></span></h1>
-                                <div class="space10"></div>
-                                <p>años de experiencia </p>
+                        <div class="space80 d-lg-block d-none"></div>
+                        <div class="space40 d-lg-none d-block"></div>
+                        <div class="counter-boxarea">
+                            <div class="row justify-content-center text-center">
+                                <div class="col-lg-4 col-md-4 col-6" data-aos="fade-up" data-aos-duration="300">
+                                    <div class="counter-box">
+                                        <h1><span class="odometer text-nowrap" data-count="2"></span></h1>
+                                        <div class="space10"></div>
+                                        <p>Ciudades</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-6" data-aos="fade-up" data-aos-duration="500">
+                                    <div class="counter-box">
+                                        <h1>+<span class="odometer text-nowrap" data-count="250"></span></h1>
+                                        <div class="space10"></div>
+                                        <p>clientes</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-12" data-aos="fade-up" data-aos-duration="700">
+                                    <div class="space30 d-md-none d-block"></div>
+                                    <div class="counter-box">
+                                        <h1>+<span class="odometer text-nowrap" data-count="5"></span></h1>
+                                        <div class="space10"></div>
+                                        <p>años de experiencia</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                
+                <!-- SOLO agregué: order-1 order-lg-2 para responsive -->
+                <div class="col-lg-6 order-1 order-lg-2">
+                    <div class="hero-images-area image-anime">
+                        <img src="assets/img/EasyOffice/LandingPage/op1.png" alt="housa" style="max-height: 780px;">
+                    </div>
+                </div>
             </div>
-            </div>
-            <div class="col-lg-6">
-            <div class="hero-images-area image-anime">
-                <img src="assets/img/EasyOffice/LandingPage/op1.png" alt="housa" style="max-height: 780px;">
-            </div>
-            </div>
-        </div>
         </div>
     </div>
     <div class="space20"></div>
@@ -638,17 +1017,26 @@
             <div class="row align-items-center">
                 
                 <div class="col-lg-6">
-                    <div class="about-heading heading2">
+                    <div class="about-heading heading2 oficina-virtual-heading">
                         <div class="space26"></div>
-                        <h2 class="text-anime-style-3">Oficina virtual<br>con domicilio fiscal</h2>
+                        <h2 class="text-anime-style-3 oficina-virtual-title" style="text-align: justify;">Oficina virtual con domicilio fiscal</h2>
                         <div class="space18"></div>
-                        <p data-aos="fade-left" data-aos-duration="900" style="text-align: justify;"> Con nuestra  oficina virtual puedes  tramitar tu  permiso de operaciones con una dirección aprobada por la alcaldía municipal.</p>
+                        <p class="oficina-virtual-desc" data-aos="fade-left" data-aos-duration="900" style="text-align: justify;"> Con nuestra  oficina virtual puedes  tramitar tu  permiso de operaciones con una dirección aprobada por la alcaldía municipal.</p>
                         <div class="space32"></div>
                         <div class="btn-area1" data-aos="fade-left" data-aos-duration="1200">
                             <a href="oficina-virtual.html" class="vl-btn1">Conoce mas <span class="arrow1"><i class="fa-solid fa-arrow-right"></i></span><span class="arrow2"><i class="fa-solid fa-arrow-right"></i></span></a>
                         </div>
                     </div>
                 </div>
+                <style>
+                @media (max-width: 768px) {
+                    .oficina-virtual-heading,
+                    .oficina-virtual-title,
+                    .oficina-virtual-desc {
+                        text-align: center !important;
+                    }
+                }
+                </style>
 
                 <div class="col-lg-6">
                     <div class="chosse-images" style="position: relative; min-height: 580px; padding: 20px;">
@@ -679,31 +1067,7 @@
 
     <div class="space28"></div>
 
-    <style>
-        .chosse-images img:hover {
-            transform: scale(1.1) rotate(0deg) !important;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.25) !important;
-            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
-            z-index: 999 !important;
-        }
-
-        .chosse-images div[style*="background: linear-gradient"]:hover {
-            transform: scale(1.15) rotate(0deg) !important;
-            transition: all 0.4s ease !important;
-        }
-
-        /* Responsive mejorado */
-        @media (max-width: 768px) {
-            .chosse-images {
-                min-height: 400px !important;
-            }
-            
-            .chosse-images img,
-            .chosse-images div[style*="position: absolute"] {
-                transform: scale(0.8) !important;
-            }
-        }
-    </style>
+    
     <!--===== Fin Oficina Virtual  =======-->
 
     <!--===== Llave en mano  =======-->
@@ -733,17 +1097,33 @@
                     </div>
                 </div>
 
-                 <div class="col-lg-6">
-                    <div class="about-heading heading2">
+                <div class="col-lg-6 d-block d-lg-none">
+                    <div class="about-heading heading2 llave-en-mano-heading">
                         <div class="space26"></div>
-                        <h2 class="text-anime-style-3">Locales amueblados con<br>Proyecto llave en mano</h2>
+                        <h2 class="text-anime-style-3 llave-en-mano-title" style="text-align: center;">Locales amueblados con proyecto llave en mano</h2>
                         <div class="space18"></div>
-                        <p data-aos="fade-left" data-aos-duration="900" style="text-align: justify;"> En EasyOffice te entregamos tu oficina o local listo para operar, con mobiliario, servicios y hasta el equipo de trabajo si lo necesitas. Un espacio funcional, adaptado a tu empresa desde el primer día.</p>
+                        <p class="llave-en-mano-desc" data-aos="fade-left" data-aos-duration="900" style="text-align: center;">
+                            En EasyOffice te entregamos tu oficina o local listo para operar, con mobiliario, servicios y hasta el equipo de trabajo si lo necesitas. Un espacio funcional, adaptado a tu empresa desde el primer día.
+                        </p>
                         <div class="space32"></div>
-                        <div class="btn-area1" data-aos="fade-left" data-aos-duration="1200">
+                        <div class="btn-area1" data-aos="fade-left" data-aos-duration="1200" style="text-align: center;">
                             <a href="llave-en-mano.html" class="vl-btn1">Conoce mas <span class="arrow1"><i class="fa-solid fa-arrow-right"></i></span><span class="arrow2"><i class="fa-solid fa-arrow-right"></i></span></a>
                         </div>
                     </div>
+                    <style>
+                        @media (max-width: 768px) {
+                            .llave-en-mano-heading,
+                            .llave-en-mano-title,
+                            .llave-en-mano-desc {
+                                text-align: center !important;
+                            }
+                        }
+                        @media (min-width: 769px) {
+                            .llave-en-mano-heading {
+                                display: none !important;
+                            }
+                        }
+                    </style>
                 </div>
 
             </div><div style="margin-top: -250px;"></div>
