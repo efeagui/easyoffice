@@ -302,10 +302,10 @@
   <!-- Fin Style empresas Afiliadas -->
    <!-- Hero Principal -->
     <style>
-        /* SOLO estos estilos mínimos para simetría de contadores */
+        
         .counter-boxarea .row {
             display: flex;
-            align-items: stretch; /* Para que las cajas tengan la misma altura */
+            align-items: stretch; 
         }
         
         .counter-box {
@@ -326,357 +326,364 @@
     <!-- Hero Principal -->
     <!-- prolocation1  Sala de Junta Oficina privda y coworking -->
     <style>
-/* ===== CSS ESPECÍFICO MEJORADO - REALMENTE FUNCIONAL ===== */
 
-/* TABLET - 768px a 1024px */
-@media (max-width: 1024px) and (min-width: 769px) {
-    
-    .pro-location1 .cs_case_study_1_list {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        padding: 0 20px;
-    }
-    
-    .pro-location1 .cs_case_study {
-        display: flex;
-        align-items: center;
-        background: #fff;
-        border-radius: 20px;
-        padding: 25px;
-        box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-        transition: transform 0.3s ease;
-    }
-    
-    .pro-location1 .cs_case_study:hover {
-        transform: translateY(-5px);
-    }
-    
-    .pro-location1 .cs_case_study_thumb {
-        width: 300px;
-        height: 220px;
-        flex-shrink: 0;
-        margin-right: 30px;
-        border-radius: 15px;
-        background-size: cover !important;
-        background-position: center !important;
-    }
-    
-    .pro-location1 .content-area {
-        flex: 1;
-    }
-    
-    .pro-location1 .features-list {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-        margin: 15px 0;
-    }
-    
-    /* Oficina Virtual - Tablet */
-    .pro-location1 .chosse-images {
-        min-height: 350px !important;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .pro-location1 .chosse-images img {
-        transform: scale(0.9) !important;
-    }
-}
+        /* TABLET - 768px a 1024px - MEJORADO */
+        @media (max-width: 1024px) and (min-width: 769px) {
+            
+            .pro-location1 .cs_case_study_1_list {
+                display: flex;
+                flex-direction: column;
+                gap: 40px;
+                padding: 0 30px;
+            }
+            
+            .pro-location1 .cs_case_study {
+                display: flex;
+                align-items: center;
+                background: #fff;
+                border-radius: 25px;
+                padding: 30px;
+                box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+                transition: all 0.3s ease;
+                border: 1px solid rgba(237,132,56,0.1);
+            }
+            
+            .pro-location1 .cs_case_study:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            }
+            
+            .pro-location1 .cs_case_study_thumb {
+                width: 320px;
+                height: 240px;
+                flex-shrink: 0;
+                margin-right: 35px;
+                border-radius: 20px;
+                background-size: cover !important;
+                background-position: center !important;
+                background-repeat: no-repeat !important;
+                /* Asegurar que las imágenes se muestren */
+                background-image: url('assets/img/EasyOffice/LandingPage/seccion2/1.png') !important;
+            }
+            
+            /* Diferentes imágenes para cada card en tablet */
+            .pro-location1 .cs_case_study_thumb2 {
+                background-image: url('assets/img/EasyOffice/LandingPage/seccion2/2.png') !important;
+            }
+            
+            .pro-location1 .cs_case_study_thumb3 {
+                background-image: url('assets/img/EasyOffice/LandingPage/seccion2/3.png') !important;
+            }
+            
+            .pro-location1 .content-area {
+                flex: 1;
+            }
+            
+            .pro-location1 .content-area .title {
+                font-size: 1.8rem !important;
+                font-weight: 700 !important;
+                color: #2c3e50 !important;
+                margin-bottom: 15px !important;
+            }
+            
+            .pro-location1 .features-list {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+                margin: 20px 0;
+            }
+        }
 
-/* MÓVIL - AQUÍ ESTÁ LA MAGIA */
-@media (max-width: 768px) {
-    
-    /* Contenedor principal */
-    .pro-location1 {
-        padding: 0 !important;
-        margin: 0 !important;
-    }
-    
-    .pro-location1 .container,
-    .pro-location1 .container-fluid {
-        padding: 0 15px !important;
-        margin: 0 !important;
-    }
-    
-    /* Encabezado principal */
-    .pro-location1 .heading1 {
-        padding: 30px 15px !important;
-        margin: 0 !important;
-    }
-    
-    .pro-location1 .heading1 h2 {
-        font-size: 2.2rem !important;
-        line-height: 1.3 !important;
-        margin: 0 !important;
-        text-align: center;
-    }
-    
-    .pro-location1 .heading1 h5 {
-        font-size: 1.1rem !important;
-        margin-bottom: 20px !important;
-    }
-    
-    /* SECCIÓN DE SERVICIOS - COMPLETAMENTE REDISEÑADA */
-    .pro-location1 .cs_case_study_1_list {
-        padding: 0 15px !important;
-        margin: 0 !important;
-    }
-    
-    .pro-location1 .cs_case_study {
-        margin-bottom: 25px !important;
-        padding: 0 !important;
-        background: transparent !important;
-        box-shadow: none !important;
-        display: block !important;
-    }
-    
-    .pro-location1 .cs_case_study_thumb {
-        width: 100% !important;
-        height: 220px !important;
-        margin: 0 0 15px 0 !important;
-        border-radius: 20px !important;
-        background-size: cover !important;
-        background-position: center !important;
-        display: block !important;
-    }
-    
-    .pro-location1 .content-area {
-        background: #fff !important;
-        padding: 25px 20px !important;
-        border-radius: 20px !important;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
-        margin: 0 !important;
-        position: relative;
-        z-index: 2;
-    }
-    
-    .pro-location1 .content-area .title {
-        font-size: 1.6rem !important;
-        font-weight: 700 !important;
-        color: #2c3e50 !important;
-        margin-bottom: 10px !important;
-        text-align: left !important;
-    }
-    
-    .pro-location1 .highlight-hover {
-        margin-bottom: 20px !important;
-    }
-    
-    .pro-location1 .highlight-hover a {
-        color: #7f8c8d !important;
-        font-size: 1rem !important;
-    }
-    
-    .pro-location1 .features-list {
-        list-style: none !important;
-        padding: 0 !important;
-        margin: 20px 0 !important;
-        display: grid !important;
-        grid-template-columns: 1fr !important;
-        gap: 15px !important;
-    }
-    
-    .pro-location1 .features-list li {
-        display: flex !important;
-        align-items: center !important;
-        font-size: 0.95rem !important;
-        color: #555 !important;
-        padding: 10px 0 !important;
-        border-bottom: 1px solid #f1f2f6;
-    }
-    
-    .pro-location1 .features-list li:last-child {
-        border-bottom: none;
-    }
-    
-    .pro-location1 .features-list li span {
-        margin-right: 15px !important;
-        flex-shrink: 0 !important;
-    }
-    
-    .pro-location1 .btn-area {
-        margin-top: 25px !important;
-    }
-    
-    .pro-location1 .vl-btn1 {
-        width: 100% !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        padding: 15px 20px !important;
-        font-size: 1.1rem !important;
-        font-weight: 600 !important;
-        border-radius: 25px !important;
-        text-decoration: none !important;
-        transition: all 0.3s ease !important;
-    }
-    
-    /* Espaciado entre tarjetas */
-    .pro-location1 .space100.d-lg-none {
-        height: 30px !important;
-    }
-    
-    .pro-location1 .space40.d-lg-none {
-        height: 15px !important;
-    }
-    
-    /* SECCIÓN OFICINA VIRTUAL - COMPLETAMENTE REDISEÑADA */
-    .pro-location1 .row.align-items-center {
-        margin: 0 !important;
-        padding: 30px 15px !important;
-    }
-    
-    .pro-location1 .row.align-items-center .col-lg-6 {
-        padding: 0 !important;
-        margin: 0 !important;
-    }
-    
-    /* Texto de oficina virtual */
-    .pro-location1 .about-heading {
-        text-align: center !important;
-        margin-bottom: 30px !important;
-    }
-    
-    .pro-location1 .about-heading h2 {
-        font-size: 2.5rem !important;
-        line-height: 1.2 !important;
-        margin-bottom: 20px !important;
-        color: #2c3e50 !important;
-        font-weight: 700 !important;
-    }
-    
-    .pro-location1 .about-heading p {
-        font-size: 1.1rem !important;
-        line-height: 1.6 !important;
-        color: #666 !important;
-        margin-bottom: 25px !important;
-        text-align: center !important;
-        padding: 0 10px !important;
-    }
-    
-    .pro-location1 .btn-area1 {
-        text-align: center !important;
-        margin-bottom: 40px !important;
-    }
-    
-    .pro-location1 .btn-area1 .vl-btn1 {
-        display: inline-flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        padding: 15px 35px !important;
-        font-size: 1.1rem !important;
-        font-weight: 600 !important;
-        border-radius: 25px !important;
-        min-width: 200px !important;
-        text-decoration: none !important;
-    }
-    
-    /* IMÁGENES DE OFICINA VIRTUAL - REDISEÑO COMPLETO */
-    .pro-location1 .chosse-images {
-        position: relative !important;
-        width: 100% !important;
-        height: 300px !important;
-        min-height: 300px !important;
-        padding: 0 !important;
-        margin: 0 auto !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        overflow: hidden !important;
-        border-radius: 20px !important;
-    }
-    
-    /* Ocultar todos los elementos decorativos */
-    .pro-location1 .chosse-images div[style*="background"] {
-        display: none !important;
-    }
-    
-    /* Imagen principal - UNA SOLA IMAGEN CENTRADA */
-    .pro-location1 .chosse-images img:first-of-type {
-        position: absolute !important;
-        top: 0 !important;
-        left: 0 !important;
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover !important;
-        border-radius: 20px !important;
-        transform: none !important;
-        box-shadow: 0 15px 40px rgba(0,0,0,0.2) !important;
-    }
-    
-    /* Ocultar la segunda imagen en móvil */
-    .pro-location1 .chosse-images img:nth-of-type(2) {
-        display: none !important;
-    }
-    
-    /* Eliminar márgenes negativos problemáticos */
-    .pro-location1 + .space28 + div[style*="margin-top"] {
-        margin-top: 0 !important;
-        display: none !important;
-    }
-    
-    div[style*="margin-top: -250px"] {
-        margin-top: 0 !important;
-        display: none !important;
-    }
-    
-    /* Eliminar hover effects en móvil */
-    .pro-location1 .chosse-images img:hover {
-        transform: none !important;
-    }
-    
-    /* Espaciado general mejorado */
-    .pro-location1 .space16,
-    .pro-location1 .space18,
-    .pro-location1 .space20,
-    .pro-location1 .space24,
-    .pro-location1 .space26,
-    .pro-location1 .space28,
-    .pro-location1 .space32 {
-        height: 15px !important;
-    }
-}
+        /* ==========================================
+           MÓVIL - REDISEÑO COMPLETO Y HERMOSO
+           ========================================== */
+        @media (max-width: 768px) {
+            
+            /* Contenedor principal - MARGIN SOLO EN MÓVIL */
+            .pro-location1 {
+                padding: 0 !important;
+                margin: 15px !important; /* ¡AQUÍ ESTÁ TU MARGIN! */
+                background: #fff !important; /* Mantener fondo blanco */
+            }
+            
+            .pro-location1 .container,
+            .pro-location1 .container-fluid {
+                padding: 0 !important; /* Sin padding lateral */
+                margin: 0 !important;
+                max-width: 100% !important;
+            }
+            
+            /* Encabezado principal - ESPACIADO OPTIMIZADO */
+            .pro-location1 .heading1 {
+                padding: 30px 20px 20px 20px !important; /* Menos padding bottom */
+                margin: 0 !important;
+            }
+            
+            .pro-location1 .heading1 h2 {
+                font-size: 2.5rem !important;
+                line-height: 1.2 !important;
+                margin: 0 !important;
+                text-align: center;
+                font-weight: 700 !important;
+            }
+            
+            .pro-location1 .heading1 h5 {
+                font-size: 1.2rem !important;
+                margin-bottom: 15px !important; /* Reducido de 25px */
+                color: #ED8438 !important;
+                font-weight: 600 !important;
+            }
+            
+            /* ==========================================
+               CARDS MÓVIL - ESPACIADO ULTRA OPTIMIZADO
+               ========================================== */
+            .pro-location1 .cs_case_study_1_list {
+                padding: 0 18px !important; /* Espaciado lateral para simetría visual */
+                margin: 0 !important;
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 20px !important; /* Reducido de 30px a 20px */
+            }
+            
+            .pro-location1 .cs_case_study {
+                margin: 0 !important;
+                padding: 0 !important;
+                background: #fff !important;
+                border-radius: 20px !important; /* Reducido de 25px */
+                box-shadow: 0 8px 25px rgba(0,0,0,0.08) !important; /* Sombra más sutil */
+                display: block !important;
+                overflow: hidden !important;
+                transition: all 0.3s ease !important;
+            }
+            
+            .pro-location1 .cs_case_study:hover {
+                transform: translateY(-3px) !important; /* Menos elevación */
+                box-shadow: 0 12px 30px rgba(0,0,0,0.12) !important;
+            }
+            
+            /* IMAGEN DE LA CARD - ALTURA OPTIMIZADA */
+            .pro-location1 .cs_case_study_thumb {
+                width: 100% !important;
+                height: 180px !important; /* Reducido de 200px */
+                margin: 0 !important;
+                border-radius: 20px 20px 0 0 !important;
+                background-size: cover !important;
+                background-position: center !important;
+                background-repeat: no-repeat !important;
+                display: block !important;
+                position: relative !important;
+                /* Forzar que se muestren las imágenes */
+                background-image: url('assets/img/EasyOffice/LandingPage/seccion2/1.png') !important;
+            }
+            
+            /* Diferentes imágenes para cada card */
+            .pro-location1 .cs_case_study_thumb2 {
+                background-image: url('assets/img/EasyOffice/LandingPage/seccion2/2.png') !important;
+            }
+            
+            .pro-location1 .cs_case_study_thumb3 {
+                background-image: url('assets/img/EasyOffice/LandingPage/seccion2/3.png') !important;
+            }
+            
+            /* CONTENIDO DE LA CARD - PADDING OPTIMIZADO */
+            .pro-location1 .content-area {
+                background: #fff !important;
+                padding: 20px !important; /* Reducido de 25px */
+                border-radius: 0 0 20px 20px !important;
+                margin: 0 !important;
+                position: relative !important;
+            }
+            
+            .pro-location1 .content-area .title {
+                font-size: 1.6rem !important; /* Reducido de 1.7rem */
+                font-weight: 700 !important;
+                color: #2c3e50 !important;
+                margin-bottom: 10px !important; /* Reducido de 12px */
+                text-align: left !important;
+                line-height: 1.3 !important;
+            }
+            
+            .pro-location1 .highlight-hover {
+                margin-bottom: 15px !important; /* Reducido de 20px */
+            }
+            
+            .pro-location1 .highlight-hover a {
+                color: #ED8438 !important;
+                font-size: 1rem !important;
+                font-weight: 600 !important;
+            }
+            
+            /* LISTA DE CARACTERÍSTICAS - SÚPER COMPACTA */
+            .pro-location1 .features-list {
+                list-style: none !important;
+                padding: 0 !important;
+                margin: 15px 0 !important; /* Reducido de 20px */
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 8px !important; /* Reducido de 10px a 8px */
+                row-gap: 4px !important; /* Espacio vertical súper reducido */
+            }
+            
+            .pro-location1 .features-list li {
+                display: flex !important;
+                align-items: center !important;
+                font-size: 0.9rem !important;
+                color: #555 !important;
+                padding: 3px 0 !important; /* ¡SÚPER REDUCIDO! de 6px a 3px */
+                font-weight: 500 !important;
+                line-height: 1.2 !important; /* Más compacto */
+            }
+            
+            .pro-location1 .features-list li span {
+                margin-right: 8px !important;
+                flex-shrink: 0 !important;
+            }
+            
+            .pro-location1 .features-list li span svg {
+                width: 18px !important;
+                height: 18px !important;
+            }
+            
+            /* BOTÓN COMPACTO */
+            .pro-location1 .btn-area {
+                margin-top: 20px !important; /* Reducido de 25px */
+                text-align: center !important;
+            }
+            
+            .pro-location1 .vl-btn1 {
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                padding: 10px 20px !important; /* Más compacto */
+                font-size: 0.95rem !important; /* Ligeramente menor */
+                font-weight: 600 !important;
+                border-radius: 20px !important; /* Reducido de 25px */
+                text-decoration: none !important;
+                transition: all 0.3s ease !important;
+                box-shadow: 0 3px 12px rgba(237,132,56,0.25) !important;
+                min-width: 150px !important; /* Reducido de 160px */
+            }
+            
+            .pro-location1 .vl-btn1:hover {
+                transform: translateY(-2px) !important;
+                box-shadow: 0 6px 20px rgba(237,132,56,0.35) !important;
+            }
+            
+            /* ESPACIADO ENTRE TARJETAS - ELIMINADO */
+            .pro-location1 .space100.d-lg-none {
+                height: 0px !important; /* Eliminado completamente */
+                display: none !important;
+            }
+            
+            .pro-location1 .space40.d-lg-none {
+                height: 0px !important; /* Eliminado completamente */
+                display: none !important;
+            }
+            
+            /* Espaciado general ultra optimizado */
+            .pro-location1 .space16,
+            .pro-location1 .space18,
+            .pro-location1 .space20,
+            .pro-location1 .space24,
+            .pro-location1 .space26,
+            .pro-location1 .space28,
+            .pro-location1 .space32 {
+                height: 5px !important; /* Muy reducido */
+            }
+        }
 
-/* MÓVILES MUY PEQUEÑOS */
-@media (max-width: 480px) {
-    
-    .pro-location1 .heading1 h2 {
-        font-size: 1.9rem !important;
-    }
-    
-    .pro-location1 .about-heading h2 {
-        font-size: 2.1rem !important;
-    }
-    
-    .pro-location1 .content-area {
-        padding: 20px 15px !important;
-    }
-    
-    .pro-location1 .content-area .title {
-        font-size: 1.4rem !important;
-    }
-    
-    .pro-location1 .features-list li {
-        font-size: 0.9rem !important;
-    }
-    
-    .pro-location1 .vl-btn1 {
-        padding: 12px 16px !important;
-        font-size: 1rem !important;
-    }
-    
-    .pro-location1 .chosse-images {
-        height: 250px !important;
-        min-height: 250px !important;
-    }
-}
+        /* ==========================================
+           MÓVILES MUY PEQUEÑOS - ULTRA COMPACTO
+           ========================================== */
+        @media (max-width: 480px) {
+            
+            .pro-location1 .cs_case_study_1_list {
+                padding: 0 15px !important; /* Espaciado lateral ajustado */
+                gap: 15px !important; /* Aún más compacto */
+            }
+            
+            .pro-location1 .heading1 {
+                padding: 25px 15px 15px 15px !important; /* Más compacto */
+            }
+            
+            .pro-location1 .heading1 h2 {
+                font-size: 2.2rem !important;
+            }
+            
+            .pro-location1 .heading1 h5 {
+                margin-bottom: 10px !important; /* Muy reducido */
+            }
+            
+            .pro-location1 .cs_case_study_thumb {
+                height: 160px !important; /* Más compacto */
+            }
+            
+            .pro-location1 .content-area {
+                padding: 15px !important; /* Muy compacto */
+            }
+            
+            .pro-location1 .content-area .title {
+                font-size: 1.4rem !important;
+                margin-bottom: 8px !important;
+            }
+            
+            .pro-location1 .highlight-hover {
+                margin-bottom: 12px !important;
+            }
+            
+            .pro-location1 .features-list {
+                grid-template-columns: 1fr !important; /* Una sola columna */
+                gap: 6px !important; /* SÚPER compacto */
+                row-gap: 2px !important; /* Espacio vertical mínimo */
+                margin: 12px 0 !important;
+            }
+            
+            .pro-location1 .features-list li {
+                font-size: 0.85rem !important;
+                padding: 2px 0 !important; /* ¡MÍNIMO ESPACIO! */
+                line-height: 1.1 !important; /* Muy compacto */
+            }
+            
+            .pro-location1 .btn-area {
+                margin-top: 15px !important;
+            }
+            
+            .pro-location1 .vl-btn1 {
+                padding: 8px 18px !important;
+                font-size: 0.9rem !important;
+                min-width: 130px !important;
+            }
+        }
 
-/* ===== FIN CSS MEJORADO ===== */
-</style>
-    
+        /* ==========================================
+           FALLBACK PARA IMÁGENES QUE NO CARGAN
+           ========================================== */
+        @media (max-width: 768px) {
+            .pro-location1 .cs_case_study_thumb::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(135deg, #ED8438, #d87e35);
+                opacity: 0.1;
+                border-radius: 25px 25px 0 0;
+            }
+            
+            .pro-location1 .cs_case_study_thumb::after {
+                content: '📍';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 2rem;
+                opacity: 0.3;
+            }
+        }
+    </style>
+    <!-- FIN prolocation1  Sala de Junta Oficina privda y coworking -->
+        
 </head>
 
 <body class="body1 b-bg1">
@@ -689,6 +696,17 @@
             document.getElementById('header-container').innerHTML = data;
         });
     </script>
+
+    <style>
+        @media (max-width: 768px) {
+            .space-negative-mobile {
+                margin-top: -60px !important;
+            }
+        }
+    </style>
+
+    <div class="space-negative-mobile"></div>
+
     <!--===== HERO AREA STARTS =======-->
     <div class="hero1-section-area">
         <div class="container-fluid">
@@ -735,7 +753,7 @@
                     </div>
                 </div>
                 
-                <!-- SOLO agregué: order-1 order-lg-2 para responsive -->
+                
                 <div class="col-lg-6 order-1 order-lg-2">
                     <div class="hero-images-area image-anime">
                         <img src="assets/img/EasyOffice/LandingPage/op1.png" alt="housa" style="max-height: 780px;">
@@ -1575,156 +1593,156 @@
   
     <!--===== FIN Empresas que confían en nosotros =======-->
     <script>
-    // Variables globales para el carrusel
-    let isDragging = false;
-    let startX = 0;
-    let scrollLeft = 0;
-    
-    document.addEventListener('DOMContentLoaded', function() {
-        // Efectos interactivos mejorados en las tarjetas
-        const cards = document.querySelectorAll('.company-card');
+        // Variables globales para el carrusel
+        let isDragging = false;
+        let startX = 0;
+        let scrollLeft = 0;
         
-        cards.forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-12px) scale(1.03)';
-            });
+        document.addEventListener('DOMContentLoaded', function() {
+            // Efectos interactivos mejorados en las tarjetas
+            const cards = document.querySelectorAll('.company-card');
             
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-12px) scale(1.03)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
             });
-        });
 
-        // Configurar carrusel interactivo
-        const carouselContainer = document.getElementById('carouselContainer');
-        const carouselTrack = document.getElementById('carouselTrack');
-        
-        if (carouselContainer && carouselTrack) {
-            // Detener animación CSS y usar JavaScript para control manual
-            carouselTrack.style.animation = 'none';
+            // Configurar carrusel interactivo
+            const carouselContainer = document.getElementById('carouselContainer');
+            const carouselTrack = document.getElementById('carouselTrack');
             
-            // Variables para el desplazamiento
-            let currentX = 0;
-            let targetX = 0;
-            let isAnimating = false;
-            
-            // Función de animación suave
-            function animate() {
-                if (Math.abs(targetX - currentX) > 0.1) {
-                    currentX += (targetX - currentX) * 0.1;
-                    carouselTrack.style.transform = `translateX(${currentX}px)`;
-                    requestAnimationFrame(animate);
-                } else {
-                    currentX = targetX;
-                    carouselTrack.style.transform = `translateX(${currentX}px)`;
-                    isAnimating = false;
-                }
-            }
-            
-            // Auto-scroll
-            function autoScroll() {
-                if (!isDragging) {
-                    targetX -= 1;
-                    if (targetX < -2000) { // Reset cuando llegue al final
-                        targetX = 0;
-                        currentX = 0;
+            if (carouselContainer && carouselTrack) {
+                // Detener animación CSS y usar JavaScript para control manual
+                carouselTrack.style.animation = 'none';
+                
+                // Variables para el desplazamiento
+                let currentX = 0;
+                let targetX = 0;
+                let isAnimating = false;
+                
+                // Función de animación suave
+                function animate() {
+                    if (Math.abs(targetX - currentX) > 0.1) {
+                        currentX += (targetX - currentX) * 0.1;
+                        carouselTrack.style.transform = `translateX(${currentX}px)`;
+                        requestAnimationFrame(animate);
+                    } else {
+                        currentX = targetX;
+                        carouselTrack.style.transform = `translateX(${currentX}px)`;
+                        isAnimating = false;
                     }
+                }
+                
+                // Auto-scroll
+                function autoScroll() {
+                    if (!isDragging) {
+                        targetX -= 1;
+                        if (targetX < -2000) { // Reset cuando llegue al final
+                            targetX = 0;
+                            currentX = 0;
+                        }
+                        if (!isAnimating) {
+                            isAnimating = true;
+                            animate();
+                        }
+                    }
+                }
+                
+                // Iniciar auto-scroll
+                setInterval(autoScroll, 50);
+                
+                // Eventos de mouse
+                carouselContainer.addEventListener('mousedown', (e) => {
+                    isDragging = true;
+                    startX = e.pageX;
+                    scrollLeft = currentX;
+                    carouselContainer.style.cursor = 'grabbing';
+                    e.preventDefault();
+                });
+                
+                carouselContainer.addEventListener('mousemove', (e) => {
+                    if (!isDragging) return;
+                    e.preventDefault();
+                    const x = e.pageX;
+                    const walk = (x - startX) * 2;
+                    targetX = scrollLeft + walk;
                     if (!isAnimating) {
                         isAnimating = true;
                         animate();
                     }
-                }
+                });
+                
+                carouselContainer.addEventListener('mouseup', () => {
+                    isDragging = false;
+                    carouselContainer.style.cursor = 'grab';
+                });
+                
+                carouselContainer.addEventListener('mouseleave', () => {
+                    isDragging = false;
+                    carouselContainer.style.cursor = 'grab';
+                });
+                
+                // Eventos táctiles
+                carouselContainer.addEventListener('touchstart', (e) => {
+                    isDragging = true;
+                    startX = e.touches[0].pageX;
+                    scrollLeft = currentX;
+                    e.preventDefault();
+                });
+                
+                carouselContainer.addEventListener('touchmove', (e) => {
+                    if (!isDragging) return;
+                    e.preventDefault();
+                    const x = e.touches[0].pageX;
+                    const walk = (x - startX) * 2;
+                    targetX = scrollLeft + walk;
+                    if (!isAnimating) {
+                        isAnimating = true;
+                        animate();
+                    }
+                });
+                
+                carouselContainer.addEventListener('touchend', () => {
+                    isDragging = false;
+                });
+                
+                // Prevenir selección de texto
+                carouselContainer.addEventListener('selectstart', (e) => {
+                    e.preventDefault();
+                });
             }
-            
-            // Iniciar auto-scroll
-            setInterval(autoScroll, 50);
-            
-            // Eventos de mouse
-            carouselContainer.addEventListener('mousedown', (e) => {
-                isDragging = true;
-                startX = e.pageX;
-                scrollLeft = currentX;
-                carouselContainer.style.cursor = 'grabbing';
-                e.preventDefault();
-            });
-            
-            carouselContainer.addEventListener('mousemove', (e) => {
-                if (!isDragging) return;
-                e.preventDefault();
-                const x = e.pageX;
-                const walk = (x - startX) * 2;
-                targetX = scrollLeft + walk;
-                if (!isAnimating) {
-                    isAnimating = true;
-                    animate();
-                }
-            });
-            
-            carouselContainer.addEventListener('mouseup', () => {
-                isDragging = false;
-                carouselContainer.style.cursor = 'grab';
-            });
-            
-            carouselContainer.addEventListener('mouseleave', () => {
-                isDragging = false;
-                carouselContainer.style.cursor = 'grab';
-            });
-            
-            // Eventos táctiles
-            carouselContainer.addEventListener('touchstart', (e) => {
-                isDragging = true;
-                startX = e.touches[0].pageX;
-                scrollLeft = currentX;
-                e.preventDefault();
-            });
-            
-            carouselContainer.addEventListener('touchmove', (e) => {
-                if (!isDragging) return;
-                e.preventDefault();
-                const x = e.touches[0].pageX;
-                const walk = (x - startX) * 2;
-                targetX = scrollLeft + walk;
-                if (!isAnimating) {
-                    isAnimating = true;
-                    animate();
-                }
-            });
-            
-            carouselContainer.addEventListener('touchend', () => {
-                isDragging = false;
-            });
-            
-            // Prevenir selección de texto
-            carouselContainer.addEventListener('selectstart', (e) => {
-                e.preventDefault();
-            });
-        }
 
-        // Efecto de entrada escalonada mejorado
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
+            // Efecto de entrada escalonada mejorado
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1
             });
-        }, {
-            threshold: 0.1
+
+            // Observar elementos para animaciones
+            document.querySelectorAll('.company-card').forEach(card => {
+                observer.observe(card);
+            });
+
+            console.log('✨ Sección de empresas afiliadas cargada con controles táctiles funcionales');
         });
 
-        // Observar elementos para animaciones
-        document.querySelectorAll('.company-card').forEach(card => {
-            observer.observe(card);
+        // Prevenir el comportamiento de arrastre de imágenes
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.carousel-logo img').forEach(img => {
+                img.addEventListener('dragstart', e => e.preventDefault());
+            });
         });
-
-        console.log('✨ Sección de empresas afiliadas cargada con controles táctiles funcionales');
-    });
-
-    // Prevenir el comportamiento de arrastre de imágenes
-    document.addEventListener('DOMContentLoaded', function() {
-        document.querySelectorAll('.carousel-logo img').forEach(img => {
-            img.addEventListener('dragstart', e => e.preventDefault());
-        });
-    });
     </script>
     <!--===== FIN Empresas que confían en nosotros =======-->
     
