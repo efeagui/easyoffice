@@ -22082,5 +22082,24 @@ only screen and (min-width: 768px) and (max-width: 991px),
   max-width: 100%;
 }
 
-/*============= LISTING CSS AREA ===============*/
+/* ============= LISTING CSS AREA =============== */
 /*# sourceMappingURL=main.css.map */
+
+/* Bordes personalizados  */
+/* Bordes personalizados - CSS PRINCIPAL */
+.bordesdarf {
+  position: relative;
+  z-index: 1;
+  margin: 0px auto; 
+  max-width: 1376px; 
+  background: white; 
+  padding: 20px 16px 195px 56px;
+  border-radius: 30px;
+}
+
+/* ARREGLO PARA MÓVIL - margin solo en móvil */
+@media (max-width: 768px) {
+  .bordesdarf {
+    margin: 15px !important;
+  }
+}

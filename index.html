@@ -683,6 +683,489 @@
         }
     </style>
     <!-- FIN prolocation1  Sala de Junta Oficina privda y coworking -->
+     
+    <!-- Oficina Virtual y llave en mano -->
+    <style>
+
+    /* ==========================================
+    DESKTOP - HOVER SÚPER RÁPIDO Y ÉPICO
+    ========================================== */
+    @media (min-width: 1025px) {
+        
+        /* LLAVE EN MANO - FORZAR TEXTO A APARECER DE UNA VEZ */
+        .bordesdarf + .space28 + .bordesdarf .col-lg-6:last-child,
+        .bordesdarf:last-of-type .col-lg-6:last-child,
+        .bordesdarf:nth-child(even) .col-lg-6:last-child {
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+        
+        .bordesdarf + .space28 + .bordesdarf .about-heading,
+        .bordesdarf:last-of-type .about-heading,
+        .bordesdarf:nth-child(even) .about-heading {
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            text-align: left !important;
+        }
+        
+        .bordesdarf + .space28 + .bordesdarf h2,
+        .bordesdarf:last-of-type h2,
+        .bordesdarf:nth-child(even) h2 {
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            text-align: left !important;
+        }
+        
+        .bordesdarf + .space28 + .bordesdarf p,
+        .bordesdarf:last-of-type p,
+        .bordesdarf:nth-child(even) p {
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            text-align: left !important;
+        }
+        
+        .bordesdarf + .space28 + .bordesdarf .btn-area1,
+        .bordesdarf:last-of-type .btn-area1,
+        .bordesdarf:nth-child(even) .btn-area1 {
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            text-align: left !important;
+        }
+        
+        .bordesdarf + .space28 + .bordesdarf .vl-btn1,
+        .bordesdarf:last-of-type .vl-btn1,
+        .bordesdarf:nth-child(even) .vl-btn1 {
+            display: inline-flex !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+        
+        /* OCULTAR elementos móviles */
+        .bordesdarf .d-block.d-lg-none {
+            display: none !important;
+        }
+        
+        /* HOVER EFFECTS ÉPICOS Y SÚPER RÁPIDOS */
+        .bordesdarf .chosse-images img:hover {
+            transform: scale(1.15) rotate(-8deg) !important;
+            box-shadow: 0 35px 70px rgba(0,0,0,0.4) !important;
+            transition: all 0.08s cubic-bezier(0.68, -0.55, 0.265, 1.55) !important; /* SÚPER RÁPIDO */
+            z-index: 999 !important;
+            filter: brightness(1.15) contrast(1.15) saturate(1.1) !important;
+        }
+
+        .bordesdarf .chosse-images div[style*="background: linear-gradient"]:hover {
+            transform: scale(1.3) rotate(20deg) !important;
+            transition: all 0.06s cubic-bezier(0.68, -0.55, 0.265, 1.55) !important; /* INSTANTÁNEO */
+            opacity: 0.8 !important;
+            filter: blur(1px) hue-rotate(10deg) !important;
+        }
+        
+        /* Hover para segunda imagen */
+        .bordesdarf .chosse-images img:nth-of-type(2):hover {
+            transform: scale(1.2) rotate(12deg) !important;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.35) !important;
+            transition: all 0.06s cubic-bezier(0.68, -0.55, 0.265, 1.55) !important;
+            filter: brightness(1.1) !important;
+        }
+        
+        /* BORDESDARF setup */
+        .bordesdarf {
+            position: relative;
+            z-index: 1;
+            overflow: visible;
+        }
+    }
+
+    /* ==========================================
+    TABLET - 768px a 1024px
+    ========================================== */
+    @media (max-width: 1024px) and (min-width: 769px) {
+        
+        .bordesdarf {
+            margin: 20px !important;
+            padding: 25px !important;
+        }
+        
+        /* Llave en mano texto en tablet */
+        .bordesdarf + .space28 + .bordesdarf .about-heading,
+        .bordesdarf:last-of-type .about-heading,
+        .bordesdarf:nth-child(even) .about-heading {
+            display: block !important;
+            text-align: center !important;
+        }
+        
+        .bordesdarf .cs_case_study_1_list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 0 15px;
+        }
+        
+        .bordesdarf .cs_case_study {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.05s ease; /* SÚPER RÁPIDO */
+        }
+        
+        .bordesdarf .cs_case_study:hover {
+            transform: translateY(-2px);
+        }
+        
+        .bordesdarf .cs_case_study_thumb {
+            width: 260px;
+            height: 180px;
+            flex-shrink: 0;
+            margin-right: 20px;
+            border-radius: 12px;
+            background-size: cover !important;
+            background-position: center !important;
+        }
+        
+        .bordesdarf .features-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin: 10px 0;
+        }
+        
+        .bordesdarf .chosse-images {
+            min-height: 300px !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .bordesdarf .chosse-images img {
+            transform: scale(0.8) !important;
+            transition: all 0.05s ease !important; /* SÚPER RÁPIDO */
+        }
+    }
+
+    /* ==========================================
+    MÓVIL - DISEÑO IDÉNTICO PARA AMBAS
+    ========================================== */
+    @media (max-width: 768px) {
+        
+        /* AMBAS SECCIONES BORDESDARF IDÉNTICAS */
+        .bordesdarf {
+            padding: 0 !important;
+            margin: 15px !important; /* MISMO MARGIN */
+            background: #fff !important;
+            border-radius: 20px !important; /* MISMO BORDER */
+            box-shadow: 0 3px 15px rgba(0,0,0,0.06) !important; /* MISMA SOMBRA */
+            overflow: hidden !important;
+        }
+        
+        .bordesdarf .container,
+        .bordesdarf .container-fluid {
+            padding: 0 18px !important; /* MISMO PADDING */
+            margin: 0 !important;
+        }
+        
+        /* Encabezado */
+        .bordesdarf .heading1 {
+            padding: 25px 15px !important;
+            margin: 0 !important;
+        }
+        
+        /* SERVICIOS */
+        .bordesdarf .cs_case_study_1_list {
+            padding: 0 18px !important;
+            margin: 0 !important;
+        }
+        
+        .bordesdarf .cs_case_study {
+            margin-bottom: 18px !important;
+            padding: 0 !important;
+            background: transparent !important;
+            box-shadow: none !important;
+            display: block !important;
+        }
+        
+        .bordesdarf .cs_case_study_thumb {
+            width: 100% !important;
+            height: 180px !important;
+            margin: 0 0 10px 0 !important;
+            border-radius: 14px !important;
+            background-size: cover !important;
+            background-position: center !important;
+            display: block !important;
+        }
+        
+        .bordesdarf .content-area {
+            background: #fff !important;
+            padding: 18px 16px !important;
+            border-radius: 14px !important;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1) !important;
+            margin: 0 !important;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .bordesdarf .highlight-hover {
+            margin-bottom: 12px !important;
+        }
+        
+        .bordesdarf .features-list {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 12px 0 !important;
+            display: grid !important;
+            grid-template-columns: 1fr !important;
+            gap: 8px !important;
+        }
+        
+        .bordesdarf .features-list li {
+            display: flex !important;
+            align-items: center !important;
+            padding: 6px 0 !important;
+            border-bottom: 1px solid #f5f6fa;
+        }
+        
+        .bordesdarf .features-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .bordesdarf .features-list li span {
+            margin-right: 10px !important;
+            flex-shrink: 0 !important;
+        }
+        
+        .bordesdarf .btn-area {
+            margin-top: 15px !important;
+        }
+        
+        .bordesdarf .vl-btn1 {
+            width: 100% !important; /* MISMO ANCHO */
+            display: flex !important; /* MISMO DISPLAY */
+            align-items: center !important;
+            justify-content: center !important;
+            padding: 12px 18px !important; /* MISMO PADDING */
+            border-radius: 18px !important; /* MISMO BORDER */
+            text-decoration: none !important;
+            transition: all 0.05s ease !important; /* SÚPER RÁPIDO */
+        }
+        
+        /* Espaciado */
+        .bordesdarf .space100.d-lg-none {
+            height: 15px !important;
+        }
+        
+        .bordesdarf .space40.d-lg-none {
+            height: 8px !important;
+        }
+        
+        /* IMÁGENES - IDÉNTICAS */
+        .bordesdarf .row.align-items-center {
+            margin: 0 !important;
+            padding: 18px 15px !important; /* MISMO PADDING */
+        }
+        
+        .bordesdarf .row.align-items-center .col-lg-6 {
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        
+        .bordesdarf .about-heading {
+            text-align: center !important;
+            margin-bottom: 20px !important; /* MISMO MARGIN */
+        }
+        
+        .bordesdarf .btn-area1 {
+            text-align: center !important;
+            padding: 0 15px !important;
+            margin-bottom: 25px !important; /* MISMO MARGIN */
+        }
+        
+        .bordesdarf .btn-area1 .vl-btn1 {
+            width: 100% !important; /* MISMO ANCHO */
+            display: flex !important; /* MISMO DISPLAY */
+            align-items: center !important;
+            justify-content: center !important;
+            padding: 12px 18px !important; /* MISMO PADDING */
+            border-radius: 18px !important; /* MISMO BORDER */
+            text-decoration: none !important;
+            transition: all 0.05s ease !important; /* SÚPER RÁPIDO */
+        }
+        
+        /* IMÁGENES IDÉNTICAS */
+        .bordesdarf .chosse-images {
+            position: relative !important;
+            width: 100% !important;
+            height: 220px !important; /* MISMA ALTURA */
+            min-height: 220px !important;
+            padding: 0 !important;
+            margin: 0 auto 20px auto !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            overflow: hidden !important;
+            border-radius: 14px !important; /* MISMO BORDER */
+        }
+        
+        /* Ocultar decorativos */
+        .bordesdarf .chosse-images div[style*="background"] {
+            display: none !important;
+        }
+        
+        /* UNA IMAGEN PRINCIPAL */
+        .bordesdarf .chosse-images img:first-of-type {
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            border-radius: 14px !important;
+            transform: none !important;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12) !important; /* MISMA SOMBRA */
+        }
+        
+        /* Ocultar segunda imagen */
+        .bordesdarf .chosse-images img:nth-of-type(2) {
+            display: none !important;
+        }
+        
+        /* Eliminar márgenes negativos */
+        div[style*="margin-top: -250px"] {
+            margin-top: 0 !important;
+            display: none !important;
+        }
+        
+        .bordesdarf + .space28 + div[style*="margin-top"] {
+            margin-top: 0 !important;
+            display: none !important;
+        }
+        
+        /* Espaciado optimizado */
+        .bordesdarf .space16,
+        .bordesdarf .space18,
+        .bordesdarf .space20,
+        .bordesdarf .space24,
+        .bordesdarf .space26,
+        .bordesdarf .space28,
+        .bordesdarf .space32 {
+            height: 8px !important;
+        }
+    }
+
+    /* ==========================================
+    MÓVILES PEQUEÑOS
+    ========================================== */
+    @media (max-width: 480px) {
+        
+        .bordesdarf {
+            margin: 10px !important; /* MISMO MARGIN */
+        }
+        
+        .bordesdarf .content-area {
+            padding: 15px 12px !important;
+        }
+        
+        .bordesdarf .features-list li {
+            padding: 5px 0 !important;
+        }
+        
+        .bordesdarf .vl-btn1 {
+            padding: 10px 15px !important;
+        }
+        
+        .bordesdarf .chosse-images {
+            height: 180px !important; /* MISMA ALTURA */
+            min-height: 180px !important;
+        }
+        
+        .bordesdarf .btn-area1 .vl-btn1 {
+            width: 100% !important; /* MISMO ANCHO */
+            padding: 10px 15px !important; /* MISMO PADDING */
+            display: flex !important; /* MISMO DISPLAY */
+            align-items: center !important;
+            justify-content: center !important;
+        }
+    }
+
+    /* ==========================================
+    DESKTOP - FORZAR LLAVE EN MANO
+    ========================================== */
+    @media (min-width: 769px) {
+        
+        /* MÚLTIPLES SELECTORES PARA FORZAR LLAVE EN MANO */
+        .bordesdarf:last-of-type .col-lg-6:last-child,
+        .bordesdarf + .space28 + .bordesdarf .col-lg-6:last-child,
+        .bordesdarf:nth-child(even) .col-lg-6:last-child,
+        .bordesdarf:nth-of-type(2) .col-lg-6:last-child {
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+        
+        .bordesdarf:last-of-type .about-heading,
+        .bordesdarf + .space28 + .bordesdarf .about-heading,
+        .bordesdarf:nth-child(even) .about-heading,
+        .bordesdarf:nth-of-type(2) .about-heading {
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            text-align: left !important;
+        }
+        
+        .bordesdarf:last-of-type h2,
+        .bordesdarf + .space28 + .bordesdarf h2,
+        .bordesdarf:nth-child(even) h2,
+        .bordesdarf:nth-of-type(2) h2 {
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            text-align: left !important;
+        }
+        
+        .bordesdarf:last-of-type p,
+        .bordesdarf + .space28 + .bordesdarf p,
+        .bordesdarf:nth-child(even) p,
+        .bordesdarf:nth-of-type(2) p {
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            text-align: left !important;
+        }
+        
+        .bordesdarf:last-of-type .btn-area1,
+        .bordesdarf + .space28 + .bordesdarf .btn-area1,
+        .bordesdarf:nth-child(even) .btn-area1,
+        .bordesdarf:nth-of-type(2) .btn-area1 {
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            text-align: left !important;
+        }
+        
+        .bordesdarf:last-of-type .vl-btn1,
+        .bordesdarf + .space28 + .bordesdarf .vl-btn1,
+        .bordesdarf:nth-child(even) .vl-btn1,
+        .bordesdarf:nth-of-type(2) .vl-btn1 {
+            display: inline-flex !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+        
+        /* Ocultar elementos móviles */
+        .bordesdarf .d-block.d-lg-none {
+            display: none !important;
+        }
+    }
+
+    </style>
+    <!--===== Fin Oficina Virtual y  y llave en mano =====-->
         
 </head>
 
@@ -765,8 +1248,8 @@
     <div class="space20"></div>
     <!--===== HERO AREA ENDS =======--> 
     <br>
-   <div id="cotizador-container"></div>
-   <br>
+    <div id="cotizador-container"></div>
+    <br>
 
    <!--===== Sala de Junta Oficina privda y coworking  =======-->
     <div class="pro-location1">
@@ -1030,7 +1513,7 @@
     <!--===== FIn Sala de Junta Oficina privda y coworking  =======-->
     <br>
     <!--===== Oficina Virtual  =======-->
-    <div class="pro-location1 ">
+    <div class="bordesdarf">
         <div class="container">
             <div class="row align-items-center">
                 
@@ -1089,7 +1572,7 @@
     <!--===== Fin Oficina Virtual  =======-->
 
     <!--===== Llave en mano  =======-->
-    <div class="pro-location1 ">
+    <div class="bordesdarf">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
@@ -1147,11 +1630,12 @@
             </div><div style="margin-top: -250px;"></div>
         </div>
     </div>
+    <!--===== Fin Llave en mano  =======-->
 
     <div class="space28"></div>
 
     <!--===== Empresas que confían en nosotros =======-->
-    <div class="pro-location1">
+    <div class="bordesdarf">
         <section class="trusted-companies-section">
             <div style="margin-top: -85px;"></div>
             <div class="container">
@@ -1252,7 +1736,7 @@
 
     <div class="space28"></div>
     <!--===== TESTIMONIAL AREA STARTS =======-->
-    <div class="pro-location1 ">
+    <div class="bordesdarf">
         <div class="testi4 sp2" ><div style="margin-top: -155px;"></div>
             <div class="container">
             <div class="row">
@@ -1435,7 +1919,7 @@
                 .vl-blog-1-icon a.readmore:hover {
                     background-color: #0284b4 !important;
                 }
-                </style>
+                </>
             </div>
             </div>
         </div>
