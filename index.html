@@ -1166,6 +1166,378 @@
 
     </style>
     <!--===== Fin Oficina Virtual y  y llave en mano =====-->
+
+    <!-- TESTIMONIOS -->
+    <style>
+        @media (max-width: 1024px) {
+            .bordesdarf .testimonial-arrows + br {
+                display: none !important;
+            }
+            
+            /* Si hay múltiples <br> seguidos, ocultarlos todos */
+            .bordesdarf br {
+                display: none !important;
+            }
+        }
+
+        /* TABLET - 768px a 1024px */
+        @media (max-width: 1024px) and (min-width: 769px) {
+            
+            .bordesdarf .testi4 {
+                padding: 30px 20px 40px 20px !important;
+                margin: 0 !important;
+            }
+            
+            /* Eliminar márgenes negativos problemáticos */
+            .bordesdarf .testi4 div[style*="margin-top: -155px"],
+            .bordesdarf .testi4 div[style*="margin-top: -175px"] {
+                margin-top: 0 !important;
+                display: none !important;
+            }
+            
+            .bordesdarf .heading2 {
+                text-align: center !important;
+                margin-bottom: 30px !important;
+            }
+            
+            .bordesdarf .testimonial4-slider-box {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 20px !important;
+                padding: 0 0 30px 0 !important;
+                margin-bottom: 0 !important;
+            }
+            
+            .bordesdarf .testimonial-single-boxarea {
+                padding: 20px !important;
+                border-radius: 12px !important;
+                height: auto !important;
+                min-height: 280px !important;
+            }
+            
+            .bordesdarf .testimonial-arrows {
+                margin-top: 20px !important;
+                margin-bottom: 20px !important;
+            }
+            
+            /* ESPACIADO PROFESIONAL PARA REEMPLAZAR TUS <br> */
+            .bordesdarf .testi-main-area {
+                padding-bottom: 40px !important;
+            }
+        }
+
+        /* MÓVIL - 768px y menor */
+        @media (max-width: 768px) {
+            
+            .bordesdarf {
+                padding: 0 !important;
+                margin: 15px !important;
+                background: #fff !important;
+                border-radius: 20px !important;
+                box-shadow: 0 3px 15px rgba(0,0,0,0.06) !important;
+                overflow: hidden !important;
+            }
+            
+            .bordesdarf .testi4 {
+                padding: 20px 0 35px 0 !important;
+                margin: 0 !important;
+                background: transparent !important;
+            }
+            
+            /* Eliminar márgenes negativos problemáticos */
+            .bordesdarf .testi4 div[style*="margin-top: -155px"],
+            .bordesdarf .testi4 div[style*="margin-top: -175px"] {
+                margin-top: 0 !important;
+                display: none !important;
+            }
+            
+            .bordesdarf .container {
+                padding: 0 15px !important;
+            }
+            
+            /* Encabezado optimizado */
+            .bordesdarf .heading2 {
+                text-align: center !important;
+                padding: 25px 10px !important;
+                margin-bottom: 20px !important;
+            }
+            
+            .bordesdarf .heading2 h5 {
+                font-size: 14px !important;
+                margin-bottom: 10px !important;
+            }
+            
+            .bordesdarf .heading2 h2 {
+                font-size: 24px !important;
+                line-height: 1.3 !important;
+                margin: 0 !important;
+            }
+            
+            .bordesdarf .space18 {
+                height: 8px !important;
+            }
+            
+            /* Slider optimizado para móvil */
+            .bordesdarf .testimonial4-slider-box {
+                display: block !important;
+                padding: 0 10px !important;
+                margin: 0 !important;
+            }
+            
+            /* Testimonios compactos y atractivos */
+            .bordesdarf .testimonial-single-boxarea {
+                background: #f8f9fa !important;
+                border-radius: 14px !important;
+                padding: 18px 16px !important;
+                margin: 0 10px 15px 10px !important;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.08) !important;
+                border: 1px solid #e9ecef !important;
+                transition: transform 0.2s ease !important;
+                display: flex !important;
+                flex-direction: column !important;
+            }
+            
+            .bordesdarf .testimonial-single-boxarea:hover {
+                transform: translateY(-2px) !important;
+                box-shadow: 0 6px 20px rgba(0,0,0,0.12) !important;
+            }
+            
+            /* REORGANIZACIÓN COMPLETA DEL TESTIMONIO */
+            .bordesdarf .testimonial-single-boxarea {
+                display: flex !important;
+                flex-direction: column !important;
+            }
+            
+            /* 1. NOMBRE - PRIMERO */
+            .bordesdarf .man-text h5 {
+                order: 1 !important;
+                font-size: 18px !important;
+                font-weight: 600 !important;
+                color: #2d3748 !important;
+                margin: 0 0 5px 0 !important;
+                text-align: center !important;
+            }
+            
+            /* 2. OFICIO - SEGUNDO */
+            .bordesdarf .man-text p {
+                order: 2 !important;
+                font-size: 14px !important;
+                color: #718096 !important;
+                margin: 0 0 12px 0 !important;
+                font-weight: 500 !important;
+                text-align: center !important;
+            }
+            
+            /* 3. ESTRELLAS - TERCERO (DESPUÉS DEL OFICIO) */
+            .bordesdarf .brand-img {
+                order: 3 !important;
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                margin: 0 0 15px 0 !important;
+            }
+            
+            /* 4. COMENTARIO - CUARTO */
+            .bordesdarf .testimonial-single-boxarea > p {
+                order: 4 !important;
+                font-size: 15px !important;
+                line-height: 1.5 !important;
+                color: #4a5568 !important;
+                text-align: left !important;
+                margin: 0 !important;
+                font-style: italic !important;
+            }
+            
+            /* LIMPIAR CONTENEDOR DE CLIENTE */
+            .bordesdarf .man-text {
+                display: contents !important;
+            }
+            
+            /* OCULTAR ESPACIOS */
+            .bordesdarf .space12,
+            .bordesdarf .space24 {
+                display: none !important;
+            }
+            
+            /* ESTRELLAS PEQUEÑAS Y ELEGANTES */
+            .bordesdarf .brand-img img {
+                display: none !important;
+            }
+            
+            .bordesdarf .brand-img ul {
+                display: flex !important;
+                list-style: none !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                gap: 2px !important;
+            }
+            
+            .bordesdarf .brand-img ul li {
+                font-size: 14px !important;
+                color: #f59e0b !important;
+            }
+            
+            .bordesdarf .brand-img ul li i {
+                font-size: 14px !important;
+            }
+            
+            /* Flechas de navegación optimizadas */
+            .bordesdarf .testimonial-arrows {
+                display: flex !important;
+                justify-content: center !important;
+                gap: 15px !important;
+                margin: 15px 0 0 0 !important;
+                padding-bottom: 25px !important;
+            }
+            
+            /* ESPACIADO PROFESIONAL PARA REEMPLAZAR <br> */
+            .bordesdarf .testi-main-area {
+                padding-bottom: 30px !important;
+                margin-bottom: 0 !important;
+            }
+            
+            .bordesdarf .testimonial4-slider-box {
+                margin-bottom: 0 !important;
+                padding-bottom: 0 !important;
+            }
+            
+            .bordesdarf .testimonial-prev-arrow,
+            .bordesdarf .testimonial-next-arrow {
+                width: auto !important;
+                height: auto !important;
+            }
+            
+            .bordesdarf .testimonial-prev-arrow button,
+            .bordesdarf .testimonial-next-arrow button {
+                width: 45px !important;
+                height: 45px !important;
+                border-radius: 50% !important;
+                background: #ed8438 !important;
+                color: white !important;
+                border: none !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                font-size: 16px !important;
+                box-shadow: 0 3px 10px rgba(237, 132, 56, 0.3) !important;
+                transition: all 0.2s ease !important;
+            }
+            
+            .bordesdarf .testimonial-prev-arrow button:hover,
+            .bordesdarf .testimonial-next-arrow button:hover {
+                background: #d97706 !important;
+                transform: scale(1.05) !important;
+                box-shadow: 0 4px 15px rgba(237, 132, 56, 0.4) !important;
+            }
+            
+            /* Espaciado general optimizado */
+            .bordesdarf .space-margin60 {
+                margin: 0 !important;
+            }
+            
+            .bordesdarf .testi-main-area {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+        }
+
+        /* MÓVILES MUY PEQUEÑOS - 480px y menor */
+        @media (max-width: 480px) {
+            
+            .bordesdarf {
+                margin: 10px !important;
+            }
+            
+            .bordesdarf .testi4 {
+                padding: 15px 0 30px 0 !important;
+            }
+            
+            .bordesdarf .container {
+                padding: 0 10px !important;
+            }
+            
+            /* ESPACIADO ADICIONAL PARA MÓVILES PEQUEÑOS */
+            .bordesdarf .testi-main-area {
+                padding-bottom: 25px !important;
+            }
+            
+            .bordesdarf .heading2 {
+                padding: 20px 8px !important;
+            }
+            
+            .bordesdarf .heading2 h2 {
+                font-size: 22px !important;
+            }
+            
+            .bordesdarf .testimonial4-slider-box {
+                padding: 0 5px !important;
+            }
+            
+            .bordesdarf .testimonial-single-boxarea {
+                padding: 16px 14px !important;
+                margin: 0 5px 12px 5px !important;
+            }
+            
+            .bordesdarf .man-text h5 {
+                font-size: 16px !important;
+            }
+            
+            .bordesdarf .man-text p {
+                font-size: 13px !important;
+            }
+            
+            .bordesdarf .testimonial-single-boxarea > p {
+                font-size: 14px !important;
+                line-height: 1.4 !important;
+            }
+            
+            .bordesdarf .testimonial-prev-arrow button,
+            .bordesdarf .testimonial-next-arrow button {
+                width: 40px !important;
+                height: 40px !important;
+                font-size: 14px !important;
+            }
+        }
+
+        /* ==========================================
+        MANTENER DESKTOP INTACTO PERO AJUSTAR ESPACIADO
+        ========================================== */
+        @media (min-width: 1025px) {
+            /* ELIMINAR ESPACIADO EXCESIVO EN DESKTOP */
+            .bordesdarf .testi4 {
+                /* Desktop se queda como está pero sin espaciado excesivo */
+                padding-bottom: 20px !important;
+            }
+            
+            .bordesdarf .testi-main-area {
+                padding-bottom: 10px !important;
+                margin-bottom: 0 !important;
+            }
+            
+            .bordesdarf .testimonial4-slider-box {
+                margin-bottom: 10px !important;
+                padding-bottom: 0 !important;
+            }
+            
+            .bordesdarf .testimonial-arrows {
+                margin-top: 15px !important;
+                margin-bottom: 10px !important;
+                padding-bottom: 0 !important;
+            }
+            
+            /* En desktop MANTENER los <br> pero reducir su impacto */
+            .bordesdarf br {
+                display: block !important;
+                line-height: 0.3 !important; /* Reducir altura de cada <br> */
+            }
+            
+            /* Eliminar márgenes negativos problemáticos en desktop también */
+            .bordesdarf div[style*="margin-top: -175px"] {
+                margin-top: -50px !important; /* Reducir de -175px a -50px */
+            }
+        }
+    </style>
+    <!-- FIn TESTIMONIOS -->
         
 </head>
 
@@ -1737,145 +2109,145 @@
     <div class="space28"></div>
     <!--===== TESTIMONIAL AREA STARTS =======-->
     <div class="bordesdarf">
-        <div class="testi4 sp2" ><div style="margin-top: -155px;"></div>
+        <div class="testi4 sp2" >
             <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                <div class="heading2 space-margin60">
-                    <h5><svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
-                        <path d="M2.5 20H4.5M4.5 20H10.5M4.5 20V11.452C4.5 10.918 4.5 10.651 4.565 10.402C4.62256 10.1819 4.71725 9.97322 4.845 9.78497C4.99 9.57197 5.191 9.39497 5.593 9.04397L10.394 4.84197C11.14 4.18997 11.513 3.86397 11.932 3.73997C12.302 3.62997 12.697 3.62997 13.067 3.73997C13.487 3.86397 13.861 4.18997 14.607 4.84397L19.407 9.04397C19.809 9.39597 20.01 9.57197 20.155 9.78397C20.283 9.9753 20.3763 10.1813 20.435 10.402C20.5 10.651 20.5 10.918 20.5 11.452V20M10.5 20H14.5M10.5 20V16C10.5 15.4695 10.7107 14.9608 11.0858 14.5858C11.4609 14.2107 11.9696 14 12.5 14C13.0304 14 13.5391 14.2107 13.9142 14.5858C14.2893 14.9608 14.5 15.4695 14.5 16V20M20.5 20H14.5M20.5 20H22.5" stroke="#ED8438" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg> Testimonios de nuestros clientes</h5>
-                    <div class="space18"></div>
-                    <h2>Conoce la experiencia Easyoffice</h2>
+                <div class="row">
+                    <div class="col-lg-6">
+                    <div class="heading2 space-margin60">
+                        <h5><svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                            <path d="M2.5 20H4.5M4.5 20H10.5M4.5 20V11.452C4.5 10.918 4.5 10.651 4.565 10.402C4.62256 10.1819 4.71725 9.97322 4.845 9.78497C4.99 9.57197 5.191 9.39497 5.593 9.04397L10.394 4.84197C11.14 4.18997 11.513 3.86397 11.932 3.73997C12.302 3.62997 12.697 3.62997 13.067 3.73997C13.487 3.86397 13.861 4.18997 14.607 4.84397L19.407 9.04397C19.809 9.39597 20.01 9.57197 20.155 9.78397C20.283 9.9753 20.3763 10.1813 20.435 10.402C20.5 10.651 20.5 10.918 20.5 11.452V20M10.5 20H14.5M10.5 20V16C10.5 15.4695 10.7107 14.9608 11.0858 14.5858C11.4609 14.2107 11.9696 14 12.5 14C13.0304 14 13.5391 14.2107 13.9142 14.5858C14.2893 14.9608 14.5 15.4695 14.5 16V20M20.5 20H14.5M20.5 20H22.5" stroke="#ED8438" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg> Testimonios de nuestros clientes</h5>
+                        <div class="space18"></div>
+                        <h2>Conoce la experiencia Easyoffice</h2>
+                    </div>
+                    </div>
                 </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="testi-main-area">
+                            <div class="testimonial4-slider-box" >
+                                <div class="testimonial-single-boxarea" style="background: #f3f4f6;">
+                                    <div class="man-text">
+                                        <h5>Michelle Flores</h5>
+                                        <div class="space12"></div>
+                                        <p>Cliente</p>
+                                    </div>
+                                    
+                                    <div class="space24"></div>
+                                    <p style="text-align: justify;">“Encantados con Easy Office. Su equipo siempre está dispuesto a ayudar y constantemente busca innovar para nosotros, sus clientes. Tienen excelentes instalaciones y una atención de primera. Nuestra experiencia ha sido 100% satisfactoria.”</p>
+                                    <div class="space24"></div>
+                                    <div class="brand-img">
+                                    <img src="" >
+                                    <ul>
+                                        <li><i class="fa-solid fa-star"></i></li>
+                                        <li><i class="fa-solid fa-star"></i></li>
+                                        <li><i class="fa-solid fa-star"></i></li>
+                                        <li><i class="fa-solid fa-star"></i></li>
+                                        <li><i class="fa-solid fa-star"></i></li>
+                                    </ul>
+                                    </div>
+                                </div>
+                                <div class="testimonial-single-boxarea" style="background: #f3f4f6;">
+                                    
+                                    <div class="man-text">
+                                        <h5>Gabriela Cornejo </h5>
+                                        <div class="space12"></div>
+                                        <p>Consultora de tecnología </p>
+                                    </div>
+                                    <div class="space24"></div>
+                                    <p style="text-align: justify;">“Easy Office ofrece un excelente servicio y apoyo, haciendo que sus clientes se sientan como en familia. Proporcionan un ambiente de trabajo sin preocupaciones al cubrir todos los gastos y servicios de oficina, lo que resulta en una experiencia laboral increíble.”</p>
+                                    <div class="space24"></div>
+                                    <div class="brand-img">
+                                    <img src="" alt="">
+                                    <ul>
+                                        <li><i class="fa-solid fa-star"></i></li>
+                                        <li><i class="fa-solid fa-star"></i></li>
+                                        <li><i class="fa-solid fa-star"></i></li>
+                                        <li><i class="fa-solid fa-star"></i></li>
+                                        <li><i class="fa-solid fa-star"></i></li>
+                                    </ul>
+                                    </div>
+                                </div>
+                                <div class="testimonial-single-boxarea"  style="background: #f3f4f6;">
+                                    <div class="man-text">
+                                    
+                                        <h5>María Pérez </h5>
+                                        <div class="space12"></div>
+                                        <p>Consultora independiente</p>
+                                
+                                    </div>
+                                    <div class="space24"></div>
+                                    <p style="text-align: justify;">“Siempre dispuestos a colaborar con una actitud positiva, el equipo de Easy Office hizo que nuestra experiencia fuera fantástica. Nos brindaron soluciones oportunas y atención profesional. </br>Los recomendamos ampliamente por su compromiso.”</p>
+                                    <div class="space24"></div>
+                                    <div class="brand-img">
+                                    <img src="" alt="">
+                                    <ul>
+                                        <li><i class="fa-solid fa-star"></i></li>
+                                        <li><i class="fa-solid fa-star"></i></li>
+                                        <li><i class="fa-solid fa-star"></i></li>
+                                        <li><i class="fa-solid fa-star"></i></li>
+                                        <li><i class="fa-solid fa-star"></i></li>
+                                    </ul>
+                                    </div>
+                                </div>
+                                <div class="testimonial-single-boxarea"  style="background: #f3f4f6;">
+                                    
+                                    <div class="man-text">
+                                        <h5>Alejandra Murillo</a>
+                                        <div class="space12"></div>
+                                        <p>Cliente</p>
+                                    
+                                    </div>
+                                    <div class="space24"></div>
+                                    <p style="text-align: justify;">“Encantados con Easy Office. Su equipo siempre está dispuesto a ayudar y constantemente busca innovar para nosotros, sus clientes. Tienen excelentes instalaciones y una atención de primera. Nuestra experiencia ha sido 100% satisfactoria.”</p>
+                                    <div class="space24"></div>
+                                    <div class="brand-img">
+                                    <img src="" alt="">
+                                    <ul>
+                                        <li><i class="fa-solid fa-star"></i></li>
+                                        <li><i class="fa-solid fa-star"></i></li>
+                                        <li><i class="fa-solid fa-star"></i></li>
+                                        <li><i class="fa-solid fa-star"></i></li>
+                                        <li><i class="fa-solid fa-star"></i></li>
+                                    </ul>
+                                    </div>
+                                </div>
+                                <div class="testimonial-single-boxarea"  style="background: #f3f4f6;">
+                                    
+                                    <div class="man-text">
+                                        <h5>Nicolas Jackson</h5>
+                                        <div class="space12"></div>
+                                        <p>Consultora de tecnología </p>
+                                    
+                                    </div>
+                                    <div class="space24"></div>
+                                    <p style="text-align: justify;">“Easy Office ofrece un excelente servicio y apoyo, haciendo que sus clientes se sientan como en familia. Proporcionan un ambiente de trabajo sin preocupaciones al cubrir todos los gastos y servicios de oficina, lo que resulta en una experiencia laboral increíble.”</p>
+                                    <div class="space24"></div>
+                                    <div class="brand-img">
+                                    <img src="" alt="">
+                                    <ul>
+                                        <li><i class="fa-solid fa-star"></i></li>
+                                        <li><i class="fa-solid fa-star"></i></li>
+                                        <li><i class="fa-solid fa-star"></i></li>
+                                        <li><i class="fa-solid fa-star"></i></li>
+                                        <li><i class="fa-solid fa-star"></i></li>
+                                    </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-arrows">
+                                <div class="testimonial-prev-arrow">
+                                    <button><i class="fa-solid fa-angle-left"></i></button>
+                                </div>
+                                <div class="testimonial-next-arrow">
+                                    <button><i class="fa-solid fa-angle-right"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                <div class="testi-main-area">
-                    <div class="testimonial4-slider-box" >
-                    <div class="testimonial-single-boxarea" style="background: #f3f4f6;">
-                        <div class="man-text">
-                            <h5>Michelle Flores</h5>
-                            <div class="space12"></div>
-                            <p>Cliente</p>
-                        </div>
-                        
-                        <div class="space24"></div>
-                        <p style="text-align: justify;">“Encantados con Easy Office. Su equipo siempre está dispuesto a ayudar y constantemente busca innovar para nosotros, sus clientes. Tienen excelentes instalaciones y una atención de primera. Nuestra experiencia ha sido 100% satisfactoria.”</p>
-                        <div class="space24"></div>
-                        <div class="brand-img">
-                        <img src="" >
-                        <ul>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                        </ul>
-                        </div>
-                    </div>
-                    <div class="testimonial-single-boxarea" style="background: #f3f4f6;">
-                        
-                        <div class="man-text">
-                            <h5>Gabriela Cornejo </h5>
-                            <div class="space12"></div>
-                            <p>Consultora de tecnología </p>
-                        </div>
-                        <div class="space24"></div>
-                        <p style="text-align: justify;">“Easy Office ofrece un excelente servicio y apoyo, haciendo que sus clientes se sientan como en familia. Proporcionan un ambiente de trabajo sin preocupaciones al cubrir todos los gastos y servicios de oficina, lo que resulta en una experiencia laboral increíble.”</p>
-                        <div class="space24"></div>
-                        <div class="brand-img">
-                        <img src="" alt="">
-                        <ul>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                        </ul>
-                        </div>
-                    </div>
-                    <div class="testimonial-single-boxarea"  style="background: #f3f4f6;">
-                        <div class="man-text">
-                        
-                            <h5>María Pérez </h5>
-                            <div class="space12"></div>
-                            <p>Consultora independiente</p>
-                       
-                        </div>
-                        <div class="space24"></div>
-                        <p style="text-align: justify;">“Siempre dispuestos a colaborar con una actitud positiva, el equipo de Easy Office hizo que nuestra experiencia fuera fantástica. Nos brindaron soluciones oportunas y atención profesional. </br>Los recomendamos ampliamente por su compromiso.”</p>
-                        <div class="space24"></div>
-                        <div class="brand-img">
-                        <img src="" alt="">
-                        <ul>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                        </ul>
-                        </div>
-                    </div>
-                    <div class="testimonial-single-boxarea"  style="background: #f3f4f6;">
-                        
-                        <div class="man-text">
-                            <h5>Alejandra Murillo</a>
-                            <div class="space12"></div>
-                            <p>Cliente</p>
-                        
-                        </div>
-                        <div class="space24"></div>
-                        <p style="text-align: justify;">“Encantados con Easy Office. Su equipo siempre está dispuesto a ayudar y constantemente busca innovar para nosotros, sus clientes. Tienen excelentes instalaciones y una atención de primera. Nuestra experiencia ha sido 100% satisfactoria.”</p>
-                        <div class="space24"></div>
-                        <div class="brand-img">
-                        <img src="" alt="">
-                        <ul>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                        </ul>
-                        </div>
-                    </div>
-                    <div class="testimonial-single-boxarea"  style="background: #f3f4f6;">
-                        
-                        <div class="man-text">
-                            <h5>Nicolas Jackson</h5>
-                            <div class="space12"></div>
-                             <p>Consultora de tecnología </p>
-                        
-                        </div>
-                        <div class="space24"></div>
-                        <p style="text-align: justify;">“Easy Office ofrece un excelente servicio y apoyo, haciendo que sus clientes se sientan como en familia. Proporcionan un ambiente de trabajo sin preocupaciones al cubrir todos los gastos y servicios de oficina, lo que resulta en una experiencia laboral increíble.”</p>
-                        <div class="space24"></div>
-                        <div class="brand-img">
-                        <img src="" alt="">
-                        <ul>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                        </ul>
-                        </div>
-                    </div>
-                    </div>
-                    <div class="testimonial-arrows">
-                    <div class="testimonial-prev-arrow">
-                        <button><i class="fa-solid fa-angle-left"></i></button>
-                    </div>
-                    <div class="testimonial-next-arrow">
-                        <button><i class="fa-solid fa-angle-right"></i></button>
-                    </div>
-                    </div>
-                </div>
-                </div>
-            </div>
-            </div>
-        </div><div style="margin-top: -175px;"></div>
+        </div><div style="margin-top: -45px;"></div>
     </div>
     <!--===== TESTIMONIAL AREA ENDS =======-->
 
