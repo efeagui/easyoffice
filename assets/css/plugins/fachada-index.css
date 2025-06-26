@@ -1,0 +1,146 @@
+/* ===== ESTILOS ORIGINALES (SIN CAMBIOS) ===== */
+.counter-boxarea .row {
+    display: flex;
+    align-items: stretch; 
+}
+
+.counter-box {
+    height: 100%; /* Para simetría */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Espaciadores originales */
+.space10 { height: 10px; }
+.space20 { height: 20px; }
+.space30 { height: 30px; }
+.space32 { height: 32px; }
+.space40 { height: 40px; }
+.space80 { height: 80px; }
+
+/* ===== SOLO MEDIA QUERIES PARA RESPONSIVE ===== */
+
+/* TABLET (768px - 1199px) - Principal problema */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .hero-heading-content h1 {
+        font-size: 2.5rem !important;
+        line-height: 1.3 !important;
+    }
+    
+    .hero-heading-content p {
+        font-size: 1rem !important;
+    }
+    
+    .hero-images-area img {
+        max-height: 500px !important;
+    }
+    
+    .counter-box h1 {
+        font-size: 2rem !important;
+    }
+    
+    .counter-box p {
+        font-size: 0.9rem !important;
+    }
+    
+    .space80 {
+        height: 40px !important;
+    }
+    
+    .space40 {
+        height: 30px !important;
+    }
+    
+    .space32 {
+        height: 25px !important;
+    }
+}
+
+/* MOBILE (hasta 767px) */
+@media (max-width: 767px) {
+    .hero-heading-content h1 {
+        font-size: 2rem !important;
+        text-align: center !important;
+    }
+    
+    .hero-heading-content p {
+        font-size: 0.95rem !important;
+        text-align: center !important;
+    }
+    
+    .btn-area1 {
+        text-align: center !important;
+    }
+    
+    .hero-images-area {
+        text-align: center !important;
+        margin-top: 30px !important;
+    }
+    
+    .hero-images-area img {
+        max-height: 350px !important;
+        width: 100% !important;
+    }
+    
+    .counter-boxarea {
+        margin-top: 30px !important;
+    }
+    
+    .counter-box {
+        margin-bottom: 20px !important;
+        text-align: center !important;
+    }
+    
+    .counter-box h1 {
+        font-size: 1.8rem !important;
+    }
+    
+    .counter-box p {
+        font-size: 0.85rem !important;
+    }
+    
+    .space80 {
+        height: 30px !important;
+    }
+    
+    .space40 {
+        height: 25px !important;
+    }
+    
+    .space32 {
+        height: 20px !important;
+    }
+    
+    .space20 {
+        height: 15px !important;
+    }
+}
+
+/* MOBILE PEQUEÑO (hasta 480px) */
+@media (max-width: 480px) {
+    .hero-heading-content h1 {
+        font-size: 1.7rem !important;
+    }
+    
+    .hero-heading-content p {
+        font-size: 0.9rem !important;
+    }
+    
+    .hero-images-area img {
+        max-height: 280px !important;
+    }
+    
+    .counter-box h1 {
+        font-size: 1.5rem !important;
+    }
+    
+    .counter-box p {
+        font-size: 0.8rem !important;
+    }
+    
+    .container-fluid {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+}

@@ -4,49 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
- <!--===== SOLUCION PARPADEO SLIDE =======-->
-    <style>
-    /* Prevenir FOUC (Flash of Unstyled Content) */
-    html {
-        visibility: hidden;
-        opacity: 0;
-    }
-
-    html.loaded {
-        visibility: visible;
-        opacity: 1;
-        transition: opacity 0.3s ease-in-out;
-    }
-
-    /* Reservar espacio para el header */
-    #header-container {
-        min-height: 80px;
-        background: transparent;
-        transition: all 0.3s ease;
-    }
-
-    /* Prevenir jump durante carga del header */
-    .hero4-slider-sectionarea {
-        opacity: 0;
-        transition: opacity 0.5s ease;
-    }
-
-    .hero4-slider-sectionarea.loaded {
-        opacity: 1;
-    }
-
-    /* Prevenir parpadeo del slider */
-    .hero4-slider-area {
-        opacity: 0;
-        transition: opacity 0.4s ease;
-    }
-
-    .hero4-slider-area.ready {
-        opacity: 1;
-    }
-    </style>
- <!--===== SOLUCION PARPADEO SLIDE =======-->
  <title>Easyoffice</title>
   <!--=====FAB ICON=======-->
   <link rel="shortcut icon" href="assets/img/logo/EasyOffice logo.png" type="image/x-icon">
@@ -63,409 +20,375 @@
   <link rel="stylesheet" href="assets/css/plugins/odometer.css">
   <link rel="stylesheet" href="assets/css/plugins/cotizador-easyoffice.css">
   <link rel="stylesheet" href="assets/css/main.css">
-
-  
-
   <!--===== CSS Para espacios de juntas =======-->
-  <style>
-      /* ===== CSS UNIFICADO PARA TODAS LAS CIUDADES ===== */
-      .compact-gallery .big-img {
-          height: 320px;
-          overflow: hidden;
-          border-radius: 10px;
-          transition: transform 0.2s ease; /* Solo transform para hover */
-      }
+<style>
+    /* ===== CSS ORIGINAL PRESERVADO - SOLO AÑADÍ INDEPENDENCIA ===== */
+    
+    /* ===== CSS UNIFICADO PARA TODAS LAS CIUDADES ===== */
+    
+    /* GALERÍA TGU - Con tu efecto original */
+    .tgu-section .all-galler-images.compact-gallery .big-img {
+        height: 320px;
+        overflow: hidden;
+        border-radius: 10px;
+        transition: transform 0.2s ease;
+    }
 
-      .compact-gallery .big-img:hover {
-          transform: scale(1.02);
-      }
+    .tgu-section .all-galler-images.compact-gallery .big-img:hover {
+        transform: scale(1.02);
+    }
 
-      .compact-gallery .big-img img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          /* Removido transition innecesario */
-      }
+    .tgu-section .all-galler-images.compact-gallery .big-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
-      /* ===== PESTAÑAS UNIVERSALES (TGU + SPS) ===== */
-      .elegant-room-tabs-1 ul,
-      .elegant-room-tabs-2 ul {
-          display: flex !important;
-          gap: 8px !important;
-          margin: 0 !important;
-          padding: 0 !important;
-          list-style: none !important;
-      }
+    /* GALERÍA SPS - Con tu efecto original */
+    .sps-section .all-galler-images.compact-gallery .big-img {
+        height: 320px;
+        overflow: hidden;
+        border-radius: 10px;
+        transition: transform 0.2s ease;
+    }
 
-      .elegant-room-tabs-1 ul li,
-      .elegant-room-tabs-2 ul li {
-          flex: 1 !important;
-      }
+    .sps-section .all-galler-images.compact-gallery .big-img:hover {
+        transform: scale(1.02);
+    }
 
-      .elegant-room-tabs-1 ul li a,
-      .elegant-room-tabs-2 ul li a {
-          display: block !important;
-          padding: 12px 16px !important;
-          background: #f8f9fa !important;
-          color: #333 !important;
-          text-decoration: none !important;
-          border-radius: 25px !important;
-          text-align: center !important;
-          font-weight: 600 !important;
-          font-size: 0.9rem !important;
-          line-height: 1.3 !important;
-          transition: all 0.2s ease !important; /* Transición más rápida */
-          border: 2px solid transparent !important;
-      }
+    .sps-section .all-galler-images.compact-gallery .big-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
-      .elegant-room-tabs-1 ul li a.tab-active-1,
-      .elegant-room-tabs-2 ul li a.tab-active-2 {
-          background: #ff7b3d !important;
-          color: white !important;
-          box-shadow: 0 4px 15px rgba(255, 123, 61, 0.3) !important;
-          transform: translateY(-2px) !important;
-      }
+    /* ===== PESTAÑAS UNIVERSALES (TGU + SPS) ===== */
+    .elegant-room-tabs-1 ul,
+    .elegant-room-tabs-2 ul {
+        display: flex !important;
+        gap: 8px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        list-style: none !important;
+    }
 
-      .elegant-room-tabs-1 ul li a:hover:not(.tab-active-1),
-      .elegant-room-tabs-2 ul li a:hover:not(.tab-active-2) {
-          background: rgba(255, 123, 61, 0.1) !important;
-          color: #ff7b3d !important;
-          border-color: rgba(255, 123, 61, 0.2) !important;
-          transform: translateY(-1px) !important;
-      }
+    .elegant-room-tabs-1 ul li,
+    .elegant-room-tabs-2 ul li {
+        flex: 1 !important;
+    }
 
-      /* ===== CONTENIDO DINÁMICO UNIVERSAL ===== */
-      .room-title {
-          color: #ff7b3d;
-          font-weight: 700;
-          font-size: 1.8rem;
-          margin-bottom: 15px;
-          /* Removido transition innecesario */
-      }
+    .elegant-room-tabs-1 ul li a,
+    .elegant-room-tabs-2 ul li a {
+        display: block !important;
+        padding: 12px 16px !important;
+        background: #f8f9fa !important;
+        color: #333 !important;
+        text-decoration: none !important;
+        border-radius: 25px !important;
+        text-align: center !important;
+        font-weight: 600 !important;
+        font-size: 0.9rem !important;
+        line-height: 1.3 !important;
+        transition: all 0.2s ease !important;
+        border: 2px solid transparent !important;
+    }
 
-      .capacity-badge {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          background: rgba(255, 123, 61, 0.1);
-          color: #ff7b3d;
-          padding: 8px 16px;
-          border-radius: 25px;
-          font-weight: 600;
-          font-size: 0.9rem;
-          border: 1px solid rgba(255, 123, 61, 0.2);
-          margin-bottom: 20px;
-      }
+    .elegant-room-tabs-1 ul li a.tab-active-1,
+    .elegant-room-tabs-2 ul li a.tab-active-2 {
+        background: #ff7b3d !important;
+        color: white !important;
+        box-shadow: 0 4px 15px rgba(255, 123, 61, 0.3) !important;
+        transform: translateY(-2px) !important;
+    }
 
-      .amenities-grid {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 12px;
-          margin: 20px 0;
-      }
+    .elegant-room-tabs-1 ul li a:hover:not(.tab-active-1),
+    .elegant-room-tabs-2 ul li a:hover:not(.tab-active-2) {
+        background: rgba(255, 123, 61, 0.1) !important;
+        color: #ff7b3d !important;
+        border-color: rgba(255, 123, 61, 0.2) !important;
+        transform: translateY(-1px) !important;
+    }
 
-      .amenity-item {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          padding: 10px 15px;
-          background: rgba(248, 249, 250, 0.8);
-          border-radius: 10px;
-          border-left: 3px solid #ff7b3d;
-          transition: all 0.2s ease; /* Transición más rápida */
-      }
+    /* ===== CONTENIDO DINÁMICO UNIVERSAL ===== */
+    .room-title {
+        color: #ff7b3d;
+        font-weight: 700;
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
 
-      .amenity-item:hover {
-          background: rgba(255, 123, 61, 0.05);
-          transform: translateX(5px);
-      }
+    .capacity-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255, 123, 61, 0.1);
+        color: #ff7b3d;
+        padding: 8px 16px;
+        border-radius: 25px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        border: 1px solid rgba(255, 123, 61, 0.2);
+        margin-bottom: 20px;
+    }
 
-      .amenity-icon {
-          color: #ff7b3d;
-          font-size: 1.1rem;
-          width: 20px;
-          text-align: center;
-      }
+    .amenities-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin: 20px 0;
+    }
 
-      .amenity-text {
-          color: #333;
-          font-weight: 500;
-          font-size: 0.9rem;
-      }
+    .amenity-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 15px;
+        background: rgba(248, 249, 250, 0.8);
+        border-radius: 10px;
+        border-left: 3px solid #ff7b3d;
+        transition: all 0.2s ease;
+    }
 
-      /* ===== BOTONES UNIVERSALES ===== */
-      .price-box {
-          background: #0284b4;
-          color: white;
-          padding: 9px 10px;
-          border-radius: 12px;
-          text-align: center;
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          transition: all 0.2s ease; /* Transición más rápida */
-      }
+    .amenity-item:hover {
+        background: rgba(255, 123, 61, 0.05);
+        transform: translateX(5px);
+    }
 
-      .price-box:hover {
-          background: #ff7b3d;
-          transform: translateY(-2px);
-      }
+    .amenity-icon {
+        color: #ff7b3d;
+        font-size: 1.1rem;
+        width: 20px;
+        text-align: center;
+    }
 
-      .price-amount {
-          font-size: 1.4rem;
-          font-weight: bold;
-          margin-bottom: 3px;
-      }
+    .amenity-text {
+        color: #333;
+        font-weight: 500;
+        font-size: 0.9rem;
+    }
 
-      .price-box small {
-          opacity: 0.8;
-          font-size: 0.8rem;
-      }
+    /* ===== BOTONES UNIVERSALES ===== */
+    .price-box {
+        background: #0284b4;
+        color: white;
+        padding: 9px 10px;
+        border-radius: 12px;
+        text-align: center;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        transition: all 0.2s ease;
+    }
 
-      .reserve-btn {
-          background: #ff7b3d;
-          color: white;
-          padding: 15px 10px;
-          border-radius: 12px;
-          text-decoration: none;
-          display: block;
-          font-weight: 600;
-          text-align: center;
-          transition: all 0.2s ease; /* Transición más rápida */
-          box-shadow: 0 4px 15px rgba(255, 123, 61, 0.3);
-      }
+    .price-box:hover {
+        background: #ff7b3d;
+        transform: translateY(-2px);
+    }
 
-      .reserve-btn:hover {
-          background: #333;
-          transform: translateY(-2px);
-          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-          color: white;
-          text-decoration: none;
-      }
+    .price-amount {
+        font-size: 1.4rem;
+        font-weight: bold;
+        margin-bottom: 3px;
+    }
 
-      .reserve-btn .arrow1 {
-          margin-left: 8px;
-          transition: transform 0.2s ease; /* Transición más rápida */
-      }
+    .price-box small {
+        opacity: 0.8;
+        font-size: 0.8rem;
+    }
 
-      .reserve-btn:hover .arrow1 {
-          transform: translateX(3px);
-      }
+    .reserve-btn {
+        background: #ff7b3d;
+        color: white;
+        padding: 15px 10px;
+        border-radius: 12px;
+        text-decoration: none;
+        display: block;
+        font-weight: 600;
+        text-align: center;
+        transition: all 0.2s ease;
+        box-shadow: 0 4px 15px rgba(255, 123, 61, 0.3);
+    }
 
-      /* ===== GALERÍA BOTTOM UNIVERSAL - MINIATURAS MÁS ALTAS ===== */
-      .bottom-galler-images {
-          display: flex;
-          gap: 10px;
-          margin-top: 15px;
-          flex-wrap: wrap;
-      }
+    .reserve-btn:hover {
+        background: #333;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        color: white;
+        text-decoration: none;
+    }
 
-      .small-img {
-          flex: 1;
-          min-width: 80px;
-          height: 95px; /* INCREMENTADO de 60px a 95px - MÁS ALTO */
-          border-radius: 8px;
-          overflow: hidden;
-          cursor: pointer;
-          transition: all 0.2s ease; /* Transición más rápida */
-          border: 2px solid transparent;
-      }
+    .reserve-btn .arrow1 {
+        margin-left: 8px;
+        transition: transform 0.2s ease;
+    }
 
-      .small-img:hover {
-          border-color: #ff7b3d;
-          transform: translateY(-2px);
-      }
+    .reserve-btn:hover .arrow1 {
+        transform: translateX(3px);
+    }
 
-      .small-img img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          /* Removido transition innecesario */
-      }
+    /* ===== GALERÍA BOTTOM UNIVERSAL - MINIATURAS MÁS ALTAS ===== */
+    .bottom-galler-images {
+        display: flex;
+        gap: 10px;
+        margin-top: 15px;
+        flex-wrap: wrap;
+    }
 
-      .space16 { height: 16px; }
-      .space32 { height: 32px; }
-      .space-margin60 { margin-bottom: 60px; }
+    .small-img {
+        flex: 1;
+        min-width: 80px;
+        height: 95px; /* INCREMENTADO de 60px a 95px - MÁS ALTO */
+        border-radius: 8px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        border: 2px solid transparent;
+    }
 
-      /* ===== RESPONSIVE UNIVERSAL ===== */
-      @media (max-width: 768px) {
-          .elegant-room-tabs-1 ul,
-          .elegant-room-tabs-2 ul {
-              flex-direction: column;
-              gap: 6px;
-          }
-          
-          .elegant-room-tabs-1 ul li a,
-          .elegant-room-tabs-2 ul li a {
-              padding: 10px 14px;
-              font-size: 0.85rem;
-          }
-          
-          .amenities-grid {
-              grid-template-columns: 1fr;
-          }
-          
-          .room-title {
-              font-size: 1.5rem;
-          }
-          
-          .compact-gallery .big-img {
-              height: 220px;
-          }
-          
-          .price-amount {
-              font-size: 1.2rem;
-          }
-          
-          /* Miniaturas más altas también en móvil */
-          .small-img {
-              height: 80px; /* Incrementado de 60px a 80px en móvil */
-          }
+    .small-img:hover {
+        border-color: #ff7b3d;
+        transform: translateY(-2px);
+    }
 
-          /* Orden responsive para SPS (galería izquierda, contenido derecha) */
-          .order-lg-1 {
-              order: 1;
-          }
-          
-          .order-lg-2 {
-              order: 2;
-          }
-          
-          .order-1 {
-              order: 1;
-          }
-          
-          .order-2 {
-              order: 2;
-          }
-      }
+    .small-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
-      /* ===== ESTILOS GENERALES UNIVERSALES ===== */
-      body { 
-          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-      }
-      
-      .properties2 { 
-          padding: 60px 0; 
-      }
-      
-      .sp1 { 
-          background: #f8f9fa; 
-      }
-      
-      .heading1 h5 { 
-          color: #ff7b3d; 
-          font-weight: 600; 
-      }
-      
-      .heading1 h2 { 
-          color: #333; 
-          font-weight: 700; 
-      }
+    .space16 { height: 16px; }
+    .space32 { height: 32px; }
+    .space-margin60 { margin-bottom: 60px; }
 
-      /* Estilo especial para h2 con clase text-anime-style-3 (SPS) */
-      .text-anime-style-3 {
-          background: linear-gradient(45deg, #ff7b3d, #ff9a56);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-      }
+    /* ===== RESPONSIVE UNIVERSAL ===== */
+    @media (max-width: 768px) {
+        .elegant-room-tabs-1 ul,
+        .elegant-room-tabs-2 ul {
+            flex-direction: column;
+            gap: 6px;
+        }
+        
+        .elegant-room-tabs-1 ul li a,
+        .elegant-room-tabs-2 ul li a {
+            padding: 10px 14px;
+            font-size: 0.85rem;
+        }
+        
+        .amenities-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .room-title {
+            font-size: 1.5rem;
+        }
+        
+        .tgu-section .all-galler-images.compact-gallery .big-img,
+        .sps-section .all-galler-images.compact-gallery .big-img {
+            height: 220px;
+        }
+        
+        .price-amount {
+            font-size: 1.2rem;
+        }
+        
+        /* Miniaturas más altas también en móvil */
+        .small-img {
+            height: 80px; /* Incrementado de 60px a 80px en móvil */
+        }
 
-      /* ===== OPTIMIZACIONES UNIVERSALES PARA RENDIMIENTO ===== */
-      * {
-          box-sizing: border-box;
-      }
+        /* Orden responsive para SPS (galería izquierda, contenido derecha) */
+        .order-lg-1 {
+            order: 1;
+        }
+        
+        .order-lg-2 {
+            order: 2;
+        }
+        
+        .order-1 {
+            order: 1;
+        }
+        
+        .order-2 {
+            order: 2;
+        }
+    }
 
-      img {
-          max-width: 100%;
-          height: auto;
-      }
+    /* ===== RESPONSIVE PANTALLAS PEQUEÑAS ===== */
+    @media (max-width: 360px) {
+        .tgu-section .all-galler-images.compact-gallery .big-img,
+        .sps-section .all-galler-images.compact-gallery .big-img {
+            height: 200px;
+        }
 
-      /* Eliminar transiciones innecesarias en elementos dinámicos */
-      #room-content-1,
-      #room-content-2 {
-          /* Removido transition que causaba lentitud */
-      }
+        .room-title {
+            font-size: 1.2rem;
+        }
 
-      /* Mejorar rendering de imágenes */
-      .big-img img,
-      .small-img img {
-          image-rendering: -webkit-optimize-contrast;
-          image-rendering: optimize-contrast;
-      }
+        .small-img {
+            height: 60px;
+            min-width: 60px;
+        }
+    }
 
-      /* ===== ANIMACIONES AOS (si están disponibles) ===== */
-      [data-aos="fade-right"] {
-          opacity: 0;
-          transform: translateX(-50px);
-          transition: opacity 0.6s ease, transform 0.6s ease;
-      }
+    /* ===== ESTILOS GENERALES UNIVERSALES ===== */
+    body { 
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    }
+    
+    .properties2 { 
+        padding: 60px 0; 
+    }
+    
+    .sp1 { 
+        background: #f8f9fa; 
+    }
+    
+    .heading1 h5 { 
+        color: #ff7b3d; 
+        font-weight: 600; 
+    }
+    
+    .heading1 h2 { 
+        color: #333; 
+        font-weight: 700; 
+    }
 
-      [data-aos="fade-right"].aos-animate {
-          opacity: 1;
-          transform: translateX(0);
-      }
+    /* Estilo especial para h2 con clase text-anime-style-3 (SPS) */
+    .text-anime-style-3 {
+        background: linear-gradient(45deg, #ff7b3d, #ff9a56);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
 
-      [data-aos="fade-left"] {
-          opacity: 0;
-          transform: translateX(50px);
-          transition: opacity 0.6s ease, transform 0.6s ease;
-      }
+    /* ===== OPTIMIZACIONES UNIVERSALES PARA RENDIMIENTO ===== */
+    * {
+        box-sizing: border-box;
+    }
 
-      [data-aos="fade-left"].aos-animate {
-          opacity: 1;
-          transform: translateX(0);
-      }
-  </style>
+    img {
+        max-width: 100%;
+        height: auto;
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: optimize-contrast;
+    }
+</style>
   <!--===== Fin CSS Para espacios de juntas =======-->
 </head>
 
 <body class="body1 b-bg1">
 
-   <div id="header-container"></div>
+    <div id="header-container"></div>
 
     <script>
-        // ✅ CARGAR HEADER SIN PARPADEO
-        document.addEventListener('DOMContentLoaded', function() {
-            
-            // Cargar header inmediatamente
-            fetch('header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header-container').innerHTML = data;
-                
-                // Marcar header como cargado
-                setTimeout(() => {
-                const sliderSection = document.querySelector('.hero4-slider-sectionarea');
-                if (sliderSection) {
-                    sliderSection.classList.add('loaded');
-                }
-                }, 100);
-                
-                // Activar sliders después de cargar header
-                setTimeout(() => {
-                document.querySelectorAll('.hero4-slider-area').forEach(area => {
-                    area.classList.add('ready');
-                });
-                }, 200);
-            })
-            .catch(error => {
-                console.error('Error cargando header:', error);
-                // Si falla, mostrar página de todas formas
-                document.documentElement.classList.add('loaded');
-            });
-        });
-
-        // ✅ MOSTRAR PÁGINA CUANDO TODO ESTÉ LISTO
-        window.addEventListener('load', function() {
-            setTimeout(() => {
-            document.documentElement.classList.add('loaded');
-            }, 100);
+        fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-container').innerHTML = data;
         });
     </script>
-  
-
 
 
     <!--===== Slide Oficina Privada =======-->
@@ -624,309 +547,311 @@
   <!--===== ABOUT AREA ENDS =======-->
   
   <!--===== Sala de Juntas Tegucigalpa=======-->
-  <div class="properties2 sp1" style="background: white; padding: 30px; margin: 30px auto; max-width: 1375px; border-radius: 20px;">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 m-auto">
-                <div class="heading1 text-center space-margin60"><div class="about-heading heading2">
-                    <h5 data-aos="fade-left" data-aos-duration="800">Salas de Juntas Tegucigalpa</h5></div>
-                    <div class="space16"></div>
-                    <h2>Espacios Profesionales</h2>
-                </div>
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-lg-5">
-                <div class="heading1">
-                    <div class="content-area">
-                        <!-- ===== PESTAÑAS TGU ULTRA OPTIMIZADAS ===== -->
-                        <div class="rent-sale-area elegant-room-tabs-1">
-                            <ul>
-                                <li>
-                                    <a href="javascript:void(0)" 
-                                       class="room-tab-1 tab-active-1" 
-                                       data-room="vanguardia"
-                                       role="button"
-                                       tabindex="0">1-4 personas</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)" 
-                                       class="room-tab-1" 
-                                       data-room="inspiracion"
-                                       role="button"
-                                       tabindex="0">5-8 personas</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)" 
-                                       class="room-tab-1" 
-                                       data-room="sinergia"
-                                       role="button"
-                                       tabindex="0">9-18 personas</a>
-                                </li>
-                            </ul>
-                        </div>
-                        
-                        <div class="space32"></div>
-                        
-                        <!-- ===== CONTENIDO DINÁMICO TGU ===== -->
-                        <div id="room-content-1">
-                            <h3 class="room-title" id="room-name-1">Vanguardia</h3>
-                            
-                            <div class="capacity-badge" id="room-capacity-1">
-                                <i class="fas fa-users"></i>
-                                <span>Capacidad Sala de juntas: 1-4 personas</span>
-                            </div>
-                            
-                            <div class="amenities-grid">
-                                <div class="amenity-item">
-                                    <i class="fas fa-chalkboard amenity-icon"></i>
-                                    <span class="amenity-text">Pizarra</span>
-                                </div>
-                                <div class="amenity-item">
-                                    <i class="fas fa-snowflake amenity-icon"></i>
-                                    <span class="amenity-text">Aire acondicionado</span>
-                                </div>
-                                <div class="amenity-item">
-                                    <i class="fas fa-plug amenity-icon"></i>
-                                    <span class="amenity-text">Planta eléctrica</span>
-                                </div>
-                                <div class="amenity-item">
-                                    <i class="fas fa-desktop amenity-icon"></i>
-                                    <span class="amenity-text">Equipo multimedia</span>
-                                </div>
-                                <div class="amenity-item">
-                                    <i class="fas fa-coffee amenity-icon"></i>
-                                    <span class="amenity-text">Estación de agua, café, té</span>
-                                </div>
-                                <div class="amenity-item">
-                                    <i class="fas fa-cookie-bite amenity-icon"></i>
-                                    <span class="amenity-text">Galletas ilimitado</span>
-                                </div>
-                            </div>
-                            
-                            <div class="space16"></div>
-
-                            <!-- ===== BOTONES TGU ===== -->
-                            <div class="text-center">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <div class="price-box">
-                                            <div class="price-amount" id="room-price-1">L490 <small>por hora</small></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <a href="#" class="reserve-btn">
-                                            Reservar <span class="arrow1"><i class="fa-solid fa-arrow-right"></i></span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+    <div class="properties2 sp1 tgu-section" style="background: white; padding: 30px; margin: 30px auto; max-width: 1375px; border-radius: 20px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 m-auto">
+                    <div class="heading1 text-center space-margin60"><div class="about-heading heading2">
+                        <h5 data-aos="fade-left" data-aos-duration="800">Salas de Juntas Tegucigalpa</h5></div>
+                        <div class="space16"></div>
+                        <h2>Espacios Profesionales</h2>
                     </div>
                 </div>
             </div>
             
-            <div class="col-lg-7">
-                <div class="all-galler-images compact-gallery">
-                    <!-- ✅ IMÁGENES GRANDES - CARGADAS POR SCRIPT -->
-                    <div class="big-img">
-                        <img src="" alt="Sala TGU imagen 1" loading="lazy">
-                    </div>
-                    <div class="big-img">
-                        <img src="" alt="Sala TGU imagen 2" loading="lazy">
-                    </div>
-                    <div class="big-img">
-                        <img src="" alt="Sala TGU imagen 3" loading="lazy">
-                    </div>
-                    <div class="big-img">
-                        <img src="" alt="Sala TGU imagen 4" loading="lazy">
-                    </div>
-                    <div class="big-img">
-                        <img src="" alt="Sala TGU imagen 5" loading="lazy">
-                    </div>
-                    <div class="big-img">
-                        <img src="" alt="Sala TGU imagen 6" loading="lazy">
-                    </div>
-                </div>
-                
-                <div class="bottom-galler-images">
-                    <!-- ✅ MINIATURAS MÁS ALTAS - CARGADAS POR SCRIPT -->
-                    <div class="small-img">
-                        <img src="" alt="Miniatura TGU 1" loading="lazy">
-                    </div>
-                    <div class="small-img">
-                        <img src="" alt="Miniatura TGU 2" loading="lazy">
-                    </div>
-                    <div class="small-img">
-                        <img src="" alt="Miniatura TGU 3" loading="lazy">
-                    </div>
-                    <div class="small-img">
-                        <img src="" alt="Miniatura TGU 4" loading="lazy">
-                    </div>
-                    <div class="small-img">
-                        <img src="" alt="Miniatura TGU 5" loading="lazy">
-                    </div>
-                    <div class="small-img">
-                        <img src="" alt="Miniatura TGU 6" loading="lazy">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-   <!--===== FIN Sala de Juntas Tegucigalpa=======-->
-
-  <!--===== Sala de Juntas San Pedro Sula (IZQUIERDA) =======-->
-  <div class="properties2 sp1" style="background: white; padding: 30px; margin: 30px auto; max-width: 1375px; border-radius: 20px;">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 m-auto">
-                <div class="heading1 text-center space-margin60"><div class="about-heading heading2">
-                    <h5 data-aos="fade-left" data-aos-duration="800">Salas de Juntas San Pedro Sula</h5></div>
-                    <div class="space16"></div>
-                    <h2 class="text-anime-style-3" style="color: #111; -webkit-text-fill-color: initial; background: none;">Tu espacio de reuniones</h2>
-                </div>
-            </div>
-        </div>
-        
-        <div class="row">
-            <!-- ===== GALERÍA A LA IZQUIERDA ===== -->
-            <div class="col-lg-7 order-lg-1 order-2">
-                <div class="all-galler-images compact-gallery" data-aos="fade-right" data-aos-duration="1000">
-                    <!-- ✅ IMÁGENES GRANDES - CARGADAS POR SCRIPT -->
-                    <div class="big-img">
-                        <img src="" alt="Sala SPS imagen 1" loading="lazy">
-                    </div>
-                    <div class="big-img">
-                        <img src="" alt="Sala SPS imagen 2" loading="lazy">
-                    </div>
-                    <div class="big-img">
-                        <img src="" alt="Sala SPS imagen 3" loading="lazy">
-                    </div>
-                    <div class="big-img">
-                        <img src="" alt="Sala SPS imagen 4" loading="lazy">
-                    </div>
-                    <div class="big-img">
-                        <img src="" alt="Sala SPS imagen 5" loading="lazy">
-                    </div>
-                    <div class="big-img">
-                        <img src="" alt="Sala SPS imagen 6" loading="lazy">
-                    </div>
-                </div>
-                
-                <div class="bottom-galler-images" data-aos="fade-left" data-aos-duration="1100">
-                    <!-- ✅ MINIATURAS MÁS ALTAS - CARGADAS POR SCRIPT -->
-                    <div class="small-img">
-                        <img src="" alt="Miniatura SPS 1" loading="lazy">
-                    </div>
-                    <div class="small-img">
-                        <img src="" alt="Miniatura SPS 2" loading="lazy">
-                    </div>
-                    <div class="small-img">
-                        <img src="" alt="Miniatura SPS 3" loading="lazy">
-                    </div>
-                    <div class="small-img">
-                        <img src="" alt="Miniatura SPS 4" loading="lazy">
-                    </div>
-                    <div class="small-img">
-                        <img src="" alt="Miniatura SPS 5" loading="lazy">
-                    </div>
-                    <div class="small-img">
-                        <img src="" alt="Miniatura SPS 6" loading="lazy">
-                    </div>
-                </div>
-            </div>
-            
-            <!-- ===== CONTENIDO A LA DERECHA ===== -->
-            <div class="col-lg-5 order-lg-2 order-1">
-                <div class="heading1">
-                    <div class="content-area">
-                        <!-- ===== PESTAÑAS SPS ULTRA OPTIMIZADAS ===== -->
-                        <div class="rent-sale-area elegant-room-tabs-2">
-                            <ul>
-                                <li>
-                                    <a href="javascript:void(0)" 
-                                       class="room-tab-2 tab-active-2" 
-                                       data-room="comoda" 
-                                       id="tab2-comoda"
-                                       role="button"
-                                       tabindex="0">1-4 personas</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)" 
-                                       class="room-tab-2" 
-                                       data-room="megaconfort" 
-                                       id="tab2-megaconfort"
-                                       role="button"
-                                       tabindex="0">1-18 personas</a>
-                                </li>
-                            </ul>
-                        </div>
-                        
-                        <div class="space32"></div>
-                        
-                        <!-- ===== CONTENIDO DINÁMICO SPS ===== -->
-                        <div id="room-content-2">
-                            <h3 class="room-title" id="room-name-2">Cómoda</h3>
-                            
-                            <div class="capacity-badge" id="room-capacity-2">
-                                <i class="fas fa-users"></i>
-                                <span>Capacidad Sala de juntas: 1-4 personas</span>
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="heading1">
+                        <div class="content-area">
+                            <!-- ===== PESTAÑAS TGU ULTRA OPTIMIZADAS ===== -->
+                            <div class="rent-sale-area elegant-room-tabs-1">
+                                <ul>
+                                    <li>
+                                        <a href="javascript:void(0)" 
+                                        class="room-tab-1 tab-active-1" 
+                                        data-room="vanguardia"
+                                        role="button"
+                                        tabindex="0">1-4 personas</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" 
+                                        class="room-tab-1" 
+                                        data-room="inspiracion"
+                                        role="button"
+                                        tabindex="0">5-8 personas</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" 
+                                        class="room-tab-1" 
+                                        data-room="sinergia"
+                                        role="button"
+                                        tabindex="0">9-18 personas</a>
+                                    </li>
+                                </ul>
                             </div>
                             
-                            <div class="amenities-grid">
-                                <div class="amenity-item">
-                                    <i class="fas fa-chalkboard amenity-icon"></i>
-                                    <span class="amenity-text">Pizarra</span>
-                                </div>
-                                <div class="amenity-item">
-                                    <i class="fas fa-snowflake amenity-icon"></i>
-                                    <span class="amenity-text">Aire acondicionado</span>
-                                </div>
-                                <div class="amenity-item">
-                                    <i class="fas fa-plug amenity-icon"></i>
-                                    <span class="amenity-text">Planta eléctrica</span>
-                                </div>
-                                <div class="amenity-item">
-                                    <i class="fas fa-desktop amenity-icon"></i>
-                                    <span class="amenity-text">Equipo multimedia</span>
-                                </div>
-                                <div class="amenity-item">
-                                    <i class="fas fa-coffee amenity-icon"></i>
-                                    <span class="amenity-text">Estación de agua, café, té</span>
-                                </div>
-                                <div class="amenity-item">
-                                    <i class="fas fa-cookie-bite amenity-icon"></i>
-                                    <span class="amenity-text">Galletas ilimitado</span>
-                                </div>
-                            </div>
+                            <div class="space32"></div>
                             
-                            <div class="space16"></div>
+                            <!-- ===== CONTENIDO DINÁMICO TGU ===== -->
+                            <div id="room-content-1">
+                                <h3 class="room-title" id="room-name-1">Vanguardia</h3>
+                                
+                                <div class="capacity-badge" id="room-capacity-1">
+                                    <i class="fas fa-users"></i>
+                                    <span>Capacidad Sala de juntas: 1-4 personas</span>
+                                </div>
+                                
+                                <div class="amenities-grid">
+                                    <div class="amenity-item">
+                                        <i class="fas fa-chalkboard amenity-icon"></i>
+                                        <span class="amenity-text">Pizarra</span>
+                                    </div>
+                                    <div class="amenity-item">
+                                        <i class="fas fa-snowflake amenity-icon"></i>
+                                        <span class="amenity-text">Aire acondicionado</span>
+                                    </div>
+                                    <div class="amenity-item">
+                                        <i class="fas fa-plug amenity-icon"></i>
+                                        <span class="amenity-text">Planta eléctrica</span>
+                                    </div>
+                                    <div class="amenity-item">
+                                        <i class="fas fa-desktop amenity-icon"></i>
+                                        <span class="amenity-text">Equipo multimedia</span>
+                                    </div>
+                                    <div class="amenity-item">
+                                        <i class="fas fa-coffee amenity-icon"></i>
+                                        <span class="amenity-text">Estación de agua, café, té</span>
+                                    </div>
+                                    <div class="amenity-item">
+                                        <i class="fas fa-cookie-bite amenity-icon"></i>
+                                        <span class="amenity-text">Galletas ilimitado</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="space16"></div>
 
-                            <!-- ===== BOTONES SPS ===== -->
-                            <div class="text-center">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <div class="price-box">
-                                            <div class="price-amount" id="room-price-2">L450 <small>por hora</small></div>
+                                <!-- ===== BOTONES TGU ===== -->
+                                <div class="text-center">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="price-box">
+                                                <div class="price-amount" id="room-price-1">L490 <small>por hora</small></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <a href="#" class="reserve-btn">
+                                                Reservar <span class="arrow1"><i class="fa-solid fa-arrow-right"></i></span>
+                                            </a>
                                         </div>
                                     </div>
-                                    <div class="col-6">
-                                        <a href="reservas.html" class="reserve-btn">
-                                            Reservar <span class="arrow1"><i class="fa-solid fa-arrow-right"></i></span>
-                                        </a>
-                                    </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-7">
+                    <!-- ===== TU ESTRUCTURA ORIGINAL DE GALERÍA ===== -->
+                    <div class="all-galler-images compact-gallery">
+                        <!-- ✅ IMÁGENES GRANDES - CARGADAS POR SCRIPT -->
+                        <div class="big-img">
+                            <img src="" alt="Sala TGU imagen 1" loading="lazy">
+                        </div>
+                        <div class="big-img">
+                            <img src="" alt="Sala TGU imagen 2" loading="lazy">
+                        </div>
+                        <div class="big-img">
+                            <img src="" alt="Sala TGU imagen 3" loading="lazy">
+                        </div>
+                        <div class="big-img">
+                            <img src="" alt="Sala TGU imagen 4" loading="lazy">
+                        </div>
+                        <div class="big-img">
+                            <img src="" alt="Sala TGU imagen 5" loading="lazy">
+                        </div>
+                        <div class="big-img">
+                            <img src="" alt="Sala TGU imagen 6" loading="lazy">
+                        </div>
+                    </div>
+                    
+                    <div class="bottom-galler-images">
+                        <!-- ✅ MINIATURAS MÁS ALTAS - CARGADAS POR SCRIPT -->
+                        <div class="small-img">
+                            <img src="" alt="Miniatura TGU 1" loading="lazy">
+                        </div>
+                        <div class="small-img">
+                            <img src="" alt="Miniatura TGU 2" loading="lazy">
+                        </div>
+                        <div class="small-img">
+                            <img src="" alt="Miniatura TGU 3" loading="lazy">
+                        </div>
+                        <div class="small-img">
+                            <img src="" alt="Miniatura TGU 4" loading="lazy">
+                        </div>
+                        <div class="small-img">
+                            <img src="" alt="Miniatura TGU 5" loading="lazy">
+                        </div>
+                        <div class="small-img">
+                            <img src="" alt="Miniatura TGU 6" loading="lazy">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-  <!--===== Fin Sala de Juntas San Pedro Sula =======-->
+    <!--===== FIN Sala de Juntas Tegucigalpa=======-->
+
+    <!--===== Sala de Juntas San Pedro Sula - CON CLASE IDENTIFICADORA =======-->
+    <div class="properties2 sp1 sps-section" style="background: white; padding: 30px; margin: 30px auto; max-width: 1375px; border-radius: 20px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 m-auto">
+                    <div class="heading1 text-center space-margin60"><div class="about-heading heading2">
+                        <h5 data-aos="fade-left" data-aos-duration="800">Salas de Juntas San Pedro Sula</h5></div>
+                        <div class="space16"></div>
+                        <h2 class="text-anime-style-3" style="color: #111; -webkit-text-fill-color: initial; background: none;">Tu espacio de reuniones</h2>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <!-- ===== GALERÍA A LA IZQUIERDA ===== -->
+                <div class="col-lg-7 order-lg-1 order-2">
+                    <!-- ===== TU ESTRUCTURA ORIGINAL DE GALERÍA ===== -->
+                    <div class="all-galler-images compact-gallery" data-aos="fade-right" data-aos-duration="1000">
+                        <!-- ✅ IMÁGENES GRANDES - CARGADAS POR SCRIPT -->
+                        <div class="big-img">
+                            <img src="" alt="Sala SPS imagen 1" loading="lazy">
+                        </div>
+                        <div class="big-img">
+                            <img src="" alt="Sala SPS imagen 2" loading="lazy">
+                        </div>
+                        <div class="big-img">
+                            <img src="" alt="Sala SPS imagen 3" loading="lazy">
+                        </div>
+                        <div class="big-img">
+                            <img src="" alt="Sala SPS imagen 4" loading="lazy">
+                        </div>
+                        <div class="big-img">
+                            <img src="" alt="Sala SPS imagen 5" loading="lazy">
+                        </div>
+                        <div class="big-img">
+                            <img src="" alt="Sala SPS imagen 6" loading="lazy">
+                        </div>
+                    </div>
+                    
+                    <div class="bottom-galler-images" data-aos="fade-left" data-aos-duration="1100">
+                        <!-- ✅ MINIATURAS MÁS ALTAS - CARGADAS POR SCRIPT -->
+                        <div class="small-img">
+                            <img src="" alt="Miniatura SPS 1" loading="lazy">
+                        </div>
+                        <div class="small-img">
+                            <img src="" alt="Miniatura SPS 2" loading="lazy">
+                        </div>
+                        <div class="small-img">
+                            <img src="" alt="Miniatura SPS 3" loading="lazy">
+                        </div>
+                        <div class="small-img">
+                            <img src="" alt="Miniatura SPS 4" loading="lazy">
+                        </div>
+                        <div class="small-img">
+                            <img src="" alt="Miniatura SPS 5" loading="lazy">
+                        </div>
+                        <div class="small-img">
+                            <img src="" alt="Miniatura SPS 6" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ===== CONTENIDO A LA DERECHA ===== -->
+                <div class="col-lg-5 order-lg-2 order-1">
+                    <div class="heading1">
+                        <div class="content-area">
+                            <!-- ===== PESTAÑAS SPS ULTRA OPTIMIZADAS ===== -->
+                            <div class="rent-sale-area elegant-room-tabs-2">
+                                <ul>
+                                    <li>
+                                        <a href="javascript:void(0)" 
+                                        class="room-tab-2 tab-active-2" 
+                                        data-room="comoda" 
+                                        id="tab2-comoda"
+                                        role="button"
+                                        tabindex="0">1-4 personas</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" 
+                                        class="room-tab-2" 
+                                        data-room="megaconfort" 
+                                        id="tab2-megaconfort"
+                                        role="button"
+                                        tabindex="0">1-18 personas</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="space32"></div>
+                            
+                            <!-- ===== CONTENIDO DINÁMICO SPS ===== -->
+                            <div id="room-content-2">
+                                <h3 class="room-title" id="room-name-2">Cómoda</h3>
+                                
+                                <div class="capacity-badge" id="room-capacity-2">
+                                    <i class="fas fa-users"></i>
+                                    <span>Capacidad Sala de juntas: 1-4 personas</span>
+                                </div>
+                                
+                                <div class="amenities-grid">
+                                    <div class="amenity-item">
+                                        <i class="fas fa-chalkboard amenity-icon"></i>
+                                        <span class="amenity-text">Pizarra</span>
+                                    </div>
+                                    <div class="amenity-item">
+                                        <i class="fas fa-snowflake amenity-icon"></i>
+                                        <span class="amenity-text">Aire acondicionado</span>
+                                    </div>
+                                    <div class="amenity-item">
+                                        <i class="fas fa-plug amenity-icon"></i>
+                                        <span class="amenity-text">Planta eléctrica</span>
+                                    </div>
+                                    <div class="amenity-item">
+                                        <i class="fas fa-desktop amenity-icon"></i>
+                                        <span class="amenity-text">Equipo multimedia</span>
+                                    </div>
+                                    <div class="amenity-item">
+                                        <i class="fas fa-coffee amenity-icon"></i>
+                                        <span class="amenity-text">Estación de agua, café, té</span>
+                                    </div>
+                                    <div class="amenity-item">
+                                        <i class="fas fa-cookie-bite amenity-icon"></i>
+                                        <span class="amenity-text">Galletas ilimitado</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="space16"></div>
+
+                                <!-- ===== BOTONES SPS ===== -->
+                                <div class="text-center">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="price-box">
+                                                <div class="price-amount" id="room-price-2">L450 <small>por hora</small></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <a href="reservas.html" class="reserve-btn">
+                                                Reservar <span class="arrow1"><i class="fa-solid fa-arrow-right"></i></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--===== Fin Sala de Juntas San Pedro Sula =======-->
 
    <!--===== FOOTER AREA STARTS =======-->
    <div id="footer-container"></div>
@@ -995,10 +920,9 @@
         });
   </script>
 
-  <!-- ===== PESTAÑAS DINÁMICAS Sala de juntas===== --> 
+  <!-- ===== SCRIPT INDEPENDIENTE PARA SALAS DE JUNTAS ===== -->
   <script>
-
-    // Datos EXACTOS como en el script de emergencia que funcionó
+    // Datos EXACTOS como en el script original que funcionó
     const tguData = {
         vanguardia: {
             name: "Vanguardia",
@@ -1037,7 +961,7 @@
             images: ["assets/img/EasyOffice/Sala de juntas /SPS/1.jpg"]
         },
         megaconfort: {
-            name: "Mega Confort", 
+            name: "Merendón", 
             capacity: "Capacidad Sala de juntas: 1-18 personas",
             price: "L920",
             images: [
@@ -1047,7 +971,7 @@
         }
     };
 
-    // Función EXACTA del script de emergencia que funcionó
+    // ⭐ FUNCIÓN TGU - SOLO AFECTA GALERÍA TGU ⭐
     function updateTGU(roomKey) {
         const room = tguData[roomKey];
         if (!room) return;
@@ -1061,22 +985,22 @@
         if (capacityEl) capacityEl.innerHTML = `<i class="fas fa-users"></i><span>${room.capacity}</span>`;
         if (priceEl) priceEl.innerHTML = `${room.price} <small>por hora</small>`;
         
-        // Actualizar imágenes
-        const bigImgs = document.querySelectorAll('.all-galler-images .big-img img');
-        const smallImgs = document.querySelectorAll('.bottom-galler-images .small-img img');
+        // ⭐ SOLO ACTUALIZAR GALERÍA TGU ⭐
+        const tguBigImgs = document.querySelectorAll('.tgu-section .all-galler-images .big-img img');
+        const tguSmallImgs = document.querySelectorAll('.tgu-section .bottom-galler-images .small-img img');
         
-        bigImgs.forEach((img, index) => {
+        tguBigImgs.forEach((img, index) => {
             const imageIndex = index % room.images.length;
             img.src = room.images[imageIndex];
         });
         
-        smallImgs.forEach((img, index) => {
+        tguSmallImgs.forEach((img, index) => {
             const imageIndex = index % room.images.length;
             img.src = room.images[imageIndex];
         });
     }
 
-    // Función EXACTA del script de emergencia que funcionó para SPS
+    // ⭐ FUNCIÓN SPS - SOLO AFECTA GALERÍA SPS ⭐
     function updateSPS(roomKey) {
         const room = spsData[roomKey];
         if (!room) return;
@@ -1090,16 +1014,16 @@
         if (capacityEl) capacityEl.innerHTML = `<i class="fas fa-users"></i><span>${room.capacity}</span>`;
         if (priceEl) priceEl.innerHTML = `${room.price} <small>por hora</small>`;
         
-        // Actualizar imágenes
-        const bigImgs = document.querySelectorAll('.all-galler-images .big-img img');
-        const smallImgs = document.querySelectorAll('.bottom-galler-images .small-img img');
+        // ⭐ SOLO ACTUALIZAR GALERÍA SPS ⭐
+        const spsBigImgs = document.querySelectorAll('.sps-section .all-galler-images .big-img img');
+        const spsSmallImgs = document.querySelectorAll('.sps-section .bottom-galler-images .small-img img');
         
-        bigImgs.forEach((img, index) => {
+        spsBigImgs.forEach((img, index) => {
             const imageIndex = index % room.images.length;
             img.src = room.images[imageIndex];
         });
         
-        smallImgs.forEach((img, index) => {
+        spsSmallImgs.forEach((img, index) => {
             const imageIndex = index % room.images.length;
             img.src = room.images[imageIndex];
         });
@@ -1113,7 +1037,7 @@
         updateTGU(roomKey);
     }
 
-    // Función EXACTA del script de emergencia que funcionó para SPS
+    // Función para activar pestaña SPS
     function activateTabSPS(activeTab, roomKey) {
         const allTabs = document.querySelectorAll('.room-tab-2');
         allTabs.forEach(tab => tab.classList.remove('tab-active-2'));
@@ -1155,7 +1079,7 @@
                 };
             }
             
-            // Inicializar TGU
+            // ⭐ INICIALIZAR TGU CON VANGUARDIA (1-4) ⭐
             updateTGU('vanguardia');
         }
         
@@ -1164,7 +1088,7 @@
         const spsTab2 = document.querySelector('[data-room="megaconfort"]');
         
         if (spsTab1 || spsTab2) {
-            // CONFIGURAR SAN PEDRO SULA - LÓGICA EXACTA QUE FUNCIONÓ
+            // CONFIGURAR SAN PEDRO SULA
             if (spsTab1) {
                 spsTab1.onclick = function(e) {
                     e.preventDefault();
@@ -1181,12 +1105,12 @@
                 };
             }
             
-            // Inicializar SPS
+            // ⭐ INICIALIZAR SPS CON CÓMODA (1-4) ⭐
             updateSPS('comoda');
         }
     });
 
-    // Respaldo window.load - LÓGICA EXACTA QUE FUNCIONÓ PARA SPS
+    // Respaldo window.load
     window.addEventListener('load', function() {
         setTimeout(() => {
             
@@ -1205,7 +1129,7 @@
                 }
             });
             
-            // Respaldo para SPS - EXACTO COMO FUNCIONÓ
+            // Respaldo para SPS
             const spsTab2 = document.getElementById('tab2-megaconfort');
             if (spsTab2 && !spsTab2.onclick) {
                 spsTab2.onclick = function(e) {
@@ -1227,6 +1151,7 @@
         }, 500);
     });
   </script>
+  
   <!-- ===== SCRIPT fin PESTAÑAS DINÁMICAS ===== -->
 
  

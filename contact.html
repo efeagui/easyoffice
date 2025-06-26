@@ -173,6 +173,28 @@
         font-size: 12px;
       }
     }
+
+    /* ✅ BOTÓN EMAIL MEJORADO */
+    .email-card {
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .email-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(237, 132, 56, 0.1), transparent);
+      transition: left 0.5s ease;
+    }
+    
+    .email-card:hover::before {
+      left: 100%;
+    }
   </style>
 </head>
 
@@ -251,9 +273,9 @@
   <div class="contact-inner">
     <div class="container-fluid">
       <div class="row">
-        <!-- ✅ EMAIL CON CLICK PERSONALIZADO -->
+        <!-- ✅ EMAIL OPTIMIZADO CON MEJOR UX -->
         <div class="col-lg-4 col-md-6">
-          <div class="phone-number" onclick="enviarEmailPersonalizado()" style="cursor: pointer;">
+          <div class="phone-number email-card" onclick="abrirEmailInteligente()" style="cursor: pointer;">
             <div class="img1">
               <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
                 <path
@@ -263,7 +285,8 @@
             </div>
             <div class="content">
               <p>Email</p>
-              <a href="mailto:info@easyoffice.hn">info@easyoffice.hn</a>
+              <a>info@easyoffice.hn</a>
+              <small style="color: #999; font-size: 12px;">Haz clic para escribir</small>
             </div>
           </div>
         </div>
@@ -497,13 +520,32 @@
     document.head.appendChild(whatsappScript);
   </script>
 
-  <!-- ✅ FUNCIÓN PARA EMAIL PERSONALIZADO -->
+  <!-- ✅ FUNCIÓN EMAIL INTELIGENTE MEJORADA -->
   <script>
-    function enviarEmailPersonalizado() {
-      const asunto = encodeURIComponent('Consulta sobre servicios de EasyOffice');
-      const cuerpo = encodeURIComponent(`Hola equipo de EasyOffice,
+    function abrirEmailInteligente() {
+      // ✅ DETECTAR PARÁMETROS URL (para protocol handlers)
+      const urlParams = new URLSearchParams(window.location.search);
+      const emailParam = urlParams.get('email');
+      const phoneParam = urlParams.get('phone');
+      
+      let asunto = 'Consulta sobre servicios de EasyOffice';
+      let cuerpoBase = `Hola equipo de EasyOffice,
 
-Estoy interesado en conocer más sobre sus servicios de oficinas. Me gustaría que me contacten para:
+Estoy interesado en conocer más sobre sus servicios de oficinas.`;
+
+      // ✅ SI VIENE DE PROTOCOL HANDLER, PERSONALIZAR
+      if (emailParam) {
+        asunto = `Consulta sobre servicios - ${emailParam}`;
+        cuerpoBase += `\n\nMi email de contacto: ${emailParam}`;
+      }
+      
+      if (phoneParam) {
+        cuerpoBase += `\nMi teléfono: ${phoneParam}`;
+      }
+      
+      const cuerpoCompleto = `${cuerpoBase}
+
+Me gustaría que me contacten para:
 
 □ Oficina Privada
 □ Oficina Virtual  
@@ -513,9 +555,9 @@ Estoy interesado en conocer más sobre sus servicios de oficinas. Me gustaría q
 □ Servicios Adicionales
 □ Otros
 
-Mis datos de contacto:
+Mis datos adicionales:
 Nombre: 
-Teléfono: 
+Teléfono: ${phoneParam || ''}
 Ciudad: 
 
 Comentarios adicionales:
@@ -523,9 +565,13 @@ Comentarios adicionales:
 
 Quedo atento a su respuesta.
 
-Saludos cordiales.`);
+Saludos cordiales.`;
       
-      window.location.href = `mailto:info@easyoffice.hn?subject=${asunto}&body=${cuerpo}`;
+      const asuntoEncoded = encodeURIComponent(asunto);
+      const cuerpoEncoded = encodeURIComponent(cuerpoCompleto);
+      
+      // ✅ ABRIR EMAIL CON DATOS PRE-RELLENADOS
+      window.location.href = `mailto:info@easyoffice.hn?subject=${asuntoEncoded}&body=${cuerpoEncoded}`;
     }
   </script>
 

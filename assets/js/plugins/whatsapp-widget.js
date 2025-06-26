@@ -17,6 +17,11 @@
                window.innerWidth <= 768;
     }
 
+    // ===== DETECTAR TABLET =====
+    function isTablet() {
+        return window.innerWidth > 768 && window.innerWidth <= 1024;
+    }
+
     // ===== CREAR HTML DEL WIDGET =====
     function createWidgetHTML() {
         return `
@@ -80,7 +85,7 @@
                                 💻 Oficina Virtual
                             </button>
                             <button class="easyoffice-quick-option" data-message="Quiero hablar con un asesor ahora">
-                                💬 Hablar con asesor de Easy Ofice
+                                💬 Hablar con asesor de Easy Office
                             </button>
                         </div>
                     </div>
@@ -105,7 +110,7 @@
     function createWidgetCSS() {
         const css = `
             <style id="easyoffice-whatsapp-styles">
-            /* ===== EASYOFFICE WHATSAPP WIDGET 2025 ===== */
+            /* ===== EASYOFFICE WHATSAPP WIDGET 2025 - MEJORADO ===== */
             :root {
                 --easyoffice-whatsapp-green: #25d366;
                 --easyoffice-whatsapp-dark: #128c7e;
@@ -113,13 +118,34 @@
                 --easyoffice-shadow-dark: rgba(0, 0, 0, 0.15);
                 --easyoffice-border-radius: 20px;
                 --easyoffice-animation-speed: 0.3s;
+                
+                /* Colores para modo claro */
+                --easyoffice-bg-primary: #ffffff;
+                --easyoffice-bg-secondary: #f8f9fa;
+                --easyoffice-bg-message: #f0f0f0;
+                --easyoffice-text-primary: #333333;
+                --easyoffice-text-secondary: #666666;
+                --easyoffice-border-color: #e0e0e0;
+            }
+
+            /* Variables para modo oscuro */
+            [data-theme="dark"], 
+            @media (prefers-color-scheme: dark) {
+                :root {
+                    --easyoffice-bg-primary: #1a1a1a;
+                    --easyoffice-bg-secondary: #2d2d2d;
+                    --easyoffice-bg-message: #404040;
+                    --easyoffice-text-primary: #ffffff;
+                    --easyoffice-text-secondary: #cccccc;
+                    --easyoffice-border-color: #444444;
+                }
             }
 
             .easyoffice-whatsapp-widget {
                 position: fixed;
-                bottom: 80px; /* Arriba de la flecha de subir */
+                bottom: 80px;
                 right: 20px;
-                z-index: 999998; /* Menor que modales pero mayor que contenido */
+                z-index: 999998;
                 font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
                 user-select: none;
             }
@@ -188,7 +214,7 @@
                 right: 0;
                 width: 350px;
                 max-height: 500px;
-                background: white;
+                background: var(--easyoffice-bg-primary);
                 border-radius: var(--easyoffice-border-radius);
                 box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
                 opacity: 0;
@@ -196,7 +222,7 @@
                 transform: translateY(20px) scale(0.9);
                 transition: all var(--easyoffice-animation-speed) cubic-bezier(0.4, 0, 0.2, 1);
                 overflow: hidden;
-                border: 1px solid #e0e0e0;
+                border: 1px solid var(--easyoffice-border-color);
             }
 
             .easyoffice-whatsapp-chat.active {
@@ -229,12 +255,14 @@
                 align-items: center;
                 justify-content: center;
                 font-size: 18px;
+                color: white;
             }
 
             .easyoffice-agent-details h4 {
                 margin: 0;
                 font-size: 16px;
                 font-weight: 600;
+                color: white;
             }
 
             .easyoffice-status {
@@ -243,6 +271,7 @@
                 display: flex;
                 align-items: center;
                 gap: 6px;
+                color: white;
             }
 
             .easyoffice-status-dot {
@@ -272,6 +301,7 @@
                 padding: 20px;
                 max-height: 300px;
                 overflow-y: auto;
+                background: var(--easyoffice-bg-primary);
             }
 
             .easyoffice-message {
@@ -295,7 +325,7 @@
             }
 
             .easyoffice-message-content {
-                background: #f0f0f0;
+                background: var(--easyoffice-bg-message);
                 padding: 12px 15px;
                 border-radius: 18px;
                 border-bottom-left-radius: 4px;
@@ -307,13 +337,18 @@
                 margin: 0 0 5px 0;
                 font-size: 14px;
                 line-height: 1.4;
-                color: #333;
+                color: var(--easyoffice-text-primary);
+            }
+
+            .easyoffice-message-content strong {
+                color: var(--easyoffice-text-primary);
+                font-weight: 600;
             }
 
             .easyoffice-message-time {
                 font-size: 11px;
-                color: #666;
-                opacity: 0.7;
+                color: var(--easyoffice-text-secondary);
+                opacity: 0.8;
             }
 
             .easyoffice-quick-options {
@@ -324,7 +359,7 @@
             }
 
             .easyoffice-quick-option {
-                background: white;
+                background: var(--easyoffice-bg-primary);
                 border: 2px solid var(--easyoffice-whatsapp-green);
                 color: var(--easyoffice-whatsapp-green);
                 padding: 10px 15px;
@@ -344,8 +379,8 @@
 
             .easyoffice-chat-footer {
                 padding: 15px 20px;
-                border-top: 1px solid #f0f0f0;
-                background: #fafafa;
+                border-top: 1px solid var(--easyoffice-border-color);
+                background: var(--easyoffice-bg-secondary);
             }
 
             .easyoffice-input-area {
@@ -357,15 +392,22 @@
             #easyoffice-message-input {
                 flex: 1;
                 padding: 12px 15px;
-                border: 2px solid #e0e0e0;
+                border: 2px solid var(--easyoffice-border-color);
                 border-radius: 25px;
                 outline: none;
                 font-size: 14px;
                 transition: border-color var(--easyoffice-animation-speed) ease;
+                background: var(--easyoffice-bg-primary);
+                color: var(--easyoffice-text-primary);
             }
 
             #easyoffice-message-input:focus {
                 border-color: var(--easyoffice-whatsapp-green);
+            }
+
+            #easyoffice-message-input::placeholder {
+                color: var(--easyoffice-text-secondary);
+                opacity: 0.7;
             }
 
             .easyoffice-send-button {
@@ -391,7 +433,7 @@
             .easyoffice-powered-by {
                 text-align: center;
                 margin-top: 10px;
-                color: #666;
+                color: var(--easyoffice-text-secondary);
             }
 
             /* ===== ANIMACIONES ===== */
@@ -421,7 +463,7 @@
                 to { opacity: 1; transform: translateY(0); }
             }
 
-            /* ===== RESPONSIVE ===== */
+            /* ===== RESPONSIVE MÓVIL ===== */
             @media (max-width: 480px) {
                 .easyoffice-whatsapp-widget {
                     bottom: 70px;
@@ -432,6 +474,7 @@
                     width: calc(100vw - 30px);
                     bottom: 75px;
                     right: -15px;
+                    max-height: 450px;
                 }
                 
                 .easyoffice-whatsapp-button {
@@ -442,29 +485,178 @@
                 .easyoffice-whatsapp-icon {
                     font-size: 24px;
                 }
+
+                .easyoffice-chat-body {
+                    padding: 15px;
+                    max-height: 250px;
+                }
+
+                .easyoffice-quick-option {
+                    font-size: 12px;
+                    padding: 8px 12px;
+                }
+
+                .easyoffice-message-content {
+                    max-width: 200px;
+                    font-size: 13px;
+                }
             }
 
-            /* ===== TEMA OSCURO ===== */
-            @media (prefers-color-scheme: dark) {
+            /* ===== RESPONSIVE TABLET ===== */
+            @media (min-width: 481px) and (max-width: 1024px) {
+                .easyoffice-whatsapp-widget {
+                    bottom: 75px;
+                    right: 25px;
+                }
+                
                 .easyoffice-whatsapp-chat {
-                    background: #2a2a2a;
-                    border-color: #444;
+                    width: 370px;
+                    bottom: 85px;
+                    right: 0;
+                    max-height: 520px;
+                }
+                
+                .easyoffice-whatsapp-button {
+                    width: 65px;
+                    height: 65px;
+                }
+                
+                .easyoffice-whatsapp-icon {
+                    font-size: 30px;
+                }
+
+                .easyoffice-chat-body {
+                    max-height: 320px;
+                }
+
+                .easyoffice-quick-option {
+                    font-size: 14px;
+                    padding: 12px 16px;
+                }
+            }
+
+            /* ===== RESPONSIVE PANTALLAS PEQUEÑAS ===== */
+            @media (max-width: 360px) {
+                .easyoffice-whatsapp-widget {
+                    bottom: 60px;
+                    right: 10px;
+                }
+                
+                .easyoffice-whatsapp-chat {
+                    width: calc(100vw - 20px);
+                    bottom: 65px;
+                    right: -10px;
+                    max-height: 400px;
+                }
+                
+                .easyoffice-whatsapp-button {
+                    width: 50px;
+                    height: 50px;
+                }
+                
+                .easyoffice-whatsapp-icon {
+                    font-size: 22px;
+                }
+
+                .easyoffice-chat-header {
+                    padding: 12px 15px;
+                }
+
+                .easyoffice-agent-details h4 {
+                    font-size: 14px;
+                }
+
+                .easyoffice-status {
+                    font-size: 11px;
+                }
+
+                .easyoffice-chat-body {
+                    padding: 12px;
+                    max-height: 200px;
+                }
+
+                .easyoffice-chat-footer {
+                    padding: 12px 15px;
+                }
+
+                .easyoffice-quick-option {
+                    font-size: 11px;
+                    padding: 6px 10px;
+                }
+            }
+
+            /* ===== ORIENTACIÓN LANDSCAPE EN MÓVILES ===== */
+            @media (max-height: 500px) and (orientation: landscape) {
+                .easyoffice-whatsapp-widget {
+                    bottom: 50px;
+                }
+                
+                .easyoffice-whatsapp-chat {
+                    max-height: 300px;
+                    bottom: 55px;
+                }
+                
+                .easyoffice-chat-body {
+                    max-height: 150px;
+                }
+
+                .easyoffice-quick-options {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 6px;
+                }
+            }
+
+            /* ===== HOVER EFFECTS SOLO EN DISPOSITIVOS CON CURSOR ===== */
+            @media (hover: hover) and (pointer: fine) {
+                .easyoffice-whatsapp-button:hover {
+                    transform: scale(1.1) translateY(-2px);
+                }
+                
+                .easyoffice-quick-option:hover {
+                    transform: translateX(5px);
+                }
+                
+                .easyoffice-send-button:hover {
+                    transform: scale(1.1);
+                }
+            }
+
+            /* ===== ACCESIBILIDAD ===== */
+            @media (prefers-reduced-motion: reduce) {
+                .easyoffice-whatsapp-button {
+                    animation: none;
+                }
+                
+                .easyoffice-pulse-ring {
+                    animation: none;
+                }
+                
+                .easyoffice-notification-badge {
+                    animation: none;
+                }
+                
+                .easyoffice-status-dot {
+                    animation: none;
+                }
+                
+                * {
+                    transition-duration: 0.1s !important;
+                }
+            }
+
+            /* ===== CONTRASTE ALTO ===== */
+            @media (prefers-contrast: high) {
+                .easyoffice-whatsapp-chat {
+                    border: 2px solid var(--easyoffice-text-primary);
                 }
                 
                 .easyoffice-message-content {
-                    background: #3a3a3a;
-                    color: #fff;
+                    border: 1px solid var(--easyoffice-text-secondary);
                 }
                 
-                .easyoffice-chat-footer {
-                    background: #333;
-                    border-color: #444;
-                }
-                
-                #easyoffice-message-input {
-                    background: #444;
-                    color: #fff;
-                    border-color: #555;
+                .easyoffice-quick-option {
+                    border-width: 3px;
                 }
             }
             </style>
@@ -477,6 +669,7 @@
         constructor() {
             this.isOpen = false;
             this.isMobile = isMobile();
+            this.isTablet = isTablet();
             this.init();
         }
         
@@ -484,6 +677,7 @@
             this.injectWidget();
             this.bindEvents();
             this.setupAutoShow();
+            this.setupResponsiveListener();
         }
         
         injectWidget() {
@@ -517,11 +711,14 @@
                 });
             });
             
-            document.addEventListener('click', (e) => {
-                if (!e.target.closest('.easyoffice-whatsapp-widget')) {
-                    this.closeChat();
-                }
-            });
+            // Cerrar chat al hacer clic fuera (solo en desktop)
+            if (!this.isMobile) {
+                document.addEventListener('click', (e) => {
+                    if (!e.target.closest('.easyoffice-whatsapp-widget')) {
+                        this.closeChat();
+                    }
+                });
+            }
         }
         
         toggleChat() {
@@ -536,8 +733,12 @@
             if (badge) badge.style.display = 'none';
             this.isOpen = true;
             
+            // Focus en el input después de la animación
             setTimeout(() => {
-                document.getElementById('easyoffice-message-input')?.focus();
+                const input = document.getElementById('easyoffice-message-input');
+                if (input && !this.isMobile) {
+                    input.focus();
+                }
             }, 300);
         }
         
@@ -584,6 +785,23 @@
             if (badge) badge.style.display = 'flex';
             if (button) button.style.animation = 'easyoffice-bounce 0.5s ease-in-out 3';
         }
+        
+        setupResponsiveListener() {
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => {
+                    this.isMobile = isMobile();
+                    this.isTablet = isTablet();
+                    
+                    // Reposicionar el chat si está abierto
+                    if (this.isOpen) {
+                        this.closeChat();
+                        setTimeout(() => this.openChat(), 100);
+                    }
+                }, 250);
+            });
+        }
     }
 
     // ===== INICIALIZAR CUANDO EL DOM ESTÉ LISTO =====
@@ -595,8 +813,28 @@
 
     // ===== API GLOBAL PARA CONTROLAR EL WIDGET =====
     window.EasyOfficeWhatsApp = {
-        show: () => document.querySelector('.easyoffice-whatsapp-widget').style.display = 'block',
-        hide: () => document.querySelector('.easyoffice-whatsapp-widget').style.display = 'none',
+        show: () => {
+            const widget = document.querySelector('.easyoffice-whatsapp-widget');
+            if (widget) widget.style.display = 'block';
+        },
+        hide: () => {
+            const widget = document.querySelector('.easyoffice-whatsapp-widget');
+            if (widget) widget.style.display = 'none';
+        },
+        toggle: () => {
+            const widget = document.querySelector('.easyoffice-whatsapp-widget');
+            if (widget) {
+                widget.style.display = widget.style.display === 'none' ? 'block' : 'none';
+            }
+        },
+        openChat: () => {
+            const chat = document.getElementById('easyoffice-whatsapp-chat');
+            if (chat) chat.classList.add('active');
+        },
+        closeChat: () => {
+            const chat = document.getElementById('easyoffice-whatsapp-chat');
+            if (chat) chat.classList.remove('active');
+        },
         config: EASYOFFICE_CONFIG
     };
 

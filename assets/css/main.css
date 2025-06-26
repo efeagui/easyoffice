@@ -3588,6 +3588,12 @@ only screen and (min-width: 768px) and (max-width: 991px),
   max-width: 1376px;
 }
 
+@media (max-width: 768px) {
+  .vl-blog-1-area {
+    margin: 15px !important;
+  }
+}
+
 .vl-blog-1-area .vl-blog-1-item {
   position: relative;
   z-index: 1;
@@ -4982,9 +4988,10 @@ only screen and (min-width: 768px) and (max-width: 991px),
   max-width: 1376px;
 }
 
+
 @media (max-width: 767px) {
   .footer-cta-bg-area {
-    margin: 0;
+    margin: 10px;
   }
 }
 
@@ -22084,6 +22091,11 @@ only screen and (min-width: 768px) and (max-width: 991px),
 
 /* ============= LISTING CSS AREA =============== */
 /*# sourceMappingURL=main.css.map */
+@media (max-width: 768px) {
+    .space-negative-mobile {
+        margin-top: -60px !important;
+    }
+}
 
 /* Bordes personalizados  */
 /* Bordes personalizados - CSS PRINCIPAL */
@@ -22093,7 +22105,7 @@ only screen and (min-width: 768px) and (max-width: 991px),
   margin: 0px auto; 
   max-width: 1376px; 
   background: white; 
-  padding: 20px 16px 195px 56px;
+  padding: 20px 16px 75px 56px;
   border-radius: 30px;
 }
 

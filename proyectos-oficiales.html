@@ -49,9 +49,8 @@
             <div class="space28"></div>
             <p><a href="index.html">Inicio <svg xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewBox="0 0 9 16" fill="none">
                   <path d="M1.5 1.74997L7.75 7.99997L1.5 14.25" stroke="#1B1B1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>programas</a> <svg xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewBox="0 0 9 16" fill="none">
-                <path d="M1.5 1.74997L7.75 7.99997L1.5 14.25" stroke="#1B1B1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>y Proyectos</p>
+                </svg>programas y Proyectos</a> 
+            </p>
           </div>
         </div>
         <div class="col-lg-6">
@@ -63,83 +62,171 @@
     </div>
   </div>
   <!--===== HERO AREA ENDS =======-->
+
   <div class="space30"></div>
-  <!--===== Seccion #1 =======-->
-  <div class="blog-inner-section">
-    <div class="container-fluid">
-      <div class="row">
-        
+
+  <div class="container-fluid">
+    <div class="row justify-content-center">
         <div class="col-lg-12">
-          <div class="space40 d-lg-none d-block"></div>
-          <div class="bg-area">
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="blog-post-details-area heading1">
-                  
-                  
-                  <div class="space20"></div>
-                  <h2>INTRO------Manos Catrachas: Hecho en Honduras</h2>
-                  <div class="space18"></div>
-                  <p style="text-align: justify;">
-                    <strong>Manos Catrachas</strong> es nuestro programa de apoyo a emprendedores locales, creado para impulsar el consumo responsable y visibilizar el talento catracho dentro de EasyOffice. A través de esta iniciativa, brindamos oportunidades a pequeños negocios, artesanos, marcas emergentes y productores nacionales para conectar con nuevas audiencias y crecer juntos.
-                  </p>
-                  <div class="space16"></div>
-                  <p style="text-align: justify;">
-                    Uno de los proyectos más representativos dentro de este programa es el <strong>Apoyo a Pequeños Productores de Café</strong>:
-                  </p>
-                  <ul style="text-align: justify; padding-left: 1.5em; list-style-type: disc;">
-                    <li>
-                      Cada mes, seleccionamos una marca de café local —muchas de ellas lideradas por mujeres— para ofrecer degustaciones, exhibir sus productos y facilitar puntos de venta directa.
-                    </li>
-                    <li>
-                      Hasta ahora hemos colaborado con <strong>12 marcas</strong>, y el <strong>60% de nuestros proveedores son mujeres emprendedoras</strong>.
-                    </li>
-                  </ul>
-                  <div class="space16"></div>
-                  <p style="text-align: justify;">
-                    <strong>Nuestra meta:</strong> que EasyOffice sea un espacio vivo de conexión entre empresas y talento local.
-                  </p>
-                  <div class="space30"></div>
-                  <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                      <div class="space30"></div>
-                      <div class="img1 image-anime">
-                        <img src="assets/img/all-images/blog/blog-img17.png" alt="housa">
-                      </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                      <div class="space30"></div>
-                      <div class="img1 image-anime">
-                        <img src="assets/img/all-images/blog/blog-img18.png" alt="housa">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="space28"></div>
-                  
-                </div>
-              </div>
+            <div class="hero-banner-orange">
+                <h1 class="banner-title">Programas especiales</h1>
             </div>
+        </div>
+    </div>
+  </div>
+
+  <style>
+    /* ===== BANNER PRINCIPAL ===== */
+    .hero-banner-orange {
+        background: linear-gradient(135deg, #ff8c42, #e67e22);
+        border-radius: 25px;
+        padding: 40px 40px; /* Altura perfecta como te gusta */
+        text-align: center;
+        margin: 20px auto;
+        width: 100%; /* Ocupa TODO el ancho disponible */
+        max-width: none; /* Sin límite de ancho - llega al final */
+        box-shadow: 0 10px 30px rgba(230, 126, 34, 0.3);
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Cuando está dentro de Bootstrap, quitar margin auto */
+    .container-fluid .hero-banner-orange,
+    .container .hero-banner-orange {
+        margin: 20px 0;
+        width: 100%; /* Asegura que llegue al final del contenedor */
+    }
+
+    .hero-banner-orange::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+        pointer-events: none;
+    }
+
+    .banner-title {
+        color: white;
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin: 0;
+        line-height: 1.2;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        position: relative;
+        z-index: 2;
+    }
+
+    /* ===== RESPONSIVE DESIGN ===== */
+    @media (max-width: 1200px) {
+        .banner-title {
+            font-size: 3rem;
+        }
+        
+        .hero-banner-orange {
+            padding: 35px 35px; /* Ajustado proporcionalmente */
+        }
+    }
+
+    @media (max-width: 992px) {
+        .banner-title {
+            font-size: 2.5rem;
+        }
+        
+        .hero-banner-orange {
+            padding: 30px 30px; /* Más bajo y simétrico */
+            border-radius: 20px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .banner-title {
+            font-size: 2rem;
+        }
+        
+        .hero-banner-orange {
+            padding: 25px 25px; /* Simétrico en móviles */
+            border-radius: 18px;
+            margin: 15px auto;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .banner-title {
+            font-size: 1.7rem;
+        }
+        
+        .hero-banner-orange {
+            padding: 20px 20px; /* Padding cuadrado - simétrico */
+            border-radius: 15px;
+            margin: 10px auto;
+        }
+    }
+
+    @media (max-width: 380px) {
+        .banner-title {
+            font-size: 1.4rem;
+        }
+        
+        .hero-banner-orange {
+            padding: 18px 15px; /* Compacto pero simétrico */
+        }
+    }
+
+    /* ===== ANIMACIÓN SUTIL ===== */
+    .hero-banner-orange {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hero-banner-orange:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 15px 40px rgba(230, 126, 34, 0.4);
+    }
+  </style>
+
+  <div class="space30"></div>
+
+   <!--===== Seccion #2 Franquicias =======-->
+  <div class="choose1">
+    <div class="container-fluid">
+      <div class="row align-items-center flex-wrap">
+        <!-- Imagen izquierda en desktop/tablet, arriba en móvil -->
+        <div class="col-lg-6 order-lg-2 order-1 d-flex flex-column justify-content-center">
+          <div class="chosse-images w-100 shadow-lg" style="max-width:440px; aspect-ratio: 4/3; background: #f8fafc; border-radius:20px; overflow:hidden; display:flex; align-items:center; justify-content:center; border: 1.5px solid #e0e7ef;">
+            <img src="assets/img/EasyOffice/Contactanos /Acerca de /11.png" alt="Coworking moderno" style="width:100%; height:100%; object-fit:cover; border-radius:20px; display:block; box-shadow:0 4px 24px rgba(0,0,0,0.10);">
+          </div>
+        </div>
+        <!-- Texto derecha en desktop/tablet, abajo en móvil -->
+        <div class="col-lg-6 order-lg-1 order-2 d-flex justify-content-center mb-4 mb-lg-0">
+          <div class="choose-heading heading2 text-center text-lg-start">
+            <h5> Franquicias</h5>
+            <div class="space16"></div>
+            <h2>Franquicias</h2>
+            <div class="choose-box mt-3">
+              <a href="contact.html">En Easy Office</a>
+              <div class="space10"></div>
+              <p style="text-align: justify;">Se encuentra preparando la apertura para su módulo de comercialización de franquicias. Próximamente estará disponible la información sobre costos, modelos operativos y unidades disponibles para franquiciar.</p>
+            </div><br>
+            <div class="vl-blog-1-icon">
+                  <a href="https://www.instagram.com/p/DH56QVGNZdn/?img_index=1" target="_blank" class="readmore" style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 24px; font-size: 1rem; border-radius: 24px; background: #ED8438; color: #fff; text-decoration: none; transition: all 0.3s;">
+                      Conocer más
+                      <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+              </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <!--===== Fin  Seccion #1 =======-->
+  <!--===== Fin Seccion #2 Franquicias =======-->
+
   <div class="space30"></div>
-  <!--===== Seccion #2 =======-->
-  <div class="miision1">
+
+  <!--===== Seccion #2 Franquicias =======-->
+  <!-- <div class="miision1">
     <div class="containr-fluid">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="heading1 text-center space-margin40">
-            <h1>Franquicias</h1>
-            <div class="space16"></div>
-            <p style="text-align: justify;">Desde su fundación en 2019, ha desarrollado iniciativas en las áreas de inclusión laboral, apoyo a emprendedores, responsabilidad social y equidad de género, integrando estos principios en su modelo de negocio.
-               La empresa surge como respuesta a la necesidad de su fundador de contar con un espacio de trabajo profesional que fomentara la colaboración y la comunidad, sin perder la independencia.
-            </p>
-          </div>
-        </div>
-      </div><br>
       <div class="row align-items-center">
         <div class="col-lg-6">
           <div class="images1">
@@ -148,9 +235,11 @@
         </div>
         <div class="col-lg-6">
           <div class="mission-heading heading1">
-            <h3>Inició de Operaciones </h3>
+            <div class="heading2">
+              <h3>Franquicias </h3>
+            </div>
             <div class="space16"></div>
-            <p style="text-align: justify;">Con esta visión, EasyOffice inició operaciones en Tegucigalpa, ofreciendo oficinas privadas y espacios de coworking a diferentes empresas y profesionales. Sin embargo, la crisis generada por la pandemia de 2020 representó un desafío significativo para sus operaciones, ya que muchas empresas cerraron o migraron a modelos híbridos, lo que redujo drásticamente la demanda de espacios físicos. En este período, la empresa logró mantenerse operativa gracias a un único cliente que continuó con sus servicios, permitiéndole superar la crisis.</p>
+            <p style="text-align: justify;">Easy Office se encuentra preparando la apertura para su módulo de comercialización de franquicias. Próximamente estará disponible la información sobre costos, modelos operativos y unidades disponibles para franquiciar.</p>
             <div class="space32"></div>
             <h3>Expansión e Innovación</h3>
             <div class="space16"></div>
@@ -159,52 +248,121 @@
         </div>
       </div>
     </div>
-  </div>
-  <!--===== Fin Seccion #2 =======-->
+  </div> -->
+  <!--===== Fin Seccion #2 Franquicias =======-->
+
   <div class="space30"></div>
-  <!--=====  Fin Seccion #6 =======-->
+
+  <!--=====  Fin Seccion #3 RSE =======-->
   <div class="about1-section-area">
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-5">
-          <div class="about-img1 image-anime reveal">
-            <img src="assets/img/EasyOffice/Contactanos /Acerca de /3.png" alt="Easyoffice">
+      <!-- Desktop/tablet: 3 columnas simétricas -->
+      <div class="row align-items-center flex-wrap d-none d-md-flex">
+        <!-- Imagen izquierda -->
+        <div class="col-lg-4 col-md-6 d-flex justify-content-center mb-4 mb-lg-0">
+          <div class="about-img1 image-anime reveal" style="max-width: 420px; width: 100%;">
+            <img src="assets/img/EasyOffice/Contactanos /Acerca de /3.png" alt="Easyoffice" style="width:100%; border-radius:16px; object-fit:cover;">
           </div>
         </div>
-        <div class="col-lg-3">
-          <div class="heading1">
+        <!-- Texto central -->
+        <div class="col-lg-4 col-md-12 d-flex flex-column align-items-center text-center">
+          <div class="heading1 w-100" style="max-width: 440px;">
             <div class="head">
-              <h3>EasyOffice</h3>
+              <h2>RSE</h2>
               <div class="space16"></div>
-              <h5>Es una empresa hondureña</h5>
             </div>
             <div class="space20"></div>
             <div class="perag-bg">
-              <p data-aos="fade-up" data-aos-duration="900" style="text-align: justify;">Comprometida con la sostenibilidad y el impacto social, con el propósito de generar un cambio positivo en la comunidad y fortalecer el ecosistema empresarial local. </style=>
+              <p data-aos="fade-up" data-aos-duration="900" style="text-align: justify;">Nuestro Programa de RSE articula diversas iniciativas enfocadas en inclusión, sostenibilidad, empleabilidad y desarrollo local. Creemos en crear un entorno laboral justo, contribuir a nuestras comunidades y fortalecer el consumo responsable.</p>
               <div class="space32"></div>
               <div class="btn-area1" data-aos="fade-up" data-aos-duration="1000">
-                <a href="contact.html" class="vl-btn1">Contactanos <span class="arrow1"><i class="fa-solid fa-arrow-right"></i></span><span class="arrow2"><i class="fa-solid fa-arrow-right"></i></span></a>
+                <a href="contact.html" class="vl-btn1">Contáctanos <span class="arrow1"><i class="fa-solid fa-arrow-right"></i></span><span class="arrow2"><i class="fa-solid fa-arrow-right"></i></span></a>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-lg-4">
-          <div class="about-img2 image-anime reveal">
-            <img src="assets/img/EasyOffice/Contactanos /Acerca de /4.png" alt="Easyoffice">
+        <!-- Imagen derecha -->
+        <div class="col-lg-4 col-md-6 d-flex justify-content-center mt-4 mt-lg-0">
+          <div class="about-img2 image-anime reveal" style="max-width: 420px; width: 100%;">
+            <img src="assets/img/EasyOffice/Contactanos /Acerca de /4.png" alt="Easyoffice" style="width:100%; border-radius:16px; object-fit:cover;">
+          </div>
+        </div>
+      </div>
+      <!-- Móvil: texto arriba, imágenes simétricas abajo en la misma fila -->
+      <div class="row d-md-none">
+        <div class="col-12 d-flex flex-column align-items-center text-center mb-3">
+          <div class="heading1 w-100" style="max-width: 440px;">
+            <div class="head">
+              <h3>RSE</h3>
+              <div class="space16"></div>
+              <h5>Significado de RSE</h5>
+            </div>
+            <div class="space20"></div>
+            <div class="perag-bg">
+              <p data-aos="fade-up" data-aos-duration="900" style="text-align: justify;">Nuestro Programa de RSE articula diversas iniciativas enfocadas en inclusión, sostenibilidad, empleabilidad y desarrollo local. Creemos en crear un entorno laboral justo, contribuir a nuestras comunidades y fortalecer el consumo responsable.</p>
+              <div class="space32"></div>
+              <div class="btn-area1" data-aos="fade-up" data-aos-duration="1000">
+                <a href="contact.html" class="vl-btn1">Contáctanos <span class="arrow1"><i class="fa-solid fa-arrow-right"></i></span><span class="arrow2"><i class="fa-solid fa-arrow-right"></i></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 d-flex justify-content-end">
+          <div class="about-img1 image-anime reveal" style="max-width: 140px; width: 100%;">
+            <img src="assets/img/EasyOffice/Contactanos /Acerca de /3.png" alt="Easyoffice" style="width:100%; border-radius:12px; object-fit:cover;">
+          </div>
+        </div>
+        <div class="col-6 d-flex justify-content-start">
+          <div class="about-img2 image-anime reveal" style="max-width: 140px; width: 100%;">
+            <img src="assets/img/EasyOffice/Contactanos /Acerca de /4.png" alt="Easyoffice" style="width:100%; border-radius:12px; object-fit:cover;">
           </div>
         </div>
       </div>
     </div>
   </div>
-  <!--===== FIn Seccion #6 =======-->
+  <style>
+    /* Desktop: imágenes más anchas y simétricas */
+    .about1-section-area .about-img1,
+    .about1-section-area .about-img2 {
+      /* Puedes agregar estilos generales aquí si lo necesitas */
+    }
+
+    /* Ajuste para simetría de la segunda imagen en móvil */
+    .about1-section-area .about-img2 img {
+      margin-top: 0px;
+    }
+
+    /* Solo mostrar la fila desktop/tablet en pantallas medianas o grandes, y la móvil en pantallas pequeñas */
+    @media (max-width: 767.98px) {
+      .about1-section-area .row.align-items-center {
+        display: none !important;
+      }
+      .about1-section-area .heading1 {
+        padding: 0 6px;
+      }
+      .about1-section-area .row.d-md-none {
+        display: flex !important;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .about1-section-area .row.d-md-none {
+        display: none !important;
+      }
+      .about1-section-area .row.align-items-center {
+        display: flex !important;
+      }
+    }
+  </style>
+  <!--===== FIn Seccion #3 RSE =======-->
   
 
-   <div class="space30"></div>
+  <div class="space30"></div>
 
-   <!--===== Eventos Seccion #4 =======-->
-    <div class="vl-blog-1-area">
+  <!--===== Eventos Seccion #4 =======-->
+  <div class="vl-blog-1-area">
     <div class="container-fluid">
-        <center><h1>Nuestros Eventos</h1></br></br><center>
+        <center><h1>Actividades destacadas</h1></br></br><center>
         <div class="row">
         <div class="col-lg-4  col-md-6">
             <div class="vl-blog-1-item">
@@ -320,389 +478,316 @@
         
         </div>
     </div>
-    </div>
-    <!--===== FIN Eventos Seccion #4 =======-->
-  
-    <div class="space30"></div>
-
-  <!--===== Seccion #5  =======-->
-  <div class="vl-blog-1-area">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-10 m-auto">
-          <div class="vl-blog-1-section-box heading1 text-center space-margin60">
-            <h2 class="vl-section-title text-anime-style-3">Comunidad</h2>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-4  col-md-6" data-aos="fade-left" data-aos-duration="900">
-          <div class="vl-blog-1-item">
-            <div class="vl-blog-1-thumb image-anime">
-              <img src="assets/img/all-images/blog/blog-img1.png" alt="housa">
-            </div>
-            <div class="vl-blog-1-content">
-              <div class="date">
-                <p>14</p>
-                <span>aUG</span>
-              </div>
-              <div class="vl-blog-meta">
-                <ul>
-                  <li>
-                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <g clip-path="url(#clip0_6058_73650)">
-                          <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M12 2C17.523 2 22 6.477 22 12C22.0035 14.3079 21.2054 16.5454 19.742 18.33L19.762 18.352L19.63 18.464C18.6922 19.5732 17.5236 20.4643 16.2057 21.0751C14.8879 21.6858 13.4525 22.0015 12 22C9.05001 22 6.40001 20.723 4.57001 18.693L4.37001 18.463L4.23801 18.353L4.25801 18.329C2.79477 16.5447 1.99663 14.3076 2.00001 12C2.00001 6.477 6.47701 2 12 2ZM12 17C10.14 17 8.45901 17.592 7.20701 18.405C8.5893 19.4426 10.2716 20.0025 12 20C13.7284 20.0025 15.4107 19.4426 16.793 18.405C15.3623 17.4886 13.6991 17.0011 12 17ZM12 4C10.4945 3.99996 9.0196 4.42471 7.74473 5.22545C6.46987 6.02619 5.44682 7.1704 4.79317 8.52657C4.13953 9.88274 3.88181 11.3958 4.04966 12.8919C4.21751 14.388 4.8041 15.8064 5.74201 16.984C7.36301 15.821 9.57501 15 12 15C14.425 15 16.637 15.821 18.258 16.984C19.1959 15.8064 19.7825 14.388 19.9504 12.8919C20.1182 11.3958 19.8605 9.88274 19.2069 8.52657C18.5532 7.1704 17.5302 6.02619 16.2553 5.22545C14.9804 4.42471 13.5055 3.99996 12 4ZM12 6C13.0609 6 14.0783 6.42143 14.8284 7.17157C15.5786 7.92172 16 8.93913 16 10C16 11.0609 15.5786 12.0783 14.8284 12.8284C14.0783 13.5786 13.0609 14 12 14C10.9391 14 9.92173 13.5786 9.17158 12.8284C8.42144 12.0783 8.00001 11.0609 8.00001 10C8.00001 8.93913 8.42144 7.92172 9.17158 7.17157C9.92173 6.42143 10.9391 6 12 6ZM12 8C11.4696 8 10.9609 8.21071 10.5858 8.58579C10.2107 8.96086 10 9.46957 10 10C10 10.5304 10.2107 11.0391 10.5858 11.4142C10.9609 11.7893 11.4696 12 12 12C12.5304 12 13.0392 11.7893 13.4142 11.4142C13.7893 11.0391 14 10.5304 14 10C14 9.46957 13.7893 8.96086 13.4142 8.58579C13.0392 8.21071 12.5304 8 12 8Z"
-                            fill="#1B1B1B" />
-                        </g>
-                        <defs>
-                          <clipPath id="clip0_6058_736505">
-                            <rect width="24" height="24" fill="white" />
-                          </clipPath>
-                        </defs>
-                      </svg> Leigh Harris</a>
-                  </li>
-                  <li>
-                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <g clip-path="url(#clip0_6058_73657)">
-                          <path
-                            d="M10.238 4.827C10.632 4.82682 11.0222 4.90427 11.3863 5.05492C11.7504 5.20557 12.0813 5.42647 12.36 5.705L18.845 12.191C19.4074 12.7536 19.7233 13.5165 19.7233 14.312C19.7233 15.1075 19.4074 15.8704 18.845 16.433L14.602 20.676C14.0394 21.2384 13.2765 21.5544 12.481 21.5544C11.6855 21.5544 10.9226 21.2384 10.36 20.676L3.87397 14.191C3.59544 13.9123 3.37454 13.5814 3.22389 13.2173C3.07324 12.8532 2.99579 12.463 2.99597 12.069V7.327C2.99597 6.66396 3.25936 6.02807 3.72821 5.55923C4.19705 5.09039 4.83293 4.827 5.49597 4.827H10.238ZM10.238 6.827H5.49597C5.36336 6.827 5.23619 6.87968 5.14242 6.97345C5.04865 7.06722 4.99597 7.19439 4.99597 7.327V12.069C4.99576 12.3341 5.10079 12.5883 5.28797 12.776L11.774 19.262C11.9615 19.4495 12.2158 19.5548 12.481 19.5548C12.7461 19.5548 13.0004 19.4495 13.188 19.262L17.431 15.019C17.6184 14.8315 17.7238 14.5772 17.7238 14.312C17.7238 14.0468 17.6184 13.7925 17.431 13.605L10.945 7.12C10.7575 6.93245 10.5032 6.82706 10.238 6.827ZM7.53097 9.362C7.81237 9.08074 8.19397 8.92278 8.59183 8.92287C8.78882 8.92292 8.98389 8.96177 9.16587 9.0372C9.34786 9.11263 9.51321 9.22317 9.65247 9.3625C9.79174 9.50183 9.9022 9.66723 9.97754 9.84925C10.0529 10.0313 10.0916 10.2264 10.0916 10.4234C10.0916 10.6204 10.0527 10.8154 9.97727 10.9974C9.90184 11.1794 9.7913 11.3447 9.65197 11.484C9.37058 11.7653 8.98898 11.9232 8.59112 11.9231C8.19326 11.923 7.81173 11.7649 7.53047 11.4835C7.24921 11.2021 7.09125 10.8205 7.09134 10.4226C7.09139 10.2256 7.13024 10.0306 7.20567 9.8486C7.2811 9.66661 7.39164 9.50127 7.53097 9.362ZM11.652 2C12.046 1.99982 12.4362 2.07727 12.8003 2.22792C13.1644 2.37857 13.4953 2.59947 13.774 2.878L20.966 10.071C21.1481 10.2596 21.2489 10.5122 21.2466 10.7744C21.2444 11.0366 21.1392 11.2874 20.9538 11.4728C20.7684 11.6582 20.5176 11.7634 20.2554 11.7657C19.9932 11.768 19.7406 11.6672 19.552 11.485L12.36 4.29C12.1717 4.10331 11.9171 3.999 11.652 4H6.99997C6.73476 4 6.4804 3.89464 6.29287 3.70711C6.10533 3.51957 5.99997 3.26522 5.99997 3C5.99997 2.73478 6.10533 2.48043 6.29287 2.29289C6.4804 2.10536 6.73476 2 6.99997 2H11.652Z"
-                            fill="#1B1B1B" />
-                        </g>
-                        <defs>
-                          <clipPath id="clip0_6058_736576">
-                            <rect width="24" height="24" fill="white" />
-                          </clipPath>
-                        </defs>
-                      </svg> Deluxe</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="space24"></div>
-              <h4 class="vl-blog-1-title"><a href="blog-detail.html">5 Tips For First-Time <br class="d-lg-block d-none"> Homebuyers Housa</a></h4>
-              <div class="space24"></div>
-              <div class="vl-blog-1-icon">
-                <a href="blog-detail.html" class="readmore">Read More <i class="fa-solid fa-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6" data-aos="fade-left" data-aos-duration="1000">
-            <div class="vl-blog-1-item" style="overflow:visible; border-radius:20px; box-shadow:0 6px 24px rgba(255,152,0,0.1); background:linear-gradient(135deg, #fff7ed 0%, #ffe0b2 100%);">
-            <div class="vl-blog-1-thumb image-anime" style="border-radius:16px 16px 0 0; overflow:hidden; position:relative;">
-              <img src="assets/img/all-images/blog/blog-img2.png" alt="Feria Naranja" style="width:100%; object-fit:cover;">
-              <div style="position:absolute; top:40px; right:24px; background:rgba(255,152,0,0.92); color:#fff; padding:6px 16px; border-radius:15px; font-weight:600; box-shadow:0 2px 8px #ff980033; font-size:0.95em;">
-          Evento Especial
-              </div>
-            </div>
-            <div class="vl-blog-1-content" style="padding:20px;">
-              <!-- Date badge moved to right -->
-              <div class="date" style="position:absolute; right:24px; top:-25px; background:#b26a00; border-radius:12px; padding:8px 16px; box-shadow:0 4px 12px rgba(255,152,0,0.15);">
-            <p style="color:#fff7ed; font-size:1.8em; font-weight:800; line-height:1; margin:0;">13</p>
-            <span style="color:#fff7ed; font-weight:700; font-size:0.9em;">AGO</span>
-              </div>
-
-              <div class="vl-blog-meta" style="background:#fff7ed; border-radius:15px; padding:15px; margin-top:10px;">
-            <div style="display:flex; align-items:center; gap:15px; flex-wrap:wrap;">
-            <div style="display:flex; align-items:center; gap:8px;">
-              <img src="https://ui-avatars.com/api/?name=Feria+Naranja&background=ff9800&color=fff7ed&rounded=true&size=36" alt="Feria Naranja" style="width:36px; height:36px; border-radius:50%; border:2px solid #ff9800;">
-              <span style="font-weight:700; color:#ff9800;">Innovación y Creatividad</span>
-            </div>
-            
-            <div style="display:flex; align-items:center; gap:6px;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"><path d="M7 11h5m-2.5-2.5V11m0 0v2.5M21 11c0 5.523-4.477 10-10 10S1 16.523 1 11 5.477 1 11 1s10 4.477 10 10Z" stroke="#ff9800" stroke-width="2" stroke-linecap="round"/></svg>
-              <div>
-            <span style="color:#ff9800;">Fecha: </span>
-            <span style="color:#b26a00;">13 Agosto</span>
-              </div>el card
-            </div>
-            
-            <div style="display:flex; align-items:center; gap:6px;">
-              <div>
-              <span style="font-weight:500; color:#ff9800;">Hora:</span>
-              <span style="color:#b26a00;">10:00 AM</span>
-              </div>
-            </div>
-            </div>
-              </div>
-              <div style="padding: 20px 6px;">
-          <div class="vl-blog-1-icon" style="text-align:center;">
-            <a href="blog-detail.html" class="readmore" style="background:linear-gradient(90deg,#ff9800 0%,#ffb74d 100%);color:#fff;font-weight:700;border-radius:8px;padding:8px 22px;box-shadow:0 2px 8px #ff980033;transition:background 0.2s;">
-              Conoce más <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6" data-aos="fade-left" data-aos-duration="1000">
-          <div class="vl-blog-1-item">
-            <div class="vl-blog-1-thumb image-anime">
-              <img src="assets/img/all-images/blog/blog-img3.png" alt="housa">
-            </div>
-            <div class="vl-blog-1-content">
-              <div class="date">
-                <p>12</p>
-                <span>aUG</span>
-              </div>
-              <div class="vl-blog-meta">
-                <ul>
-                  <li>
-                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <g clip-path="url(#clip0_6058_73650)">
-                          <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M12 2C17.523 2 22 6.477 22 12C22.0035 14.3079 21.2054 16.5454 19.742 18.33L19.762 18.352L19.63 18.464C18.6922 19.5732 17.5236 20.4643 16.2057 21.0751C14.8879 21.6858 13.4525 22.0015 12 22C9.05001 22 6.40001 20.723 4.57001 18.693L4.37001 18.463L4.23801 18.353L4.25801 18.329C2.79477 16.5447 1.99663 14.3076 2.00001 12C2.00001 6.477 6.47701 2 12 2ZM12 17C10.14 17 8.45901 17.592 7.20701 18.405C8.5893 19.4426 10.2716 20.0025 12 20C13.7284 20.0025 15.4107 19.4426 16.793 18.405C15.3623 17.4886 13.6991 17.0011 12 17ZM12 4C10.4945 3.99996 9.0196 4.42471 7.74473 5.22545C6.46987 6.02619 5.44682 7.1704 4.79317 8.52657C4.13953 9.88274 3.88181 11.3958 4.04966 12.8919C4.21751 14.388 4.8041 15.8064 5.74201 16.984C7.36301 15.821 9.57501 15 12 15C14.425 15 16.637 15.821 18.258 16.984C19.1959 15.8064 19.7825 14.388 19.9504 12.8919C20.1182 11.3958 19.8605 9.88274 19.2069 8.52657C18.5532 7.1704 17.5302 6.02619 16.2553 5.22545C14.9804 4.42471 13.5055 3.99996 12 4ZM12 6C13.0609 6 14.0783 6.42143 14.8284 7.17157C15.5786 7.92172 16 8.93913 16 10C16 11.0609 15.5786 12.0783 14.8284 12.8284C14.0783 13.5786 13.0609 14 12 14C10.9391 14 9.92173 13.5786 9.17158 12.8284C8.42144 12.0783 8.00001 11.0609 8.00001 10C8.00001 8.93913 8.42144 7.92172 9.17158 7.17157C9.92173 6.42143 10.9391 6 12 6ZM12 8C11.4696 8 10.9609 8.21071 10.5858 8.58579C10.2107 8.96086 10 9.46957 10 10C10 10.5304 10.2107 11.0391 10.5858 11.4142C10.9609 11.7893 11.4696 12 12 12C12.5304 12 13.0392 11.7893 13.4142 11.4142C13.7893 11.0391 14 10.5304 14 10C14 9.46957 13.7893 8.96086 13.4142 8.58579C13.0392 8.21071 12.5304 8 12 8Z"
-                            fill="#1B1B1B" />
-                        </g>
-                        <defs>
-                          <clipPath id="clip0_6058_736508">
-                            <rect width="24" height="24" fill="white" />
-                          </clipPath>
-                        </defs>
-                      </svg> Leigh Harris</a>
-                  </li>
-                  <li>
-                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <g clip-path="url(#clip0_6058_73657)">
-                          <path
-                            d="M10.238 4.827C10.632 4.82682 11.0222 4.90427 11.3863 5.05492C11.7504 5.20557 12.0813 5.42647 12.36 5.705L18.845 12.191C19.4074 12.7536 19.7233 13.5165 19.7233 14.312C19.7233 15.1075 19.4074 15.8704 18.845 16.433L14.602 20.676C14.0394 21.2384 13.2765 21.5544 12.481 21.5544C11.6855 21.5544 10.9226 21.2384 10.36 20.676L3.87397 14.191C3.59544 13.9123 3.37454 13.5814 3.22389 13.2173C3.07324 12.8532 2.99579 12.463 2.99597 12.069V7.327C2.99597 6.66396 3.25936 6.02807 3.72821 5.55923C4.19705 5.09039 4.83293 4.827 5.49597 4.827H10.238ZM10.238 6.827H5.49597C5.36336 6.827 5.23619 6.87968 5.14242 6.97345C5.04865 7.06722 4.99597 7.19439 4.99597 7.327V12.069C4.99576 12.3341 5.10079 12.5883 5.28797 12.776L11.774 19.262C11.9615 19.4495 12.2158 19.5548 12.481 19.5548C12.7461 19.5548 13.0004 19.4495 13.188 19.262L17.431 15.019C17.6184 14.8315 17.7238 14.5772 17.7238 14.312C17.7238 14.0468 17.6184 13.7925 17.431 13.605L10.945 7.12C10.7575 6.93245 10.5032 6.82706 10.238 6.827ZM7.53097 9.362C7.81237 9.08074 8.19397 8.92278 8.59183 8.92287C8.78882 8.92292 8.98389 8.96177 9.16587 9.0372C9.34786 9.11263 9.51321 9.22317 9.65247 9.3625C9.79174 9.50183 9.9022 9.66723 9.97754 9.84925C10.0529 10.0313 10.0916 10.2264 10.0916 10.4234C10.0916 10.6204 10.0527 10.8154 9.97727 10.9974C9.90184 11.1794 9.7913 11.3447 9.65197 11.484C9.37058 11.7653 8.98898 11.9232 8.59112 11.9231C8.19326 11.923 7.81173 11.7649 7.53047 11.4835C7.24921 11.2021 7.09125 10.8205 7.09134 10.4226C7.09139 10.2256 7.13024 10.0306 7.20567 9.8486C7.2811 9.66661 7.39164 9.50127 7.53097 9.362ZM11.652 2C12.046 1.99982 12.4362 2.07727 12.8003 2.22792C13.1644 2.37857 13.4953 2.59947 13.774 2.878L20.966 10.071C21.1481 10.2596 21.2489 10.5122 21.2466 10.7744C21.2444 11.0366 21.1392 11.2874 20.9538 11.4728C20.7684 11.6582 20.5176 11.7634 20.2554 11.7657C19.9932 11.768 19.7406 11.6672 19.552 11.485L12.36 4.29C12.1717 4.10331 11.9171 3.999 11.652 4H6.99997C6.73476 4 6.4804 3.89464 6.29287 3.70711C6.10533 3.51957 5.99997 3.26522 5.99997 3C5.99997 2.73478 6.10533 2.48043 6.29287 2.29289C6.4804 2.10536 6.73476 2 6.99997 2H11.652Z"
-                            fill="#1B1B1B" />
-                        </g>
-                        <defs>
-                          <clipPath id="clip0_6058_736579">
-                            <rect width="24" height="24" fill="white" />
-                          </clipPath>
-                        </defs>
-                      </svg> Deluxe</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="space24"></div>
-              <h4 class="vl-blog-1-title"><a href="blog-detail.html">How to Stage Your Home for <br class="d-lg-block d-none"> a Quick Sale</a></h4>
-              <div class="space24"></div>
-              <div class="vl-blog-1-icon">
-                <a href="blog-detail.html" class="readmore">Read More <i class="fa-solid fa-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
-  <!--=====  Fin Seccion #5  =======-->
+  <!--===== FIN Eventos Seccion #4 =======-->
 
   <div class="space30"></div>
-<!--===== Seccion #3 =======-->
-  <div class="choose1">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-5 m-auto">
-          <div class="heading1 text-center space-margin60">
-            <h5>¿Por qué elegirnos?</h5>
-            <div class="space16"></div>
-            <h2>RSE </h2>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="choose-heading heading1">
-            <h2>En Easyoffice</h2>
-            <div class="space16"></div>
-            <p style="text-align: justify;">Creemos que el éxito de nuestros clientes comienza con un entorno de trabajo adecuado. Nuestra misión, visión y valores guían cada decisión que tomamos y cada espacio que creamos. Nos esforzamos por ofrecer soluciones flexibles, fomentar una comunidad colaborativa y transformar la manera en que las empresas crecen y trabajan en Centroamérica.</p>
-            <div class="space24"></div>
-            <div class="choose-box">
-              <a href="our-service.html">Misión</a>
-              <div class="space16"></div>
-              <p style="text-align: justify;">Brindar soluciones empresariales flexibles y personalizadas, combinando espacios de trabajo modernos con una red de servicios profesionales, tecnología y comunidad, para que nuestros clientes se enfoquen en lo que realmente importa: hacer crecer su negocio</p>
-            </div>
-            <div class="space24"></div>
-            <div class="choose-box">
-              <a href="our-service.html">Visión</a>
-              <div class="space16"></div>
-              <p style="text-align: justify;">Ser la red de espacios de trabajo más influyente en Centroamérica, reconocida por su innovación, impacto en la comunidad empresarial y capacidad de transformar la manera en que profesionales y empresas trabajan y colaboran.</p>
-            </div>
-            <div class="space24"></div>
-            <div class="choose-box">
-              <a href="our-service.html">Valores</a>
-              <div class="space16"></div>
-              <p style="text-align: justify;">IMPACTO: Innovación, Mejora continua, Proximidad, Adaptabilidad, Colaboración, Transparencia y Oportunidad con propósito. Cada letra representa una acción concreta, una actitud diaria, un compromiso real.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="chosse-images" style="display: flex; flex-direction: column; gap: 16px; height: 100%; justify-content: center;">
-            <img src="assets/img/elements/elements8.png" alt="Easyoffice" class="elements8">
-            <div class="img2" style="display: flex; justify-content: center; margin-top: 48px;">
-              <img src="assets/img/EasyOffice/Contactanos /Acerca de /12.png" style="width: 80%; max-width: 800px; height: 700px; object-fit: cover; border-radius: 16px;" alt="Easyoffice">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--===== Fin Seccion #3 =======-->
-  
- <div class="space30"></div>
-  <!--===== BLOG AREA STARTS =======-->
+
+  <!--===== Seccion #5 Comunidad easyofice =======-->
   <div class="vl-blog-1-area">
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-10 m-auto">
           <div class="vl-blog-1-section-box heading1 text-center space-margin60">
-            <h2 class="vl-section-title text-anime-style-3">RSE</h2>
+            <h2 class="vl-section-title text-anime-style-3">Comunidad EasyOffice
+              <span class="vl-section-title-bg"></span>
+            </h2>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-lg-4 col-md-6" data-aos="fade-left" data-aos-duration="1000">
-            <div class="vl-blog-1-item" style="overflow:visible; border-radius:20px; box-shadow:0 6px 24px rgba(255,152,0,0.1); background:linear-gradient(135deg, #fff7ed 0%, #ffe0b2 100%);">
-            <div class="vl-blog-1-thumb image-anime" style="border-radius:16px 16px 0 0; overflow:hidden; position:relative;">
-              <img src="assets/img/all-images/blog/blog-img2.png" alt="Feria Naranja" style="width:100%; object-fit:cover;">
-              <div style="position:absolute; top:40px; right:24px; background:rgba(255,152,0,0.92); color:#fff; padding:6px 16px; border-radius:15px; font-weight:600; box-shadow:0 2px 8px #ff980033; font-size:0.95em;">
-          Evento Especial
+      <div class="row property2">
+        <div class="property-listing-area owl-carousel">
+            <div class="property-listing-boxarea">
+              <div class="vl-blog-1-item" style="overflow:visible; border-radius:20px; box-shadow:0 6px 24px rgba(255,152,0,0.1); background:linear-gradient(135deg, #fff7ed 0%, #ffe0b2 100%);">
+                  <div class="vl-blog-1-thumb image-anime" style="border-radius:16px 16px 0 0; overflow:hidden; position:relative;">
+                    <img src="assets/img/all-images/blog/blog-img2.png" alt="Feria Naranja" style="width:100%; object-fit:cover;">
+                    <div style="position:absolute; top:40px; right:24px; background:rgba(255,152,0,0.92); color:#fff; padding:6px 16px; border-radius:15px; font-weight:600; box-shadow:0 2px 8px #ff980033; font-size:0.95em;">
+                        Como parte del RSE #1
+                    </div>
+                  </div>
+                  
+                    
+                    <div style="padding: 20px 6px;">
+                      <div class="vl-blog-1-icon" style="text-align:center;">
+                        <a href="blog-detail.html" class="readmore" style="background:linear-gradient(90deg,#ff9800 0%,#ffb74d 100%);color:#fff;font-weight:700;border-radius:8px;padding:8px 22px;box-shadow:0 2px 8px #ff980033;transition:background 0.2s;">
+                          Conoce más <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                      </div>
+                    </div>
               </div>
             </div>
-            <div class="vl-blog-1-content" style="padding:20px;">
-              <!-- Date badge moved to right -->
-              <div class="date" style="position:absolute; right:24px; top:-25px; background:#b26a00; border-radius:12px; padding:8px 16px; box-shadow:0 4px 12px rgba(255,152,0,0.15);">
-            <p style="color:#fff7ed; font-size:1.8em; font-weight:800; line-height:1; margin:0;">22</p>
-            <span style="color:#fff7ed; font-weight:700; font-size:0.9em;">MAY</span>
+            <div class="property-listing-boxarea">
+               <div class="vl-blog-1-item" style="overflow:visible; border-radius:20px; box-shadow:0 6px 24px rgba(255,152,0,0.1); background:linear-gradient(135deg, #fff7ed 0%, #ffe0b2 100%);">
+                    <div class="vl-blog-1-thumb image-anime" style="border-radius:16px 16px 0 0; overflow:hidden; position:relative;">
+                      <img src="assets/img/all-images/blog/blog-img2.png" alt="Feria Naranja" style="width:100%; object-fit:cover;">
+                      <div style="position:absolute; top:40px; right:24px; background:rgba(255,152,0,0.92); color:#fff; padding:6px 16px; border-radius:15px; font-weight:600; box-shadow:0 2px 8px #ff980033; font-size:0.95em;">
+                          Como parte del RSE #2
+                      </div>
+                    </div>
+                    
+                      
+                      <div style="padding: 20px 6px;">
+                        <div class="vl-blog-1-icon" style="text-align:center;">
+                          <a href="blog-detail.html" class="readmore" style="background:linear-gradient(90deg,#ff9800 0%,#ffb74d 100%);color:#fff;font-weight:700;border-radius:8px;padding:8px 22px;box-shadow:0 2px 8px #ff980033;transition:background 0.2s;">
+                            Conoce más <i class="fa-solid fa-arrow-right"></i>
+                          </a>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="property-listing-boxarea">
+              <div class="vl-blog-1-item" style="overflow:visible; border-radius:20px; box-shadow:0 6px 24px rgba(255,152,0,0.1); background:linear-gradient(135deg, #fff7ed 0%, #ffe0b2 100%);">
+                <div class="vl-blog-1-thumb image-anime" style="border-radius:16px 16px 0 0; overflow:hidden; position:relative;">
+                  <img src="assets/img/all-images/blog/blog-img2.png" alt="Feria Naranja" style="width:100%; object-fit:cover;">
+                  <div style="position:absolute; top:40px; right:24px; background:rgba(255,152,0,0.92); color:#fff; padding:6px 16px; border-radius:15px; font-weight:600; box-shadow:0 2px 8px #ff980033; font-size:0.95em;">
+                      Como parte del RSE #3
+                  </div>
+                </div>
+                <div style="padding: 20px 6px;">
+                  <div class="vl-blog-1-icon" style="text-align:center;">
+                    <a href="blog-detail.html" class="readmore" style="background:linear-gradient(90deg,#ff9800 0%,#ffb74d 100%);color:#fff;font-weight:700;border-radius:8px;padding:8px 22px;box-shadow:0 2px 8px #ff980033;transition:background 0.2s;">
+                      Conoce más <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
               </div>
-
-              <div class="vl-blog-meta" style="background:#fff7ed; border-radius:15px; padding:15px; margin-top:10px;">
-            <div style="display:flex; align-items:center; gap:15px; flex-wrap:wrap;">
-            <div style="display:flex; align-items:center; gap:8px;">
-              <img src="https://ui-avatars.com/api/?name=Feria+Naranja&background=ff9800&color=fff7ed&rounded=true&size=36" alt="Feria Naranja" style="width:36px; height:36px; border-radius:50%; border:2px solid #ff9800;">
-              <span style="font-weight:700; color:#ff9800;">Innovación y Creatividad</span>
             </div>
-            
-            <div style="display:flex; align-items:center; gap:6px;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"><path d="M7 11h5m-2.5-2.5V11m0 0v2.5M21 11c0 5.523-4.477 10-10 10S1 16.523 1 11 5.477 1 11 1s10 4.477 10 10Z" stroke="#ff9800" stroke-width="2" stroke-linecap="round"/></svg>
-              <div>
-            <span style="color:#ff9800;">Fecha: </span>
-            <span style="color:#b26a00;">13 Agosto</span>
-              </div>el card
+            <div class="property-listing-boxarea">
+              <div class="vl-blog-1-item" style="overflow:visible; border-radius:20px; box-shadow:0 6px 24px rgba(255,152,0,0.1); background:linear-gradient(135deg, #fff7ed 0%, #ffe0b2 100%);">
+                <div class="vl-blog-1-thumb image-anime" style="border-radius:16px 16px 0 0; overflow:hidden; position:relative;">
+                  <img src="assets/img/all-images/blog/blog-img2.png" alt="Feria Naranja" style="width:100%; object-fit:cover;">
+                  <div style="position:absolute; top:40px; right:24px; background:rgba(255,152,0,0.92); color:#fff; padding:6px 16px; border-radius:15px; font-weight:600; box-shadow:0 2px 8px #ff980033; font-size:0.95em;">
+                      Como parte del RSE #4
+                  </div>
+                </div>
+                <div style="padding: 20px 6px;">
+                  <div class="vl-blog-1-icon" style="text-align:center;">
+                    <a href="blog-detail.html" class="readmore" style="background:linear-gradient(90deg,#ff9800 0%,#ffb74d 100%);color:#fff;font-weight:700;border-radius:8px;padding:8px 22px;box-shadow:0 2px 8px #ff980033;transition:background 0.2s;">
+                      Conoce más <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
-            
-            <div style="display:flex; align-items:center; gap:6px;">
-              <div>
-              <span style="font-weight:500; color:#ff9800;">Hora:</span>
-              <span style="color:#b26a00;">10:00 AM</span>
+            <div class="property-listing-boxarea">
+              <div class="vl-blog-1-item" style="overflow:visible; border-radius:20px; box-shadow:0 6px 24px rgba(255,152,0,0.1); background:linear-gradient(135deg, #fff7ed 0%, #ffe0b2 100%);">
+                <div class="vl-blog-1-thumb image-anime" style="border-radius:16px 16px 0 0; overflow:hidden; position:relative;">
+                  <img src="assets/img/all-images/blog/blog-img2.png" alt="Feria Naranja" style="width:100%; object-fit:cover;">
+                  <div style="position:absolute; top:40px; right:24px; background:rgba(255,152,0,0.92); color:#fff; padding:6px 16px; border-radius:15px; font-weight:600; box-shadow:0 2px 8px #ff980033; font-size:0.95em;">
+                      Como parte del RSE #5
+                  </div>
+                </div>
+                <div style="padding: 20px 6px;">
+                  <div class="vl-blog-1-icon" style="text-align:center;">
+                    <a href="blog-detail.html" class="readmore" style="background:linear-gradient(90deg,#ff9800 0%,#ffb74d 100%);color:#fff;font-weight:700;border-radius:8px;padding:8px 22px;box-shadow:0 2px 8px #ff980033;transition:background 0.2s;">
+                      Conoce más <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="property-listing-boxarea">
+              <div class="vl-blog-1-item" style="overflow:visible; border-radius:20px; box-shadow:0 6px 24px rgba(255,152,0,0.1); background:linear-gradient(135deg, #fff7ed 0%, #ffe0b2 100%);">
+                <div class="vl-blog-1-thumb image-anime" style="border-radius:16px 16px 0 0; overflow:hidden; position:relative;">
+                  <img src="assets/img/all-images/blog/blog-img2.png" alt="Feria Naranja" style="width:100%; object-fit:cover;">
+                  <div style="position:absolute; top:40px; right:24px; background:rgba(255,152,0,0.92); color:#fff; padding:6px 16px; border-radius:15px; font-weight:600; box-shadow:0 2px 8px #ff980033; font-size:0.95em;">
+                      Como parte del RSE #6
+                  </div>
+                </div>
+                <div style="padding: 20px 6px;">
+                  <div class="vl-blog-1-icon" style="text-align:center;">
+                    <a href="blog-detail.html" class="readmore" style="background:linear-gradient(90deg,#ff9800 0%,#ffb74d 100%);color:#fff;font-weight:700;border-radius:8px;padding:8px 22px;box-shadow:0 2px 8px #ff980033;transition:background 0.2s;">
+                      Conoce más <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="property-listing-boxarea">
+              <div class="vl-blog-1-item" style="overflow:visible; border-radius:20px; box-shadow:0 6px 24px rgba(255,152,0,0.1); background:linear-gradient(135deg, #fff7ed 0%, #ffe0b2 100%);">
+                <div class="vl-blog-1-thumb image-anime" style="border-radius:16px 16px 0 0; overflow:hidden; position:relative;">
+                  <img src="assets/img/all-images/blog/blog-img2.png" alt="Feria Naranja" style="width:100%; object-fit:cover;">
+                  <div style="position:absolute; top:40px; right:24px; background:rgba(255,152,0,0.92); color:#fff; padding:6px 16px; border-radius:15px; font-weight:600; box-shadow:0 2px 8px #ff980033; font-size:0.95em;">
+                      Como parte del RSE #7
+                  </div>
+                </div>
+                <div style="padding: 20px 6px;">
+                  <div class="vl-blog-1-icon" style="text-align:center;">
+                    <a href="blog-detail.html" class="readmore" style="background:linear-gradient(90deg,#ff9800 0%,#ffb74d 100%);color:#fff;font-weight:700;border-radius:8px;padding:8px 22px;box-shadow:0 2px 8px #ff980033;transition:background 0.2s;">
+                      Conoce más <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+           <div class="property-listing-boxarea">
+              <div class="vl-blog-1-item" style="overflow:visible; border-radius:20px; box-shadow:0 6px 24px rgba(255,152,0,0.1); background:linear-gradient(135deg, #fff7ed 0%, #ffe0b2 100%);">
+                <div class="vl-blog-1-thumb image-anime" style="border-radius:16px 16px 0 0; overflow:hidden; position:relative;">
+                  <img src="assets/img/all-images/blog/blog-img2.png" alt="Feria Naranja" style="width:100%; object-fit:cover;">
+                  <div style="position:absolute; top:40px; right:24px; background:rgba(255,152,0,0.92); color:#fff; padding:6px 16px; border-radius:15px; font-weight:600; box-shadow:0 2px 8px #ff980033; font-size:0.95em;">
+                      Como parte del RSE #8
+                  </div>
+                </div>
+                <div style="padding: 20px 6px;">
+                  <div class="vl-blog-1-icon" style="text-align:center;">
+                    <a href="blog-detail.html" class="readmore" style="background:linear-gradient(90deg,#ff9800 0%,#ffb74d 100%);color:#fff;font-weight:700;border-radius:8px;padding:8px 22px;box-shadow:0 2px 8px #ff980033;transition:background 0.2s;">
+                      Conoce más <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="property-listing-boxarea">
+              <div class="vl-blog-1-item" style="overflow:visible; border-radius:20px; box-shadow:0 6px 24px rgba(255,152,0,0.1); background:linear-gradient(135deg, #fff7ed 0%, #ffe0b2 100%);">
+                <div class="vl-blog-1-thumb image-anime" style="border-radius:16px 16px 0 0; overflow:hidden; position:relative;">
+                  <img src="assets/img/all-images/blog/blog-img2.png" alt="Feria Naranja" style="width:100%; object-fit:cover;">
+                  <div style="position:absolute; top:40px; right:24px; background:rgba(255,152,0,0.92); color:#fff; padding:6px 16px; border-radius:15px; font-weight:600; box-shadow:0 2px 8px #ff980033; font-size:0.95em;">
+                      Como parte del RSE #9
+                  </div>
+                </div>
+                <div style="padding: 20px 6px;">
+                  <div class="vl-blog-1-icon" style="text-align:center;">
+                    <a href="blog-detail.html" class="readmore" style="background:linear-gradient(90deg,#ff9800 0%,#ffb74d 100%);color:#fff;font-weight:700;border-radius:8px;padding:8px 22px;box-shadow:0 2px 8px #ff980033;transition:background 0.2s;">
+                      Conoce más <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             </div>
-              </div>
-              <div style="padding: 20px 6px;">
-          <div class="vl-blog-1-icon" style="text-align:center;">
-            <a href="blog-detail.html" class="readmore" style="background:linear-gradient(90deg,#ff9800 0%,#ffb74d 100%);color:#fff;font-weight:700;border-radius:8px;padding:8px 22px;box-shadow:0 2px 8px #ff980033;transition:background 0.2s;">
-              Conoce más <i class="fa-solid fa-arrow-right"></i>
-            </a>
           </div>
-              </div>
+      </div>
+    </div>
+  </div>
+  <!--=====  Fin Seccion #5 Comunidad easyofice =======-->
+
+  <div class="space30"></div>
+
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-lg-12">
+            <div class="hero-banner-orange">
+                <h1 class="banner-title">Programas Especiales</h1>
             </div>
+        </div>
+    </div>
+  </div>
+  <div class="space28"></div>
+
+  <!--===== Seccion #6 RSE =======-->
+  <div class="choose1">
+    <div class="container-fluid">
+      <div class="row align-items-center flex-wrap">
+        <!-- Imagen izquierda en desktop/tablet, arriba en móvil -->
+        <div class="col-lg-6 order-lg-1 order-2 d-flex justify-content-center mb-4 mb-lg-0">
+          <div class="chosse-images w-100 shadow-lg" style="max-width:440px; aspect-ratio: 4/3; background: #f8fafc; border-radius:20px; overflow:hidden; display:flex; align-items:center; justify-content:center; border: 1.5px solid #e0e7ef;">
+            <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80" alt="Coworking moderno" style="width:100%; height:100%; object-fit:cover; border-radius:20px; display:block; box-shadow:0 4px 24px rgba(0,0,0,0.10);">
           </div>
         </div>
-        <div class="col-lg-4 col-md-6" data-aos="fade-left" data-aos-duration="1000">
-            <div class="vl-blog-1-item" style="overflow:visible; border-radius:20px; box-shadow:0 6px 24px rgba(255,152,0,0.1); background:linear-gradient(135deg, #fff7ed 0%, #ffe0b2 100%);">
-            <div class="vl-blog-1-thumb image-anime" style="border-radius:16px 16px 0 0; overflow:hidden; position:relative;">
-              <img src="assets/img/all-images/blog/blog-img2.png" alt="Feria Naranja" style="width:100%; object-fit:cover;">
-              <div style="position:absolute; top:40px; right:24px; background:rgba(255,152,0,0.92); color:#fff; padding:6px 16px; border-radius:15px; font-weight:600; box-shadow:0 2px 8px #ff980033; font-size:0.95em;">
-          Evento Especial
+        <!-- Texto derecha en desktop/tablet, abajo en móvil -->
+        <div class="col-lg-6 order-lg-2 order-1 d-flex flex-column justify-content-center">
+          <div class="choose-heading heading2 text-center text-lg-start">
+            <h5>PROGRAMAS ESPECIALES</h5>
+            <div class="space16"></div>
+            <h2>Restauración Lobby</h2>
+            <div class="choose-box mt-3">
+              <a href="our-service.html">Aeropuerto Villeda Morales – SPS</a>
+              <div class="space16"></div>
+              <p style="text-align: justify;">Easy Office lideró la mejora del área de recepción del Aeropuerto Internacional de San Pedro Sula, con un enfoque en diseño funcional y moderno. Este proyecto refleja nuestro compromiso con espacios acogedores y con identidad.</p>
+            </div><br>
+            <div class="vl-blog-1-icon">
+                  <a href="https://www.instagram.com/p/DH56QVGNZdn/?img_index=1" target="_blank" class="readmore" style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 24px; font-size: 1rem; border-radius: 24px; background: #ED8438; color: #fff; text-decoration: none; transition: all 0.3s;">
+                      Conocer más
+                      <i class="fa-solid fa-arrow-right"></i>
+                  </a>
               </div>
-            </div>
-            <div class="vl-blog-1-content" style="padding:20px;">
-              <!-- Date badge moved to right -->
-              <div class="date" style="position:absolute; right:24px; top:-25px; background:#b26a00; border-radius:12px; padding:8px 16px; box-shadow:0 4px 12px rgba(255,152,0,0.15);">
-            <p style="color:#fff7ed; font-size:1.8em; font-weight:800; line-height:1; margin:0;">24</p>
-            <span style="color:#fff7ed; font-weight:700; font-size:0.9em;">DIC</span>
-              </div>
-
-              <div class="vl-blog-meta" style="background:#fff7ed; border-radius:15px; padding:15px; margin-top:10px;">
-            <div style="display:flex; align-items:center; gap:15px; flex-wrap:wrap;">
-            <div style="display:flex; align-items:center; gap:8px;">
-              <img src="https://ui-avatars.com/api/?name=Feria+Naranja&background=ff9800&color=fff7ed&rounded=true&size=36" alt="Feria Naranja" style="width:36px; height:36px; border-radius:50%; border:2px solid #ff9800;">
-              <span style="font-weight:700; color:#ff9800;">Innovación y Creatividad</span>
-            </div>
-            
-            <div style="display:flex; align-items:center; gap:6px;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"><path d="M7 11h5m-2.5-2.5V11m0 0v2.5M21 11c0 5.523-4.477 10-10 10S1 16.523 1 11 5.477 1 11 1s10 4.477 10 10Z" stroke="#ff9800" stroke-width="2" stroke-linecap="round"/></svg>
-              <div>
-            <span style="color:#ff9800;">Fecha: </span>
-            <span style="color:#b26a00;">13 Agosto</span>
-              </div>el card
-            </div>
-            
-            <div style="display:flex; align-items:center; gap:6px;">
-              <div>
-              <span style="font-weight:500; color:#ff9800;">Hora:</span>
-              <span style="color:#b26a00;">10:00 AM</span>
-              </div>
-            </div>
-            </div>
-              </div>
-              <div style="padding: 20px 6px;">
-          <div class="vl-blog-1-icon" style="text-align:center;">
-            <a href="blog-detail.html" class="readmore" style="background:linear-gradient(90deg,#ff9800 0%,#ffb74d 100%);color:#fff;font-weight:700;border-radius:8px;padding:8px 22px;box-shadow:0 2px 8px #ff980033;transition:background 0.2s;">
-              Conoce más <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6" data-aos="fade-left" data-aos-duration="1000">
-            <div class="vl-blog-1-item" style="overflow:visible; border-radius:20px; box-shadow:0 6px 24px rgba(255,152,0,0.1); background:linear-gradient(135deg, #fff7ed 0%, #ffe0b2 100%);">
-            <div class="vl-blog-1-thumb image-anime" style="border-radius:16px 16px 0 0; overflow:hidden; position:relative;">
-              <img src="assets/img/all-images/blog/blog-img2.png" alt="Feria Naranja" style="width:100%; object-fit:cover;">
-              <div style="position:absolute; top:40px; right:24px; background:rgba(255,152,0,0.92); color:#fff; padding:6px 16px; border-radius:15px; font-weight:600; box-shadow:0 2px 8px #ff980033; font-size:0.95em;">
-          Evento Especial
-              </div>
-            </div>
-            <div class="vl-blog-1-content" style="padding:20px;">
-              <!-- Date badge moved to right -->
-              <div class="date" style="position:absolute; right:24px; top:-25px; background:#b26a00; border-radius:12px; padding:8px 16px; box-shadow:0 4px 12px rgba(255,152,0,0.15);">
-            <p style="color:#fff7ed; font-size:1.8em; font-weight:800; line-height:1; margin:0;">13</p>
-            <span style="color:#fff7ed; font-weight:700; font-size:0.9em;">AGO</span>
-              </div>
-
-              <div class="vl-blog-meta" style="background:#fff7ed; border-radius:15px; padding:15px; margin-top:10px;">
-            <div style="display:flex; align-items:center; gap:15px; flex-wrap:wrap;">
-            <div style="display:flex; align-items:center; gap:8px;">
-              <img src="https://ui-avatars.com/api/?name=Feria+Naranja&background=ff9800&color=fff7ed&rounded=true&size=36" alt="Feria Naranja" style="width:36px; height:36px; border-radius:50%; border:2px solid #ff9800;">
-              <span style="font-weight:700; color:#ff9800;">Innovación y Creatividad</span>
-            </div>
-            
-            <div style="display:flex; align-items:center; gap:6px;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"><path d="M7 11h5m-2.5-2.5V11m0 0v2.5M21 11c0 5.523-4.477 10-10 10S1 16.523 1 11 5.477 1 11 1s10 4.477 10 10Z" stroke="#ff9800" stroke-width="2" stroke-linecap="round"/></svg>
-              <div>
-            <span style="color:#ff9800;">Fecha: </span>
-            <span style="color:#b26a00;">13 Agosto</span>
-              </div>el card
-            </div>
-            
-            <div style="display:flex; align-items:center; gap:6px;">
-              <div>
-              <span style="font-weight:500; color:#ff9800;">Hora:</span>
-              <span style="color:#b26a00;">10:00 AM</span>
-              </div>
-            </div>
-            </div>
-              </div>
-              <div style="padding: 20px 6px;">
-          <div class="vl-blog-1-icon" style="text-align:center;">
-            <a href="blog-detail.html" class="readmore" style="background:linear-gradient(90deg,#ff9800 0%,#ffb74d 100%);color:#fff;font-weight:700;border-radius:8px;padding:8px 22px;box-shadow:0 2px 8px #ff980033;transition:background 0.2s;">
-              Conoce más <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
     </div>
+    <style>
+      .choose1 .chosse-images {
+        max-width: 440px;
+        width: 100%;
+        aspect-ratio: 4/3;
+        border-radius: 20px;
+        overflow: hidden;
+        background: #f8fafc;
+        border: 1.5px solid #e0e7ef;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+        margin: 0 auto;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: box-shadow 0.3s;
+      }
+      .choose1 .chosse-images img {
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.3s, box-shadow 0.3s;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      }
+      .choose1 .chosse-images img:hover {
+        transform: scale(1.025);
+        box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+      }
+      @media (max-width: 1199.98px) {
+        .choose1 .chosse-images {
+          max-width: 370px;
+          aspect-ratio: 4/3;
+        }
+      }
+      @media (max-width: 991.98px) {
+        .choose1 .row.align-items-center {
+          flex-direction: column !important;
+        }
+        .choose1 .col-lg-6 {
+          max-width: 100%;
+          flex: 0 0 100%;
+        }
+        .choose1 .chosse-images {
+          max-width: 320px;
+          aspect-ratio: 16/11;
+          margin: 0 auto 18px auto;
+          border-radius: 16px;
+        }
+        .choose1 .chosse-images img {
+          border-radius: 16px;
+        }
+        .choose1 .choose-heading {
+          padding: 0 8px;
+        }
+      }
+      @media (max-width: 575.98px) {
+        .choose1 .chosse-images {
+          max-width: 100%;
+          aspect-ratio: 16/11;
+          border-radius: 12px;
+        }
+        .choose1 .chosse-images img {
+          border-radius: 12px;
+        }
+        .choose1 .choose-heading h2 {
+          font-size: 1.3rem;
+        }
+        .choose1 .choose-heading h5 {
+          font-size: 1rem;
+        }
+        .choose1 .choose-box a {
+          font-size: 1rem;
+        }
+      }
+    </style>
   </div>
-  <!--===== BLOG AREA ENDS =======-->
+  <!--===== Fin Seccion #6 RSE =======-->
+  
+  
+
+  
  <div class="space30"></div>
   <!--===== FOOTER AREA STARTS =======-->
    <div id="footer-container"></div>

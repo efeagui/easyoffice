@@ -5,48 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>Easyoffice</title>
-  <!--===== SOLUCION PARPADEO SLIDE =======-->
-    <style>
-    /* Prevenir FOUC (Flash of Unstyled Content) */
-    html {
-        visibility: hidden;
-        opacity: 0;
-    }
-
-    html.loaded {
-        visibility: visible;
-        opacity: 1;
-        transition: opacity 0.3s ease-in-out;
-    }
-
-    /* Reservar espacio para el header */
-    #header-container {
-        min-height: 80px;
-        background: transparent;
-        transition: all 0.3s ease;
-    }
-
-    /* Prevenir jump durante carga del header */
-    .hero4-slider-sectionarea {
-        opacity: 0;
-        transition: opacity 0.5s ease;
-    }
-
-    .hero4-slider-sectionarea.loaded {
-        opacity: 1;
-    }
-
-    /* Prevenir parpadeo del slider */
-    .hero4-slider-area {
-        opacity: 0;
-        transition: opacity 0.4s ease;
-    }
-
-    .hero4-slider-area.ready {
-        opacity: 1;
-    }
-    </style>
- <!--===== SOLUCION PARPADEO SLIDE =======-->
   <!--=====FAB ICON=======-->
   <link rel="shortcut icon" href="assets/img/logo/EasyOffice logo.png" type="image/x-icon">
   <!--===== CSS LINK =======-->
@@ -66,47 +24,15 @@
 
 <body class="body1 b-bg1">
 
-  <div id="header-container"></div>
+   <div id="header-container"></div>
 
-   <script>
-        // ✅ CARGAR HEADER SIN PARPADEO
-        document.addEventListener('DOMContentLoaded', function() {
-            
-            // Cargar header inmediatamente
-            fetch('header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header-container').innerHTML = data;
-                
-                // Marcar header como cargado
-                setTimeout(() => {
-                const sliderSection = document.querySelector('.hero4-slider-sectionarea');
-                if (sliderSection) {
-                    sliderSection.classList.add('loaded');
-                }
-                }, 100);
-                
-                // Activar sliders después de cargar header
-                setTimeout(() => {
-                document.querySelectorAll('.hero4-slider-area').forEach(area => {
-                    area.classList.add('ready');
-                });
-                }, 200);
-            })
-            .catch(error => {
-                console.error('Error cargando header:', error);
-                // Si falla, mostrar página de todas formas
-                document.documentElement.classList.add('loaded');
-            });
+    <script>
+        fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-container').innerHTML = data;
         });
-
-        // ✅ MOSTRAR PÁGINA CUANDO TODO ESTÉ LISTO
-        window.addEventListener('load', function() {
-            setTimeout(() => {
-            document.documentElement.classList.add('loaded');
-            }, 100);
-        });
-  </script>
+    </script>
   
   <!-- ===== Slide Oficina Privada =======-->
   <div class="hero4-slider-sectionarea">
