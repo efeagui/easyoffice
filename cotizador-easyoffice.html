@@ -4,9 +4,9 @@
       <i class="fas fa-briefcase"></i>
       Servicios
     </button>
-    <button class="tab-btn-smart" data-tab="proyectos">
-      <i class="fas fa-rocket"></i>
-      Proyectos
+    <button class="tab-btn-smart" data-tab="otros">
+      <i class="fas fa-cogs"></i>
+      Otros
     </button>
   </div>
 
@@ -29,6 +29,7 @@
               <option value="sala-juntas">🤝 Sala de Juntas</option>
               <option value="oficina-privada">🏢 Oficina Privada</option>
               <option value="cowork">👥 Cowork</option>
+              <option value="llave-mano">🔑 Llave en Mano</option>
             </select>
             <i class="fas fa-chevron-down select-arrow-smart"></i>
           </div>
@@ -59,22 +60,39 @@
           <div class="select-wrapper-smart">
             <select id="ciudad" onchange="updateCapacidadOptions()">
               <option value="">Seleccionar ciudad</option>
-              <option value="tegucigalpa">🏙️ Tegucigalpa</option>
-              <option value="san-pedro-sula">🌆 San Pedro Sula</option>
+              <!-- Las opciones se llenan dinámicamente desde JavaScript -->
             </select>
             <i class="fas fa-chevron-down select-arrow-smart"></i>
           </div>
         </div>
 
-        <!-- CAPACIDAD (para Sala de Juntas y Oficina Privada) -->
+        <!-- CAPACIDAD (para Sala de Juntas, Oficina Privada y Llave en Mano) -->
         <div class="filter-group-smart hidden" id="capacidad-options">
           <label class="filter-label-smart">
             <i class="fas fa-users"></i>
             <span id="capacidad-label">Capacidad</span>
           </label>
           <div class="select-wrapper-smart">
-            <select id="capacidad" onchange="updateReservaOptions()">
+            <select id="capacidad" onchange="handleCapacidadChange()">
               <option value="">Seleccionar capacidad</option>
+            </select>
+            <i class="fas fa-chevron-down select-arrow-smart"></i>
+          </div>
+        </div>
+
+        <!-- TIPO DE CONTRATO (solo para Llave en Mano) -->
+        <div class="filter-group-smart hidden" id="contrato-options">
+          <label class="filter-label-smart">
+            <i class="fas fa-file-contract"></i>
+            Tipo de Contrato
+          </label>
+          <div class="select-wrapper-smart">
+            <select id="tipo-contrato" onchange="updateButtonState()">
+              <option value="">Seleccionar contrato</option>
+              <option value="6-meses">📅 6 meses</option>
+              <option value="12-meses">📅 12 meses</option>
+              <option value="18-meses">📅 18 meses</option>
+              <option value="18-meses-plus">📅 Más de 18 meses</option>
             </select>
             <i class="fas fa-chevron-down select-arrow-smart"></i>
           </div>
@@ -147,67 +165,95 @@
       </div>
     </div>
 
-    <!-- TAB PROYECTOS -->
-    <div class="tab-content-smart hidden" id="proyectos">
-      <div class="filters-smart-proyectos" id="filters-container-proyectos">
+    <!-- TAB OTROS -->
+    <div class="tab-content-smart hidden" id="otros">
+      <div class="filters-smart-proyectos" id="filters-container-otros">
         
-        <!-- TIPO DE PROYECTO -->
+        <!-- TIPO DE SERVICIO ADICIONAL -->
         <div class="filter-group-smart">
           <label class="filter-label-smart">
-            <i class="fas fa-lightbulb"></i>
-            Tipo de Proyecto
+            <i class="fas fa-cogs"></i>
+            Seleccione tipo de servicios
           </label>
           <div class="select-wrapper-smart">
-            <select id="tipo-proyecto" onchange="updateProyectoOptions()">
-              <option value="">Seleccionar proyecto</option>
-              <option value="llave-mano">🔑 Llave en Mano</option>
-              <option value="manos-catrachas">🇭🇳 Manos Catrachas</option>
-              <option value="proveedores-locales">🤝 Proveedores locales</option>
-            </select>
-            <i class="fas fa-chevron-down select-arrow-smart"></i>
-          </div>
-        </div>
-
-        <!-- OPCIONES MANOS CATRACHAS -->
-        <div class="filter-group-smart hidden" id="catrachas-options">
-          <label class="filter-label-smart">
-            <i class="fas fa-shopping-basket"></i>
-            Producto
-          </label>
-          <div class="select-wrapper-smart">
-            <select id="tipo-producto">
+            <select id="tipo-otros" onchange="updateOtrosOptions()">
               <option value="">Seleccionar</option>
-              <option value="cafe">☕ Café</option>
-              <option value="artesanias">🎨 Artesanías</option>
-              <option value="textiles">🧵 Textiles</option>
-              <option value="alimentos">🥘 Alimentos</option>
+              <option value="servicios-adicionales">🔧 Servicios adicionales</option>
             </select>
             <i class="fas fa-chevron-down select-arrow-smart"></i>
           </div>
         </div>
 
-        <!-- DESCRIPCIÓN DEL PROYECTO -->
-        <div class="filter-group-smart filter-group-wide hidden" id="proyecto-descripcion">
+        <!-- DESCRIPCIÓN DE OTROS SERVICIOS -->
+        <div class="filter-group-smart filter-group-wide hidden" id="otros-descripcion">
           <label class="filter-label-smart">
             <i class="fas fa-file-alt"></i>
-            Descripción del proyecto
+            Descríbenos lo que necesitas
           </label>
           <div class="textarea-wrapper-smart">
-            <textarea id="descripcion-proyecto" placeholder="Cuéntanos tu idea de proyecto..." rows="4"></textarea>
+            <textarea id="descripcion-otros" oninput="updateOtrosButtonState()" placeholder="Si no encuentras la solución, podemos darte la que tú necesitas" rows="4"></textarea>
           </div>
         </div>
 
-        <!-- BOTÓN PROYECTOS -->
+        <!-- BOTÓN OTROS -->
         <div class="search-button-smart">
-          <button id="btn-proyectos" type="button" onclick="enviarWhatsApp()" class="btn-principal-smart btn-whatsapp">
-            <i class="fab fa-whatsapp"></i>
-            Enviar por WhatsApp
+          <button id="btn-principal-otros" type="button" onclick="procesarOtros()" class="btn-principal-smart">
+            <i class="fas fa-search"></i>
+            <span id="btn-text-otros">Seleccione una solución</span>
             <span class="btn-arrow-smart"><i class="fas fa-arrow-right"></i></span>
           </button>
         </div>
       </div>
     </div>
 
+  </div>
+</div>
+
+<!-- MODAL PARA RECOPILAR DATOS DEL CLIENTE -->
+<div id="modal-datos" class="modal-overlay-smart hidden">
+  <div class="modal-container-smart">
+    <div class="modal-header-smart">
+      <h3><i class="fas fa-user"></i> Información de Contacto</h3>
+      <button onclick="cerrarModal('modal-datos')" class="modal-close-smart">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="modal-body-smart">
+      <div class="datos-cliente-form">
+        <div class="form-group-smart">
+          <label class="filter-label-smart">
+            <i class="fas fa-user"></i>
+            Nombre completo *
+          </label>
+          <input type="text" id="nombre-cliente" placeholder="Nombre y apellido" class="input-smart" required>
+        </div>
+        
+        <div class="form-group-smart">
+          <label class="filter-label-smart">
+            <i class="fas fa-phone"></i>
+            Teléfono *
+          </label>
+          <input type="tel" id="telefono-cliente" placeholder="Para poderte dar una respuesta" class="input-smart" required>
+        </div>
+        
+        <div class="form-group-smart">
+          <label class="filter-label-smart">
+            <i class="fas fa-envelope"></i>
+            Correo electrónico
+          </label>
+          <input type="email" id="correo-cliente" placeholder="Correo (opcional)" class="input-smart">
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer-smart">
+      <button onclick="validarYEnviar()" class="btn-principal-smart">
+        <i class="fas fa-check"></i>
+        Continuar
+      </button>
+      <button onclick="cerrarModal('modal-datos')" class="btn-cerrar-smart">
+        Cancelar
+      </button>
+    </div>
   </div>
 </div>
 
@@ -268,7 +314,7 @@
       </div>
     </div>
     <div class="modal-footer-smart">
-      <button onclick="contactarDirecto()" class="btn-contactar-smart">
+      <button onclick="enviarSolicitudFinal()" class="btn-contactar-smart">
         <i class="fas fa-phone"></i>
         Contactar
       </button>
