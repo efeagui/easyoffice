@@ -334,10 +334,10 @@
         <div class="col-lg-6">
           <div class="chosse-images" style="position: relative;">
             <div class="img1 text-end">
-              <img src="assets/img/EasyOffice/Contactanos /Post EasyOffice .png" style="width:410px; height:540px; border-radius:15%;" alt="EasyOffice">
+              <img src="assets/img/EasyOffice/Contactanos /1 (1).png" style="width:410px; height:540px; border-radius:15%;" alt="EasyOffice">
             </div>
             <div class="img2" style="position: relative; left: -10px; top: -50px;">
-              <img src="assets/img/EasyOffice/Contactanos /ATENCION.png" style="width:380px; height:490px; border-radius:15%; display: block; margin-left: 0;" alt="EasyOffice">
+              <img src="assets/img/EasyOffice/Contactanos /2.png" style="width:380px; height:490px; border-radius:15%; display: block; margin-left: 0;" alt="EasyOffice">
             </div>
           </div>
         </div>
@@ -360,28 +360,28 @@
                 <div class="row">
                   <div class="col-lg-6">
                     <div class="input-area">
-                      <input type="text" id="firstName" placeholder="Tu Nombre*" required>
+                      <input type="text" id="firstName" placeholder="Tu Nombre*">
                     </div>
                   </div>
                   <div class="col-lg-6">
                     <div class="input-area">
-                      <input type="text" id="lastName" placeholder="Apellido*" required>
+                      <input type="text" id="lastName" placeholder="Apellido*">
                     </div>
                   </div>
                   <div class="col-lg-6">
                     <div class="input-area">
-                      <input type="tel" id="phone" placeholder="Número de Teléfono*" required>
+                      <input type="tel" id="phone" placeholder="Número de Teléfono*">
                     </div>
                   </div>
                   <div class="col-lg-6">
                     <div class="input-area">
-                      <input type="email" id="email" placeholder="Correo Electrónico*" required>
+                      <input type="email" id="email" placeholder="Correo Electrónico*">
                     </div>
                   </div>
                   <!-- ✅ COMBOBOX CIUDAD CON ID ÚNICO -->
                   <div class="col-lg-6">
                     <div class="input-area">
-                      <select id="city" required>
+                      <select id="city">
                         <option value="">Selecciona tu Ciudad*</option>
                         <option value="Tegucigalpa">Tegucigalpa</option>
                         <option value="San Pedro Sula">San Pedro Sula</option>
@@ -391,7 +391,7 @@
                   <!-- ✅ COMBOBOX SERVICIO CON ID ÚNICO -->
                   <div class="col-lg-6">
                     <div class="input-area">
-                      <select id="serviceType" required>
+                      <select id="serviceType">
                         <option value="">Selecciona el Tipo de Servicio*</option>
                         <option value="Oficina Privada">Oficina Privada</option>
                         <option value="Oficina Virtual">Oficina Virtual</option>
@@ -531,41 +531,41 @@
       let asunto = 'Consulta sobre servicios de EasyOffice';
       let cuerpoBase = `Hola equipo de EasyOffice,
 
-Estoy interesado en conocer más sobre sus servicios de oficinas.`;
+        Estoy interesado en conocer más sobre sus servicios de oficinas.`;
 
-      // ✅ SI VIENE DE PROTOCOL HANDLER, PERSONALIZAR
-      if (emailParam) {
-        asunto = `Consulta sobre servicios - ${emailParam}`;
-        cuerpoBase += `\n\nMi email de contacto: ${emailParam}`;
-      }
-      
-      if (phoneParam) {
-        cuerpoBase += `\nMi teléfono: ${phoneParam}`;
-      }
-      
-      const cuerpoCompleto = `${cuerpoBase}
+              // ✅ SI VIENE DE PROTOCOL HANDLER, PERSONALIZAR
+              if (emailParam) {
+                asunto = `Consulta sobre servicios - ${emailParam}`;
+                cuerpoBase += `\n\nMi email de contacto: ${emailParam}`;
+              }
+              
+              if (phoneParam) {
+                cuerpoBase += `\nMi teléfono: ${phoneParam}`;
+              }
+              
+              const cuerpoCompleto = `${cuerpoBase}
 
-Me gustaría que me contacten para:
+        Me gustaría que me contacten para:
 
-□ Oficina Privada
-□ Oficina Virtual  
-□ Sala de Juntas
-□ Coworking
-□ Proyecto Llave en Mano
-□ Servicios Adicionales
-□ Otros
+        □ Oficina Privada
+        □ Oficina Virtual  
+        □ Sala de Juntas
+        □ Coworking
+        □ Proyecto Llave en Mano
+        □ Servicios Adicionales
+        □ Otros
 
-Mis datos adicionales:
-Nombre: 
-Teléfono: ${phoneParam || ''}
-Ciudad: 
+        Mis datos adicionales:
+        Nombre: 
+        Teléfono: ${phoneParam || ''}
+        Ciudad: 
 
-Comentarios adicionales:
+        Comentarios adicionales:
 
 
-Quedo atento a su respuesta.
+        Quedo atento a su respuesta.
 
-Saludos cordiales.`;
+        Saludos cordiales.`;
       
       const asuntoEncoded = encodeURIComponent(asunto);
       const cuerpoEncoded = encodeURIComponent(cuerpoCompleto);
@@ -576,187 +576,305 @@ Saludos cordiales.`;
   </script>
 
   <!-- ✅ Whatsapp y Google Sheets -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      setTimeout(inicializarFormulario, 100);
+ <script>
+document.addEventListener('DOMContentLoaded', function() {
+  setTimeout(inicializarFormulario, 100);
+});
+
+function inicializarFormulario() {
+  const form = document.getElementById('contactForm');
+  const successMessage = document.getElementById('successMessage');
+  const errorMessage = document.getElementById('errorMessage');
+  
+  if (!form || !successMessage || !errorMessage) {
+    setTimeout(inicializarFormulario, 500);
+    return;
+  }
+  
+  console.log('✅ Formulario inicializado correctamente');
+
+  // ✅ CONFIGURACIÓN
+  const whatsappNumber = '50432777777';
+  const googleSheetsURL = 'https://script.google.com/macros/s/AKfycbwVXHjohRPGySe4BcaB2_Vo1vYv6FTUkFyjQKEL30PTjrb1XqenAppvyzR6nZwDTejh/exec';
+
+  // ✅ VALIDACIONES EN TIEMPO REAL
+  setupValidaciones();
+
+  // ✅ MANEJO DEL SUBMIT
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    console.log('📝 Formulario enviado');
+    
+    // Ocultar mensajes
+    successMessage.style.display = 'none';
+    errorMessage.style.display = 'none';
+    
+    // Obtener datos
+    const datos = {
+      firstName: document.getElementById('firstName').value.trim(),
+      lastName: document.getElementById('lastName').value.trim(),
+      phone: document.getElementById('phone').value.trim(),
+      email: document.getElementById('email').value.trim(),
+      city: document.getElementById('city').value,
+      serviceType: document.getElementById('serviceType').value,
+      message: document.getElementById('message').value.trim()
+    };
+    
+    console.log('📊 Datos:', datos);
+    
+    // ✅ VALIDAR TODO
+    if (validarFormulario(datos)) {
+      procesarEnvio(datos, form, whatsappNumber, googleSheetsURL, successMessage);
+    }
+  });
+
+  // ✅ LIMPIAR ERRORES AL ESCRIBIR
+  form.querySelectorAll('input, select, textarea').forEach(input => {
+    input.addEventListener('input', function() {
+      this.classList.remove('required-field');
+      errorMessage.style.display = 'none';
     });
-    
-    function inicializarFormulario() {
-      const form = document.getElementById('contactForm');
-      const successMessage = document.getElementById('successMessage');
-      const errorMessage = document.getElementById('errorMessage');
+  });
+}
+
+// ✅ VALIDACIONES EN TIEMPO REAL
+function setupValidaciones() {
+  // TELÉFONO
+  const phoneInput = document.getElementById('phone');
+  if (phoneInput) {
+    phoneInput.addEventListener('input', function(e) {
+      let valor = e.target.value.replace(/\D/g, '');
+      if (valor.length > 8) valor = valor.substring(0, 8);
+      if (valor.length >= 5) valor = valor.substring(0, 4) + '-' + valor.substring(4);
+      e.target.value = valor;
       
-      if (!form || !successMessage || !errorMessage) {
-        setTimeout(inicializarFormulario, 500);
-        return;
+      if (valor.length >= 1) {
+        const primerDigito = valor.charAt(0);
+        if (!['2', '3', '8', '9'].includes(primerDigito)) {
+          e.target.style.borderColor = '#dc3545';
+          e.target.style.backgroundColor = '#fff5f5';
+        } else {
+          e.target.style.borderColor = '#28a745';
+          e.target.style.backgroundColor = '#f8fff8';
+        }
       }
-      
-      console.log('✅ Formulario inicializado correctamente');
-      
-      // ✅ CONFIGURACIÓN CON NUEVA URL
-      const whatsappNumber = '50432777777';
-      const googleSheetsURL = 'https://script.google.com/macros/s/AKfycbyAx70nYwZ_cg02y3sgFie-d7Bu-z4gX0JB3iv8juQLmI3xc4oVRIL4suxiMkpSFTTY/exec';
-      
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        console.log('📝 Formulario enviado');
-        
-        successMessage.style.display = 'none';
-        errorMessage.style.display = 'none';
-        
-        // ✅ OBTENER DATOS DEL FORMULARIO
-        const formData = {
-          firstName: document.getElementById('firstName').value.trim(),
-          lastName: document.getElementById('lastName').value.trim(), 
-          phone: document.getElementById('phone').value.trim(),
-          email: document.getElementById('email').value.trim(),
-          city: document.getElementById('city').value,
-          serviceType: document.getElementById('serviceType').value,
-          message: document.getElementById('message').value.trim()
-        };
-        
-        console.log('📊 Datos del formulario:', formData);
-        
-        // ✅ VALIDACIÓN
-        const requiredFields = [
-          { field: document.getElementById('firstName'), value: formData.firstName, name: 'firstName' },
-          { field: document.getElementById('lastName'), value: formData.lastName, name: 'lastName' },
-          { field: document.getElementById('phone'), value: formData.phone, name: 'phone' },
-          { field: document.getElementById('email'), value: formData.email, name: 'email' },
-          { field: document.getElementById('city'), value: formData.city, name: 'city' },
-          { field: document.getElementById('serviceType'), value: formData.serviceType, name: 'serviceType' }
-        ];
-        
-        let isValid = true;
-        let camposFaltantes = [];
-        
-        requiredFields.forEach(item => {
-          if (!item.value) {
-            item.field.classList.add('required-field');
-            camposFaltantes.push(item.name);
-            isValid = false;
-          } else {
-            item.field.classList.remove('required-field');
-          }
-        });
-        
-        if (!isValid) {
-          console.log('❌ Campos faltantes:', camposFaltantes);
-          errorMessage.style.display = 'block';
-          errorMessage.scrollIntoView({ behavior: 'smooth' });
-          return;
+    });
+  }
+
+  // EMAIL
+  const emailInput = document.getElementById('email');
+  if (emailInput) {
+    emailInput.addEventListener('input', function(e) {
+      const valor = e.target.value.trim();
+      if (valor) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (emailRegex.test(valor)) {
+          e.target.style.borderColor = '#28a745';
+          e.target.style.backgroundColor = '#f8fff8';
+        } else {
+          e.target.style.borderColor = '#dc3545';
+          e.target.style.backgroundColor = '#fff5f5';
         }
-        
-        console.log('✅ Validación pasada, preparando WhatsApp...');
-        
-        // ✅ MENSAJE DE WHATSAPP CON EMOJIS BONITOS
-        let whatsappMessage = `🏢 CONSULTA EASYOFFICE\n\n`;
-        whatsappMessage += `👤 Cliente: ${formData.firstName} ${formData.lastName}\n`;
-        whatsappMessage += `📞 Telefono: ${formData.phone}\n`;
-        whatsappMessage += `✉ Email: ${formData.email}\n`;
-        whatsappMessage += `🌎 Ciudad: ${formData.city}\n`;
-        whatsappMessage += `🏗 Servicio: ${formData.serviceType}\n`;
-        
-        if (formData.message) {
-          whatsappMessage += `💬 Mensaje: ${formData.message}\n`;
-        }
-        
-        whatsappMessage += `\n⏰ Fecha: ${new Date().toLocaleString('es-HN')}`;
-        whatsappMessage += `\n🌐 Enviado desde easyoffice.hn`;
-        whatsappMessage += `\n\n⚡ FAVOR RESPONDER PRONTO ⚡`;
-        
-        console.log('📱 Mensaje WhatsApp preparado:', whatsappMessage);
-        
-        // ✅ BOTÓN DE LOADING
-        const submitBtn = form.querySelector('button[type="submit"]');
-        const originalBtnText = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<i class="fab fa-whatsapp"></i> Enviando...';
-        submitBtn.disabled = true;
-        
-        // ✅ ENVIAR A GOOGLE SHEETS EN PARALELO
-        const formDataToSend = new FormData();
-        Object.keys(formData).forEach(key => {
-          formDataToSend.append(key, formData[key]);
-        });
-        
-        fetch(googleSheetsURL, {
-          method: 'POST',
-          mode: 'no-cors',
-          body: formDataToSend
-        }).then(() => {
-          console.log('📊 Datos enviados a Google Sheets');
-        }).catch((error) => {
-          console.log('⚠️ Error en Sheets (continuando):', error);
-        });
-        
-        // ✅ PROCEDER CON WHATSAPP SIEMPRE
-        setTimeout(() => {
-          console.log('🚀 Abriendo WhatsApp...');
-          
-          // ✅ RESTAURAR BOTÓN
-          submitBtn.innerHTML = originalBtnText;
-          submitBtn.disabled = false;
-          
-          // ✅ MOSTRAR MENSAJE DE ÉXITO
-          successMessage.innerHTML = '✅ ¡Perfecto! Tu información se ha registrado. Te contactaremos pronto.';
-          successMessage.style.display = 'block';
-          successMessage.scrollIntoView({ behavior: 'smooth' });
-          
-          // ✅ ABRIR WHATSAPP
-          const encodedMessage = encodeURIComponent(whatsappMessage);
-          const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-          
-          console.log('🔗 URL WhatsApp:', whatsappUrl);
-          window.open(whatsappUrl, '_blank');
-          
-          // ✅ LIMPIAR FORMULARIO
-          form.reset();
-          
-          // ✅ OCULTAR MENSAJE DESPUÉS DE 5 SEGUNDOS
-          setTimeout(() => {
-            successMessage.style.display = 'none';
-          }, 5000);
-          
-        }, 1500);
-      });
-      
-      // ✅ LIMPIAR ERRORES AL ESCRIBIR
-      const inputs = form.querySelectorAll('input, select, textarea');
-      inputs.forEach(input => {
-        input.addEventListener('input', function() {
-          this.classList.remove('required-field');
-          errorMessage.style.display = 'none';
-        });
-        
-        input.addEventListener('change', function() {
-          this.classList.remove('required-field');
-          errorMessage.style.display = 'none';
-        });
+      } else {
+        e.target.style.borderColor = '';
+        e.target.style.backgroundColor = '';
+      }
+    });
+  }
+
+  // NOMBRES - SOLO LETRAS
+  ['firstName', 'lastName'].forEach(id => {
+    const input = document.getElementById(id);
+    if (input) {
+      input.addEventListener('input', function(e) {
+        e.target.value = e.target.value.replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/g, '');
       });
     }
-    
-    // ✅ FUNCIÓN PARA DEBUG
-    function debugFormulario() {
-      console.log('🔍 DEBUG - Estado del formulario:');
-      console.log('Form:', document.getElementById('contactForm'));
-      console.log('FirstName:', document.getElementById('firstName'));
-      console.log('City:', document.getElementById('city'));
-      console.log('ServiceType:', document.getElementById('serviceType'));
-      
-      const city = document.getElementById('city');
-      const serviceType = document.getElementById('serviceType');
-      
-      console.log('City value:', city ? city.value : 'No encontrado');
-      console.log('ServiceType value:', serviceType ? serviceType.value : 'No encontrado');
-      
-      if (city) {
-        console.log('City options:', Array.from(city.options).map(opt => opt.value));
-      }
-      if (serviceType) {
-        console.log('ServiceType options:', Array.from(serviceType.options).map(opt => opt.value));
-      }
+  });
+}
+
+// ✅ VALIDAR FORMULARIO COMPLETO
+function validarFormulario(datos) {
+  console.log('🔍 Iniciando validaciones...');
+
+  // ✅ 1. CAMPOS OBLIGATORIOS (TODOS MENOS MESSAGE)
+  const camposObligatorios = [
+    { campo: 'firstName', valor: datos.firstName, nombre: 'Nombre' },
+    { campo: 'lastName', valor: datos.lastName, nombre: 'Apellido' },
+    { campo: 'phone', valor: datos.phone, nombre: 'Teléfono' },
+    { campo: 'email', valor: datos.email, nombre: 'Email' },
+    { campo: 'city', valor: datos.city, nombre: 'Ciudad' },
+    { campo: 'serviceType', valor: datos.serviceType, nombre: 'Tipo de Servicio' }
+  ];
+
+  // Verificar campos vacíos
+  for (let item of camposObligatorios) {
+    if (!item.valor) {
+      console.log('❌ Campo faltante:', item.nombre);
+      document.getElementById(item.campo).classList.add('required-field');
+      mostrarAlerta(`El campo "${item.nombre}" es obligatorio`);
+      document.getElementById(item.campo).focus();
+      return false;
+    } else {
+      document.getElementById(item.campo).classList.remove('required-field');
     }
-  </script>
+  }
+
+  // ✅ 2. VALIDAR FORMATO DE TELÉFONO
+  if (datos.phone) {
+    const telefonoLimpio = datos.phone.replace(/\D/g, '');
+    console.log('📞 Validando teléfono:', telefonoLimpio);
+    
+    if (telefonoLimpio.length !== 8) {
+      mostrarAlerta('El teléfono debe tener exactamente 8 dígitos');
+      document.getElementById('phone').focus();
+      return false;
+    }
+    
+    const primerDigito = telefonoLimpio.charAt(0);
+    if (!['2', '3', '8', '9'].includes(primerDigito)) {
+      mostrarAlerta('El teléfono debe iniciar con 2, 3, 8 o 9');
+      document.getElementById('phone').focus();
+      return false;
+    }
+  }
+
+  // ✅ 3. VALIDAR FORMATO DE EMAIL
+  if (datos.email) {
+    console.log('📧 Validando email:', datos.email);
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(datos.email)) {
+      mostrarAlerta('El correo debe tener formato válido: usuario@dominio.com');
+      document.getElementById('email').focus();
+      return false;
+    }
+  }
+
+  console.log('✅ Todas las validaciones pasaron');
+  return true;
+}
+
+// ✅ PROCESAR ENVÍO
+function procesarEnvio(datos, form, whatsappNumber, googleSheetsURL, successMessage) {
+  console.log('🚀 Procesando envío...');
+
+  // Mensaje WhatsApp
+  let mensaje = `🏢 CONSULTA EASYOFFICE\n\n`;
+  mensaje += `👤 Cliente: ${datos.firstName} ${datos.lastName}\n`;
+  mensaje += `📞 Teléfono: ${datos.phone}\n`;
+  mensaje += `✉️ Email: ${datos.email}\n`;
+  mensaje += `🌎 Ciudad: ${datos.city}\n`;
+  mensaje += `🏗️ Servicio: ${datos.serviceType}\n`;
+  
+  if (datos.message) {
+    mensaje += `💬 Mensaje: ${datos.message}\n`;
+  }
+  
+  mensaje += `\n⏰ Fecha: ${new Date().toLocaleString('es-HN')}`;
+  mensaje += `\n🌐 Enviado desde easyoffice.hn`;
+  mensaje += `\n\n⚡ FAVOR RESPONDER PRONTO ⚡`;
+
+  // Botón loading
+  const btn = form.querySelector('button[type="submit"]');
+  const originalText = btn.innerHTML;
+  btn.innerHTML = '<i class="fab fa-whatsapp"></i> Enviando...';
+  btn.disabled = true;
+
+  // Enviar a Google Sheets
+  const formData = new FormData();
+  Object.keys(datos).forEach(key => {
+    formData.append(key, datos[key]);
+  });
+
+  fetch(googleSheetsURL, {
+    method: 'POST',
+    mode: 'no-cors',
+    body: formData
+  }).then(() => {
+    console.log('📊 Enviado a Google Sheets');
+  }).catch(error => {
+    console.log('⚠️ Error en Sheets:', error);
+  });
+
+  // Procesar después de 1.5 segundos
+  setTimeout(() => {
+    // Restaurar botón
+    btn.innerHTML = originalText;
+    btn.disabled = false;
+
+    // Mostrar éxito
+    successMessage.innerHTML = '✅ ¡Perfecto! Tu información se ha registrado. Te contactaremos pronto.';
+    successMessage.style.display = 'block';
+    successMessage.scrollIntoView({ behavior: 'smooth' });
+
+    // Abrir WhatsApp
+    const encodedMessage = encodeURIComponent(mensaje);
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+    console.log('🔗 Abriendo WhatsApp:', whatsappUrl);
+    window.open(whatsappUrl, '_blank');
+
+    // Limpiar formulario
+    form.reset();
+
+    // Ocultar mensaje después de 5 segundos
+    setTimeout(() => {
+      successMessage.style.display = 'none';
+    }, 5000);
+
+  }, 1500);
+}
+
+// ✅ MODAL DE ALERTA - SIMPLE Y DIRECTO
+function mostrarAlerta(mensaje, tipo = 'error') {
+  console.log('🚨 Mostrar alerta:', mensaje);
+  
+  // Remover alerta existente
+  const existente = document.getElementById('modal-alerta');
+  if (existente) existente.remove();
+
+  const color = tipo === 'success' ? '#ED8438' : '#ff6b35';
+  const icono = tipo === 'success' ? 'fa-check-circle' : 'fa-exclamation-triangle';
+  
+  const modalHTML = `
+    <div id="modal-alerta" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: flex; justify-content: center; align-items: center; z-index: 10000;">
+      <div style="background: white; padding: 30px; border-radius: 15px; max-width: 400px; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+        <i class="fas ${icono}" style="font-size: 48px; color: ${color}; margin-bottom: 20px;"></i>
+        <h3 style="margin: 0 0 15px 0; color: #333;">${tipo === 'success' ? '¡Excelente!' : 'Atención'}</h3>
+        <p style="margin: 0 0 25px 0; color: #666; line-height: 1.5;">${mensaje}</p>
+        <button onclick="cerrarAlerta()" style="background: linear-gradient(135deg, ${color}, ${color}aa); color: white; border: none; padding: 12px 24px; border-radius: 25px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+          ${tipo === 'success' ? '¡Perfecto!' : 'Entendido'}
+        </button>
+      </div>
+    </div>
+  `;
+  
+  document.body.insertAdjacentHTML('beforeend', modalHTML);
+  
+  if (tipo === 'success') {
+    setTimeout(cerrarAlerta, 3000);
+  }
+}
+
+function cerrarAlerta() {
+  const modal = document.getElementById('modal-alerta');
+  if (modal) {
+    modal.remove();
+  }
+}
+
+// ✅ DEBUG
+function debugFormulario() {
+  console.log('🔍 DEBUG COMPLETO:');
+  console.log('Form existe:', !!document.getElementById('contactForm'));
+  console.log('firstName:', document.getElementById('firstName')?.value);
+  console.log('lastName:', document.getElementById('lastName')?.value);
+  console.log('phone:', document.getElementById('phone')?.value);
+  console.log('email:', document.getElementById('email')?.value);
+  console.log('city:', document.getElementById('city')?.value);
+  console.log('serviceType:', document.getElementById('serviceType')?.value);
+  console.log('message:', document.getElementById('message')?.value);
+}
+</script>
   
   <!--===== JS SCRIPT LINK =======-->
   <script src="assets/js/plugins/jquery-3-7-1.min.js"></script>

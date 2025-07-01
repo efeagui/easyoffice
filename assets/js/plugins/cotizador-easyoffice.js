@@ -5,7 +5,7 @@ const WHATSAPP_NUMBER = '+50432777777';
 // ✅ CONFIGURACIÓN INTEGRADA
 const EASYOFFICE_CONFIG = {
   debug: true,
-  googleSheetsURL: 'https://script.google.com/macros/s/AKfycbyAx70nYwZ_cg02y3sgFie-d7Bu-z4gX0JB3iv8juQLmI3xc4oVRIL4suxiMkpSFTTY/exec',
+  googleSheetsURL: 'https://script.google.com/macros/s/AKfycbwVXHjohRPGySe4BcaB2_Vo1vYv6FTUkFyjQKEL30PTjrb1XqenAppvyzR6nZwDTejh/exec',
   whatsappNumber: '50432777777'
 };
 
@@ -511,7 +511,8 @@ async function procesarSolicitud() {
   console.log('   - Tiempo:', solicitudActual.tiempo);
   console.log('   - Tipo Contrato:', solicitudActual.tipoContrato);
   
-  mostrarModalDatos();
+  // ✅ 1. MOSTRAR MODAL DE RESUMEN PRIMERO
+  mostrarModalResumen();
 }
 
 async function procesarOtros() {
@@ -540,6 +541,97 @@ async function procesarOtros() {
   console.log('   - Servicio:', solicitudActual.servicio);
   console.log('   - Descripción:', solicitudActual.descripcion);
   
+  // ✅ 1. MOSTRAR MODAL DE RESUMEN PRIMERO
+  mostrarModalResumen();
+}
+
+// ✅ 1. MODAL DE RESUMEN RESTAURADO - CON EVENT LISTENERS CORREGIDOS
+function mostrarModalResumen() {
+  // Eliminar modal existente si hay uno
+  const modalExistente = document.getElementById('modal-resumen');
+  if (modalExistente) {
+    modalExistente.remove();
+  }
+
+  let contenidoResumen = `
+    <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+      <h3 style="color: #ED8438; margin: 0 0 15px 0;">📋 Resumen de tu solicitud</h3>
+      
+      <div style="background: white; padding: 15px; border-radius: 8px; border-left: 4px solid #ED8438;">
+        <p><strong>🏗️ Servicio:</strong> ${formatearNombreServicio(solicitudActual.servicio)}</p>
+        ${solicitudActual.ciudad ? `<p><strong>📍 Ciudad:</strong> ${solicitudActual.ciudad}</p>` : ''}
+        ${solicitudActual.paquete ? `<p><strong>📦 Paquete:</strong> ${solicitudActual.paquete === 'basico' ? 'Básico' : 'Plus'}</p>` : ''}
+        ${solicitudActual.capacidad ? `<p><strong>👥 Capacidad:</strong> ${solicitudActual.capacidad}</p>` : ''}
+        ${solicitudActual.espacios ? `<p><strong>🪑 Espacios:</strong> ${solicitudActual.espacios}</p>` : ''}
+        ${solicitudActual.tipoReserva && solicitudActual.tiempo ? `<p><strong>📅 Reserva:</strong> ${solicitudActual.tipoReserva} - ${solicitudActual.tiempo}</p>` : ''}
+        ${solicitudActual.tipoContrato ? `<p><strong>📄 Contrato:</strong> ${solicitudActual.tipoContrato}</p>` : ''}
+        ${solicitudActual.descripcion ? `<p><strong>💬 Descripción:</strong> ${solicitudActual.descripcion}</p>` : ''}
+      </div>
+      
+      <p style="text-align: center; margin: 20px 0 10px 0; color: #666;">
+        A continuación deberás ingresar tus datos de contacto para recibir la cotización
+      </p>
+    </div>
+  `;
+
+  const modalHtml = `
+    <div id="modal-resumen" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: flex; justify-content: center; align-items: center; z-index: 10000;">
+      <div style="background: white; padding: 30px; border-radius: 15px; max-width: 500px; max-height: 80vh; overflow-y: auto; box-shadow: 0 20px 40px rgba(0,0,0,0.2);">
+        ${contenidoResumen}
+        
+        <div style="text-align: center; margin-top: 20px;">
+          <button id="btn-cancelar-resumen" style="background: #dc3545; color: white; border: none; padding: 12px 24px; border-radius: 25px; font-weight: 600; cursor: pointer; margin-right: 10px;">
+            <i class="fas fa-times"></i> Cancelar
+          </button>
+          <button id="btn-continuar-resumen" style="background: linear-gradient(135deg, #ED8438, #ff8c42); color: white; border: none; padding: 12px 24px; border-radius: 25px; font-weight: 600; cursor: pointer;">
+            <i class="fas fa-arrow-right"></i> Continuar
+          </button>
+        </div>
+      </div>
+    </div>
+  `;
+  
+  document.body.insertAdjacentHTML('beforeend', modalHtml);
+  
+  // ✅ AGREGAR EVENT LISTENERS DESPUÉS DE QUE EL MODAL ESTÉ EN EL DOM
+  setTimeout(() => {
+    const btnCancelar = document.getElementById('btn-cancelar-resumen');
+    const btnContinuar = document.getElementById('btn-continuar-resumen');
+    
+    if (btnCancelar) {
+      btnCancelar.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        cerrarModalResumen();
+      }, { once: true }); // ✅ solo una vez
+    }
+    
+    if (btnContinuar) {
+      btnContinuar.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        // ✅ Deshabilitar botón temporalmente
+        btnContinuar.disabled = true;
+        btnContinuar.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Continuando...';
+        
+        setTimeout(() => {
+          continuarADatos();
+        }, 100);
+      }, { once: true }); // ✅ solo una vez
+    }
+  }, 50); // ✅ pequeño delay para asegurar que el DOM esté listo
+}
+
+function cerrarModalResumen() {
+  const modal = document.getElementById('modal-resumen');
+  if (modal) {
+    modal.remove();
+  }
+}
+
+function continuarADatos() {
+  cerrarModalResumen();
   mostrarModalDatos();
 }
 
@@ -978,15 +1070,15 @@ function mostrarMensajeExito(mensaje) {
   mostrarAlerta(mensaje, 'success');
 }
 
-// ✅ MODAL DE ÉXITO FINAL
+// ✅ 2. MODAL DE ÉXITO FINAL CON COLORES OFICIALES NARANJA
 function mostrarModalExito() {
   const modalHtml = `
     <div id="modal-exito" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: flex; justify-content: center; align-items: center; z-index: 10000;">
       <div style="background: white; padding: 40px; border-radius: 15px; max-width: 450px; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.2);">
-        <i class="fas fa-check-circle" style="font-size: 64px; color: #28a745; margin-bottom: 20px;"></i>
+        <i class="fas fa-check-circle" style="font-size: 64px; color: #ED8438; margin-bottom: 20px;"></i>
         <h3 style="margin: 0 0 15px 0; color: #333; font-size: 24px;">ATENCIÓN</h3>
         <p style="margin: 0 0 30px 0; color: #666; line-height: 1.6; font-size: 16px;">Solicitud enviada correctamente</p>
-        <button onclick="cerrarModalExito()" style="background: linear-gradient(135deg, #28a745, #20c997); color: white; border: none; padding: 15px 30px; border-radius: 25px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; font-size: 16px;">
+        <button onclick="cerrarModalExito()" style="background: linear-gradient(135deg, #ED8438, #ff8c42); color: white; border: none; padding: 15px 30px; border-radius: 25px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; font-size: 16px;">
           Entendido
         </button>
       </div>
@@ -1013,7 +1105,7 @@ function mostrarAlerta(mensaje, tipo = 'error') {
   // Crear modal de alerta personalizado
   const tipoClass = tipo === 'success' ? 'success-alert' : 'error-alert';
   const icono = tipo === 'success' ? 'fa-check-circle' : 'fa-exclamation-triangle';
-  const color = tipo === 'success' ? '#28a745' : '#ff6b35';
+  const color = tipo === 'success' ? '#ED8438' : '#ff6b35';
   
   const alertaHtml = `
     <div id="modal-alerta" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: flex; justify-content: center; align-items: center; z-index: 10000;">
