@@ -23,7 +23,7 @@
             Tipo de Servicio
           </label>
           <div class="select-wrapper-smart">
-            <select id="tipo-servicio" onchange="updateServicioOptions()">
+            <select id="tipo-servicio">
               <option value="">Seleccionar servicio</option>
               <option value="oficina-virtual">🌐 Oficina Virtual</option>
               <option value="sala-juntas">🤝 Sala de Juntas</option>
@@ -42,7 +42,7 @@
             Paquete
           </label>
           <div class="select-wrapper-smart">
-            <select id="paquete-virtual" onchange="updateCiudadOptions()">
+            <select id="paquete-virtual">
               <option value="">Seleccionar paquete</option>
               <option value="basico">📦 Paquete básico</option>
               <option value="plus">⭐ Paquete plus</option>
@@ -58,7 +58,7 @@
             Ciudad
           </label>
           <div class="select-wrapper-smart">
-            <select id="ciudad" onchange="updateCapacidadOptions()">
+            <select id="ciudad">
               <option value="">Seleccionar ciudad</option>
               <!-- Las opciones se llenan dinámicamente desde JavaScript -->
             </select>
@@ -73,7 +73,7 @@
             <span id="capacidad-label">Capacidad</span>
           </label>
           <div class="select-wrapper-smart">
-            <select id="capacidad" onchange="handleCapacidadChange()">
+            <select id="capacidad">
               <option value="">Seleccionar capacidad</option>
             </select>
             <i class="fas fa-chevron-down select-arrow-smart"></i>
@@ -87,7 +87,7 @@
             Tipo de Contrato
           </label>
           <div class="select-wrapper-smart">
-            <select id="tipo-contrato" onchange="updateButtonState()">
+            <select id="tipo-contrato">
               <option value="">Seleccionar contrato</option>
               <option value="6-meses">📅 6 meses</option>
               <option value="12-meses">📅 12 meses</option>
@@ -105,7 +105,7 @@
             Espacios
           </label>
           <div class="select-wrapper-smart">
-            <select id="espacios" onchange="updateReservaOptions()">
+            <select id="espacios">
               <option value="">Seleccionar espacios</option>
               <option value="1">1 espacio</option>
               <option value="2">2 espacios</option>
@@ -129,7 +129,7 @@
             Tipo de reserva
           </label>
           <div class="select-wrapper-smart">
-            <select id="tipo-reserva" onchange="updateTiempoOptions()">
+            <select id="tipo-reserva">
               <option value="">Seleccionar tipo</option>
               <option value="hora">⏰ Por hora</option>
               <option value="dia">📅 Por día</option>
@@ -147,7 +147,7 @@
             <span id="tiempo-label">Elegir horario</span>
           </label>
           <div class="select-wrapper-smart">
-            <select id="tiempo-elegido" onchange="updateButtonState()">
+            <select id="tiempo-elegido">
               <option value="">Seleccionar</option>
             </select>
             <i class="fas fa-chevron-down select-arrow-smart"></i>
@@ -156,7 +156,7 @@
 
         <!-- BOTÓN PRINCIPAL SERVICIOS -->
         <div class="search-button-smart">
-          <button id="btn-principal-servicios" type="button" onclick="procesarSolicitud()" class="btn-principal-smart">
+          <button id="btn-principal-servicios" type="button" class="btn-principal-smart">
             <i class="fas fa-search"></i>
             <span id="btn-text">Seleccionar Servicio</span>
             <span class="btn-arrow-smart"><i class="fas fa-arrow-right"></i></span>
@@ -176,7 +176,7 @@
             Seleccione tipo de servicios
           </label>
           <div class="select-wrapper-smart">
-            <select id="tipo-otros" onchange="updateOtrosOptions()">
+            <select id="tipo-otros">
               <option value="">Seleccionar</option>
               <option value="servicios-adicionales">🔧 Servicios adicionales</option>
             </select>
@@ -191,13 +191,13 @@
             Descríbenos lo que necesitas
           </label>
           <div class="textarea-wrapper-smart">
-            <textarea id="descripcion-otros" oninput="updateOtrosButtonState()" placeholder="Si no encuentras la solución, podemos darte la que tú necesitas" rows="4"></textarea>
+            <textarea id="descripcion-otros" placeholder="Si no encuentras la solución, podemos darte la que tú necesitas" rows="4"></textarea>
           </div>
         </div>
 
         <!-- BOTÓN OTROS -->
         <div class="search-button-smart">
-          <button id="btn-principal-otros" type="button" onclick="procesarOtros()" class="btn-principal-smart">
+          <button id="btn-principal-otros" type="button" class="btn-principal-smart">
             <i class="fas fa-search"></i>
             <span id="btn-text-otros">Seleccione una solución</span>
             <span class="btn-arrow-smart"><i class="fas fa-arrow-right"></i></span>

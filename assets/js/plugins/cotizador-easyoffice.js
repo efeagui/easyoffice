@@ -14,6 +14,48 @@ document.addEventListener('DOMContentLoaded', function() {
   setTimeout(initializeCotizador, 100);
 });
 
+// function initializeCotizador() {
+//   console.log('🚀 Inicializando EasyOffice Cotizador v3.0...');
+  
+//   // Configurar eventos de tabs
+//   const tabButtons = document.querySelectorAll('.tab-btn-smart');
+//   if (tabButtons.length > 0) {
+//     tabButtons.forEach(button => {
+//       button.addEventListener('click', function() {
+//         document.querySelectorAll('.tab-btn-smart').forEach(btn => btn.classList.remove('active'));
+//         this.classList.add('active');
+        
+//         document.querySelectorAll('.tab-content-smart').forEach(tab => tab.classList.add('hidden'));
+//         const targetTab = this.getAttribute('data-tab');
+//         const targetElement = document.getElementById(targetTab);
+//         if (targetElement) {
+//           targetElement.classList.remove('hidden');
+//         }
+        
+//         resetearFormularios();
+//       });
+//     });
+//   }
+  
+//   // Asegurar que el tab de servicios esté activo por defecto
+//   const serviciosTab = document.getElementById('servicios');
+//   if (serviciosTab) {
+//     serviciosTab.classList.remove('hidden');
+//   }
+  
+//   // ✅ CONFIGURAR VALIDACIONES EN TIEMPO REAL AL INICIALIZAR
+//   setTimeout(() => {
+//     configurarValidacionesEnTiempoReal();
+//   }, 500);
+  
+//   // ✅ CONFIGURAR FORMULARIO DE CONTACTO SI EXISTE
+//   setTimeout(() => {
+//     manejarFormularioContacto();
+//   }, 1000);
+  
+//   console.log('✅ Cotizador v3.0 inicializado correctamente');
+// }
+
 function initializeCotizador() {
   console.log('🚀 Inicializando EasyOffice Cotizador v3.0...');
   
@@ -52,6 +94,100 @@ function initializeCotizador() {
   setTimeout(() => {
     manejarFormularioContacto();
   }, 1000);
+  
+  // ✅✅✅ AGREGAR ESTAS LÍNEAS NUEVAS AL FINAL ✅✅✅
+  // ===== EVENT LISTENERS PARA CHROME COMPATIBILITY =====
+  setTimeout(() => {
+    console.log('🔧 Configurando event listeners para Chrome...');
+    
+    // Event listener para tipo de servicio
+    const tipoServicioSelect = document.getElementById('tipo-servicio');
+    if (tipoServicioSelect) {
+      tipoServicioSelect.addEventListener('change', updateServicioOptions);
+      console.log('✅ Event listener para tipo-servicio configurado');
+    }
+    
+    // Event listener para paquete virtual  
+    const paqueteVirtualSelect = document.getElementById('paquete-virtual');
+    if (paqueteVirtualSelect) {
+      paqueteVirtualSelect.addEventListener('change', updateCiudadOptions);
+      console.log('✅ Event listener para paquete-virtual configurado');
+    }
+    
+    // Event listener para ciudad
+    const ciudadSelect = document.getElementById('ciudad');
+    if (ciudadSelect) {
+      ciudadSelect.addEventListener('change', updateCapacidadOptions);
+      console.log('✅ Event listener para ciudad configurado');
+    }
+    
+    // Event listener para capacidad
+    const capacidadSelect = document.getElementById('capacidad');
+    if (capacidadSelect) {
+      capacidadSelect.addEventListener('change', handleCapacidadChange);
+      console.log('✅ Event listener para capacidad configurado');
+    }
+    
+    // Event listener para espacios
+    const espaciosSelect = document.getElementById('espacios');
+    if (espaciosSelect) {
+      espaciosSelect.addEventListener('change', updateReservaOptions);
+      console.log('✅ Event listener para espacios configurado');
+    }
+    
+    // Event listener para tipo de reserva
+    const tipoReservaSelect = document.getElementById('tipo-reserva');
+    if (tipoReservaSelect) {
+      tipoReservaSelect.addEventListener('change', updateTiempoOptions);
+      console.log('✅ Event listener para tipo-reserva configurado');
+    }
+    
+    // Event listener para tiempo elegido
+    const tiempoElegidoSelect = document.getElementById('tiempo-elegido');
+    if (tiempoElegidoSelect) {
+      tiempoElegidoSelect.addEventListener('change', updateButtonState);
+      console.log('✅ Event listener para tiempo-elegido configurado');
+    }
+    
+    // Event listener para tipo de contrato
+    const tipoContratoSelect = document.getElementById('tipo-contrato');
+    if (tipoContratoSelect) {
+      tipoContratoSelect.addEventListener('change', updateButtonState);
+      console.log('✅ Event listener para tipo-contrato configurado');
+    }
+    
+    // Event listener para otros
+    const tipoOtrosSelect = document.getElementById('tipo-otros');
+    if (tipoOtrosSelect) {
+      tipoOtrosSelect.addEventListener('change', updateOtrosOptions);
+      console.log('✅ Event listener para tipo-otros configurado');
+    }
+    
+    // Event listener para descripción otros
+    const descripcionOtrosTextarea = document.getElementById('descripcion-otros');
+    if (descripcionOtrosTextarea) {
+      descripcionOtrosTextarea.addEventListener('input', updateOtrosButtonState);
+      console.log('✅ Event listener para descripcion-otros configurado');
+    }
+    
+    // Event listener para botón principal servicios
+    const btnPrincipalServicios = document.getElementById('btn-principal-servicios');
+    if (btnPrincipalServicios) {
+      btnPrincipalServicios.addEventListener('click', procesarSolicitud);
+      console.log('✅ Event listener para btn-principal-servicios configurado');
+    }
+    
+    // Event listener para botón principal otros
+    const btnPrincipalOtros = document.getElementById('btn-principal-otros');
+    if (btnPrincipalOtros) {
+      btnPrincipalOtros.addEventListener('click', procesarOtros);
+      console.log('✅ Event listener para btn-principal-otros configurado');
+    }
+    
+    console.log('🎉 Todos los event listeners configurados para Chrome');
+    
+  }, 800); // Ejecutar después de que el cotizador esté completamente cargado
+  // ===== FIN EVENT LISTENERS NUEVOS =====
   
   console.log('✅ Cotizador v3.0 inicializado correctamente');
 }
